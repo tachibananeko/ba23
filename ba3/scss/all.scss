@@ -3,12 +3,15 @@
 @import "mixin";
 @import "share_tool";
 
+// btn_group.html用完可刪
+@import "ba3_btn_style";
+
 // layout
 @import "frame";
-@import "left_menu"; 
+@import "left_menu";
 @import "top_menu";
-@import "main_game"; 
-
+@import "main_game";
+@import "alert";
 
 
 
