@@ -1252,10 +1252,9 @@
     }
 
     // 好路提示設定按鈕
-    .goodroad_btn,
-    .close_btn {
-        @include btn_set(20px, 20px, url(../images/icon_setting.svg) no-repeat center / contain);
-        @include pos_abs(0, unset, 0, 10px);
+    .goodroad_btn{
+        @include btn_set(30px, 100%, url(../images/icon_setting.svg) no-repeat center / 70%);
+        @include pos_abs(0, unset, 0, 0);
         margin: auto;
 
         @at-root .--on>.goodroad_btn {
@@ -1270,13 +1269,19 @@
 
     // 好路提示關閉按鈕
     .close_btn{
-        background-image: url(../images/icon_x.svg);
-        left: auto;
-        right: 10px;
+        @include btn_set(30px, 100%, url(../images/icon_x.svg) no-repeat center / 50%);
+        @include pos_abs(0, -3px, 0, unset);
+        margin: auto;
+        
         display: none;
 
         @include mw_md{
             display: block;
+        }
+
+        // 手指效果
+        @include hoverHandler{
+            transform: scale(1.2);
         }
     }
 }
@@ -1358,11 +1363,15 @@
         &__go {
             position: relative;
             flex: 0 0 50px;
-            padding: 5px;
+            padding: 0 5px;
 
             @include mw_lg{
                 flex: 0 0 100px;
                 height: 40px;
+            }
+            
+            @include mw_ms{
+                flex: 0 0 50px;
             }
 
             // 網投無卡

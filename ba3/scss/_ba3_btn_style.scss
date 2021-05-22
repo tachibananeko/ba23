@@ -14,12 +14,6 @@
         margin-left: auto;
     }
 
-    &.--i_vip i {
-        width: 40px;
-        height: 100%;
-        background: url(../images/icon_ba3lobby_vip.svg) no-repeat center top / contain;
-    }
-
     &.--i_ex i::before,
     &.--i_fast i::after {
         @include pos_abs(0, calc(100% + 5px), 0, unset);
@@ -34,7 +28,7 @@
         background-image: url(../images/icon_fast.svg);
         right: calc(100% + 35px);
     }
-    &.--i_fast:not(.--i_vip):not(.--i_ex) i::after {
+    &.--i_fast:not(.--i_ex) i::after {
         right: calc(100% + 5px);
     }
 

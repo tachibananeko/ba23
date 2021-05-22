@@ -1,0 +1,194 @@
+
+.alert{
+    @include d_f(flex, center, center);
+    height: 100%;
+    padding: 10px;
+    background: map-get($bg_color, black_alpha);
+
+    flex-direction: column;
+
+    // 視窗外框 .alert__box
+    &__box{
+        @include d_f(flex, unset, flex-start);
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        max-width: 250px;
+        min-height: 150px;
+        background: map-get($bg_color, secondary_vl);
+        border-radius: 5px;
+        overflow: hidden;
+
+        &::before{
+            @include pos_abs(0, 0, 0, 0);
+            content: '';
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+            background: map-get($bg_color, darkbrown_gradual_vl);
+            margin: auto;
+        }
+
+        // 視窗title .alert__box__title
+        &__title{
+            @include d_f(flex, center, flex-start);
+            position: relative;
+            flex: none;
+            padding: 10px;
+            color: map-get($txt_color, primary);
+
+            i{
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+            }
+
+            .close_btn{
+                @include btn_set(20px, 20px, url(../images/icon_x.svg) no-repeat center / 80%);
+                margin-left: auto;
+
+                // 手指效果
+                @include hoverHandler{
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+        // 視窗內容 .alert__box__info
+        &__info{
+            @include d_f(flex, center, center);
+            flex-direction: column;
+            position: relative;
+            flex: 1 1 100%;
+            padding: 0 10px 10px;
+            text-align: center;
+
+            .list_txt{
+                
+                li{
+                    @include d_f(flex, center, flex-start);
+                    color: map-get($txt_color, white);
+                    margin-bottom: 5px;
+
+                    &::before{
+                        @include mr_distance;
+                        content: attr(data-txt);
+                        display: block;
+                        width: 80px;
+                        color: map-get($txt_color, primary);
+                        text-align: right;
+                        letter-spacing: 5px;
+                    }
+                    &[data-txt=""]::before{
+                        content: none;
+                    }
+                }
+
+                // 單一置中訊息
+                &.--bigword li{
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+            }
+            
+        }
+        
+
+        // 彈窗功能按鈕
+        .func{
+                @include d_f(flex, center, center);
+                flex: none;
+                flex-wrap: wrap;
+                padding: 0 10px;
+
+
+            // .foot_btn
+            &_btn{
+                @include btn_set(calc(100% / 2 - 10px), 35px, map-get($btn_color, lightblue));
+                border: 1px solid map-get($bg_color, lightblue);
+                border-radius: 3px;
+                margin-bottom: 10px;
+
+                overflow: hidden;
+                
+                &:nth-child(even){
+                    margin-left: 20px;
+                }
+
+                &::before{
+                    @include btn_hoverlight01(150%);
+                }
+                &::after{
+                    @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
+                    
+                }
+                .hover_item{
+                    @include btn_hoveritem(map-get($btn_color, blue));
+                    box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
+                                0 0 6px map-get($bg_color, secondary) inset;
+                    &::before {
+                        @include btn_hoverlight01(200%);
+                    }
+                }
+
+                // 紅色款
+                &.--red {
+                    background: map-get($btn_color, lightred);
+                    border-color: map-get($bg_color, secondary);
+                    
+                    .hover_item {
+                        background: map-get($btn_color, red);
+                    }
+                }
+
+                // 手指效果
+                @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
+            }
+
+        }
+
+        // .load
+        .load{
+            display: inline-block;
+            position: relative;
+            width: 30px;
+            height: 30px;
+            margin: 25px 0 10px;
+            
+            &::before{
+                @include pos_abs(unset, 0, calc(100% + 10px), 0);
+                content: attr(data-txt);
+                font-size: 12px;
+                margin: auto;
+                white-space: nowrap;
+            }
+            
+            div {
+                @include pos_abs(0, 0, 0, 0);
+                border: 2px solid map-get($bg_color, white);
+                border-radius: 50%;
+                box-shadow: 0 0 5px map-get($bg_color, secondary);
+                opacity: 1;
+
+                animation: load 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+
+                &:nth-child(2) {
+                    animation-delay: -.5s;
+                }
+            }
+            @keyframes load {
+                0% {
+                    transform: scale(0);
+                }
+                80% {
+                    transform: scale(1.5);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(1.8);
+                    opacity: 0;
+                }
+            }
+        }
+
+    }
+}

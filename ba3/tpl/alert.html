@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'
+        integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=='
+        crossorigin='anonymous'></script>
+    <title>Welcome</title>
+
+    <link rel="stylesheet" href="../style/all.min.css">
+
+    <!-- icon -->
+    <link rel="shortcut icon" href="/favicon_icon.ico">
+    <link rel="icon" href="/favicon_icon.ico">
+    <link rel="apple-touch-icon" type="image/png" href="/favicon_icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/favicon_icon.png">
+
+</head>
+
+<body>
+
+
+    <div class="alert">
+
+        <!-- 打賞視窗 -->
+        <div class="alert__box" style="display: none;">
+            <!-- 視窗title -->
+            <div class="alert__box__title">
+                <i class="icon_titletip"></i>
+                <span>小費</span>
+                <button class="close_btn"></button>
+            </div>
+
+            <!-- 視窗內容 -->
+            <div class="alert__box__info">
+                <img src="../images/img_money.png">
+
+                <ul class="list_txt">
+                    <li data-txt="桌號">MW2001</li>
+                    <li data-txt="小費">
+                        <input type="text" class="input_style" value="5,000">
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 彈窗功能按鈕 -->
+            <div class="func">
+                <button class="func_btn" data-txt="確定">
+                    <span class="hover_item"></span>
+                </button>
+            </div>
+        </div>
+        <!-- 打賞視窗 end -->
+
+
+
+        <!-- 飛牌視窗 -->
+        <div class="alert__box" style="display: none;">
+            <!-- 視窗title -->
+            <div class="alert__box__title"></div>
+
+            <!-- 視窗內容 -->
+            <div class="alert__box__info">
+                <!-- 單一置中訊息 加上.--bigword -->
+                <ul class="list_txt --bigword">
+                    <li data-txt="">是否確定要飛牌?</li>
+                </ul>
+            </div>
+
+            <!-- 彈窗功能按鈕 -->
+            <div class="func">
+                <button class="func_btn --red" data-txt="取消">
+                    <span class="hover_item"></span>
+                </button>
+                <button class="func_btn" data-txt="確定">
+                    <span class="hover_item"></span>
+                </button>
+            </div>
+        </div>
+        <!-- 飛牌視窗 end -->
+
+
+
+        <!-- 呼叫公關視窗 -->
+        <div class="alert__box">
+            <!-- 視窗title -->
+            <div class="alert__box__title"></div>
+
+            <!-- 視窗內容 -->
+            <div class="alert__box__info">
+                <!-- 單一置中訊息 加上.--bigword -->
+                <ul class="list_txt --bigword">
+                    <li data-txt="">呼叫公關中</li>
+                </ul>
+
+                <div class="load" data-txt="請稍後">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+
+            <!-- 彈窗功能按鈕 -->
+            <div class="func">
+                <button class="func_btn --red" data-txt="取消呼叫">
+                    <span class="hover_item"></span>
+                </button>
+            </div>
+        </div>
+        <!-- 呼叫公關視窗 end -->
+
+
+
+
+
+    </div>
+
+
+
+</body>
+
+</html>

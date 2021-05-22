@@ -28,7 +28,9 @@ $bg_color: (
     darkbrown: #140a0c,
     brown_gradual: linear-gradient(to right, #f2bd79 0%, #563d29 70%, #000 100%),
     brown_gradual_vl: linear-gradient(to top, #563d29 30%, #000 100%),
+    darkbrown_gradual_vl: linear-gradient(to top, #42210b 30%, #000 100%),
     red: #c11615,
+    lightblue: #00a0ed,
     green: #115f24,
     lightgreen: #00d345,
     order_area: #224d4d,
@@ -93,4 +95,17 @@ $border_color: (
         visibility: visible;
         opacity: 1;
     }
+}
+
+// 通用的input select checkbox等
+.input_style{
+    width: calc(100% - 100px);
+    height: 30px;
+    padding: 0 10px;
+    background: map-get($bg_color , darkbrown);
+    border-radius: 3px;
+    color: map-get($txt_color, white);
+}
+.select_style{
+    
 }

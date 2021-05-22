@@ -1317,10 +1317,9 @@
     }
 
     // 好路提示設定按鈕
-    .goodroad_btn,
-    .close_btn {
-        @include btn_set(20px, 20px, url(../images/icon_setting.svg) no-repeat center / contain);
-        @include pos_abs(0, unset, 0, 5px);
+    .goodroad_btn{
+        @include btn_set(30px, 100%, url(../images/icon_setting.svg) no-repeat center / 70%);
+        @include pos_abs(0, unset, 0, 0);
         filter: brightness(200%);
         margin: auto;
 
@@ -1336,11 +1335,10 @@
 
     // 好路提示關閉按鈕
     .close_btn{
-        width: 15px;
-        height: 15px;
-        background-image: url(../images/icon_x.svg);
-        left: auto;
-        right: 5px;
+        @include btn_set(30px, 100%, url(../images/icon_x.svg) no-repeat center / 50%);
+        @include pos_abs(0, -3px, 0, unset);
+        margin: auto;
+
         display: none;
 
         @at-root .--on + .close_btn {
@@ -1349,6 +1347,11 @@
 
         @include mw_md{
             display: block;
+        }
+
+        // 手指效果
+        @include hoverHandler{
+            transform: scale(1.2);
         }
     }
 }

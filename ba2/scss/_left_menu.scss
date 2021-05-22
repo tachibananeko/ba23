@@ -161,12 +161,12 @@
 
             &::after{
                 content: '';
+                display: inline-block;
                 width: 8px;
                 height: 8px;
                 flex: none;
                 border-width: 2px;
                 border-color:transparent #fff #fff #fff;
-                display: inline-block;
                 border-style:solid;
                 border-radius: 50%;
                 animation: load .5s linear infinite;
