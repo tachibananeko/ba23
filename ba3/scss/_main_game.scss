@@ -1404,7 +1404,7 @@
 
         // 雙
         &:nth-child(even) {
-            background: #37c6ff;
+            background: map-get($bg_color, lightblue);
 
             &::before {
                 background: map-get($btn_color, lightblue_vl);

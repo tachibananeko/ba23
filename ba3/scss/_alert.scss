@@ -13,7 +13,7 @@
         flex-direction: column;
         position: relative;
         width: 100%;
-        max-width: 250px;
+        max-width: 300px;
         min-height: 150px;
         background: map-get($bg_color, secondary_vl);
         border-radius: 5px;
@@ -24,7 +24,7 @@
             content: '';
             width: calc(100% - 4px);
             height: calc(100% - 4px);
-            background: map-get($bg_color, darkbrown_gradual_vl);
+            background: map-get($bg_color, alert_bg);
             margin: auto;
         }
 
@@ -51,6 +51,15 @@
                     transform: scale(1.2);
                 }
             }
+
+            .minisize_btn{
+                @include btn_set(20px, 20px, url(../images/icon_minisize.svg) no-repeat center / contain);
+                
+                // 手指效果
+                @include hoverHandler{
+                    transform: scale(1.2);
+                }
+            }
         }
 
         // 視窗內容 .alert__box__info
@@ -63,7 +72,9 @@
             text-align: center;
 
             .list_txt{
-                
+                width: 100%;
+                padding-left: 15px;
+
                 li{
                     @include d_f(flex, center, flex-start);
                     color: map-get($txt_color, white);
@@ -74,19 +85,34 @@
                         content: attr(data-txt);
                         display: block;
                         width: 80px;
-                        color: map-get($txt_color, primary);
+                        color: map-get($txt_color, yellow);
                         text-align: right;
-                        letter-spacing: 5px;
-                    }
-                    &[data-txt=""]::before{
-                        content: none;
                     }
                 }
 
                 // 單一置中訊息
                 &.--bigword li{
+                    justify-content: center;
                     font-weight: bold;
                     font-size: 20px;
+                    
+                    &::before{
+                        content: none;
+                    }
+
+                    code{
+                        color: map-get($txt_color, yellow);
+                    }                    
+                }
+            }
+
+            .check_area{
+                @include d_f(flex, center, center);
+                width: 100%;
+                margin: 10px 0;
+
+                li + li{
+                    margin-left: 20px;
                 }
             }
             
@@ -115,33 +141,62 @@
                 }
 
                 &::before{
-                    @include btn_hoverlight01(150%);
+                    @include btn_hoverlight03;
                 }
                 &::after{
                     @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
+                    font-weight: bold;
                     
                 }
                 .hover_item{
-                    @include btn_hoveritem(map-get($btn_color, blue));
-                    box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
-                                0 0 6px map-get($bg_color, secondary) inset;
-                    &::before {
-                        @include btn_hoverlight01(200%);
-                    }
-                }
+                    @include btn_hoveritem(map-get($btn_color, primary));
 
-                // 紅色款
-                &.--red {
-                    background: map-get($btn_color, lightred);
-                    border-color: map-get($bg_color, secondary);
-                    
-                    .hover_item {
-                        background: map-get($btn_color, red);
+                    &::before {
+                        @include btn_hoverlight03;
                     }
                 }
 
                 // 手指效果
-                @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
+                @include btn_hoverHandler(1px, map-get($txt_color, secondary)){
+                    border-color: map-get($bg_color, secondary);
+                }
+
+
+                // 紅色款
+                &.--red {
+                    background: map-get($btn_color, orange_hl);
+                    border-color: map-get($bg_color, secondary);
+                    
+                    .hover_item {
+                        background: map-get($btn_color, lightorange_hl);
+                    }
+
+                    // 手指效果
+                    @include btn_hoverHandler(1px, map-get($txt_color, primary)){
+                        border-color: map-get($bg_color, secondary);
+                    }
+                }
+
+                // 金色款
+                &.--gold {
+                    background: map-get($btn_color, primary);
+                    border-color: map-get($bg_color, secondary);
+                    
+                    &::after{
+                        @include btn_txt(center, map-get($txt_color, secondary), map-get($txt_color, shadow));
+                    }
+
+                    .hover_item {
+                        background: map-get($btn_color, lightblue);
+                    }
+
+                    // 手指效果
+                    @include btn_hoverHandler(1px, map-get($txt_color, primary)){
+                        border-color: map-get($bg_color, lightblue);
+                    }
+                }
+
+                
             }
 
         }
@@ -157,6 +212,7 @@
             &::before{
                 @include pos_abs(unset, 0, calc(100% + 10px), 0);
                 content: attr(data-txt);
+                color: map-get($txt_color, yellow);
                 font-size: 12px;
                 margin: auto;
                 white-space: nowrap;
@@ -166,7 +222,7 @@
                 @include pos_abs(0, 0, 0, 0);
                 border: 2px solid map-get($bg_color, white);
                 border-radius: 50%;
-                box-shadow: 0 0 5px map-get($bg_color, secondary);
+                box-shadow: 0 0 5px map-get($bg_color, lightblue);
                 opacity: 1;
 
                 animation: load 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;

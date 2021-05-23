@@ -13,7 +13,7 @@
         flex-direction: column;
         position: relative;
         width: 100%;
-        max-width: 250px;
+        max-width: 300px;
         min-height: 150px;
         background: map-get($bg_color, secondary_vl);
         border-radius: 5px;
@@ -24,7 +24,7 @@
             content: '';
             width: calc(100% - 4px);
             height: calc(100% - 4px);
-            background: map-get($bg_color, darkbrown_gradual_vl);
+            background: map-get($bg_color, alert_bg);
             margin: auto;
         }
 
@@ -78,15 +78,17 @@
                         text-align: right;
                         letter-spacing: 5px;
                     }
-                    &[data-txt=""]::before{
-                        content: none;
-                    }
                 }
 
                 // 單一置中訊息
                 &.--bigword li{
+                    justify-content: center;
                     font-weight: bold;
                     font-size: 20px;
+
+                    &::before{
+                        content: none;
+                    }
                 }
             }
             
@@ -119,6 +121,7 @@
                 }
                 &::after{
                     @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
+                    font-weight: bold;
                     
                 }
                 .hover_item{

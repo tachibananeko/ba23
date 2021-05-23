@@ -40,7 +40,7 @@
 }
 
 // 自定義
-// 選取勾勾
+// 勾勾
 @mixin checktick($width, $height, $x, $y, $boder, $bc) {
 	@include pos_abs($y, unset, unset, $x);
 	content: none;
@@ -469,10 +469,10 @@ $breakpoints: (
 $num: 100; 
 @while $num > 0 {
 	.w#{$num} {
-		width: $num * 1%;
+		width: $num * 1% !important;
 	}
 	.w#{$num}px {
-		width: $num + px;
+		width: $num + px !important;
 	}
 	.mb#{$num} {
 		margin-bottom: $num + px;
