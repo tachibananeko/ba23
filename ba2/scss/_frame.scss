@@ -138,7 +138,7 @@
 
             .road {
                 grid-area: road;
-                background-color: #fff;
+                background-color: map-get($bg_color, white);
 
                 @include mw_ms {
                     min-height: 350px;

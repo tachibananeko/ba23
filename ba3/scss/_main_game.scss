@@ -1650,7 +1650,7 @@
     }
     
     .cardAll{
-        @include pos_abs(-20px, unset, unset, 0)
+        @include pos_abs(-20px, unset, unset, 0);
         height: calc(100% + 20px);
     }
 }
