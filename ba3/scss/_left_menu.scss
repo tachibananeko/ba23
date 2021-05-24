@@ -164,7 +164,7 @@
                 display: inline-block;
                 border-style:solid;
                 border-radius: 50%;
-                animation: load .5s linear infinite;
+                animation: moneyload .5s linear infinite;
                 @include mw_lg {
                     margin-bottom: 5px;
                 }
@@ -172,7 +172,7 @@
                     margin: 0 0 0 5px;
                 }
 
-                @keyframes load {
+                @keyframes moneyload {
                     from {
                         transform: rotate(0deg);
                     }

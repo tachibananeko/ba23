@@ -3436,8 +3436,8 @@ tt {
   display: inline-block;
   border-style: solid;
   border-radius: 50%;
-  -webkit-animation: load .5s linear infinite;
-          animation: load .5s linear infinite;
+  -webkit-animation: moneyload .5s linear infinite;
+          animation: moneyload .5s linear infinite;
 }
 
 @media screen and (max-width: 1180px) {
@@ -3452,7 +3452,7 @@ tt {
   }
 }
 
-@-webkit-keyframes load {
+@-webkit-keyframes moneyload {
   from {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -3463,7 +3463,7 @@ tt {
   }
 }
 
-@keyframes load {
+@keyframes moneyload {
   from {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -8057,6 +8057,23 @@ tt {
 .alert__box .load div:nth-child(2) {
   -webkit-animation-delay: -.5s;
           animation-delay: -.5s;
+}
+
+@-webkit-keyframes load {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  80% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.8);
+            transform: scale(1.8);
+    opacity: 0;
+  }
 }
 
 @keyframes load {
