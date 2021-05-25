@@ -37,8 +37,8 @@
     &.--i_fast i::after {
         @include pos_abs(0, calc(100% + 5px), 0, unset);
         content: '';
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
         background: url(../images/icon_ex.svg) no-repeat center / contain;        
         margin: auto;
     }
@@ -151,6 +151,7 @@
                 background: url(../images/icon_time.svg) no-repeat center / contain;
             }
             &:empty{
+                padding: 0;
                 background:none;
                 border: none;
             }
