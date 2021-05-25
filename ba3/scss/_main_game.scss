@@ -117,7 +117,16 @@
             overflow: hidden;
             z-index: 4;
 
+            @include mw_md{
+                position: fixed;
+                bottom: auto;
+                top: 10px;
+                left: 380px;
+            }
+
             @include mw_ms{
+                position: absolute;
+                top: auto;
                 bottom: 0;
                 left: 10px;
                 border-radius: 3px 3px 0 0;
