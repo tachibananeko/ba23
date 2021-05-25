@@ -3011,8 +3011,8 @@ tt {
   max-width: 1290px;
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
-  -ms-grid-rows: minmax(0, 100%);
-      grid-template-rows: minmax(0, 100%);
+  -ms-grid-rows: minmax(0, 1fr);
+      grid-template-rows: minmax(0, 1fr);
   -ms-grid-columns: 130px minmax(0, 1fr);
       grid-template-columns: 130px minmax(0, 1fr);
       grid-template-areas: "menu main" "menu main";
@@ -3030,8 +3030,8 @@ tt {
   .frame {
     -ms-grid-rows: minmax(0, 1fr) 50px;
         grid-template-rows: minmax(0, 1fr) 50px;
-    -ms-grid-columns: 100%;
-        grid-template-columns: 100%;
+    -ms-grid-columns: minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr);
         grid-template-areas: "main main" "menu menu";
   }
 }
@@ -3073,6 +3073,8 @@ tt {
   display: grid;
   -ms-grid-rows: 50px minmax(0, 1fr);
       grid-template-rows: 50px minmax(0, 1fr);
+  -ms-grid-columns: minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr);
       grid-template-areas: "nav" "inside";
 }
 
@@ -3250,8 +3252,8 @@ tt {
 .--bigTv .frame__main__inside {
   -ms-grid-rows: 550px 20px 200px 30px;
       grid-template-rows: 550px 20px 200px 30px;
-  -ms-grid-columns: 100%;
-      grid-template-columns: 100%;
+  -ms-grid-columns: minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr);
       grid-template-areas: "video" "table" "order" "road";
 }
 
@@ -4228,6 +4230,9 @@ ul.--api i {
   width: auto;
   height: 30px;
   background: url(../images/icon_zoomin.svg) no-repeat left center/20px;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
   padding-left: 25px;
   margin-left: auto;
   color: #fbe2b0;
@@ -4383,7 +4388,7 @@ ul.--api i {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 100%;
           flex: 1 1 100%;
-  padding: 5px 30px 5px 10px;
+  padding: 5px 0;
   overflow: hidden;
 }
 

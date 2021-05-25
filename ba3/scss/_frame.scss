@@ -7,7 +7,7 @@
     // min-height: 900px;
     padding-bottom: constant(safe-area-inset-bottom);
     padding-bottom: env(safe-area-inset-bottom);
-    grid-template-rows: minmax(0, 100%);
+    grid-template-rows: minmax(0, 1fr);
     grid-template-columns: 130px minmax(0, 1fr);
     grid-template-areas:"menu main"
                         "menu main";
@@ -17,7 +17,7 @@
     }
     @include mw_md {
         grid-template-rows: minmax(0, 1fr) 50px;
-        grid-template-columns: 100%;
+        grid-template-columns: minmax(0, 1fr);
         grid-template-areas:"main main"
                             "menu menu";
     }
@@ -39,6 +39,7 @@
 
         display: grid;
         grid-template-rows: 50px minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr);
         grid-template-areas:"nav"
                             "inside";
         @include mw_xs{
@@ -49,6 +50,7 @@
         &__nav{
             @include d_f(flex, center, flex-start);
             grid-area: nav;
+            
             padding: 0 10px;
             background: map-get($bg_color, primary_vl);
             z-index: 4;
@@ -247,7 +249,7 @@
 // 主要區塊配置 網投有卡
 .--bigTv .frame__main__inside {
     grid-template-rows: 550px 20px 200px 30px;
-    grid-template-columns: 100%;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas:"video"
                         "table"
                         "order"
@@ -256,7 +258,7 @@
 // 主要區塊配置 電投有卡
 .--telType.--bigTv .frame__main__inside{
     grid-template-rows: 550px 20px 30px;
-    grid-template-columns: 100%;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas:"video"
                         "table"
                         "road";
@@ -281,7 +283,7 @@
 .--noCard.--bigTv .frame__main__inside,
 .--noOrder.--bigTv .frame__main__inside {
     grid-template-rows: 550px 20px;
-    grid-template-columns: 100%;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas:"video"
                         "table";
 

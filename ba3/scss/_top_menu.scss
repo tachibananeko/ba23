@@ -239,6 +239,7 @@
 // 全螢幕
 .zoom_btn{
     @include btn_set(auto, 30px, url(../images/icon_zoomin.svg) no-repeat left center / 20px);
+    flex: none;
     padding-left: 25px;
     margin-left: auto;
     color: map-get($txt_color, gray);
