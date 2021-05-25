@@ -1040,6 +1040,7 @@
     // 珠路包.road__group
     &__group{
         @include d_f(flex, unset, flex-start);
+        position: relative;
         flex: 1 1 100%;
 
         //珠路資訊.road__group__info
@@ -1069,6 +1070,19 @@
                     }
                 }
             }
+        }
+        
+        // 切換珠路按鈕
+        .roadChange_btn{
+            @include btn_set(30px, 30px, url(../images/icon_changeroad.svg) no-repeat center / contain);
+            @include pos_abs(0, 10px, 0, unset);
+            margin: auto;
+            opacity: .3;
+
+            // 手指效果
+            @include hoverHandler{
+                opacity: .6;
+            };
         }
 
         // 珠路圖.road__group__img
