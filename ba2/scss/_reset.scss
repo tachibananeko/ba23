@@ -130,12 +130,12 @@ tt {
 	::-webkit-scrollbar {
 		width: 6px;
 		height: 6px;
-		background-color: #f1f1f1;
+		background-color: #000;
 	}
 
 	::-webkit-scrollbar-thumb {
-		background-color: #c1c1c1;
-		border: 1px #f1f1f1 solid;
+		background-color: #3e3123;
+		border: 1px #000 solid;
 		border-radius: 3px;
 		cursor: pointer;
 		-webkit-transition: background .5s linear;
@@ -143,10 +143,10 @@ tt {
 	}
 
 	*:hover::-webkit-scrollbar-thumb {
-		background-color: #a9a9a9;
+		background-color: #563d29;
 	}
 
 	::-webkit-scrollbar-corner {
-		background-color: #f1f1f1;
+		background-color: #3e3123;
 	}
 }

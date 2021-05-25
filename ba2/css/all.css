@@ -129,21 +129,21 @@ tt {
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
-    background-color: #f1f1f1;
+    background-color: #000;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: #c1c1c1;
-    border: 1px #f1f1f1 solid;
+    background-color: #3e3123;
+    border: 1px #000 solid;
     border-radius: 3px;
     cursor: pointer;
     -webkit-transition: background .5s linear;
     transition: background .5s linear;
   }
   *:hover::-webkit-scrollbar-thumb {
-    background-color: #a9a9a9;
+    background-color: #563d29;
   }
   ::-webkit-scrollbar-corner {
-    background-color: #f1f1f1;
+    background-color: #3e3123;
   }
 }
 
@@ -6663,19 +6663,70 @@ span.--on::after {
   -webkit-box-align: unset;
       -ms-flex-align: unset;
           align-items: unset;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-line-pack: start;
-      align-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 20px;
+  padding: 0 5px 0 20px;
+}
+
+@media screen and (max-width: 996px) {
+  .frame__main__otherinside.--lobby {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
 }
 
 @media screen and (max-width: 599px) {
   .frame__main__otherinside.--lobby {
     padding: 10px;
+  }
+}
+
+.frame__main__otherinside.--lobby .titleGroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.frame__main__otherinside.--lobby .lobbyGroup {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 50%;
+  height: calc(100% - 40px);
+  padding: 20px 10px 0 0;
+}
+
+.frame__main__otherinside.--lobby .lobbyGroup:last-child {
+  padding-left: 5px;
+}
+
+@media screen and (max-width: 996px) {
+  .frame__main__otherinside.--lobby .lobbyGroup {
+    overflow-x: unset;
+    overflow-y: unset;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    height: auto;
+    padding: 20px 0 0;
   }
 }
 
@@ -6689,14 +6740,20 @@ span.--on::after {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  background: -webkit-gradient(linear, left top, left bottom, from(#3e3123), to(#140a0c));
-  background: linear-gradient(to bottom, #3e3123 0%, #140a0c 100%);
   position: relative;
   width: 100%;
-  max-width: 600px;
-  height: 45px;
+  height: 40px;
   overflow: hidden;
-  margin-bottom: 30px;
+}
+
+.lobbyTitle:first-child {
+  padding-right: 10px;
+}
+
+@media screen and (max-width: 996px) {
+  .lobbyTitle:last-child {
+    display: none;
+  }
 }
 
 .lobbyTitle__num {
@@ -6721,6 +6778,7 @@ span.--on::after {
   border-top-right-radius: 5px;
   -webkit-transform: skewX(35deg);
           transform: skewX(35deg);
+  z-index: 1;
 }
 
 .lobbyTitle__num::before {
@@ -6743,6 +6801,9 @@ span.--on::after {
 }
 
 .lobbyTitle_btn {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6752,9 +6813,25 @@ span.--on::after {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  position: relative;
   width: 100%;
   height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3e3123), to(#140a0c));
+  background: linear-gradient(to bottom, #3e3123 0%, #140a0c 100%);
   color: #756e6e;
+}
+
+.lobbyTitle_btn::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  left: unset;
+  content: '';
+  width: 50px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3e3123), to(#140a0c));
+  background: linear-gradient(to bottom, #3e3123 0%, #140a0c 100%);
+  margin: auto;
 }
 
 .lobbyTitle_btn li {
@@ -6768,7 +6845,7 @@ span.--on::after {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
-  width: calc(100% / 3);
+  width: 90px;
   height: 100%;
   background: transparent;
   border: 1px solid #000;
@@ -6776,6 +6853,9 @@ span.--on::after {
   -o-border-image: linear-gradient(to top, #3e3123 0%, #140a0c 100%) 1;
      border-image: -webkit-gradient(linear, left bottom, left top, from(#3e3123), to(#140a0c)) 1;
      border-image: linear-gradient(to top, #3e3123 0%, #140a0c 100%) 1;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
   padding: 0 5px;
 }
 
@@ -6862,7 +6942,9 @@ span.--on::after {
 }
 
 .lobbyTb {
-  width: calc(100% / 2 - 10px);
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
   color: #fff;
   font-size: 14px;
   margin-bottom: 20px;
@@ -6960,10 +7042,12 @@ span.--on::after {
   bottom: 0;
   right: auto;
   left: 0;
+  width: 120px;
   height: 100%;
   padding-left: 10px;
   font-weight: bold;
   margin: auto;
+  overflow: hidden;
 }
 
 .lobbyTb__title__no::before {
@@ -6971,9 +7055,8 @@ span.--on::after {
   top: 0;
   bottom: unset;
   right: unset;
-  left: unset;
+  left: -10px;
   content: '';
-  min-width: 120px;
   width: 100%;
   height: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(#f2bd79), to(#3e3123));
@@ -6994,6 +7077,7 @@ span.--on::after {
   -webkit-text-fill-color: transparent;
   content: attr(data-txt);
   position: relative;
+  width: 100%;
 }
 
 .lobbyTb__title__time {

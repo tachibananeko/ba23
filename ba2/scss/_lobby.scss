@@ -1,13 +1,43 @@
 
 .frame__main__otherinside{
     &.--lobby{
-        @include d_f(flex, unset, space-between);
-        align-content: flex-start;
+        @include d_f(flex, unset, flex-start);
         flex-wrap: wrap;
-        padding: 20px;
+        padding: 0 5px 0 20px;
 
+        @include mw_ms{
+            @include scrollbar(hidden, auto);
+            align-content: flex-start;
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
         @include mw_xs{
             padding: 10px;
+        }
+
+        // title群組
+        .titleGroup{
+            @include d_f(flex, unset, space-between);
+            width: 100%;
+        }
+
+        // 桌子群組
+        .lobbyGroup{
+            @include scrollbar(hidden, auto);
+            width: 50%;
+            height: calc(100% - 40px);
+            padding: 20px 10px 0 0;
+            
+            &:last-child{
+                padding-left: 5px;
+            }
+
+            @include mw_ms{
+                @include scrollbar(unset, unset);
+                width: 100%;
+                height: auto;
+                padding: 20px 0 0;
+            }
         }
     }
 }
@@ -15,13 +45,20 @@
 // 大廳桌選擇
 .lobbyTitle{
     @include d_f(flex, center, flex-start);
-    background: map-get($bg_color, primary_vl);
     position: relative;
     width: 100%;
-    max-width: 600px;
-    height: 45px;
+    height: 40px;
     overflow: hidden;
-    margin-bottom: 30px;
+
+    &:first-child{
+        padding-right: 10px;
+    }
+
+    &:last-child{
+        @include mw_ms{
+            display: none;
+        }
+    }
     
     // .lobbyTitle__num
     &__num{
@@ -34,6 +71,8 @@
         background: map-get($bg_color, secondary_vl);
         border-top-right-radius: 5px;
         transform: skewX(35deg);
+        z-index: 1;
+
         &::before{
             @extend %txtshadow;
             content: attr(data-txt);
@@ -53,15 +92,27 @@
     }
     // .lobbyTitle_btn
     &_btn{
+        @include scrollbar(auto, hidden);
         @include d_f(flex, center, flex-start);
+        position: relative;
         width: 100%;
         height: 100%;
+        background: map-get($bg_color, primary_vl);
         color: map-get($txt_color, gray);
+
+        &::before{
+            @include pos_abs(0, 100%, 0, unset);
+            content: '';
+            width: 50px;
+            background: map-get($bg_color, primary_vl);
+            margin: auto;
+        }
         
         li{
             @include d_f(flex, center, center);
-            @include btn_set(calc(100% / 3), 100%, transparent);
+            @include btn_set(90px, 100%, transparent);
             @include border(1px, map-get($border_color, brown));
+            flex: none;
             padding: 0 5px;
             
             &:nth-child(1)::after{
@@ -91,7 +142,7 @@
 
 // 大廳桌
 .lobbyTb {
-    width: calc(100% / 2 - 10px);
+    flex: none;
     color: map-get($txt_color, white);
     font-size: 14px;
     margin-bottom: 20px;
@@ -161,14 +212,16 @@
         &__no {
             @include d_f(flex, center, center);
             @include pos_abs(0, auto, 0, 0);
+            width: 120px;
             height: 100%;
             padding-left: 10px;
             font-weight: bold;
             margin: auto;
+            overflow: hidden;
+
             &::before{
-                @include pos_abs(0, unset, unset, unset);
+                @include pos_abs(0, unset, unset, -10px);
                 content: '';
-                min-width: 120px;
                 width: 100%;
                 height: 100%;
                 background: map-get($bg_color, secondary_vl);
@@ -180,6 +233,7 @@
                 @include bg_txt(map-get($bg_color, gold), 20px);
                 content: attr(data-txt);
                 position: relative;
+                width: 100%;
             }
         }
 
