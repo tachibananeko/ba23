@@ -1,9 +1,16 @@
-.outside_flex {
-    background-color: #000;
+
+.frame__main__otherinside{
+    &.--lobby{
+        @include d_f(flex, unset, space-between);
+        align-content: flex-start;
+        flex-wrap: wrap;
+        padding: 20px;
+
+        @include mw_xs{
+            padding: 10px;
+        }
+    }
 }
-
-
-
 
 // 大廳桌選擇
 .lobbyTitle{
@@ -15,6 +22,7 @@
     height: 45px;
     overflow: hidden;
     margin-bottom: 30px;
+    
     // .lobbyTitle__num
     &__num{
         @include d_f(flex, center, flex-start);
@@ -57,7 +65,7 @@
             padding: 0 5px;
             
             &:nth-child(1)::after{
-                @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
+                @include btn_txt(center, map-get($txt_color, white), map-get($txt_color, shadow));
             }
             i {
                 position: relative;
@@ -72,14 +80,13 @@
             }
 
             // 手指效果
-            @include btn_hoverHandler(1px, map-get($txt_color, primary)){
+            @include btn_hoverHandler(1px, map-get($txt_color, white)){
                 border-image: map-get($border_color, secondary);
             };
             
         }
     }
 }
-
 
 
 // 大廳桌
@@ -184,7 +191,7 @@
             padding: 0 5px;
             border-radius: 27px;
             border: 1px solid map-get($bg_color, secondary);
-            color: map-get($txt_color, primary);
+            color: map-get($txt_color, white);
             font-size: 18px;
 
             &::before {
@@ -410,7 +417,7 @@
             }
 
             &::after {
-                @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
+                @include btn_txt(center, map-get($txt_color, white), map-get($txt_color, shadow));
                 font-size: 18px;
                 transform: skewX(-35deg);
             }
@@ -424,8 +431,7 @@
             }
 
             // 手指效果
-            @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
+            @include btn_hoverHandler(1px 0, map-get($txt_color, white));
         }
     }
 }
-

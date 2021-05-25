@@ -32,7 +32,8 @@
             </ul>
         </div>
 
-
+        <!-- vip桌.--i_vip 包桌.--i_ex 快速桌.--i_fast -->
+        <!-- 1 -->
         <div class="lobbyTb --i_vip --i_ex --i_fast">
             <!-- title -->
             <div class="lobbyTb__title">
@@ -55,7 +56,7 @@
                 <!-- loading -->
                 <div class="lobbyTb__road__loading" style="display: none;"></div>
                 <!-- loading end -->
-
+                
                 <!-- 限額 -->
                 <div class="lobbyTb__road__limit" data-info="本桌投注限紅">
                     <ul class="mum_content">
@@ -71,7 +72,7 @@
                             對子最高:
                             <span>19,777</span>
                         </li>
-                    
+                
                         <li>
                             最低投注:
                             <span>1</span>
@@ -87,17 +88,23 @@
                     </ul>
                 </div>
                 <!-- 限額 end -->
-
+                
                 <!-- 好路出現 -->
-                <div class="lobbyTb__road__goodroad"></div>
+                <div class="lobbyTb__road__goodroad" style="display: none;" data-txt="野生好路出現了!">
+                    <span></span>
+                </div>
                 <!-- 好路出現 end -->
-
-                <!-- 停止下注 -->
-                <div class="lobbyTb__road__stop"></div>
-                <!-- 停止下注 end -->
-
+                
+                <!-- 鎖頭停止下注 -->
+                <div class="lobbyTb__road__stop" data-txt="本桌已達限制局數,請換其他桌下注" style="display: none;">
+                    <span></span>
+                </div>
+                <!-- 鎖頭停止下注 end -->
+                
                 <!-- 關桌 -->
-                <div class="lobbyTb__road__close"></div>
+                <div class="lobbyTb__road__close" style="display: none;">
+                    本桌關桌中
+                </div>
                 <!-- 關桌 end -->
             </div>
             <!-- road end -->
@@ -117,6 +124,9 @@
             <!-- foot end -->
         </div>
 
+
+
+        <!-- 2只是模擬loading可刪除 以1模組為主 -->
         <div class="lobbyTb --i_fast">
             <!-- title -->
             <div class="lobbyTb__title">
@@ -129,62 +139,47 @@
         
             <!-- road -->
             <div class="lobbyTb__road">
-                <!-- 路圖 -->
-                <div class="lobbyTb__road__img" style="display: none;">
-                    <i class="icon_rwm"></i>
-                    <img src="../images/road_img.png">
-                </div>
-                <!-- 路圖 end -->
-            
                 <!-- loading -->
                 <div class="lobbyTb__road__loading">
                     <div class="load_item">loading</div>
                 </div>
                 <!-- loading end -->
-            
-                <!-- 限額 -->
-                <div class="lobbyTb__road__limit" data-info="本桌投注限紅">
-                    <ul class="mum_content">
-                        <li>
-                            最高投注:
-                            <span>197</span>
-                        </li>
-                        <li>
-                            和注最高:
-                            <span>19,777</span>
-                        </li>
-                        <li>
-                            對子最高:
-                            <span>19,777</span>
-                        </li>
-            
-                        <li>
-                            最低投注:
-                            <span>1</span>
-                        </li>
-                        <li>
-                            和注最低:
-                            <span>1</span>
-                        </li>
-                        <li>
-                            對子最低:
-                            <span>1</span>
-                        </li>
-                    </ul>
+            </div>
+            <!-- road end -->
+        
+            <!-- foot -->
+            <div class="lobbyTb__foot">
+                <ul class="lobbyTb__foot__info">
+                    <li data-info="20">莊</li>
+                    <li data-info="20">閒</li>
+                    <li data-info="20">和</li>
+                </ul>
+                <span class="icon_rwm"></span>
+                <button class="lobbyTb__foot__btn" data-txt="進入">
+                    <span class="hover_item"></span>
+                </button>
+            </div>
+            <!-- foot end -->
+        </div>
+
+        <!-- 3只是模擬loading可刪除 以1模組為主 -->
+        <div class="lobbyTb --i_ex">
+            <!-- title -->
+            <div class="lobbyTb__title">
+                <div class="lobbyTb__title__limit" data-info="限紅">1,000 - 200,000</div>
+                <div class="lobbyTb__title__no" data-txt="2001"></div>
+                <i></i>
+                <div class="lobbyTb__title__time">99</div>
+            </div>
+            <!-- title end -->
+        
+            <!-- road -->
+            <div class="lobbyTb__road">
+                <!-- loading -->
+                <div class="lobbyTb__road__loading">
+                    <div class="load_item">loading</div>
                 </div>
-                <!-- 限額 end -->
-            
-                <!-- 好路出現 -->
-                <div class="lobbyTb__road__goodroad"></div>
-                <!-- 好路出現 end -->
-            
-                <!-- 停止下注 -->
-                <div class="lobbyTb__road__stop"></div>
-                <!-- 停止下注 end -->
-            
-                <!-- 關桌 -->
-                <div class="lobbyTb__road__close"></div>
-                <!-- 關桌 end -->
+                <!-- loading end -->
             </div>
             <!-- road end -->
         
