@@ -51,12 +51,16 @@
             @include d_f(flex, center, flex-start);
             grid-area: nav;
 
-            padding: 0 10px;
+            padding: 0 20px;
             background: map-get($bg_color, primary_vl);
             z-index: 4;
+
+            @include mw_xs{
+                padding: 10px;
+            }
         }
 
-        // .frame__main__inside
+        // 遊戲室專屬 .frame__main__inside
         &__inside {
             grid-area: inside;
 
@@ -161,7 +165,12 @@
                     grid-area: 1 / 1 / 2 / 2;
                 }
             }
-        }        
+        }
+        
+        // 其他頁面 .frame__main__otherinside
+        &__otherinside {
+            grid-area: inside;
+        }
     }
 }
 

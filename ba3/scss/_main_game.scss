@@ -115,9 +115,9 @@
             border: 1px solid map-get($bg_color, lightgreen);
             border-radius: 3px;
             overflow: hidden;
-            z-index: 2;
+            z-index: 4;
 
-            @include mw_md{
+            @include mw_ms{
                 bottom: 0;
                 left: 10px;
                 border-radius: 3px 3px 0 0;

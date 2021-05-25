@@ -272,3 +272,52 @@
         opacity: 0.7;
     }
 }
+
+
+// 大廳跑馬燈
+.lobby__marquee{
+    @include d_f(flex, center, flex-end);
+    position: relative;
+    flex: 1 1 100%;
+    padding: 5px 0;
+    background: map-get($bg_color, black);
+    border-radius: 3px;
+    margin-right: 20px;
+    overflow: hidden;
+
+    @include coarse{
+        margin-right: 0;
+    }
+
+    &::before{
+        @include pos_abs(5px, 5px, unset, unset);
+        content: 'NEWS';
+        padding: 2px 3px;
+        background: map-get($bg_color, red);
+        font-size: 12px;
+        z-index: 1;
+    }
+    &::after{
+        @include pos_abs(5px, 0, unset, unset);
+        content: '';
+        width: 5px;
+        height: 18px;
+        background: map-get($bg_color, black);
+    }
+    span{
+        flex: 0 0 100%;
+        white-space: nowrap;
+        z-index: 0;
+    }
+
+    @keyframes marquee_move {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+}

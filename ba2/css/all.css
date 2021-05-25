@@ -3098,10 +3098,16 @@ tt {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: nav;
-  padding: 0 10px;
+  padding: 0 20px;
   background: -webkit-gradient(linear, left top, left bottom, from(#3e3123), to(#140a0c));
   background: linear-gradient(to bottom, #3e3123 0%, #140a0c 100%);
   z-index: 4;
+}
+
+@media screen and (max-width: 599px) {
+  .frame__main__nav {
+    padding: 10px;
+  }
 }
 
 .frame__main__inside {
@@ -3247,6 +3253,12 @@ tt {
     -ms-grid-column-span: 1;
     grid-area: 1 / 1 / 2 / 2;
   }
+}
+
+.frame__main__otherinside {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: inside;
 }
 
 .--bigTv .frame__main__inside {
