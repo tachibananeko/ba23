@@ -6751,6 +6751,25 @@ span.--on::after {
 }
 
 @media screen and (max-width: 996px) {
+  .lobbyTitle:first-child {
+    padding-right: 0;
+  }
+}
+
+.lobbyTitle:first-child::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: unset;
+  left: 0;
+  content: '';
+  width: 160px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3e3123), to(#140a0c));
+  background: linear-gradient(to bottom, #3e3123 0%, #140a0c 100%);
+  margin: auto;
+}
+
+@media screen and (max-width: 996px) {
   .lobbyTitle:last-child {
     display: none;
   }
@@ -6779,6 +6798,12 @@ span.--on::after {
   -webkit-transform: skewX(35deg);
           transform: skewX(35deg);
   z-index: 1;
+}
+
+@media screen and (max-width: 996px) {
+  .lobbyTitle__num {
+    display: none;
+  }
 }
 
 .lobbyTitle__num::before {
@@ -6813,25 +6838,16 @@ span.--on::after {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  position: relative;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(#3e3123), to(#140a0c));
-  background: linear-gradient(to bottom, #3e3123 0%, #140a0c 100%);
   color: #756e6e;
 }
 
-.lobbyTitle_btn::before {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 100%;
-  left: unset;
-  content: '';
-  width: 50px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#3e3123), to(#140a0c));
-  background: linear-gradient(to bottom, #3e3123 0%, #140a0c 100%);
-  margin: auto;
+@media screen and (max-width: 996px) {
+  .lobbyTitle_btn {
+    background: -webkit-gradient(linear, left top, left bottom, from(#3e3123), to(#140a0c));
+    background: linear-gradient(to bottom, #3e3123 0%, #140a0c 100%);
+  }
 }
 
 .lobbyTitle_btn li {
@@ -6857,6 +6873,14 @@ span.--on::after {
       -ms-flex: none;
           flex: none;
   padding: 0 5px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3e3123), to(#140a0c));
+  background: linear-gradient(to bottom, #3e3123 0%, #140a0c 100%);
+}
+
+@media screen and (max-width: 996px) {
+  .lobbyTitle_btn li {
+    width: calc(100% / 4);
+  }
 }
 
 .lobbyTitle_btn li:nth-child(1)::after {

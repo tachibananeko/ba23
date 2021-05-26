@@ -52,6 +52,18 @@
 
     &:first-child{
         padding-right: 10px;
+
+        @include mw_ms{
+            padding-right: 0;
+        }
+
+        &::before{
+            @include pos_abs(0, unset, 0, 0);
+            content: '';
+            width: 160px;
+            background: map-get($bg_color, primary_vl);
+            margin: auto;
+        }
     }
 
     &:last-child{
@@ -73,6 +85,10 @@
         transform: skewX(35deg);
         z-index: 1;
 
+        @include mw_ms{
+            display: none;
+        }
+
         &::before{
             @extend %txtshadow;
             content: attr(data-txt);
@@ -90,22 +106,17 @@
             transform: skewX(-35deg);
         }
     }
+
     // .lobbyTitle_btn
     &_btn{
         @include scrollbar(auto, hidden);
         @include d_f(flex, center, flex-start);
-        position: relative;
         width: 100%;
         height: 100%;
-        background: map-get($bg_color, primary_vl);
         color: map-get($txt_color, gray);
 
-        &::before{
-            @include pos_abs(0, 100%, 0, unset);
-            content: '';
-            width: 50px;
+        @include mw_ms{
             background: map-get($bg_color, primary_vl);
-            margin: auto;
         }
         
         li{
@@ -114,6 +125,11 @@
             @include border(1px, map-get($border_color, brown));
             flex: none;
             padding: 0 5px;
+            background: map-get($bg_color, primary_vl);
+
+            @include mw_ms{
+                width: calc(100% / 4);
+            }
             
             &:nth-child(1)::after{
                 @include btn_txt(center, map-get($txt_color, white), map-get($txt_color, shadow));
