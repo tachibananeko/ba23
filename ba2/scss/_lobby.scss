@@ -49,7 +49,7 @@
                 }
 
                 code{
-                    @include pos_abs(unset, unset, unset, 100px);
+                    @include pos_abs(unset, unset, unset, 150px);
                     font-weight: bold;
                     font-size: 70px;
                     text-shadow: 0 0 3px map-get($txt_color, black),
