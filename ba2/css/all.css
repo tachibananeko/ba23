@@ -6940,7 +6940,7 @@ span.--on::after {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   width: 50%;
-  height: calc(100% - 40px);
+  height: calc(100% - 180px);
   padding: 20px 10px 0 0;
 }
 
@@ -6970,7 +6970,7 @@ span.--on::after {
       -ms-flex-pack: start;
           justify-content: flex-start;
   position: relative;
-  width: calc(100% / 2 - 10px);
+  width: calc(100% / 2 - 5px);
   height: 40px;
   overflow: hidden;
 }

@@ -78,7 +78,7 @@
         .lobbyGroup{
             @include scrollbar(hidden, auto);
             width: 50%;
-            height: calc(100% - 40px);
+            height: calc(100% - 180px);
             padding: 20px 10px 0 0;
             
             &:last-child{
@@ -99,7 +99,7 @@
 .lobbyTitle{
     @include d_f(flex, center, flex-start);
     position: relative;
-    width: calc(100% / 2 - 10px);
+    width: calc(100% / 2 - 5px);
     height: 40px;
     overflow: hidden;
 
@@ -109,7 +109,7 @@
 
     &:first-of-type{
         padding-right: 10px;
-
+        
         @include mw_ms{
             padding-right: 0;
         }
