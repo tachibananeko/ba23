@@ -225,10 +225,6 @@
     margin-right: 20px;
     overflow: hidden;
 
-    @include coarse{
-        margin-right: 0;
-    }
-
     &::before{
         @include pos_abs(5px, 5px, unset, unset);
         content: 'NEWS';
@@ -262,3 +258,70 @@
 
 }
 
+
+// 多桌+好路按鈕.otherpage
+.otherpage{
+    width: 200px;
+    height: 25px;
+    flex: none;
+    background: map-get($bg_color, primary_vl);
+    font-size: 0;
+    margin-right: 20px;
+
+    @include mw_ms{
+        width: 100px;
+    }
+    
+    @include coarse{
+        margin-right: 0;
+    }
+
+    &__btn{
+        @include btn_set(calc(100% / 2), 100%, map-get($btn_color, lightgreen));
+        @include border(1px 0, map-get($border_color, primary));
+        overflow: hidden;
+
+        @include mw_ms{
+            width: 100%;
+        }
+
+        &:first-child{
+            border-radius: 3px 0 0 3px;
+        }
+        &:last-child{
+            border-radius: 0 3px 3px 0;
+        }
+
+        &::before{
+            @include btn_hoverlight02;
+        }
+
+        &::after{
+            @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
+        }
+
+        .hover_item{
+            @include btn_hoveritem(map-get($btn_color, green));
+            box-shadow: 0 0 1px map-get($bg_color, secondary) inset,
+            0 0 3px map-get($bg_color, secondary) inset;
+            &::before {
+                @include btn_hoverlight02;
+            }
+        }
+
+        // 多桌
+        &.--more_tb {
+            background-image: map-get($btn_color, orange);
+            .hover_item {
+                background-image: map-get($btn_color, lightorange);
+            }
+
+            @include mw_ms{
+                display: none;
+            }
+        }
+
+        // 手指效果
+        @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
+    }
+}
