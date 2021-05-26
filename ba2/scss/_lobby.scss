@@ -49,7 +49,7 @@
                 }
 
                 code{
-                    @include pos_abs(0, unset, 0, 100px);
+                    @include pos_abs(unset, unset, unset, 100px);
                     font-weight: bold;
                     font-size: 90px;
                     text-shadow: 0 0 3px map-get($txt_color, black),
@@ -65,7 +65,7 @@
 
                     &::before{
                         @include pos_abs(0, 0, 0, 0);
-                        @include bg_txt(map-get($bg_color, gold), 90px);
+                        @include bg_txt(map-get($bg_color, darkgold), 90px);
                         content: attr(data-txt);
                         text-shadow: none;
                     }
