@@ -26,7 +26,7 @@
                 position: relative;
                 display: block;
                 width: 100%;
-                height: 140px;
+                height: 100px;
 
                 @include mw_ms{
                     display: none;
@@ -51,7 +51,7 @@
                 code{
                     @include pos_abs(unset, unset, unset, 100px);
                     font-weight: bold;
-                    font-size: 90px;
+                    font-size: 70px;
                     text-shadow: 0 0 3px map-get($txt_color, black),
                     0 0 6px map-get($txt_color, black),
                     0 0 10px map-get($txt_color, darkbrown);
@@ -65,7 +65,7 @@
 
                     &::before{
                         @include pos_abs(0, 0, 0, 0);
-                        @include bg_txt(map-get($bg_color, darkgold), 90px);
+                        @include bg_txt(map-get($bg_color, darkgold), 70px);
                         content: attr(data-txt);
                         text-shadow: none;
                     }
@@ -78,7 +78,7 @@
         .lobbyGroup{
             @include scrollbar(hidden, auto);
             width: 50%;
-            height: calc(100% - 180px);
+            height: calc(100% - 140px);
             padding: 20px 10px 0 0;
             
             &:last-child{
