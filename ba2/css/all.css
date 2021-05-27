@@ -1,3 +1,154 @@
+.txt_primary {
+  color: #fbe2b0 !important;
+}
+
+.txt_secondary {
+  color: #240913 !important;
+}
+
+.txt_gray {
+  color: #756e6e !important;
+}
+
+.txt_black {
+  color: #000 !important;
+}
+
+.txt_white {
+  color: #fff !important;
+}
+
+.txt_shadow {
+  color: rgba(23, 13, 14, 0.5) !important;
+}
+
+.txt_warn {
+  color: #ff5f67 !important;
+}
+
+.txt_bank {
+  color: #ff302a !important;
+}
+
+.txt_play {
+  color: #0068ed !important;
+}
+
+.txt_tie {
+  color: #009245 !important;
+}
+
+.txt_win {
+  color: #f2d77a !important;
+}
+
+.bg_primary {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #3e3123), to(#140a0c)) !important;
+  background: linear-gradient(to right, #3e3123 50%, #140a0c 100%) !important;
+}
+
+.bg_primary_vl {
+  background: -webkit-gradient(linear, left top, left bottom, from(#3e3123), to(#140a0c)) !important;
+  background: linear-gradient(to bottom, #3e3123 0%, #140a0c 100%) !important;
+}
+
+.bg_secondary {
+  background: #fbe2b0 !important;
+}
+
+.bg_secondary02 {
+  background: #f2bd79 !important;
+}
+
+.bg_secondary_vl {
+  background: -webkit-gradient(linear, left top, left bottom, from(#f2bd79), to(#3e3123)) !important;
+  background: linear-gradient(to bottom, #f2bd79 0%, #3e3123 100%) !important;
+}
+
+.bg_gold {
+  background: -webkit-gradient(linear, left top, left bottom, from(#f2d77a), color-stop(20%, #ffffc5), to(#f2bd79)) !important;
+  background: linear-gradient(to bottom, #f2d77a 0%, #ffffc5 20%, #f2bd79 100%) !important;
+}
+
+.bg_white {
+  background: #fff !important;
+}
+
+.bg_black {
+  background: #000 !important;
+}
+
+.bg_gray {
+  background: #b3b3b3 !important;
+}
+
+.bg_darkgray {
+  background: #0f0f0f !important;
+}
+
+.bg_brown {
+  background: #240913 !important;
+}
+
+.bg_darkbrown {
+  background: #140a0c !important;
+}
+
+.bg_brown_gradual {
+  background: -webkit-gradient(linear, left top, right top, from(#f2bd79), color-stop(70%, #563d29), to(#000)) !important;
+  background: linear-gradient(to right, #f2bd79 0%, #563d29 70%, #000 100%) !important;
+}
+
+.bg_brown_gradual_vl {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, #563d29), to(#000)) !important;
+  background: linear-gradient(to top, #563d29 30%, #000 100%) !important;
+}
+
+.bg_alert_bg {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, #42210b), to(#000)) !important;
+  background: linear-gradient(to top, #42210b 30%, #000 100%) !important;
+}
+
+.bg_red {
+  background: #c11615 !important;
+}
+
+.bg_lightblue {
+  background: #00a0ed !important;
+}
+
+.bg_green {
+  background: #115f24 !important;
+}
+
+.bg_lightgreen {
+  background: #00d345 !important;
+}
+
+.bg_order_area {
+  background: #224d4d !important;
+}
+
+.bg_nocon_area {
+  background: #482989 !important;
+}
+
+.bg_bank {
+  background: #ff302a !important;
+}
+
+.bg_play {
+  background: #0068ed !important;
+}
+
+.bg_tie {
+  background: #009245 !important;
+}
+
+.bg_black_alpha {
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
 .lobbyTitle__num::before {
   text-shadow: 2px 2px rgba(23, 13, 14, 0.5);
 }
@@ -1928,157 +2079,6 @@
 
 .mt1 {
   margin-top: 1px;
-}
-
-.txt_primary {
-  color: #fbe2b0 !important;
-}
-
-.txt_secondary {
-  color: #240913 !important;
-}
-
-.txt_gray {
-  color: #756e6e !important;
-}
-
-.txt_black {
-  color: #000 !important;
-}
-
-.txt_white {
-  color: #fff !important;
-}
-
-.txt_shadow {
-  color: rgba(23, 13, 14, 0.5) !important;
-}
-
-.txt_warn {
-  color: #ff5f67 !important;
-}
-
-.txt_bank {
-  color: #ff302a !important;
-}
-
-.txt_play {
-  color: #0068ed !important;
-}
-
-.txt_tie {
-  color: #009245 !important;
-}
-
-.txt_win {
-  color: #f2d77a !important;
-}
-
-.bg_primary {
-  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #3e3123), to(#140a0c)) !important;
-  background: linear-gradient(to right, #3e3123 50%, #140a0c 100%) !important;
-}
-
-.bg_primary_vl {
-  background: -webkit-gradient(linear, left top, left bottom, from(#3e3123), to(#140a0c)) !important;
-  background: linear-gradient(to bottom, #3e3123 0%, #140a0c 100%) !important;
-}
-
-.bg_secondary {
-  background: #fbe2b0 !important;
-}
-
-.bg_secondary02 {
-  background: #f2bd79 !important;
-}
-
-.bg_secondary_vl {
-  background: -webkit-gradient(linear, left top, left bottom, from(#f2bd79), to(#3e3123)) !important;
-  background: linear-gradient(to bottom, #f2bd79 0%, #3e3123 100%) !important;
-}
-
-.bg_gold {
-  background: -webkit-gradient(linear, left top, left bottom, from(#f2d77a), color-stop(20%, #ffffc5), to(#f2bd79)) !important;
-  background: linear-gradient(to bottom, #f2d77a 0%, #ffffc5 20%, #f2bd79 100%) !important;
-}
-
-.bg_white {
-  background: #fff !important;
-}
-
-.bg_black {
-  background: #000 !important;
-}
-
-.bg_gray {
-  background: #b3b3b3 !important;
-}
-
-.bg_darkgray {
-  background: #0f0f0f !important;
-}
-
-.bg_brown {
-  background: #240913 !important;
-}
-
-.bg_darkbrown {
-  background: #140a0c !important;
-}
-
-.bg_brown_gradual {
-  background: -webkit-gradient(linear, left top, right top, from(#f2bd79), color-stop(70%, #563d29), to(#000)) !important;
-  background: linear-gradient(to right, #f2bd79 0%, #563d29 70%, #000 100%) !important;
-}
-
-.bg_brown_gradual_vl {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, #563d29), to(#000)) !important;
-  background: linear-gradient(to top, #563d29 30%, #000 100%) !important;
-}
-
-.bg_alert_bg {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, #42210b), to(#000)) !important;
-  background: linear-gradient(to top, #42210b 30%, #000 100%) !important;
-}
-
-.bg_red {
-  background: #c11615 !important;
-}
-
-.bg_lightblue {
-  background: #00a0ed !important;
-}
-
-.bg_green {
-  background: #115f24 !important;
-}
-
-.bg_lightgreen {
-  background: #00d345 !important;
-}
-
-.bg_order_area {
-  background: #224d4d !important;
-}
-
-.bg_nocon_area {
-  background: #482989 !important;
-}
-
-.bg_bank {
-  background: #ff302a !important;
-}
-
-.bg_play {
-  background: #0068ed !important;
-}
-
-.bg_tie {
-  background: #009245 !important;
-}
-
-.bg_black_alpha {
-  background: rgba(0, 0, 0, 0.7) !important;
 }
 
 .active_item {

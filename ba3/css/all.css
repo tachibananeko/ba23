@@ -1,3 +1,189 @@
+.txt_primary {
+  color: #fff !important;
+}
+
+.txt_secondary {
+  color: #240913 !important;
+}
+
+.txt_yellow {
+  color: #fefdb3 !important;
+}
+
+.txt_gray {
+  color: #b3b3b3 !important;
+}
+
+.txt_shadow {
+  color: rgba(23, 13, 14, 0.5) !important;
+}
+
+.txt_warn {
+  color: #ff5f67 !important;
+}
+
+.txt_win {
+  color: #37c6ff !important;
+}
+
+.txt_bank {
+  color: #ff302a !important;
+}
+
+.txt_play {
+  color: #0068ed !important;
+}
+
+.txt_tie {
+  color: #009245 !important;
+}
+
+.bg_primary {
+  background: -webkit-gradient(linear, left top, right top, from(#001940), to(#004889)) !important;
+  background: linear-gradient(to right, #001940 0%, #004889 100%) !important;
+}
+
+.bg_primary_vl {
+  background: -webkit-gradient(linear, left top, left bottom, from(#004889), to(#001940)) !important;
+  background: linear-gradient(to bottom, #004889 0%, #001940 100%) !important;
+}
+
+.bg_secondary {
+  background: #fbe2b0 !important;
+}
+
+.bg_secondary_vl {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(60%, #f2bd79), to(#563d29)) !important;
+  background: linear-gradient(to top, #f2bd79 60%, #563d29 100%) !important;
+}
+
+.bg_darkblue {
+  background: linear-gradient(-137deg, #001940 0%, #000) 100% !important;
+}
+
+.bg_darkblue_vl {
+  background: -webkit-gradient(linear, left bottom, left top, from(#001940), to(#000)) 100% !important;
+  background: linear-gradient(to top, #001940 0%, #000) 100% !important;
+}
+
+.bg_darkblue_vl_re {
+  background: -webkit-gradient(linear, left top, left bottom, from(#001940), to(#000)) 100% !important;
+  background: linear-gradient(to bottom, #001940 0%, #000) 100% !important;
+}
+
+.bg_bank_gradual {
+  background: -webkit-gradient(linear, left top, right top, from(#9b0109), to(#000)) 100% !important;
+  background: linear-gradient(to right, #9b0109 0%, #000) 100% !important;
+}
+
+.bg_play_gradual {
+  background: -webkit-gradient(linear, left top, right top, from(#004889), to(#000)) 100% !important;
+  background: linear-gradient(to right, #004889 0%, #000) 100% !important;
+}
+
+.bg_tie_gradual {
+  background: -webkit-gradient(linear, left top, right top, from(#113924), to(#000)) 100% !important;
+  background: linear-gradient(to right, #113924 0%, #000) 100% !important;
+}
+
+.bg_gold {
+  background: -webkit-gradient(linear, left top, left bottom, from(#f2bd79), color-stop(50%, #fefdb3), color-stop(90%, #f2bd79)) !important;
+  background: linear-gradient(#f2bd79, #fefdb3 50%, #f2bd79 90%) !important;
+}
+
+.bg_alert_bg {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, #00326e), to(#000f28)) !important;
+  background: linear-gradient(to top, #00326e 30%, #000f28 100%) !important;
+}
+
+.bg_white {
+  background: #fff !important;
+}
+
+.bg_gray {
+  background: #b3b3b3 !important;
+}
+
+.bg_black {
+  background: #000 !important;
+}
+
+.bg_black_alpha {
+  background: rgba(0, 0, 0, 0.6) !important;
+}
+
+.bg_secondary_alpha {
+  background: #fdfcb380 !important;
+}
+
+.bg_blue {
+  background: #0f2f66 !important;
+}
+
+.bg_middblue {
+  background: #001940 !important;
+}
+
+.bg_lightblue {
+  background: #37c6ff !important;
+}
+
+.bg_lightyellow {
+  background: #ffd300 !important;
+}
+
+.bg_green {
+  background: #115f24 !important;
+}
+
+.bg_lightgreen {
+  background: #00d345 !important;
+}
+
+.bg_darkgreen {
+  background: #0f361e !important;
+}
+
+.bg_red {
+  background: #c11615 !important;
+}
+
+.bg_darkred {
+  background: #650008 !important;
+}
+
+.bg_i_blue {
+  background: #37c6ffb3 !important;
+}
+
+.bg_i_green {
+  background: #caff71b3 !important;
+}
+
+.bg_i_red {
+  background: #ffe1f9b3 !important;
+}
+
+.bg_i_gold {
+  background: #fbe2b0b3 !important;
+}
+
+.bg_order_area {
+  background: #224d4d !important;
+}
+
+.bg_bank {
+  background: #ff302a !important;
+}
+
+.bg_play {
+  background: #0068ed !important;
+}
+
+.bg_tie {
+  background: #009245 !important;
+}
+
 .lobbyTb, .lobbyTb__title__limit {
   text-shadow: 2px 2px rgba(23, 13, 14, 0.5);
 }
@@ -1927,192 +2113,6 @@
 
 .mt1 {
   margin-top: 1px;
-}
-
-.txt_primary {
-  color: #fff !important;
-}
-
-.txt_secondary {
-  color: #240913 !important;
-}
-
-.txt_yellow {
-  color: #fefdb3 !important;
-}
-
-.txt_gray {
-  color: #b3b3b3 !important;
-}
-
-.txt_shadow {
-  color: rgba(23, 13, 14, 0.5) !important;
-}
-
-.txt_warn {
-  color: #ff5f67 !important;
-}
-
-.txt_win {
-  color: #37c6ff !important;
-}
-
-.txt_bank {
-  color: #ff302a !important;
-}
-
-.txt_play {
-  color: #0068ed !important;
-}
-
-.txt_tie {
-  color: #009245 !important;
-}
-
-.bg_primary {
-  background: -webkit-gradient(linear, left top, right top, from(#001940), to(#004889)) !important;
-  background: linear-gradient(to right, #001940 0%, #004889 100%) !important;
-}
-
-.bg_primary_vl {
-  background: -webkit-gradient(linear, left top, left bottom, from(#004889), to(#001940)) !important;
-  background: linear-gradient(to bottom, #004889 0%, #001940 100%) !important;
-}
-
-.bg_secondary {
-  background: #fbe2b0 !important;
-}
-
-.bg_secondary_vl {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(60%, #f2bd79), to(#563d29)) !important;
-  background: linear-gradient(to top, #f2bd79 60%, #563d29 100%) !important;
-}
-
-.bg_darkblue {
-  background: linear-gradient(-137deg, #001940 0%, #000) 100% !important;
-}
-
-.bg_darkblue_vl {
-  background: -webkit-gradient(linear, left bottom, left top, from(#001940), to(#000)) 100% !important;
-  background: linear-gradient(to top, #001940 0%, #000) 100% !important;
-}
-
-.bg_darkblue_vl_re {
-  background: -webkit-gradient(linear, left top, left bottom, from(#001940), to(#000)) 100% !important;
-  background: linear-gradient(to bottom, #001940 0%, #000) 100% !important;
-}
-
-.bg_bank_gradual {
-  background: -webkit-gradient(linear, left top, right top, from(#9b0109), to(#000)) 100% !important;
-  background: linear-gradient(to right, #9b0109 0%, #000) 100% !important;
-}
-
-.bg_play_gradual {
-  background: -webkit-gradient(linear, left top, right top, from(#004889), to(#000)) 100% !important;
-  background: linear-gradient(to right, #004889 0%, #000) 100% !important;
-}
-
-.bg_tie_gradual {
-  background: -webkit-gradient(linear, left top, right top, from(#113924), to(#000)) 100% !important;
-  background: linear-gradient(to right, #113924 0%, #000) 100% !important;
-}
-
-.bg_gold {
-  background: -webkit-gradient(linear, left top, left bottom, from(#f2bd79), color-stop(50%, #fefdb3), color-stop(90%, #f2bd79)) !important;
-  background: linear-gradient(#f2bd79, #fefdb3 50%, #f2bd79 90%) !important;
-}
-
-.bg_alert_bg {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, #00326e), to(#000f28)) !important;
-  background: linear-gradient(to top, #00326e 30%, #000f28 100%) !important;
-}
-
-.bg_white {
-  background: #fff !important;
-}
-
-.bg_gray {
-  background: #b3b3b3 !important;
-}
-
-.bg_black {
-  background: #000 !important;
-}
-
-.bg_black_alpha {
-  background: rgba(0, 0, 0, 0.6) !important;
-}
-
-.bg_secondary_alpha {
-  background: #fdfcb380 !important;
-}
-
-.bg_blue {
-  background: #0f2f66 !important;
-}
-
-.bg_middblue {
-  background: #001940 !important;
-}
-
-.bg_lightblue {
-  background: #37c6ff !important;
-}
-
-.bg_lightyellow {
-  background: #ffd300 !important;
-}
-
-.bg_green {
-  background: #115f24 !important;
-}
-
-.bg_lightgreen {
-  background: #00d345 !important;
-}
-
-.bg_darkgreen {
-  background: #0f361e !important;
-}
-
-.bg_red {
-  background: #c11615 !important;
-}
-
-.bg_darkred {
-  background: #650008 !important;
-}
-
-.bg_i_blue {
-  background: #37c6ffb3 !important;
-}
-
-.bg_i_green {
-  background: #caff71b3 !important;
-}
-
-.bg_i_red {
-  background: #ffe1f9b3 !important;
-}
-
-.bg_i_gold {
-  background: #fbe2b0b3 !important;
-}
-
-.bg_order_area {
-  background: #224d4d !important;
-}
-
-.bg_bank {
-  background: #ff302a !important;
-}
-
-.bg_play {
-  background: #0068ed !important;
-}
-
-.bg_tie {
-  background: #009245 !important;
 }
 
 .active_item {
