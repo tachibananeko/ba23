@@ -21,6 +21,7 @@
             flex-wrap: wrap;
             width: 100%;
 
+            // .titleGroup__img
             &__img{
                 @include d_f(flex, unset, space-between);
                 position: relative;
@@ -60,12 +61,12 @@
 
                     &:last-child{
                         left: auto;
-                        right: 100px;
+                        right: 120px;
                     }
 
                     &::before{
                         @include pos_abs(0, 0, 0, 0);
-                        @include bg_txt(map-get($bg_color, darkgold), 70px);
+                        @include bg_txt(map-get($bg_color, gold), 70px);
                         content: attr(data-txt);
                         text-shadow: none;
                     }
@@ -368,7 +369,7 @@
 
         // 桌子loading .lobbyTb__road__loading
         &__loading{
-            @include load_set(.7, map-get($bg_color, secondary02));
+            @include load_set(.6, map-get($bg_color, secondary02));
             padding-bottom: calc(100% * .1891);
             
             @include mw_xs{
