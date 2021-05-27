@@ -3281,6 +3281,9 @@ tt {
   height: 30px;
   background: url(../images/icon_back.svg) no-repeat center/contain;
   margin-right: 20px;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
 }
 
 @media screen and (max-width: 599px) {

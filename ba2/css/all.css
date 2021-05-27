@@ -3149,6 +3149,9 @@ ul.--api i {
   height: 30px;
   background: url(../images/icon_back.svg) no-repeat center/contain;
   margin-right: 20px;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
 }
 
 @media screen and (max-width: 599px) {
@@ -3611,6 +3614,7 @@ ul.--api i {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  margin-right: 20px;
   position: relative;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 100%;
@@ -3619,8 +3623,13 @@ ul.--api i {
   background: #000;
   border-radius: 3px;
   color: #fff;
-  margin-right: 20px;
   overflow: hidden;
+}
+
+@media screen and (max-width: 599px) {
+  .lobby__marquee {
+    margin-right: 10px;
+  }
 }
 
 .lobby__marquee::before {

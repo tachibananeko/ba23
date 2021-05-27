@@ -3,6 +3,7 @@
 .back_btn{
     @include btn_set(30px, 30px, url(../images/icon_back.svg) no-repeat center / contain);
     @include mr_distance;
+    flex: none;
     
     // 手指效果
     @include hoverHandler{
@@ -216,13 +217,13 @@
 // 大廳跑馬燈
 .lobby__marquee{
     @include d_f(flex, center, flex-end);
+    @include mr_distance;
     position: relative;
     flex: 1 1 100%;
     padding: 5px 0;
     background: map-get($bg_color, black);
     border-radius: 3px;
     color: map-get($bg_color, white);
-    margin-right: 20px;
     overflow: hidden;
 
     &::before{
