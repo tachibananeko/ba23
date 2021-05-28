@@ -3028,7 +3028,7 @@ tt {
 }
 
 .menu__main ul li.--on::after {
-  color: #240913;
+  color: #fff;
 }
 
 .menu__main ul li.--on .hover_item {
@@ -3053,7 +3053,7 @@ tt {
             filter: none !important;
   }
   .menu__main ul li:hover::after {
-    color: #240913;
+    color: #fff;
   }
   .menu__main ul li:hover .hover_item {
     opacity: 1;
@@ -3075,7 +3075,7 @@ ul.--api i {
 }
 
 .menu__main ul li:active::after {
-  color: #240913;
+  color: #fff;
 }
 
 .menu__main ul li:active .hover_item {
@@ -7360,7 +7360,7 @@ span.--on::after {
           justify-content: center;
   position: relative;
   height: 80%;
-  padding: 0 5px;
+  padding: 2px 5px 0;
   border-radius: 27px;
   border: 1px solid #fbe2b0;
   color: #fff;

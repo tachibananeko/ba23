@@ -135,7 +135,7 @@
             @include d_f(flex, center, center);
             position: relative;
             height: 80%;
-            padding: 0 5px;
+            padding: 2px 5px 0;
             background: map-get($bg_color, darkblue);
             border-radius: 27px;
             border: 1px solid map-get($bg_color, secondary);

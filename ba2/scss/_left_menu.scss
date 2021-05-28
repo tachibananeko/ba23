@@ -245,14 +245,14 @@
             }
             
             // _on效果
-            @include btn_on(map-get($txt_color, secondary)) {
+            @include btn_on(map-get($txt_color, white)) {
                 i {
                     filter: brightness(200%);
                 }
             }
 
             // 手指效果
-            @include btn_hoverHandler(1px 0, map-get($txt_color, secondary)) {
+            @include btn_hoverHandler(1px 0, map-get($txt_color, white)) {
                 i {
                     filter: brightness(200%);
 
