@@ -5119,6 +5119,17 @@ ul.--api i {
   width: 50%;
   height: 55%;
   padding: 5px;
+}
+
+.tw {
+  font-size: 60px;
+}
+
+.en {
+  font-size: 60px;
+}
+
+.sa {
   font-size: 60px;
 }
 
@@ -5137,26 +5148,6 @@ ul.--api i {
   margin: auto;
 }
 
-@media screen and (max-width: 1180px) {
-  .order__area .area_b,
-  .order__area .area_p,
-  .order__area .area_t,
-  .order__area .area_bp,
-  .order__area .area_pp {
-    font-size: 50px;
-  }
-}
-
-@media screen and (max-width: 599px) {
-  .order__area .area_b,
-  .order__area .area_p,
-  .order__area .area_t,
-  .order__area .area_bp,
-  .order__area .area_pp {
-    font-size: 40px;
-  }
-}
-
 .order__area .area_t,
 .order__area .area_bp,
 .order__area .area_pp {
@@ -5166,20 +5157,16 @@ ul.--api i {
   font-size: 40px;
 }
 
-@media screen and (max-width: 1180px) {
-  .order__area .area_t,
-  .order__area .area_bp,
-  .order__area .area_pp {
-    font-size: 30px;
-  }
+.tw {
+  font-size: 40px;
 }
 
-@media screen and (max-width: 599px) {
-  .order__area .area_t,
-  .order__area .area_bp,
-  .order__area .area_pp {
-    font-size: 25px;
-  }
+.en {
+  font-size: 40px;
+}
+
+.sa {
+  font-size: 40px;
 }
 
 .order__area .area_b,

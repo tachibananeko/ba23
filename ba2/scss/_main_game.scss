@@ -690,12 +690,12 @@
         .area_bp,
         .area_pp {
             @include d_f(flex, unset, flex-start);
+            @include fz(xxx-large);
             flex-direction: column;
             position: relative;
             width: 50%;
             height: 55%;
             padding: 5px;
-            font-size: 60px;
 
             // 不能下注
             &.--nobet::after {
@@ -707,26 +707,27 @@
             }
 
             @include mw_lg {
-                font-size: 50px;
+                // @include fz(xx-large);
             }
             @include mw_xs {
-                font-size: 40px;
+                // @include fz(x-large);
             }
         }
 
         .area_t,
         .area_bp,
         .area_pp {
+            @include fz(x-large);
             width: calc(100% / 3);
             height: 45%;
             border-top: 1px solid map-get($bg_color, black);
             font-size: 40px;
 
             @include mw_lg {
-                font-size: 30px;
+                // @include fz(large);
             }
             @include mw_xs {
-                font-size: 25px;
+                // @include fz(medium);
             }
         }
 

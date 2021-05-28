@@ -76,7 +76,7 @@ $border_color: (
     gold: linear-gradient(to right, transparent 5%, #f2d77a 20%, #ffffc5 60%, #f2d77a 80%, transparent 100%) 1,
 );
 
-// 字顏色class
+// 顏色class
 @each $name, $value in $txt_color {
     .txt_#{$name} {
         color: $value !important;
