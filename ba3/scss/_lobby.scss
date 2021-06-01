@@ -246,14 +246,36 @@
 
         // 好路出現 .lobbyTb__road__goodroad
         &__goodroad{
-            @include d_f(flex, center, flex-start);
-            background: map-get($bg_color, black_alpha);
+            @include d_f(flex, center, center);
+            background: url(../images/img_dragon.gif) no-repeat center / 70% map-get($bg_color, black);
+            opacity: .7;
 
+            &::before,
             &::after{
+                @include pos_abs();
                 @include bg_txt(map-get($bg_color, gold), 32px);
                 content: attr(data-txt);
                 font-weight: bold;
+                text-shadow: 0 0 3px map-get($bg_color, black),
+                    0 0 5px map-get($bg_color, black);
+                animation: shine 10s linear infinite;
+            }
+            &::after{
                 text-shadow: none;
+            }
+
+            @keyframes shine {
+                30%,
+                90% {
+                    opacity: 0;
+                }
+                0%,
+                20%,
+                40%,
+                80%,
+                100% {
+                    opacity: 1;
+                }
             }
         }
 
@@ -261,32 +283,51 @@
         &__stop{
             @include d_f(flex, center, flex-start);
 
-            span{
-                
+            .img{
                 display: block;
                 width: 35%;
                 height: 100%;
                 background: url(../images/icon_lock.svg) no-repeat center / 50% map-get($bg_color, black_alpha);
             }
+            .txt{
+                @include d_f(flex, center, center);
+                position: relative;
+                width: 65%;
+                height: 100%;
 
-            &::after{
-                    width: 65%;
+                &::before,
+                &::after{
+                    @include pos_abs();
+                    @include d_f(flex, center, center);
+                    @include bg_txt(map-get($bg_color, primary), 20px);
                     content: attr(data-txt);
-                    color: map-get($txt_color, secondary);
-                    font-size: 20px;
+                    padding: 0 10px;
                     font-weight: bold;
                     text-shadow: 0 0 1px map-get($txt_color, yellow),
-                    0 0 3px map-get($txt_color, shadow);
-                    text-align: center;
+                    0 0 5px map-get($txt_color, shadow);
                 }
+
+                &::after{
+                    text-shadow: none;
+                }
+            }
         }
 
         // 關桌 .lobbyTb__road__close
         &__close{
             @include d_f(flex, center, center);
             background: map-get($bg_color, black_alpha);
-            font-weight: bold;
-            font-size: 24px;
+            
+            &::before,
+            &::after{
+                @include pos_abs();
+                @include bg_txt(map-get($bg_color, gold), 30px);
+                font-weight: bold;
+            }
+
+            &::after{
+                text-shadow: none;
+            }
         }
     }
 
