@@ -1,3 +1,53 @@
+// 語系字體尺寸
+// $txt_size: (
+//     chinese: (
+//         xxx-large: 60px,
+//         xx-large: 50px,
+//         x-large: 40px,
+//         large: 30px,
+//         medium: 24px,
+//         normal: 16px,
+//         small: 14px,
+//         x-small: 12px
+//     ),
+//     en: (
+//         xxx-large: 60px,
+//         xx-large: 50px,
+//         x-large: 40px,
+//         large: 30px,
+//         medium: 24px,
+//         normal: 16px,
+//         small: 14px,
+//         x-small: 12px
+//     ),
+//     sa: (
+//         xxx-large: 60px,
+//         xx-large: 50px,
+//         x-large: 40px,
+//         large: 30px,
+//         medium: 24px,
+//         normal: 16px,
+//         small: 14px,
+//         x-small: 12px
+//     )
+// );
+
+// @mixin fz($size: "normal"){
+//     @at-root .tw{
+//             $chinese: map-get($txt_size, chinese);
+//             font-size: map-get($chinese, $size);
+//     }
+//     @at-root .en{
+//             $en: map-get($txt_size, en);
+//             font-size: map-get($en, $size);
+//     }
+    
+//     @at-root .sa{
+//             $sa: map-get($txt_size, sa);
+//             font-size: map-get($sa, $size);
+//     }
+// }
+
 // 字體顏色
 $txt_color: (
     primary: #fff,

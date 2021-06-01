@@ -344,7 +344,7 @@ $breakpoints: (
 	pad: 1024px,
 	pad_vl: 996px,
 	ph: 599px
-	);
+);
 
 @mixin mw_xl {
 	@media screen and (max-width: map-get($breakpoints, "pc")) {
@@ -376,32 +376,6 @@ $breakpoints: (
 	}
 }
 
-
-// 手指hover相關
-// 一般
-[class*="_btn"]:not(disable),
-%hand {
-	cursor: pointer;
-	transition: all .2s ease-in-out;
-}
-
-%no_hand {
-	cursor: default;
-}
-
-@mixin hoverHandler {
-	@media (pointer: fine) and (max-resolution: 2dppx),
-	screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2),
-	(-moz-touch-enabled: 0) {
-		&:hover {
-			@content;
-		}
-	}
-	&:active {
-		@content;
-	}
-}
-
 // 僅在pc顯示
 @mixin fine {
 	@media (pointer: fine) and (max-resolution: 2dppx),
@@ -419,7 +393,33 @@ $breakpoints: (
 	}
 }
 
-// 按鈕
+// 手指hover相關
+// 一般
+[class*="_btn"]:not(disable),
+%hand {
+	cursor: pointer;
+	transition: all .2s ease-in-out;
+}
+
+%no_hand {
+	cursor: default;
+}
+
+// 一般滑過
+@mixin hoverHandler {
+	@media (pointer: fine) and (max-resolution: 2dppx),
+	screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2),
+	(-moz-touch-enabled: 0) {
+		&:hover {
+			@content;
+		}
+	}
+	&:active {
+		@content;
+	}
+}
+
+// 按鈕滑過
 @mixin btn_hoverHandler($border, $txt) {
 
 	@media (pointer: fine) and (max-resolution: 2dppx),
@@ -454,7 +454,7 @@ $breakpoints: (
 	}
 }
 
-// 寬度距離基本設定
+// 寬度距離設定
 @function distance($count: 4) {
 	@return 5px * $count;
 }
