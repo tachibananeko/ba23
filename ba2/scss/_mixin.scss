@@ -3,7 +3,7 @@
 %txtshadow{
 	text-shadow: 2px 2px hsla(354, 29%, 7%, 0.5);
 }
-@mixin pos_abs($top: unset , $right: unset , $bottom: unset , $left: unset){
+@mixin pos_abs($top:unset , $right:unset , $bottom:unset , $left:unset){
 	position: absolute;
 	top: $top;
 	bottom: $bottom;
