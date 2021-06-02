@@ -91,7 +91,10 @@
                 }
 
                 // 單一置中訊息
-                &.--bigword li{
+                &.--bigword {
+                    padding-left: 0;
+                    
+                    li{
                     justify-content: center;
                     font-weight: bold;
                     font-size: 20px;
@@ -103,6 +106,7 @@
                     code{
                         color: map-get($txt_color, yellow);
                     }                    
+                }
                 }
             }
 

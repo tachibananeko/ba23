@@ -495,8 +495,7 @@
                     content: attr(data-txt);
                     padding: 0 10px;
                     font-weight: bold;
-                    text-shadow: 0 0 2px map-get($txt_color, white),
-                    0 0 5px map-get($txt_color, shadow);
+                    text-shadow: 0 0 1px map-get($txt_color, primary), 0 0 3px map-get($txt_color, primary);
                 }
 
                 &::after{
