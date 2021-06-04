@@ -485,3 +485,9 @@ $num: 100;
 
 	$num: $num - 1;
 }
+
+
+// video高度測試用
+@function videoH($px){
+    @return $px * 100 / 428 + vw;
+}

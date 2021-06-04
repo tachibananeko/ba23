@@ -115,10 +115,10 @@
             border: 1px solid map-get($bg_color, lightgreen);
             border-radius: 3px;
             overflow: hidden;
-            z-index: 4;
+            z-index: 4; //層級要比.frame__main__nav高
 
             @include mw_md{
-                position: fixed;
+                position: fixed; //需停在nav不能跟著捲軸移動
                 bottom: auto;
                 top: 10px;
                 left: 380px;
@@ -130,6 +130,7 @@
                 bottom: 0;
                 left: 10px;
                 border-radius: 3px 3px 0 0;
+                z-index: 1; //層級還原不能比.detail高
             }
 
             &::before{
