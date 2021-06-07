@@ -15,9 +15,14 @@
         width: 100%;
         max-width: 300px;
         min-height: 150px;
+        padding: 2px;
         background: map-get($bg_color, secondary_vl);
         border-radius: 5px;
         overflow: hidden;
+
+        &.--password{
+            background: map-get($bg_color, lightblue);
+        }
 
         &::before{
             @include pos_abs(0, 0, 0, 0);
@@ -35,6 +40,11 @@
             flex: none;
             padding: 10px;
             color: map-get($txt_color, primary);
+
+            @at-root .--password .alert__box__title{
+                @include border(0 0 1px, map-get($border_color, secondary));
+                background: map-get($bg_color, primary_vl);
+            }
 
             i{
                 width: 20px;
@@ -71,14 +81,23 @@
             padding: 0 10px 10px;
             text-align: center;
 
+            @at-root .--password .alert__box__info{
+                padding: 20px 20px 0;
+            }
+
             .list_txt{
                 width: 100%;
-                padding-left: 15px;
 
                 li{
                     @include d_f(flex, center, flex-start);
                     color: map-get($txt_color, white);
                     margin-bottom: 5px;
+
+                    @at-root .--password .list_txt li{
+                        flex-direction: column;
+                        align-items: flex-start;
+                        margin-bottom: 20px;
+                    }
 
                     &::before{
                         @include mr_distance;
@@ -87,6 +106,14 @@
                         width: 80px;
                         color: map-get($txt_color, yellow);
                         text-align: right;
+
+                        @at-root .--password .list_txt li::before{
+                            width: auto;
+                            color: map-get($txt_color, primary);
+                            margin-bottom: 5px;
+                            font-size: 14px;
+                            text-align: left;
+                        }
                     }
                 }
 
@@ -130,6 +157,9 @@
                 flex-wrap: wrap;
                 padding: 0 10px;
 
+                @at-root .--password .func{
+                    padding: 0 20px 10px;
+                }
 
             // .foot_btn
             &_btn{
