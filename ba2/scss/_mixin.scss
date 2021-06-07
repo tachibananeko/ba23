@@ -42,11 +42,14 @@
 // 自定義
 // 勾勾
 @mixin checktick($box, $xy, $boder, $bc) {
+	position: relative;
+
 	input{
         display: none;
     }
 
 	span{
+		position: relative;
 		display: inline-block;
         width: $box;
         height: $box;

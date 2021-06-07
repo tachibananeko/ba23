@@ -209,7 +209,7 @@
                 padding: 0 20px 10px;
             }
 
-        // .foot_btn
+        // .func_btn
         &_btn{
             @include btn_set(calc(100% / 2 - 10px), 35px, map-get($btn_color, lightblue));
             max-width: 120px;
@@ -289,12 +289,22 @@
     // 好路提示設定
     .roadSet{
         @include pos_abs(unset, 0, 0, unset);
+        @include d_f(flex, unset, center);
+        flex-direction: column;
         width: 100%;
         max-width: 500px;
+        max-height: 100%;
         padding: 2px;
         background: map-get($bg_color, lightblue);
         border-radius: 5px;
         overflow: hidden;
+
+        @include mw_md{
+            position: relative;
+        }
+        @include mw_xs{
+            max-width: 300px;
+        }
 
         &::before{
             @include pos_abs(0, 0, 0, 0);
@@ -311,7 +321,7 @@
             position: relative;
             background: map-get($bg_color, primary_vl);
             flex: none;
-            padding: 10px 20px;
+            padding: 10px;
             font-weight: bold;
             text-align: center;
 
@@ -321,6 +331,12 @@
                 color: map-get($txt_color, primary);
                 font-size: 14px;
                 margin: auto;
+                
+                @include mw_xs{
+                    code{
+                        display: none;
+                    }
+                }
 
                 &::before{
                     content: '';
@@ -341,7 +357,7 @@
         // .roadSet__info
         &__info{
             @include scrollbar(hidden, auto);
-            @include d_f(flex, flex-start, space-between);
+            @include d_f(flex, flex-start, space-around);
             align-content: flex-start;
             flex-wrap: wrap;
             flex: 1 1 100%;
@@ -353,6 +369,15 @@
                 @include d_f(flex, center, center);
                 color: map-get($txt_color, primary);
                 font-size: 14px;
+
+                @include mw_xs{
+                    position: relative;
+                    width: 100%;
+                    justify-content: flex-start;
+                    bottom: auto;
+                    left: 15px;
+                    margin-bottom: 10px;
+                }
             }
 
             // .roadSet__info__item
@@ -389,7 +414,6 @@
                 img{
                     position: relative;
                     width: 100%;
-                    height: 80px;
                     background: #fff;
                 }
             }
