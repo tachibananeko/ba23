@@ -41,16 +41,35 @@
 
 // 自定義
 // 勾勾
-@mixin checktick($width, $height, $x, $y, $boder, $bc) {
-	@include pos_abs($y, unset, unset, $x);
-	content: none;
-	display: block;
-	width: $width;
-	height: $height;
-	border-width: 0 0 $boder $boder;
-	border-style:  solid;
-	border-color: $bc;
-	transform: rotate(-48deg);
+@mixin checktick($box, $xy, $boder, $bc) {
+	input{
+        display: none;
+    }
+
+	span{
+		display: inline-block;
+        width: $box;
+        height: $box;
+        background: $bc;
+        margin: 2px;
+
+		&::before{
+			@include pos_abs($xy, unset, unset, $xy);
+			content: none;
+			display: block;
+			width: ($box / 2);
+			height: ($box / 3);
+			border-width: 0 0 $boder $boder;
+			border-style:  solid;
+			border-color: map-get($bg_color , white);
+			transform: rotate(-48deg);
+		}
+	}
+
+	input:checked + span::before{
+		content: '';
+	}
+	
 }
 
 // 漸層背景字

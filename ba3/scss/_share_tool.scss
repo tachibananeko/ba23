@@ -73,3 +73,7 @@
         }
     }
 }
+
+.checkbox_style{
+    @include checktick(15px, 2px, 2px, map-get($bg_color , middblue))
+}

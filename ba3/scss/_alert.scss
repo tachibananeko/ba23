@@ -5,8 +5,6 @@
     padding: 10px;
     background: map-get($bg_color, black_alpha);
 
-    flex-direction: column;
-
     // 視窗外框 .alert__box
     &__box{
         @include d_f(flex, unset, flex-start);
@@ -15,6 +13,7 @@
         width: 100%;
         max-width: 300px;
         min-height: 150px;
+        max-height: 100%;
         padding: 2px;
         background: map-get($bg_color, secondary_vl);
         border-radius: 5px;
@@ -39,7 +38,6 @@
             position: relative;
             flex: none;
             padding: 10px;
-            color: map-get($txt_color, primary);
 
             @at-root .--password .alert__box__title{
                 @include border(0 0 1px, map-get($border_color, secondary));
@@ -74,6 +72,7 @@
 
         // 視窗內容 .alert__box__info
         &__info{
+            @include scrollbar(hidden, auto);
             @include d_f(flex, center, center);
             flex-direction: column;
             position: relative;
@@ -148,92 +147,8 @@
             }
             
         }
-        
-
-        // 彈窗功能按鈕
-        .func{
-                @include d_f(flex, center, center);
-                flex: none;
-                flex-wrap: wrap;
-                padding: 0 10px;
-
-                @at-root .--password .func{
-                    padding: 0 20px 10px;
-                }
-
-            // .foot_btn
-            &_btn{
-                @include btn_set(calc(100% / 2 - 10px), 35px, map-get($btn_color, lightblue));
-                border: 1px solid map-get($bg_color, lightblue);
-                border-radius: 3px;
-                margin-bottom: 10px;
-
-                overflow: hidden;
-                
-                &:nth-child(even){
-                    margin-left: 20px;
-                }
-
-                &::before{
-                    @include btn_hoverlight03;
-                }
-                &::after{
-                    @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
-                    font-weight: bold;
-                    
-                }
-                .hover_item{
-                    @include btn_hoveritem(map-get($btn_color, primary));
-
-                    &::before {
-                        @include btn_hoverlight03;
-                    }
-                }
-
-                // 手指效果
-                @include btn_hoverHandler(1px, map-get($txt_color, secondary)){
-                    border-color: map-get($bg_color, secondary);
-                }
 
 
-                // 紅色款
-                &.--red {
-                    background: map-get($btn_color, orange_hl);
-                    border-color: map-get($bg_color, secondary);
-                    
-                    .hover_item {
-                        background: map-get($btn_color, lightorange_hl);
-                    }
-
-                    // 手指效果
-                    @include btn_hoverHandler(1px, map-get($txt_color, primary)){
-                        border-color: map-get($bg_color, secondary);
-                    }
-                }
-
-                // 金色款
-                &.--gold {
-                    background: map-get($btn_color, primary);
-                    border-color: map-get($bg_color, secondary);
-                    
-                    &::after{
-                        @include btn_txt(center, map-get($txt_color, secondary), map-get($txt_color, shadow));
-                    }
-
-                    .hover_item {
-                        background: map-get($btn_color, lightblue);
-                    }
-
-                    // 手指效果
-                    @include btn_hoverHandler(1px, map-get($txt_color, primary)){
-                        border-color: map-get($bg_color, lightblue);
-                    }
-                }
-
-                
-            }
-
-        }
 
         // .load
         .load{
@@ -279,6 +194,205 @@
                 }
             }
         }
+    }
 
+
+
+    // 彈窗功能按鈕
+    .func{
+            @include d_f(flex, center, center);
+            flex: none;
+            flex-wrap: wrap;
+            padding: 0 10px;
+
+            @at-root .--password .func{
+                padding: 0 20px 10px;
+            }
+
+        // .foot_btn
+        &_btn{
+            @include btn_set(calc(100% / 2 - 10px), 35px, map-get($btn_color, lightblue));
+            max-width: 120px;
+            border: 1px solid map-get($bg_color, lightblue);
+            border-radius: 3px;
+            margin-bottom: 10px;
+
+            overflow: hidden;
+            
+            &:nth-child(even){
+                margin-left: 20px;
+            }
+
+            &::before{
+                @include btn_hoverlight03;
+            }
+            &::after{
+                @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
+                font-weight: bold;
+                
+            }
+            .hover_item{
+                @include btn_hoveritem(map-get($btn_color, primary));
+
+                &::before {
+                    @include btn_hoverlight03;
+                }
+            }
+
+            // 手指效果
+            @include btn_hoverHandler(1px, map-get($txt_color, secondary)){
+                border-color: map-get($bg_color, secondary);
+            }
+
+
+            // 紅色款
+            &.--red {
+                background: map-get($btn_color, orange_hl);
+                border-color: map-get($bg_color, secondary);
+                
+                .hover_item {
+                    background: map-get($btn_color, lightorange_hl);
+                }
+
+                // 手指效果
+                @include btn_hoverHandler(1px, map-get($txt_color, primary)){
+                    border-color: map-get($bg_color, secondary);
+                }
+            }
+
+            // 金色款
+            &.--gold {
+                background: map-get($btn_color, primary);
+                border-color: map-get($bg_color, secondary);
+                
+                &::after{
+                    @include btn_txt(center, map-get($txt_color, secondary), map-get($txt_color, shadow));
+                }
+
+                .hover_item {
+                    background: map-get($btn_color, lightblue);
+                }
+
+                // 手指效果
+                @include btn_hoverHandler(1px, map-get($txt_color, primary)){
+                    border-color: map-get($bg_color, lightblue);
+                }
+            }
+
+            
+        }
+
+    }
+
+
+
+    // 好路提示設定
+    .roadSet{
+        @include pos_abs(unset, 0, 0, unset);
+        width: 100%;
+        max-width: 500px;
+        padding: 2px;
+        background: map-get($bg_color, lightblue);
+        border-radius: 5px;
+        overflow: hidden;
+
+        &::before{
+            @include pos_abs(0, 0, 0, 0);
+            content: '';
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+            background: map-get($bg_color, black);
+            margin: auto;
+        }
+
+        // .roadSet__title
+        &__title{
+            @include border(0 0 1px, map-get($border_color, secondary));
+            position: relative;
+            background: map-get($bg_color, primary_vl);
+            flex: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            text-align: center;
+
+            .roadSet_btn{
+                @include pos_abs(0, 20px, 0, unset);
+                @include d_f(flex, center, flex-start);
+                color: map-get($txt_color, primary);
+                font-size: 14px;
+                margin: auto;
+
+                &::before{
+                    content: '';
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    background: url(../images/icon_notice.svg) no-repeat left center;
+                    margin-right: 5px;
+                }
+
+                // 手指效果
+                @include hoverHandler{
+                    opacity: .7;
+                }
+            }
+        }
+
+        // .roadSet__info
+        &__info{
+            @include scrollbar(hidden, auto);
+            @include d_f(flex, flex-start, space-between);
+            align-content: flex-start;
+            flex-wrap: wrap;
+            flex: 1 1 100%;
+            padding: 20px 20px 0;
+
+            .--allChecked{
+                @extend %hand;
+                @include pos_abs(unset, unset, 20px, 20px);
+                @include d_f(flex, center, center);
+                color: map-get($txt_color, primary);
+                font-size: 14px;
+            }
+
+            // .roadSet__info__item
+            &__item{
+                @extend %hand;
+                @include d_f(flex, center, flex-start);
+                flex-wrap: wrap;
+                position: relative;
+                width: 100px;
+                padding: 1px;
+                background: map-get($bg_color, lightblue);
+                border-radius: 3px;
+                margin-bottom: 20px;
+                overflow: hidden;
+
+                &::before{
+                    @include pos_abs(0, 0, 0, 0);
+                    content: '';
+                    width: calc(100% - 2px);
+                    height: calc(100% - 2px);
+                    background: map-get($bg_color, primary_vl);
+                    pointer-events: none;
+                    margin: auto;
+                }
+
+                *{
+                    position: relative;
+                }
+
+                code{
+                    font-size: 12px;
+                }
+
+                img{
+                    position: relative;
+                    width: 100%;
+                    height: 80px;
+                    background: #fff;
+                }
+            }
+        }
     }
 }
