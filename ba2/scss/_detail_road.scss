@@ -1,0 +1,118 @@
+
+.frame__main__otherinside{
+    &.--detailRoad{
+        padding: 20px 40px;
+
+        @include mw_xs{
+            padding: 0;
+        }
+    }
+}
+
+// 圖文內容
+.detailRoad__info{
+    @include d_f(flex, unset, flex-start);
+    align-content: flex-start;
+    flex-wrap: wrap;
+
+    @include mw_xs{
+        padding: 0 30px;
+    }
+
+    &__item{
+        position: relative;
+        width: calc(100% / 3 - 15px);
+        background: map-get($bg_color, secondary_vl);
+        padding: 2px;
+        border-radius: 5px;
+        margin:0 20px 30px 0;
+        overflow: hidden;
+
+        &:nth-child(3n){
+            margin-right: 0;
+        }
+
+        @include mw_ms{
+            width: calc(100% / 2 - 30px);
+            
+            &:nth-child(even){
+                margin-right: 0;
+            }
+            &:nth-child(odd){
+                margin-right: 60px;
+            }
+        }
+
+        @include mw_xs{
+            width: 100%;
+            
+            &:nth-child(odd){
+                margin-right: 0;
+            }
+        }
+
+        &::before{
+            @include pos_abs(0, 0, 0, 0);
+            content: '';
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+            background: map-get($bg_color, black);
+            margin: auto;
+        }
+
+        .title{
+            @include border(0 0 1px, map-get($border_color, secondary));
+            position: relative;
+            background: map-get($bg_color, primary_vl);
+            padding: 5px 10px;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .detail{
+            @include d_f(flex, flex-start, space-between);
+            padding: 10px;
+            font-size: 14px;
+
+            // .detail__img
+            &__img{
+                position: relative;
+                width: 40%;
+                border: 1px solid map-get($bg_color, secondary);
+                border-radius:3px;
+                overflow: hidden;
+                
+                &::before{
+                    content: attr(data-txt);
+                    display: block;
+                    padding: 5px 10px;
+                    background: map-get($bg_color, primary_vl);
+                    color: map-get($txt_color, white);
+                }
+            }
+
+            // .detail__txt
+            &__txt{
+                width: 50%;
+                color: map-get($txt_color, white);
+
+                &::before{
+                    content: attr(data-txt);
+                    display: table; //我偷懶
+                    padding: 3px;
+                    background: map-get($bg_color, secondary);
+                    border-radius: 3px;
+                    color: map-get($txt_color, secondary);
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        img{
+            position: relative;
+        }
+    }
+}
+
+
