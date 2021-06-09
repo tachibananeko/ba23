@@ -41,7 +41,7 @@
 
 // 自定義
 // 勾勾
-@mixin checktick($box, $xy, $boder, $bc) {
+@mixin checktick($box, $xy, $boder, $bg) {
 	position: relative;
 
 	input{
@@ -53,7 +53,7 @@
 		display: inline-block;
         width: $box;
         height: $box;
-        background: $bc;
+        background: $bg;
         margin: 2px;
 
 		&::before{
