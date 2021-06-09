@@ -61,7 +61,7 @@
         }
 
         .title{
-            @include border(0 0 1px, map-get($border_color, secondary));
+            @include border(0 0 1px, map-get($border_color, primary));
             position: relative;
             background: map-get($bg_color, primary_vl);
             padding: 5px 10px;

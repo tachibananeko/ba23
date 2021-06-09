@@ -66,7 +66,7 @@ $btn_color: (
 
 // 裝飾線色
 $border_color: (
-    primary: linear-gradient(to right, transparent 10%, #f2d77a 20%, #ffffc5 60%, #f2d77a 80%, transparent 100%) 1,
+    primary: linear-gradient(to right, transparent 0%, #f2d77a 20%, #ffffc5 60%, #f2d77a 80%, transparent 100%) 1,
     secondary: linear-gradient(to right, #f2d77a 10%, #ffffc5 30%, #f2d77a 60%, rgba(242, 216, 122, 0) 100%) 1,
     brown: linear-gradient(to top, #3e3123 0%, #140a0c 100%) 1,
 );
