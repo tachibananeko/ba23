@@ -111,10 +111,9 @@
         .PR_btn{
             @include btn_set(auto, 30px, map-get($btn_color, green));
             @include pos_abs (unset, unset, calc(100% + 10px), 380px);
+            @include radius_hidden();
             padding: 0 10px;
             border: 1px solid map-get($bg_color, lightgreen);
-            border-radius: 3px;
-            overflow: hidden;
             z-index: 4; //層級要比.frame__main__nav高
 
             @include mw_md{
@@ -217,12 +216,13 @@
 }
 
 
-// 選擇桌次.table__title
+// 選擇桌次
 .table{
     @include d_f(flex, flex-start, flex-start);
     position: relative;
     flex-direction: column;
 
+    // .table__title
     &__title{
         position: relative;
         width: 100%;
@@ -1220,15 +1220,14 @@
     &__phChange{
         @include pos_abs(0, 0, 0, unset);
         @include d_f(flex, center, center);
+        @include radius_hidden(5px 0 0 5px);
         flex-direction: column;
         width: 35px;
         height: 150px;
         border: 1px solid map-get($bg_color, secondary);
         border-width: 1px 0 1px 1px;
-        border-radius: 5px 0 0 5px;
         margin: auto;
         pointer-events: auto;
-        overflow: hidden;
 
         display: none;
 
@@ -1320,16 +1319,15 @@
     // .goodroadList__item
     &__item {
         @include d_f(flex, center, center);
+        @include radius_hidden(5px);
         @extend %hand;
         position: relative;
         height: 55px;
         padding: 2px;
         background: map-get($bg_color, middblue);
-        border-radius: 5px;
         color: map-get($txt_color, primary);
         font-size: 14px;
         margin-bottom: 5px;
-        overflow: hidden;
 
         &::before {
             content: '';

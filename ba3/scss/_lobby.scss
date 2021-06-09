@@ -16,12 +16,11 @@
 // 大廳桌
 .lobbyTb {
     @extend %txtshadow;
+    @include radius_hidden(5px);
     width: calc(100% / 2 - 10px);
-    border-radius: 5px;
     color: map-get($txt_color, primary);
     font-size: 14px;
     margin-bottom: 20px;
-    overflow: hidden;
 
     @include mw_ms{
         width: 100%;
@@ -60,6 +59,7 @@
         padding: 0 10px;
         background: map-get($bg_color, primary_vl);
         overflow: hidden;
+        
         &::before{
             @include pos_abs(0, unset, unset, 0);
             content: '';
@@ -91,13 +91,12 @@
         // title桌號 .lobbyTb__title__no
         &__no {
             @include pos_abs(-120%, 0, auto, 0);
+            @include radius_hidden(20px);
             width: 33%;
             height: 200%;
-            border-radius: 20px;
             border: 2px solid map-get($bg_color, secondary);
             font-weight: bold;
             margin: auto;
-            overflow: hidden;
 
             @include mw_ms{
                 width: 25%;

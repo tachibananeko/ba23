@@ -116,12 +116,11 @@
         // 選擇卡片呼叫公關
         .PR {
             @include pos_abs(unset, unset, calc(100% + 10px), 320px);
+            @include radius_hidden(5px);
             width: 300px;
             height: 30px;
-            border-radius: 5px;
             font-size: 0;
             white-space: nowrap;
-            overflow: hidden;
             z-index: 4;
 
             @include mw_ms{
@@ -557,10 +556,10 @@
             padding: 0;
         }
 
+        // .otherpage__btn
         &__btn{
             @include btn_set(calc(100% / 3), 100%, map-get($btn_color, lightgreen));
             @include border(1px 0, map-get($border_color, primary));
-            overflow: hidden;
 
             @include mw_ms{
                 width: calc(100% / 2);
@@ -570,10 +569,10 @@
             }
 
             &:first-child{
-                border-radius: 3px 0 0 3px;
+                @include radius_hidden(3px 0 0 3px);
             }
             &:last-child{
-                border-radius: 0 3px 3px 0;
+                @include radius_hidden(0 3px 3px 0);
             }
 
             &::before{
@@ -901,10 +900,9 @@
         .function_btn{
             @include btn_set(calc(100% / 3), 100%, map-get($btn_color, lightblue));
             @include border(1px 0, map-get($border_color, primary));
-            overflow: hidden;
 
             &:first-child{
-                border-radius: 5px 0 0 5px;
+                @include radius_hidden(5px 0 0 5px);
 
                 @include mw_ms{
                     border-radius: 0;
@@ -1248,15 +1246,14 @@
     &__phChange{
         @include pos_abs(0, 0, 0, unset);
         @include d_f(flex, center, center);
+        @include radius_hidden(5px 0 0 5px);
         flex-direction: column;
         width: 35px;
         height: 150px;
         border: 1px solid map-get($bg_color, secondary);
         border-width: 1px 0 1px 1px;
-        border-radius: 5px 0 0 5px;
         margin: auto;
         pointer-events: auto;
-        overflow: hidden;
 
         display: none;
 
@@ -1379,17 +1376,16 @@
 
     // .goodroadList__item
     &__item {
-        @include d_f(flex, center, center);
         @extend %hand;
+        @include d_f(flex, center, center);
+        @include radius_hidden(5px);
         position: relative;
         height: 55px;
         padding: 2px;
         background: map-get($btn_color, gold);
-        border-radius: 5px;
         color: map-get($txt_color, primary);
         font-size: 14px;
         margin-bottom: 5px;
-        overflow: hidden;
 
         &::before {
             content: '';

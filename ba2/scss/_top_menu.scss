@@ -19,11 +19,10 @@
     // .channel__item
     &__item {
         @include d_f(flex, center, flex-start);
+        @include radius_hidden();
         position: relative;
         height: 100%;
         border: 1px solid map-get($bg_color, secondary);
-        border-radius: 3px;
-        overflow: hidden;
 
         @include mw_ms {
             display: none;
@@ -64,10 +63,10 @@
 
     // ph當前頻道 .channel__1st
     &__1st {
-        display: none;
+        @include radius_hidden();
         border: 1px solid map-get($bg_color, secondary);
-        border-radius: 3px;
-        overflow: hidden;
+        
+        display: none;
         @include mw_ms {
             display: block;
             height: 30px;
@@ -104,12 +103,11 @@
 // ph選擇桌次
 .tableph_btn{
     @include btn_set(auto, 30px, map-get($btn_color, primary));
+    @include radius_hidden();
     @include mr_distance;
     padding: 0 25px 0 10px;
     font-weight: bold;
     border: 1px solid map-get($bg_color, secondary);
-    border-radius: 3px;
-    overflow: hidden;
     
     display: none;
 
@@ -217,14 +215,13 @@
 // 大廳跑馬燈
 .lobby__marquee{
     @include d_f(flex, center, flex-end);
+    @include radius_hidden();
     @include mr_distance;
     position: relative;
     flex: 1 1 100%;
     padding: 5px 0;
     background: map-get($bg_color, black);
-    border-radius: 3px;
     color: map-get($bg_color, white);
-    overflow: hidden;
 
     &::before{
         @include pos_abs(5px, 5px, unset, unset);
@@ -277,20 +274,20 @@
         margin-right: 0;
     }
 
+    // .otherpage__btn
     &__btn{
         @include btn_set(calc(100% / 2), 100%, map-get($btn_color, lightgreen));
         @include border(1px 0, map-get($border_color, primary));
-        overflow: hidden;
 
         @include mw_ms{
             width: 100%;
         }
 
         &:first-child{
-            border-radius: 3px 0 0 3px;
+            @include radius_hidden(3px 0 0 3px);
         }
         &:last-child{
-            border-radius: 0 3px 3px 0;
+            @include radius_hidden(0 3px 3px 0);
         }
 
         &::before{

@@ -75,6 +75,12 @@
 	
 }
 
+// 圓角遮罩
+@mixin radius_hidden($size: 3px){
+	border-radius: $size;
+	overflow: hidden;
+}
+
 // 漸層背景字
 @mixin bg_txt($bg, $size) {
 	content: attr(data-txt);

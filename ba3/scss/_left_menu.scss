@@ -276,14 +276,13 @@
 
         // 槍手桌號
         li.--PR {
+            @include radius_hidden();
             width: calc(100% - 20px);
             padding-bottom: 5px;
             background: map-get($bg_color, black);
-            border-radius: 3px;
             font-weight: bold;
             text-align: center;
             margin: auto auto 20px;
-            overflow: hidden;
 
             @include mw_lg {
                 width: 100%;

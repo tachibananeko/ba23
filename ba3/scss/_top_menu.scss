@@ -19,10 +19,9 @@
     // .channel__item
     &__item {
         @include d_f(flex, center, flex-start);
+        @include radius_hidden();
         position: relative;
         height: 100%;
-        border-radius: 3px;
-        overflow: hidden;
 
         @include mw_ms {
             display: none;
@@ -64,9 +63,10 @@
 
     // ph當前頻道 .channel__1st
     &__1st {
+        @include radius_hidden();
+        
         display: none;
-        border-radius: 3px;
-        overflow: hidden;
+        
         @include mw_ms {
             display: block;
             height: 30px;
@@ -103,12 +103,11 @@
 // ph選擇桌次
 .tableph_btn{
     @include btn_set(auto, 30px, map-get($btn_color, primary));
+    @include radius_hidden();
     @include mr_distance;
     padding: 0 25px 0 10px;
     font-weight: bold;
     border: 1px solid map-get($bg_color, secondary);
-    border-radius: 3px;
-    overflow: hidden;
     
     display: none;
 
@@ -278,13 +277,12 @@
 // 大廳跑馬燈
 .lobby__marquee{
     @include d_f(flex, center, flex-end);
+    @include radius_hidden();
     position: relative;
     flex: 1 1 100%;
     padding: 5px 0;
     background: map-get($bg_color, black);
-    border-radius: 3px;
     margin-right: 20px;
-    overflow: hidden;
 
     @include coarse{
         margin-right: 0;
