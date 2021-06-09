@@ -19,7 +19,10 @@
         padding: 0 30px;
     }
 
+    // .detailRoad__info__item
     &__item{
+        @include d_f(flex, unset, flex-start);
+        flex-direction: column;
         position: relative;
         width: calc(100% / 3 - 15px);
         background: map-get($bg_color, secondary_vl);
@@ -63,8 +66,9 @@
         .title{
             @include border(0 0 1px, map-get($border_color, primary));
             position: relative;
-            background: map-get($bg_color, primary_vl);
             padding: 5px 10px;
+            flex: none;
+            background: map-get($bg_color, primary_vl);
             font-weight: bold;
             font-size: 18px;
             text-align: center;
@@ -72,6 +76,7 @@
 
         .detail{
             @include d_f(flex, flex-start, space-between);
+            flex: 1 1 100%;
             padding: 10px;
             font-size: 14px;
 
@@ -95,6 +100,7 @@
             // .detail__txt
             &__txt{
                 width: 50%;
+                flex: none;
                 color: map-get($txt_color, white);
 
                 &::before{
