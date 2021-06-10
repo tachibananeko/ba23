@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
+    <title>Welcome</title>
+
+    <link rel="stylesheet" href="../style/all.min.css">
+
+    <!-- icon -->
+    <link rel="shortcut icon" href="/favicon_icon.ico">
+    <link rel="icon" href="/favicon_icon.ico">
+    <link rel="apple-touch-icon" type="image/png" href="/favicon_icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/favicon_icon.png">
+
+</head>
+
+<body ontouchstart="">
+    <!-- 
+        視訊放大 在上方狀態後加上.--bigTv
+        選擇桌次展開.--tableOpen
+        卡片all展開.--cardOpen
+    -->
+    <div class="frame" id="frame">
+        <!-- 左邊menu -->
+        <!-- 打開人頭內按鈕 .--active -->
+        <aside class="frame__menu">
+            <!-- 客戶資訊 -->
+            <div class="menu__info">
+                <div class="menu__info__logo"></div>
+                <button class="menu__info_btn"></button>
+                <div class="menu__info__txt">
+                    <span class="name">LoremLoremLoremLoremLoremLoremLoremLoremLoremLorem</span>
+                    <span class="amount">200,000,000</span>
+                </div>
+            </div>
+            <!-- 客戶資訊 end -->
+
+            <!-- 分頁按鈕 -->
+            <div class="menu__main">
+                <!-- 廠商按鈕 -->
+                <!-- 當前頁面.--on -->
+                <ul class="--api">
+                    <li data-txt="百家樂">
+                        <span class="hover_item"></span>
+                        <i class="icon_ibo"></i>
+                    </li>
+                    <li data-txt="鬥雞">
+                        <span class="hover_item"></span>
+                        <i class="icon_cockfight"></i>
+                    </li>
+                    <li data-txt="A5彩票">
+                        <span class="hover_item"></span>
+                        <i class="icon_a5"></i>
+                    </li>
+                </ul>
+                <!-- 廠商按鈕 end -->
+
+                <!-- 基本按鈕 -->
+                <!-- 當前頁面.--on -->
+                <ul class="--myself" id="myself">
+                    <li data-txt="交易紀錄">
+                        <span class="hover_item"></span>
+                        <i class="icon_history"></i>
+                    </li>
+                    <li data-txt="會員資料">
+                        <span class="hover_item"></span>
+                        <i class="icon_info"></i>
+                    </li>
+                    <li data-txt="遊戲規則">
+                        <span class="hover_item"></span>
+                        <i class="icon_rule"></i>
+                    </li>
+                    <li data-txt="登出">
+                        <span class=" hover_item"></span>
+                        <i class="icon_logout"></i>
+                    </li>
+                </ul>
+                <!-- 基本按鈕 end -->
+            </div>
+            <!-- 分頁按鈕 end -->
+        </aside>
+        <!-- 左邊menu end -->
+
+
+
+
+
+        <!-- iframe放置區 -->
+        <main class="frame__main">
+            <!-- 上方menu -->
+            <nav class="frame__main__nav">
+                <!-- 返回按鈕 -->
+                <button class="back_btn"></button>
+                <!-- 返回按鈕 end -->
+
+                <!-- 跑馬燈 -->
+                <div class="lobby__marquee">
+                    <span style="animation: marquee_move 25s linear infinite;">Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Et consequuntur velit impedit. Animi officiis, sint eius
+                        dignissimos quis non fugiat dicta deleniti iste aut sapiente consequatur facere. Iure,
+                        omnis corrupti?</span>
+                </div>
+                <!-- 跑馬燈 end -->
+
+                <!-- 多桌+好路按鈕 -->
+                <div class="otherpage">
+                    <button class="otherpage__btn --more_tb" data-txt="多桌模式">
+                        <span class="hover_item"></span>
+                    </button>
+                    <button class="otherpage__btn" data-txt="好路追注">
+                        <span class="hover_item"></span>
+                    </button>
+                </div>
+                <!-- 多桌+好路按鈕 end -->
+
+                <!-- 全螢幕 -->
+                <!-- 縮小螢幕 --zoomout -->
+                <button class="zoom_btn">
+                    <span class="zoom_btn__txt">全螢幕</span>
+                    <span class="zoom_btn__txt --in">正常螢幕</span>
+                </button>
+                <!-- 全螢幕 end -->
+            </nav>
+            <!-- 上方menu end -->
+
+
+
+
+            <!-- 主內容 -->
+            <div class="frame__main__otherinside --game_rule">
+                <div class="game_rule">
+                    <div class="game_rule__title">
+                        <span class="title_txt">遊戲規則</span>
+                        <button class="close_btn"></button>
+                    </div>
+                    <div class="game_rule__content">
+                        <div class="game_type">
+                            <button class="game_type__btn --on">百家樂</button>
+                            <button class="game_type__btn">鬥雞</button>
+                            <button class="game_type__btn">A5彩票</button>
+                        </div>
+                        <div class="description">
+                            <span class="description__title"><i class="icon_rule_chips"></i>百家樂玩法</span>
+                            <ul class="description__list">
+                                <li class="description__item">荷官會按“閒”“莊”“閒”“莊”順序依次派出“莊家”和“閒家”兩份牌，如果需要補牌，將依照以下補牌規則多發一張牌點數，得9點或接近9點的一家勝出。</li>
+                                <li class="description__item">任何一家拿到"例牌"，牌局就算結束，不再補牌。</li>
+                            </ul>
+                        </div>
+                        <div class="draw">
+                            <span class="draw__title"><i class="icon_rule_poker"></i>補牌規則</span>
+                            <div class="draw__content">
+                                <div class="directions --player">
+                                    <span class="directions__title">閒家</span>
+                                    <div class="directions__content">
+                                        <div class="directions__item">
+                                            <span>頭兩張牌合計點數</span>
+                                            <span>補牌規則</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>0</span>
+                                            <span>必須補牌</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>1</span>
+                                            <span>必須補牌</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>2</span>
+                                            <span>必須補牌</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>3</span>
+                                            <span>必須補牌</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>4</span>
+                                            <span>必須補牌</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>5</span>
+                                            <span>必須補牌</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>6</span>
+                                            <span>不得補牌</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>7</span>
+                                            <span>不得補牌</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>8</span>
+                                            <span>例牌，即定輸贏</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>9</span>
+                                            <span>例牌，即定輸贏</span>
+                                        </div>
+                                        <div class="directions__item"></div>
+                                    </div>
+                                </div>
+                                <div class="directions --banker">
+                                    <span class="directions__title">莊家</span>
+                                    <div class="directions__content">
+                                        <div class="directions__item">
+                                            <span>頭兩張牌合計點數</span>
+                                            <span>補牌規則</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>0</span>
+                                            <span>必須補牌</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>1</span>
+                                            <span>必須補牌</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>2</span>
+                                            <span>必須補牌</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>3</span>
+                                            <span class="txt_small">若閒家補得第三張牌是8，不得補牌</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>4</span>
+                                            <span class="txt_small">若閒家補得第三張牌是0.1.8.9，不得補牌</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>5</span>
+                                            <span class="txt_small">若閒家補得第三張牌是0.1.2.3.8.9，不得補牌</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>6</span>
+                                            <span class="txt_small">若閒家補得第三張牌是6.7，不得補牌</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>7</span>
+                                            <span>不得補牌</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>8</span>
+                                            <span>例牌，即定輸贏</span>
+                                        </div>
+                                        <div class="directions__item">
+                                            <span>9</span>
+                                            <span>例牌，即定輸贏</span>
+                                        </div>
+                                        <div class="directions__item"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 主內容 end -->
+        </main>
+    </div>
+</body>
+
+<script src="../script/tpl.js"></script>
+
+</html>

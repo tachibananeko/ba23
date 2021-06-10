@@ -1,0 +1,228 @@
+.frame__main__otherinside{
+    &.--game_rule{
+        background: map-get($bg_color, black);
+        padding: 50px 80px;
+        @include mw_xs{
+            padding: 0;
+        }
+    }
+}
+
+.game_rule{
+    width: 100%;
+    height: 100%;
+    // game_rule__title
+    &__title{
+        position: relative;
+        @include d_f(flex, center, center);
+        width: 100%;
+        height: 35px;
+        color: #F1BE7C;
+        font-size: 18px;
+        background: map-get($bg_color, primary_vl);
+        .close_btn{
+            width: 30px;
+            height: 30px;
+            @include pos_abs(0, 5px, 0, auto);
+            margin: auto;
+            &:before,
+            &:after{
+                content: '';
+                width: 20px;
+                height: 1px;
+                border-radius: 3px;
+                @include pos_abs(0, 0, 0, 0);
+                margin: auto;
+                background: #8D8A87;
+                transform: rotate(45deg);
+            }
+            &:after{
+                transform: rotate(135deg);
+            }
+        }
+    }
+    // game_rule__content
+    &__content{
+        width: 100%;
+        height: calc(100% - 35px);
+        padding: 0 70px;
+        background: #1a1a1a;
+        @include mw_md{
+            padding: 0 60px 20px;
+            overflow-y: auto;
+        }
+        @include mw_xs{
+            padding: 0;
+        }
+        .game_type{
+            @include d_f(flex, center, center);
+            padding: 20px 0;
+            // game_type__btn
+            &__btn{
+                @include btn_set(140px, 40px, #4D4D4D);
+                border: 1px solid #F5C78D;
+                color: #BBB;
+                font-weight: bold;
+                &.--on{
+                    color: #EFD8A8;
+                    background: map-get($btn_color, secondary);
+                }
+                &:first-child{
+                    border-radius: 5px 0 0 5px;
+                }
+                &:last-child{
+                    border-radius: 0 5px 5px 0;
+                }
+                &:before{
+                    @include btn_hoverlight02;
+                }
+            }
+        }
+        .description{
+            // description__title
+            &__title{
+                @include d_f(flex, center, flex-start);
+                position: relative;
+                font-size: 18px;
+                font-weight: bold;
+                height: 40px;
+                z-index: 0;
+                overflow: hidden;
+                &:before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: -20px;
+                    right: 0;
+                    width: 200px;
+                    background: map-get($bg_color, secondary_vl);
+                    border-top-right-radius: 5px;
+                    transform: skewX(35deg);
+                    z-index: -1;
+                }
+                .icon_rule_chips{
+                    width: 25px;
+                    height: 25px;
+                    margin: 0 10px;
+                }
+            }
+            // description__list
+            &__list{
+                color: #fff;
+                list-style: inherit;
+                padding-left: 65px;
+                @include mw_xs{
+                    padding: 0 30px;
+                }
+            }
+            // description__item
+            &__item{
+                position: relative;
+                font-weight: bold;
+                margin-top: 10px;
+                &:before{
+                    content: '';
+                    position: absolute;
+                    top: 6px;
+                    left: -15px;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 5px 0 5px 8.7px;
+                    border-color: transparent transparent transparent #fcfdaf;
+                }
+            }
+        }
+        .draw{
+            padding-left: 50px;
+            @include mw_xs{
+                padding-left: 0;
+            }
+            // draw__title
+            &__title{
+                @include d_f(flex, center, flex-start);
+                font-size: 18px;
+                font-weight: bold;
+                color: #F3BD77;
+                margin: 10px 0;
+                @include mw_xs{
+                    justify-content: center;
+                }
+                .icon_rule_poker{
+                    width: 45px;
+                    height: 30px;
+                    margin-right: 10px;
+                }
+            }
+            // draw__content
+            &__content{
+                display: flex;
+                @include mw_ms{
+                    flex-wrap: wrap;
+                }
+                @at-root .directions{
+                    width: 50%;
+                    @include mw_ms{
+                        width: 100%;
+                    }
+                    &.--player{
+                        .directions__title{
+                            border-top-left-radius: 5px;
+                        }
+                    }
+                    &.--banker{
+                        .directions__title{
+                            border-top-right-radius: 5px;
+                        }
+                    }
+                    // directions__title
+                    &__title{
+                        display: flex;
+                        justify-content: center;
+                        font-size: 18px;
+                        color: #F2BD79;
+                        background: map-get($bg_color, primary_vl);
+                        border-width: 0 0 2px 0;
+                        border-style: solid;
+                        border-image: linear-gradient(to right, #37251C 0%, #4C3727 20%, #866C49 60%, #4C3727 80%, #37251C 100%) 1;
+                        @include mw_ms{
+                            border-radius: 5px 5px 0 0;
+                        }
+                    }
+                    // directions__item
+                    &__item{
+                        @include d_f(flex, center, space-between);
+                        height: 32px;
+                        background: #808080;
+                        border: 1px solid #737373;
+                        span{
+                            @include d_f(flex, center, center);
+                            width: 50%;
+                            
+                            text-align: center;
+                        }
+                        .txt_small{
+                            font-size: 12px;
+                        }
+                        &:first-child{
+                            height: 40px;
+                            background: #4D4D4D;
+                        }
+                        &:last-child{
+                            height: 15px;
+                            background: #4D4D4D;
+                        }
+                    }
+                    & + .directions{
+                        margin-left: 5px;
+                        @include mw_ms{
+                            margin-left: 0;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
