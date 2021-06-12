@@ -129,7 +129,7 @@
 
         .refreshLine_btn{
             @include btn_set(auto, 30px, map-get($btn_color, orange_hl));
-            @include pos_abs(20px, 20px, unset, unset);
+            @include pos_abs(15px, 20px, unset, unset);
             @include radius_hidden();
             border: 1px solid map-get($bg_color, secondary);
             padding: 10px;
