@@ -54,6 +54,7 @@ $txt_color: (
     secondary: #240913,
     yellow: #fefdb3,
     gray: #b3b3b3,
+    red: #f00,
     shadow: hsla(354, 29%, 7%, 0.5),
     warn: #ff5f67,
     win: #37c6ff,
@@ -113,7 +114,8 @@ $btn_color: (
     orange: linear-gradient(to top, #f36428 0%, #440010 100%),
     lightorange: linear-gradient(to top, #ff901d 0%, #991b10 100%),
     orange_hl: linear-gradient(to right, #f36428 0%, #440010 100%),
-    lightorange_hl: linear-gradient(to right, #ff901d 0%, #991b10 100%)
+    lightorange_hl: linear-gradient(to right, #ff901d 0%, #991b10 100%),
+    red: linear-gradient(to top, #FF302A 0%, #440010 100%)
 );
 // 裝飾線色
 $border_color: (

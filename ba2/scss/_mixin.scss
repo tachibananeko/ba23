@@ -419,7 +419,7 @@ $breakpoints: (
 
 // 手指hover相關
 // 一般
-[class*="_btn"]:not(disable),
+[class*="_btn"]:not(:disabled),
 %hand {
 	cursor: pointer;
 	transition: all .2s ease-in-out;

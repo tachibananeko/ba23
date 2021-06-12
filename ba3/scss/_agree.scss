@@ -1,13 +1,238 @@
 
 .frame__main__otherinside{
     &.--agree{
-        padding: 20px;
+        @include d_f(flex, flex-start, space-between);
+        flex-wrap: wrap;
+        padding: 20px 20px 0;
 
         @include mw_xs{
-            padding: 10px 20px;
+            padding: 0;
+        }
+    }
+
+    .func{
+        width: 100%;
+        padding: 20px 0;
+
+        // .func_btn
+        &_btn{
+            max-width: 150px;
+            font-size: 20px;
+
+            &:last-child{
+                margin-left: 20px;
+            }
         }
     }
 }
 
 // 我同意內容
+.agree{
+    @include radius_hidden(5px);
+    width: calc(40% - 10px);
+    height: calc(100% - 75px);
+    border: 1px solid map-get($bg_color, blue);
+    border-top: none;
 
+    @include mw_ms{
+        width: 100%;
+        height: calc(100% - 295px);
+        border: none;
+        border-radius: 0;
+    }
+
+    &.--txt{
+        width: calc(60% - 10px);
+
+        @include mw_ms{
+            width: 100%;
+            height: 200px;
+            order: -1;
+            margin-bottom: 20px;
+        }
+    }
+
+    // .agree__title 
+    &__title{
+        position: relative;
+        height: 35px;
+        background: map-get($bg_color, primary_vl);
+        overflow: hidden;
+
+        @include mw_ms{
+            background: transparent;
+        }
+
+        &::before{
+            @include pos_abs(0, unset, unset, 0);
+            content: '';
+            width: 100%;
+            height: 2000%;
+            background: linear-gradient(-137deg, #004889 0%, #001940 100%);
+            background-size: 25px 25px;
+            pointer-events: none;
+            transform: rotate(-45deg);
+            transform-origin: 2% 5%;
+            opacity: .4;
+
+            @include mw_ms{
+                opacity: 0;
+            }
+        }
+
+        span{
+            @include pos_abs(-110%, 0, auto, 0);
+            @include radius_hidden(20px);
+            display: block;
+            width: 40%;
+            height: 200%;
+            border: 2px solid map-get($bg_color, secondary);
+            font-weight: bold;
+            margin: auto;
+
+            @include mw_ms{
+                width: 80%;
+                border-radius: 10px;
+            }
+
+            &::before {
+                @include pos_abs(0, unset, unset, 0);
+                content: '';
+                width: 100%;
+                height: 2000%;
+                background: map-get($bg_color, darkblue);
+                background-size: 25px 25px;
+                pointer-events: none;
+                transform: rotate(-45deg);
+                transform-origin: 8% 5%;                
+            }
+
+            &::after{
+                @include pos_abs(unset, 0, 2px, 0);
+                content: attr(data-txt);
+                color: map-get($txt_color, yellow);
+                font-size: 20px;
+                text-align: center;
+                text-shadow: none;
+                margin: auto;
+            }
+        }
+    }
+
+    // .agree__online
+    &__online{
+        @include border(0 0 1px, map-get($border_color , secondary));
+        position: relative;
+        padding: 20px;
+        text-align: center;
+
+        .refreshLine_btn{
+            @include btn_set(auto, 30px, map-get($btn_color, orange_hl));
+            @include pos_abs(20px, 20px, unset, unset);
+            @include radius_hidden();
+            border: 1px solid map-get($bg_color, secondary);
+            padding: 10px;
+
+            &::before{
+                @include btn_hoverlight03;
+            }
+
+            &::after{
+                @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
+                font-size: 14px;
+            }
+
+            .hover_item{
+                @include btn_hoveritem(map-get($btn_color, lightorange_hl));
+
+                &::before {
+                    @include btn_hoverlight03;
+                }
+            }
+
+            // 手指效果
+            @include btn_hoverHandler(1px, map-get($txt_color, primary)){
+                border-color: map-get($bg_color, secondary);
+            }
+        }
+    }
+
+    // .agree__line
+    &__line{
+        @include scrollbar(hidden, auto);
+        height: calc(100% - 140px);
+        padding: 20px 40px;
+
+        li{
+            text-align: center;
+            margin-bottom: 20px;
+            
+            &::after{
+                content:attr(data-txt);
+                color: map-get($txt_color, yellow);
+                font-size: 14px;
+            }
+        }
+
+        // .agree__line_btn
+        &_btn{
+            @extend %txtshadow;
+            @include btn_set(100%, 40px, map-get($bg_color, gray));
+            border-radius: 40px;
+            color: map-get($txt_color, primary);
+
+            @at-root .--fast .agree__line_btn{
+                background: map-get($btn_color, lightgreen);
+
+                &::before{
+                    @include pos_abs(0, unset, 0, 10px);
+                    content: '';
+                    width: 25px;
+                    height: 25px;
+                    background: url(../images/icon_tick.svg) no-repeat center / contain;
+                    margin: auto;
+                }
+            }
+
+            @at-root .--slow .agree__line_btn{
+                background: map-get($btn_color, red);
+            }
+
+            &:disabled{
+                background: map-get($bg_color, gray);
+            }
+
+            // 手指效果
+            @include hoverHandler{
+                &:not(:disabled){
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+        + p{
+            padding: 10px 20px;
+            text-align: center;
+        }
+    }
+
+    // .agree__txt
+    &__txt{
+        @include scrollbar(hidden, auto);
+        height: calc(100% - 35px);
+        padding: 20px;
+        line-height: 25px;
+        
+        ul{
+            margin: 20px 0;
+        }
+
+        li{
+            list-style: decimal inside;
+            margin-bottom: 10px;
+            ol{
+                margin-left: 20px;
+            }
+        }
+    }
+}
