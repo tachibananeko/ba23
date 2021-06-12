@@ -169,59 +169,23 @@
 
     // 彈窗功能按鈕
     .func{
-            @include d_f(flex, center, center);
-            flex: none;
-            flex-wrap: wrap;
-            padding: 0 10px;
+        flex-wrap: wrap;
+        padding: 0 10px;
 
-            @at-root .--password .func{
-                padding: 0 20px 10px;
-            }
+        @at-root .--password .func{
+            padding: 0 20px 10px;
+        }
 
 
         // .func_btn
         &_btn{
-            @include btn_set(calc(100% / 2 - 10px), 35px, map-get($btn_color, lightblue));
-            @include radius_hidden();
             max-width: 120px;
-            border: 1px solid map-get($bg_color, lightblue);
             margin-bottom: 10px;
             
             &:nth-child(even){
                 margin-left: 20px;
             }
-
-            &::before{
-                @include btn_hoverlight01(150%);
-            }
-            &::after{
-                @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
-                font-weight: bold;
-                
-            }
-            .hover_item{
-                @include btn_hoveritem(map-get($btn_color, blue));
-                box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
-                            0 0 6px map-get($bg_color, secondary) inset;
-                &::before {
-                    @include btn_hoverlight01(200%);
-                }
-            }
-
-            // 紅色款
-            &.--red {
-                background: map-get($btn_color, lightred);
-                border-color: map-get($bg_color, secondary);
-                
-                .hover_item {
-                    background: map-get($btn_color, red);
-                }
-            }
-
-            // 手指效果
-            @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
         }
-
     }
 
 

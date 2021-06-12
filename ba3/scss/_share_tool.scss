@@ -76,7 +76,7 @@
 }
 
 .checkbox_style{
-    @include checktick(15px, 2px, 2px, map-get($bg_color , middblue))
+    @include checktick(15px, 2px, 2px, map-get($bg_color , middblue));
 }
 
 
@@ -124,5 +124,74 @@
         width: 20px;
         height: 20px;
         margin-right: 10px;
+    }
+}
+
+// 彈窗功能按鈕
+.func{
+    @include d_f(flex, center, center);
+    flex: none;
+
+    // .func_btn
+    &_btn{
+        @include btn_set(calc(100% / 2 - 10px), 35px, map-get($btn_color, lightblue));
+        @include radius_hidden();
+        border: 1px solid map-get($bg_color, lightblue);
+
+        &::before{
+            @include btn_hoverlight03;
+        }
+        &::after{
+            @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
+            font-weight: bold;
+            
+        }
+        .hover_item{
+            @include btn_hoveritem(map-get($btn_color, primary));
+
+            &::before {
+                @include btn_hoverlight03;
+            }
+        }
+
+        // 手指效果
+        @include btn_hoverHandler(1px, map-get($txt_color, secondary)){
+            border-color: map-get($bg_color, secondary);
+        }
+
+
+        // 紅色款
+        &.--red {
+            background: map-get($btn_color, orange_hl);
+            border-color: map-get($bg_color, secondary);
+            
+            .hover_item {
+                background: map-get($btn_color, lightorange_hl);
+            }
+
+            // 手指效果
+            @include btn_hoverHandler(1px, map-get($txt_color, primary)){
+                border-color: map-get($bg_color, secondary);
+            }
+        }
+
+        // 金色款
+        &.--gold {
+            background: map-get($btn_color, primary);
+            border-color: map-get($bg_color, secondary);
+            
+            &::after{
+                @include btn_txt(center, map-get($txt_color, secondary), map-get($txt_color, shadow));
+            }
+
+            .hover_item {
+                background: map-get($btn_color, lightblue);
+            }
+
+            // 手指效果
+            @include btn_hoverHandler(1px, map-get($txt_color, primary)){
+                border-color: map-get($bg_color, lightblue);
+            }
+        }
     }
 }
