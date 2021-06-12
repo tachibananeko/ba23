@@ -1,0 +1,102 @@
+
+.frame__main__otherinside{
+    &.--agree{
+        @include d_f(flex, flex-start, space-between);
+        flex-wrap: wrap;
+        padding: 20px 20px 0;
+
+        @include mw_xs{
+            padding: 0;
+        }
+    }
+
+    .func{
+        width: 100%;
+        padding: 20px 0;
+
+        // .func_btn
+        &_btn{
+            max-width: 150px;
+            font-size: 20px;
+
+            &:last-child{
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+// 我同意內容
+.agree{
+    @include radius_hidden(5px);
+    @include border(0 0 2px, map-get($border_color, primary));
+    height: calc(100% - 75px);
+    border-top: none;
+
+    @include mw_ms{
+        border-radius: 0;
+    }
+
+    // .agree__title 
+    &__title{
+        position: relative;
+        height: 35px;
+        background: map-get($bg_color, primary_vl);
+
+        span{
+            @include pos_abs(0, 0, auto, 0);
+            @include radius_hidden(0 0 20px 20px);
+            display: block;
+            width: 40%;
+            height: 100%;
+            border: 2px solid map-get($bg_color, secondary);
+            border-top: none;
+            margin: auto;
+
+            @include mw_ms{
+                width: 80%;
+                border-radius: 0 0 10px 10px;
+            }
+
+            &::before {
+                @include pos_abs(0, unset, unset, 0);
+                content: '';
+                width: 100%;
+                height: 100%;
+                background: map-get($bg_color, darkbrown);
+            }
+
+            &::after{
+                @include pos_abs(0, 0, 0, 0);
+                content: attr(data-txt);
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+                text-shadow: none;
+                margin: auto;
+            }
+        }
+    }
+
+    // .agree__txt
+    &__txt{
+        @include scrollbar(hidden, auto);
+        height: calc(100% - 35px);
+        padding: 20px;
+        background: map-get($bg_color, darkgray);
+        line-height: 25px;
+        color: map-get($txt_color, white);
+
+        ul{
+            margin: 20px 0;
+        }
+
+        li{
+            list-style: decimal inside;
+            margin-bottom: 10px;
+            ol{
+                margin-left: 20px;
+            }
+        }
+    }
+}
