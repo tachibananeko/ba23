@@ -48,13 +48,7 @@
             }
 
             .close_btn{
-                @include btn_set(20px, 20px, url(../images/icon_x.svg) no-repeat center / 80%);
                 margin-left: auto;
-
-                // 手指效果
-                @include hoverHandler{
-                    transform: scale(1.2);
-                }
             }
         }
 

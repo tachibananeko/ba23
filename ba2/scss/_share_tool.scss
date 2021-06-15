@@ -125,6 +125,16 @@
     }
 }
 
+// 左上關閉按鈕
+.close_btn{
+    @include btn_set(20px, 20px, url(../images/icon_x.svg) no-repeat center / 80%);
+
+    // 手指效果
+    @include hoverHandler{
+        transform: scale(1.2);
+    }
+}
+
 // 通用確定取消按鈕
 .func{
         @include d_f(flex, center, center);

@@ -2,6 +2,7 @@
 $txt_color: (
     primary: #fbe2b0,
     secondary: #240913,
+    secondary02: #f2bd79,
     gray: #756e6e,
     black: #000,
     white: #fff,
@@ -24,6 +25,7 @@ $bg_color: (
     white: #fff,
     black: #000,
     gray: #b3b3b3,
+    td_gray: #808080,
     darkgray: #0f0f0f,
     brown: #240913,
     darkbrown: #140a0c,
@@ -50,6 +52,7 @@ $btn_color: (
     secondary: linear-gradient(to right, #f2bd79 0%, #563d29 70%, #000 100%),
     black: linear-gradient(to right, #333 50%, #000 80%),
     lightblack: linear-gradient(to right, #666 50%, #000 80%),
+    lightgary: linear-gradient(to right, #444 80%, #333 100%),
     brown: linear-gradient(to right, #563d29 50%, #000 100%),
     brown_vl: linear-gradient(to top, #3e3123 20%, #000 100%),
     blue: linear-gradient(to right, #005fd7 0%, #0b0e25 100%),
