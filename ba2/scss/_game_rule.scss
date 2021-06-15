@@ -21,38 +21,23 @@
         font-size: 18px;
         background: map-get($bg_color, primary_vl);
         .close_btn{
-            width: 30px;
-            height: 30px;
+            @include btn_set(30px, 30px, url(../images/icon_x.svg) no-repeat center);
             @include pos_abs(0, 5px, 0, auto);
             margin: auto;
-            &:before,
-            &:after{
-                content: '';
-                width: 20px;
-                height: 1px;
-                border-radius: 3px;
-                @include pos_abs(0, 0, 0, 0);
-                margin: auto;
-                background: #8D8A87;
-                transform: rotate(45deg);
-            }
-            &:after{
-                transform: rotate(135deg);
-            }
         }
     }
     // game_rule__content
     &__content{
         width: 100%;
         height: calc(100% - 35px);
-        padding: 0 70px;
+        padding: 0 70px 20px;
         background: #1a1a1a;
+        overflow-y: auto;
         @include mw_md{
             padding: 0 60px 20px;
-            overflow-y: auto;
         }
         @include mw_xs{
-            padding: 0;
+            padding: 0 0 20px;
         }
         .game_type{
             @include d_f(flex, center, center);
@@ -76,6 +61,23 @@
                 &:before{
                     @include btn_hoverlight02;
                 }
+                &::after {
+                    @include btn_txt(center, #ccc, transparent);
+                    font-weight: bold;
+                }
+                .hover_item {
+                    @include btn_hoveritem(map-get($btn_color, brown));
+                    box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
+                    0 0 6px map-get($bg_color, secondary) inset;
+                    &::before {
+                        @include btn_hoverlight02;
+                    }
+                }
+                // _on效果
+                @include btn_on(map-get($txt_color, primary));
+
+                // 手指效果
+                @include btn_hoverHandler(2px, map-get($txt_color, primary));
             }
         }
         .description{
@@ -134,12 +136,12 @@
                 }
             }
         }
-        .draw{
+        .rules{
             padding-left: 50px;
             @include mw_xs{
                 padding-left: 0;
             }
-            // draw__title
+            // rules__title
             &__title{
                 @include d_f(flex, center, flex-start);
                 font-size: 18px;
@@ -155,7 +157,7 @@
                     margin-right: 10px;
                 }
             }
-            // draw__content
+            // rules__content
             &__content{
                 display: flex;
                 @include mw_ms{
@@ -199,11 +201,11 @@
                         span{
                             @include d_f(flex, center, center);
                             width: 50%;
-                            
                             text-align: center;
                         }
                         .txt_small{
                             font-size: 12px;
+                            padding-right: 10px;
                         }
                         &:first-child{
                             height: 40px;
@@ -214,12 +216,73 @@
                             background: #4D4D4D;
                         }
                     }
+                    // directions__points
+                    &__points{
+                        color: #fff;
+                    }
                     & + .directions{
                         margin-left: 5px;
                         @include mw_ms{
                             margin-left: 0;
                             margin-top: 10px;
                         }
+                    }
+                }
+            }
+            // rules__list
+            &__list{
+                color: #fff;
+                list-style: inherit;
+                padding-left: 20px;
+                @include mw_xs{
+                    padding: 0 30px;
+                }
+            }
+            // rules__item
+            &__item{
+                position: relative;
+                font-weight: bold;
+                margin-top: 10px;
+                &:before{
+                    content: '';
+                    position: absolute;
+                    top: 6px;
+                    left: -15px;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 5px 0 5px 8.7px;
+                    border-color: transparent transparent transparent #fcfdaf;
+                }
+                ul{
+                    padding-left: 20px;
+                }
+                &.txt_red{
+                    color: hsl(0, 100%, 80%);
+                }
+            }
+            &.--ba{
+                .rules__content{
+                    flex-wrap: wrap;
+                }
+                .directions__title,
+                .directions__item{
+                    width: 100%;
+                    span{
+                        width: calc(100% / 3);
+                        @include d_f(flex, center, center);
+                        text-align: center;
+                    }
+                }
+                .directions__title{
+                    justify-content: space-between;
+                    border-radius: 5px 5px 0 0;
+                }
+                .directions__item{
+                    height: auto;
+                    min-height: 32px;
+                    &:last-child{
+                        min-height: 15px;
                     }
                 }
             }
