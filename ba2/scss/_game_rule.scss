@@ -18,11 +18,9 @@
     }
     // .game_rule__title
     &__title{
-        position: relative;
         @include d_f(flex, center, center);
-        width: 100%;
+        position: relative;
         height: 35px;
-        font-size: 18px;
         background: map-get($bg_color, primary_vl);
 
         span{
@@ -54,7 +52,6 @@
                 font-size: 20px;
                 font-weight: bold;
                 text-align: center;
-                text-shadow: none;
                 margin: auto;
             }
         }
@@ -64,7 +61,7 @@
             margin: auto;
         }
     }
-    // game_rule__content
+    // .game_rule__content
     &__content{
         @include scrollbar(hidden, auto);
         width: 100%;
@@ -82,7 +79,7 @@
             @include d_f(flex, center, center);
             padding: 20px 0;
 
-            // game_type__btn
+            // .game_type__btn
             &__btn{
                 @include btn_set(140px, 40px, map-get($btn_color, lightgary));
                 border: 1px solid map-get($bg_color, secondary);
@@ -122,7 +119,7 @@
             }
         }
         .description{
-            // description__title
+            // .description__title
             &__title{
                 @include d_f(flex, center, flex-start);
                 position: relative;
@@ -153,7 +150,7 @@
         }
 
 
-        // ruleTxt__list
+        // .ruleTxt__list
         .ruleTxt__list{
             color: map-get($txt_color, white);
             list-style: inherit;
@@ -177,7 +174,7 @@
 
         .rules{
 
-            // rules__title
+            // .rules__title
             &__title{
                 @include d_f(flex, center, flex-start);
                 font-size: 18px;
@@ -193,7 +190,7 @@
                     margin-right: 10px;
                 }
             }
-            // rules__content
+            // .rules__content
             &__content{
                 display: flex;
                 @include mw_ms{
@@ -214,7 +211,7 @@
                             border-top-right-radius: 5px;
                         }
                     }
-                    // directions__title
+                    // .directions__title
                     &__title{
                         @include border(0 0 1px, map-get($border_color, primary));
                         display: flex;
@@ -223,18 +220,19 @@
                         font-size: 18px;
                         color: map-get($txt_color, secondary02);
                         background: map-get($bg_color, primary_vl);
+                        margin-bottom: 3px;
 
                         @include mw_ms{
                             border-radius: 5px 5px 0 0;
                         }
                     }
-                    // directions__item
+                    // .directions__item
                     &__item{
                         @include d_f(flex, center, space-between);
                         height: 35px;
                         padding: 5px 10px;
                         background: map-get($bg_color, td_gray);
-                        border: 1px solid map-get($bg_color, gray);
+                        border-top: 1px solid map-get($bg_color, td_titlegray);
                         span{
                             @include d_f(flex, center, center);
                             width: 70%;
@@ -250,12 +248,12 @@
                         }
                         &:first-child{
                             height: 40px;
-                            background: #4D4D4D;
+                            background: map-get($txt_color, td_titlegray);
                         }
                     }
                     // directions__points
                     &__points{
-                        color: #fff;
+                        color: map-get($txt_color, white);
                     }
                     & + .directions{
                         margin-left: 5px;

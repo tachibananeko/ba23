@@ -37,8 +37,11 @@
     @include mw_ms{
         width: 100%;
         height: calc(100% - 295px);
-        border: none;
+    }
+    
+    @include mw_xs {
         border-radius: 0;
+        border: none;
     }
 
     &.--txt{
@@ -59,7 +62,7 @@
         background: map-get($bg_color, primary_vl);
         overflow: hidden;
 
-        @include mw_ms{
+        @include mw_xs{
             background: transparent;
         }
 
@@ -75,7 +78,7 @@
             transform-origin: 2% 5%;
             opacity: .4;
 
-            @include mw_ms{
+            @include mw_xs{
                 opacity: 0;
             }
         }
@@ -90,7 +93,7 @@
             border-top: none;
             margin: auto;
 
-            @include mw_ms{
+            @include mw_xs{
                 width: 80%;
                 border-radius: 0 0 10px 10px;
             }
