@@ -1,0 +1,184 @@
+.frame__main__otherinside{
+    &.--game_rule{
+        background: map-get($bg_color, black);
+        padding: 20px;
+        @include mw_xs{
+            padding: 0;
+        }
+    }
+}
+.game_rule{
+    @include radius_hidden(5px);
+    width: 100%;
+    height: 100%;
+    @include mw_xs{
+        border-radius: 0;
+    }
+    // game_rule__title
+    &__title{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        height: 35px;
+        background: linear-gradient(to bottom, #004889 0%, #001940 100%);
+        overflow: hidden;
+        &::before{
+            @include pos_abs(0, unset, unset, 0);
+            content: '';
+            width: 100%;
+            height: 2000%;
+            background: linear-gradient(-137deg, #004889 0%, #001940 100%);
+            background-size: 25px 25px;
+            pointer-events: none;
+            transform: rotate(-45deg);
+            transform-origin: 2% 5%;
+            opacity: .4;
+        }
+        .close_btn{
+            position: absolute;
+            right: 10px;
+        }
+        // game_rule__title__txt
+        &__txt{
+            position: absolute;
+            top: -5px;
+            bottom: auto;
+            right: 0;
+            left: 0;
+            border-radius: 0 0 20px 20px;
+            overflow: hidden;
+            width: 33%;
+            height: 100%;
+            border: 2px solid #fbe2b0;
+            border-top: none;
+            margin: auto;
+            &:before{
+                position: absolute;
+                top: 0;
+                bottom: unset;
+                right: unset;
+                left: -15px;
+                content: '';
+                width: 100%;
+                height: 2000%;
+                background: linear-gradient(-137deg, #001940 0%, #000) 100%;
+                background-size: 25px 25px;
+                pointer-events: none;
+                transform: rotate(-45deg);
+                transform-origin: 8% 5%;
+            }
+            &:after{
+                position: absolute;
+                top: unset;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                content: attr(data-txt);
+                color: transparent;
+                background: linear-gradient(to top, #f2bd79 60%, #563d29 100%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                font-size: 24px;
+                -webkit-text-fill-color: transparent;
+                content: attr(data-txt);
+                margin: auto;
+                font-weight: bold;
+                text-align: center;
+                text-shadow: none;
+            }
+        }
+    }
+    // game_rule__content
+    &__content{
+        @include scrollbar(hidden, auto);
+        height: calc(100% - 35px);
+        padding-top: 55px;
+        @include mw_xs{
+            padding-top: 10px;
+        }
+        @at-root .directions{
+            max-width: 750px;
+            margin: auto;
+            & + .directions{
+                margin-top: 30px;
+                @include mw_xs{
+                    margin-top: 10px;
+                }
+            }
+            // directions__title
+            &__title{
+                @include d_f(flex, center, center);
+                height: 40px;
+                font-size: 24px;
+                letter-spacing: 3px;
+                border-width: 0 0 1px;
+                border-style: solid;
+                border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
+                border-radius: 5px 5px 0 0;
+                background: map-get($btn_color, secondary_vl);
+                margin-bottom: 5px;
+            }
+            // directions__content
+            &__content{
+                @include d_f(flex, flex-start, flex-start);
+                @include mw_xs{
+                    flex-wrap: wrap;
+                }
+                .content_box{
+                    width: auto;
+                    flex: 1 1 100%;
+                    @include mw_xs{
+                        flex: none;
+                        font-size: 14px;
+                        width: calc(100% - 150px);
+                    }
+                    &.--head{
+                        width: 185px;
+                        flex: none;
+                        @include mw_xs{
+                            width: 150px;
+                        }
+                        .content_item{
+                            color: #fff;
+                            justify-content: center;
+                            width: 100%;
+                        }
+                    }
+                    &.--ph{
+                        display: none;
+                        @include mw-xs{
+                            display: block;
+                        }
+                    }
+                    & + .content_box{
+                        margin-left: 2px;
+                        @include mw_xs{
+                            margin-left: 0;
+                        }
+                    }
+                    .content_item{
+                        @include d_f(flex, center, flex-start);
+                        min-height: 55px;
+                        padding: 0 20px;
+                        color: #FDFCB3;
+                        background: #808080;
+                        @include mw_xs{
+                            min-height: 30px;
+                        }
+                        &:first-child{
+                            color: #fff;
+                            background: #4D4D4D;
+                            @include mw_xs{
+                                min-height: 40px;
+                            }
+                        }
+                        & + .content_item{
+                            border-top: 1px solid #707070;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
