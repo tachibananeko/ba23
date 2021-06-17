@@ -230,17 +230,22 @@
                     &__item{
                         @include d_f(flex, center, space-between);
                         height: 35px;
-                        padding: 5px 10px;
                         background: map-get($bg_color, td_gray);
                         border-top: 1px solid map-get($bg_color, td_titlegray);
                         span{
                             @include d_f(flex, center, center);
                             width: 70%;
+                            height: 100%;
+                            padding: 5px;
                             font-size: 14px;
                             text-align: center;
 
                             &:first-child{
                                 width: 30%;
+                            }
+
+                            &:not(:last-child){
+                                border-right: 1px solid map-get($bg_color, black);
                             }
                         }
                         .txt_small{
