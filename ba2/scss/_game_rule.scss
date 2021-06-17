@@ -232,6 +232,11 @@
                         height: 35px;
                         background: map-get($bg_color, td_gray);
                         border-top: 1px solid map-get($bg_color, td_titlegray);
+
+                        &:first-child{
+                            background: map-get($bg_color, td_titlegray);
+                        }
+
                         span{
                             @include d_f(flex, center, center);
                             width: 70%;
