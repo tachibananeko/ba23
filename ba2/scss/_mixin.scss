@@ -329,7 +329,9 @@ $icon: (
 @each $name in $icon {
 	.icon_#{$name} {
 		display: inline-block;
-		background:url(../images/icon_#{$name}.svg) no-repeat center / contain;
+		//若沒有png就讀svg
+		background:url(../images/icon_#{$name}.png) no-repeat center / contain,
+		url(../images/icon_#{$name}.svg) no-repeat center / contain;
 	}
 }
 

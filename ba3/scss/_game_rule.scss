@@ -92,7 +92,7 @@
     &__content{
         @include scrollbar(hidden, auto);
         height: calc(100% - 35px);
-        padding-top: 40px;
+        padding: 40px 0;
         @include mw_xs{
             padding-top: 10px;
         }
@@ -100,7 +100,7 @@
             max-width: 800px;
             margin: auto;
             & + .directions{
-                margin-top: 30px;
+                margin-top: 20px;
                 @include mw_xs{
                     margin-top: 10px;
                 }
