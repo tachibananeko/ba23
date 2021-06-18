@@ -421,11 +421,11 @@ $breakpoints: (
 [class*="_btn"]:not(:disabled),
 %hand {
 	cursor: pointer;
-	transition: all .2s ease-in-out;
 }
 
 %no_hand {
 	cursor: default;
+	transition: none;
 }
 
 // 一般滑過
@@ -440,6 +440,8 @@ $breakpoints: (
 	&:active {
 		@content;
 	}
+
+	transition: all .2s ease-in-out;
 }
 
 // 按鈕滑過

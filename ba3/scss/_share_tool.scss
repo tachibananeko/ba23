@@ -23,6 +23,15 @@
     background: map-get($bg_color , black);
     border-radius: 3px;
     color: map-get($txt_color, primary);
+
+    // 手指效果
+    @include hoverHandler{
+        box-shadow: 0 0 5px map-get($bg_color, lightblue) inset;
+        
+        @at-root .input_style:focus{
+            box-shadow: 0 0 5px map-get($bg_color, lightblue) inset;
+        }
+    }
 }
 
 .select_style{
