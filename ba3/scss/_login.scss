@@ -124,7 +124,6 @@
             border:1px solid map-get($bg_color, gray);
             border-radius: 40px;
             margin-bottom: 30px;
-            overflow: hidden;
 
             &::after{
                 @include btn_txt(center,map-get($txt_color, gray), transparent);
@@ -144,6 +143,7 @@
 
             .hover_item{
                 @include btn_hoveritem(map-get($bg_color, gold));
+                border-radius: 40px;
             }
 
             i{
