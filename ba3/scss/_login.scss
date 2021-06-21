@@ -95,7 +95,7 @@
 
             input{
                 width: 100%;
-                
+                color: map-get($txt_color, primary);
                 font-weight: bold;
                 font-size: 20px;
                 text-align: center;
