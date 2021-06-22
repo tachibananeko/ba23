@@ -241,6 +241,10 @@
             cursor: pointer;
         }
 
+        @include mw_ms{
+            height: 20px;
+        }
+
         &::before{
             @include pos_abs(0, unset, 0, calc(50% + 50px));
             @include triangle(10px, map-get($bg_color, secondary), bottom);
@@ -1235,20 +1239,17 @@
         @include mw_ms{
             display: flex;
         }
-
-        @include mw_xs{
-            top: unset;
-            bottom: 40px;
-        }
         
         li{
             @extend %hand;
             @include btn_set(100%, 100%, map-get($btn_color, secondary));
             font-size: 14px;
-            writing-mode: vertical-lr;
 
             &::after{
                 @include btn_txt(center, map-get($txt_color, primary), transparent);
+                @include pos_abs(0, 0, 0, 0);
+                margin: auto;
+                writing-mode: vertical-lr;
             }
 
             .hover_item{
@@ -1566,6 +1567,11 @@
     @include mw_ms {
         width: 50%;
     }
+}
+
+.--telType .detail__phChange,
+.--noOrder .detail__phChange{
+    height: 75px;
 }
 
 // 網投有卡

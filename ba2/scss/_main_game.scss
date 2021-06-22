@@ -1271,10 +1271,12 @@
             @include btn_set(100%, 100%, map-get($btn_color, primary));
             font-size: 14px;
             font-weight: bold;
-            writing-mode: vertical-lr;
 
             &::after{
                 @include btn_txt(center, map-get($txt_color, secondary), transparent);
+                @include pos_abs(0, 0, 0, 0);
+                margin: auto;
+                writing-mode: vertical-lr;
             }
 
             .hover_item{
