@@ -96,6 +96,25 @@
             border-bottom: 1px solid map-get($bg_color, secondary);
             margin-bottom: 20px;
 
+            &.--ver{
+                position: relative;
+
+                &::before{
+                    @include pos_abs(0, unset, 0, 10px);
+                    content: '';
+                    width: 20px;
+                    height: 20px;
+                    background: url(../images/icon_verification.svg) no-repeat;
+                    margin: auto;
+                }
+
+                &::after{
+                    @include pos_abs(unset, 10px, 10px, unset);
+                    content: attr(data-txt);
+                    font-size: 18px;
+                }
+            }
+
             input{
                 width: 100%;
                 color: map-get($txt_color, white);
@@ -183,6 +202,10 @@
     @include d_f(flex, center, center);
     padding: 50px 0 20px;
     
+    @include mw_md{
+        display: none;
+    }
+
     @include coarse{
         display: none;
     }

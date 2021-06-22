@@ -190,6 +190,10 @@
 .logFoot{
     @include d_f(flex, center, center);    
     padding: 50px 0 20px;
+    
+    @include mw_md{
+        display: none;
+    }
 
     @include coarse{
         display: none;
