@@ -12,13 +12,14 @@
 // 登入資訊
 .logArea{
     @include d_f(flex, flex-start, center);
+    padding-top: 5%;
     flex-wrap: wrap;
     min-height: 550px;
     background: url(../images/img_login.png) no-repeat 30% bottom / 650px;
-    margin-bottom: 50px;
 
     @include mw_ms{
         min-height: auto;
+        padding-top: 0;
         background-position: 10% 60%;
         background-size: 450px;
     }
@@ -89,7 +90,7 @@
 
         // 輸入input.logArea__from__import
         &__import{
-            padding: 20px;
+            padding: 10px 20px;
             border-bottom: 1px solid map-get($bg_color, gray);
             margin-bottom: 20px;
 
@@ -97,7 +98,7 @@
                 width: 100%;
                 color: map-get($txt_color, primary);
                 font-weight: bold;
-                font-size: 20px;
+                font-size: 18px;
                 text-align: center;
             }
         }
@@ -170,16 +171,16 @@
         text-align: center;
         margin: auto;
 
-        &::before{
-            content: attr(data-txt);
-            color: map-get($txt_color, primary);
+        @include fine{
+            display: none;
         }
+
         a{
             display: block;
             padding: 3px 10px;
             background: map-get($bg_color, gold);
             color: map-get($txt_color, secondary);
-            font-size: 14px;
+            font-size: 12px;
             margin-top: 10px;
         }
     }
@@ -187,8 +188,9 @@
 
 // foot
 .logFoot{
-    @include d_f(flex, center, center);
-    
+    @include d_f(flex, center, center);    
+    padding: 50px 0 20px;
+
     @include coarse{
         display: none;
     }

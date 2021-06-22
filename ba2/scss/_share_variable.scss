@@ -33,6 +33,7 @@ $bg_color: (
     brown_gradual: linear-gradient(to right, #f2bd79 0%, #563d29 70%, #000 100%),
     brown_gradual_vl: linear-gradient(to top, #563d29 30%, #000 100%),
     alert_bg: linear-gradient(to top, #42210b 30%, #000 100%),
+    login_bg: linear-gradient(to left, #42210b 30%, #000 100%),
     red: #c11615,
     lightblue: #00a0ed,
     green: #115f24,
@@ -43,6 +44,7 @@ $bg_color: (
     play: #0068ed,
     tie: #009245,
     black_alpha: rgba(0, 0, 0, 0.7),
+    brown_alpha: rgba(36, 9, 19, .7),
 );
 
 // 按鈕色

@@ -1,8 +1,8 @@
 .logBg{
     @include d_f(flex, unset, center);
     flex-direction: column;
-    background: map-get($bg_color, black);
-    color: map-get($txt_color, gray);
+    background: map-get($bg_color, login_bg);
+    color: map-get($txt_color, primary);
 
     @include mw_xs{
         display: block;
@@ -14,11 +14,12 @@
     @include d_f(flex, flex-start, center);
     flex-wrap: wrap;
     min-height: 550px;
-    background: url(../images/img_login.png) no-repeat 30% bottom / 650px;
-    margin-bottom: 50px;
+    padding-top: 5%;
+    background: url(../images/img_login.png) no-repeat 30% bottom / 500px;
 
     @include mw_ms{
         min-height: auto;
+        padding-top: 0;
         background-position: 10% 60%;
         background-size: 450px;
     }
@@ -30,16 +31,17 @@
 
     // 宣傳文.logArea__txt
     &__txt{
-        @include bg_txt(map-get($bg_color, gold), 80px);
         width: 40%;
+        padding-right: 20px;
         position: relative;
+        color: map-get($txt_color, white);
+        font-size: 60px;
         font-style: italic;
-
-        @include mw_md{
-            font-size: 60px;
-        }
+        text-align: right;
+        opacity: 0.9;
 
         @include mw_ms{
+            font-size: 40px;
             width: 50%;
         }        
 
@@ -48,10 +50,11 @@
         }
 
         &:after{
-            @include pos_abs(calc(100% - 10px), unset, unset, 0);
-            @include bg_txt(map-get($bg_color, gold), 30px);
+            @include pos_abs(calc(100% - 10px), 20px, unset, unset);
             content: attr(data-txt);
+            color: map-get($txt_color, white);
             font-style: normal;
+            font-size: 20px;
         }
     }
 
@@ -65,7 +68,7 @@
             max-width: none;
             height: 100%;
             padding: 5% 30px 0;
-            background: map-get($bg_color, black_alpha);
+            background: map-get($bg_color, brown_alpha);
         }
 
         // 語系.logArea__from__Language
@@ -76,7 +79,7 @@
 
             select{
                 width: calc(100% - 30px);
-                color: map-get($txt_color, gray);
+                color: map-get($txt_color, primary);
                 font-size: 14px;
             }
 
@@ -89,15 +92,15 @@
 
         // 輸入input.logArea__from__import
         &__import{
-            padding: 20px;
-            border-bottom: 1px solid map-get($bg_color, gray);
+            padding: 10px 20px;
+            border-bottom: 1px solid map-get($bg_color, secondary);
             margin-bottom: 20px;
 
             input{
                 width: 100%;
-                color: map-get($txt_color, primary);
+                color: map-get($txt_color, white);
                 font-weight: bold;
-                font-size: 20px;
+                font-size: 18px;
                 text-align: center;
             }
         }
@@ -114,31 +117,21 @@
             }
             
             span{
-                border:1px solid map-get($bg_color, gray);
+                border:1px solid map-get($bg_color, secondary);
             }
         }
 
         // 登入按鈕.logArea__from_btn
         &_btn{
             @include btn_set(100%, 40px, transparent);
-            border:1px solid map-get($bg_color, gray);
+            border:1px solid map-get($bg_color, secondary);
             border-radius: 40px;
             margin-bottom: 30px;
 
             &::after{
-                @include btn_txt(center,map-get($txt_color, gray), transparent);
+                @include btn_txt(center,map-get($txt_color, primary), transparent);
                 
                 font-weight: bold;
-            }
-
-            &.--guest{
-                @include d_f(flex, center, center);
-                border-color: map-get($bg_color, secondary);
-
-                &::after{
-                    width: auto;
-                    color: map-get($txt_color, yellow);
-                }
             }
 
             .hover_item{
@@ -170,16 +163,16 @@
         text-align: center;
         margin: auto;
 
-        &::before{
-            content: attr(data-txt);
-            color: map-get($txt_color, primary);
+        @include fine{
+            display: none;
         }
+
         a{
             display: block;
             padding: 3px 10px;
             background: map-get($bg_color, gold);
             color: map-get($txt_color, secondary);
-            font-size: 14px;
+            font-size: 12px;
             margin-top: 10px;
         }
     }
@@ -188,6 +181,7 @@
 // foot
 .logFoot{
     @include d_f(flex, center, center);
+    padding: 50px 0 20px;
     
     @include coarse{
         display: none;
@@ -214,7 +208,7 @@
 
             // 手指效果
             @include hoverHandler{
-                color: map-get($txt_color, yellow);
+                color: map-get($txt_color, white);
                 text-decoration: underline;
             }
         }
@@ -224,9 +218,9 @@
     &__downdload{
         @include d_f(flex, center, center);
         padding: 5px 10px;
-        border: 1px solid map-get($bg_color, gray);
+        border: 1px solid map-get($bg_color, secondary);
         border-radius: 5px;
-        color: map-get($txt_color, gray);
+        color: map-get($txt_color, primary);
         font-size: 12px;
         margin-left: 20px;
 
@@ -248,7 +242,7 @@
 
             // 手指效果
             @include hoverHandler{
-                color: map-get($txt_color, yellow);
+                color: map-get($txt_color, white);
                 text-decoration: underline;
             }
         }
