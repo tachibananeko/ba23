@@ -71,6 +71,7 @@
             flex: 1 1 100%;
             padding: 5px 0;
             overflow: hidden;
+            z-index: 0;
 
             &::after{
                 @include pos_abs(5px, 0, unset, unset);
@@ -84,7 +85,6 @@
                 flex: 0 0 100%;
                 color: map-get($txt_color, white);
                 white-space: nowrap;
-                z-index: 0;
             }
 
             @keyframes marquee_move {

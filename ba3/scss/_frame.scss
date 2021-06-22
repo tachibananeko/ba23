@@ -96,11 +96,11 @@
                 }
             }
             @include mw_xs {
-                grid-template-rows: 60vw 1fr minmax(200px, 350px);
+                grid-template-rows: 60vw 1fr 150px;
 
                 // 選擇桌次展開
                 @at-root .--tableOpen .frame__main__inside {
-                    grid-template-rows: 60vw 1fr 1fr minmax(200px, 350px);
+                    grid-template-rows: 60vw 1fr 1fr 150px;
                 }
             }
             
@@ -148,7 +148,7 @@
                 background-color: map-get($bg_color, white);
 
                 @include mw_ms {
-                    min-height: 350px;
+                    min-height: 150px;
 
                     // 選擇桌次展開
                     @at-root .--tableOpen .road {

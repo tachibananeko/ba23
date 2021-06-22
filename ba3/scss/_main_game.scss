@@ -68,6 +68,7 @@
             flex: 1 1 100%;
             padding: 5px 0;
             overflow: hidden;
+            z-index: 0;
 
             &::after{
                 @include pos_abs(5px, 0, unset, unset);
@@ -79,7 +80,6 @@
             span{
                 flex: 0 0 100%;
                 white-space: nowrap;
-                z-index: 0;
             }
 
             @keyframes marquee_move {
@@ -498,7 +498,7 @@
         order: -2;
 
         @include mw_xs{
-            padding: 2px 5px;
+            display: none;
         }
 
         ul {
