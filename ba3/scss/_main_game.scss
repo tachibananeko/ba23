@@ -791,6 +791,9 @@
             @include btn_set(calc(100% / 3), 100%, map-get($bg_color, blue));
             @include border(2px, map-get($border_color, blue));
 
+            @include mw_xs {
+                border-width: 1px;
+            }
             &::before {
                 @include btn_hoverlight04;
             }
@@ -799,7 +802,7 @@
                 @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
                 font-size: 24px;
                 
-                @include mw_ms {
+                @include mw_xs {
                     font-size: 20px;
                 }
             }
@@ -1082,10 +1085,6 @@
                 align-content: center;
                 flex-wrap: wrap;
                 height: 50%;
-
-                @include mw_ms{
-                    // height: 33.33%;
-                }
 
                 i{
                     width: 10px;
@@ -1559,16 +1558,17 @@
     }
 }
 
-// 好路提示設定
-.roadSet{
-
-}
 
 // 電網投各種狀態============================================
 // .order內層細項設定
 // 電投有卡 電投無卡
 .--telType [class^="order__"],
 .--noCard .memberInfo{
+    display: none;
+}
+
+// 電投有卡
+.--telType .memberInfo li:nth-child(2) ~ li{
     display: none;
 }
 
@@ -1593,6 +1593,18 @@
 .--noOrder .detail__phChange{
     height: 70px;
 }
+
+// -----------------------------------------
+// .road內層細項設定
+// 電投有卡 電投無卡 網投無卡
+.--telType .road__group__info .ballBox,
+.--noOrder .road__group__info .ballBox{
+    @include mw_ms{
+        height: calc(100% / 3);
+    }
+}
+
+
 
 // 網投有卡
 .frame:not(.--telType):not(.--noOrder) .detail__box{

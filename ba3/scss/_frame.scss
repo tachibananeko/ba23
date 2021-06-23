@@ -274,7 +274,7 @@
         grid-template-areas:"video"
                             "order"
                             "road";
-        grid-template-rows: 60vw 60px minmax(200px, 350px);
+        grid-template-rows: 60vw 47px minmax(200px, 300px);
 
         // 選擇桌次展開
         @at-root .--telType.--tableOpen .frame__main__inside{
@@ -282,13 +282,13 @@
                                 "table"
                                 "order"
                                 "road";
-            grid-template-rows: 60vw 1fr 1fr minmax(200px, 350px);
+            grid-template-rows: 60vw 1fr 1fr minmax(200px, 300px);
         }
 
         
         // 卡片all展開
         @at-root .--telType.--cardOpen .frame__main__inside{
-            grid-template-rows: 60vw 200px minmax(200px, 350px);
+            grid-template-rows: 60vw 200px minmax(200px, 300px);
         }
 
         // 卡片all展開 + 選擇桌次展開
@@ -297,7 +297,7 @@
                                 "table"
                                 "order"
                                 "road";
-            grid-template-rows: 60vw 1fr 1fr minmax(200px, 350px);
+            grid-template-rows: 60vw 1fr 1fr minmax(200px, 300px);
         }
     }
 }
@@ -311,7 +311,7 @@
     @include mw_ms{
         grid-template-areas:"video"
                             "road";
-        grid-template-rows: 60vw minmax(200px, 350px);
+        grid-template-rows: 60vw minmax(200px, 300px);
 
         // 選擇桌次展開
         @at-root .--noCard.--tableOpen .frame__main__inside,
@@ -319,7 +319,7 @@
             grid-template-areas:"video"
                                 "table"
                                 "road";
-            grid-template-rows: 60vw 130px minmax(200px, 350px);
+            grid-template-rows: 60vw 130px minmax(200px, 300px);
         }
     }
 }
