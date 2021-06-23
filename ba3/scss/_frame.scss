@@ -16,11 +16,18 @@
     @include mw_lg {
         grid-template-columns: 80px minmax(0, 1fr);
     }
+
     @include mw_md {
         grid-template-rows: minmax(0, 1fr) 50px;
         grid-template-columns: minmax(0, 1fr);
         grid-template-areas:"main main"
                             "menu menu";
+    }
+    
+    @include mw_xs {
+        grid-template-rows: minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:"main";
     }
     // .frame__menu
     &__menu {
@@ -31,6 +38,12 @@
             @include scrollbar(auto, hidden);
             @include d_f(flex, center, center);
             position: relative;
+        }
+
+        @include mw_xs {
+            position: fixed;
+            bottom: 0;
+            display: none;
         }
     }
 
