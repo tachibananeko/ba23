@@ -992,6 +992,11 @@
     .totalCount{
         @extend %hand;
         position: relative;
+
+        @include mw_xs{
+            display: none;
+        }
+
         // 莊閒和.totalCount__item
         &__item{
             @include d_f(flex, center, space-around);
@@ -1001,10 +1006,6 @@
             @include mw_ms{
                 justify-content: space-between;
                 padding-right: 30px;
-            }
-
-            @include mw_xs{
-                display: none;
             }
 
             li{
@@ -1116,6 +1117,7 @@
         &__img{
             flex: 1 1 100%;
             height: 100%;
+            background: url(../images/road_img.png) left top/ 200% 130px no-repeat;
         }
     }
 }
@@ -1602,6 +1604,11 @@
     @include mw_ms{
         height: calc(100% / 3);
     }
+}
+
+.--telType .totalCount,
+.--noOrder .totalCount{
+    display: block;
 }
 
 
