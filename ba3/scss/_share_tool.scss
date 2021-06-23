@@ -13,6 +13,21 @@
     }
 }
 
+// 尺寸顯示隱藏
+.hidden_xs{
+    @include mw_xs{
+        display: none;
+    }
+}
+
+.show_xs{
+    @include mw_ms{
+        display: none;
+    }
+    @include mw_xs{
+        display: flex;
+    }
+}
 
 
 // 通用的input select checkbox等

@@ -458,6 +458,7 @@
     // 996以下會員資訊
     @at-root .order .memberInfo{
         display: none;
+        
         @include mw_ms{
             display: flex;
         }
@@ -477,8 +478,10 @@
         }
 
         @include mw_xs {
-            &:last-child {
-                display: none;
+            font-size: 12px;
+
+            &::before{
+                margin-right: 0;
             }
         }
     }
@@ -984,6 +987,10 @@
                 padding-right: 30px;
             }
 
+            @include mw_xs{
+                display: none;
+            }
+
             li{
                 @include d_f(flex, center, center);
                 position: relative;
@@ -1064,7 +1071,7 @@
                 height: 50%;
 
                 @include mw_ms{
-                    height: 33.33%;
+                    // height: 33.33%;
                 }
 
                 i{
