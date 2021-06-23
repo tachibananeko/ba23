@@ -25,7 +25,7 @@
         display: none;
     }
     @include mw_xs{
-        display: flex;
+        display: block;
     }
 }
 

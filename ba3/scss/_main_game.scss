@@ -462,6 +462,12 @@
         @include mw_ms{
             display: flex;
         }
+
+        @include mw_xs{
+            font-size: 12px;
+            padding: 3px 5px;
+            border-width: 1px 0 0;
+        }
     }
     // 996以上會員資訊
     @at-root .road .memberInfo {
@@ -478,7 +484,6 @@
         }
 
         @include mw_xs {
-            font-size: 12px;
 
             &::before{
                 margin-right: 0;
@@ -587,7 +592,7 @@
                 font-size: 50px;
             }
             @include mw_xs {
-                font-size: 40px;
+                font-size: 30px;
             }
         }
 
@@ -603,7 +608,7 @@
                 font-size: 30px;
             }
             @include mw_xs {
-                font-size: 25px;
+                font-size: 20px;
             }
         }
 
@@ -779,7 +784,7 @@
         @include d_f(flex, center, center);
         flex: none;
         height: 10%;
-        min-height: 40px;
+        min-height: 30px;
         background: map-get($bg_color, black);
 
         .function_btn {
@@ -793,6 +798,10 @@
             &::after {
                 @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
                 font-size: 24px;
+                
+                @include mw_ms {
+                    font-size: 20px;
+                }
             }
 
             .hover_item {
@@ -854,6 +863,10 @@
         @include mw_ms{
             height: 30px;
             padding-top: 0;
+        }
+
+        @include mw_xs{
+            height: 25px;
         }
 
         >li {
@@ -926,8 +939,8 @@
         display: none;
 
         @include mw_ms{
-            top: 60px;
-            height: calc(100% - 60px);
+            top: 47px;
+            height: calc(100% - 47px);
         }
 
         // 卡片all展開
@@ -1235,7 +1248,7 @@
         @include radius_hidden(5px 0 0 5px);
         flex-direction: column;
         width: 35px;
-        height: 150px;
+        height: 140px;
         border: 1px solid map-get($bg_color, secondary);
         border-width: 1px 0 1px 1px;
         margin: auto;
@@ -1578,7 +1591,7 @@
 
 .--telType .detail__phChange,
 .--noOrder .detail__phChange{
-    height: 75px;
+    height: 70px;
 }
 
 // 網投有卡

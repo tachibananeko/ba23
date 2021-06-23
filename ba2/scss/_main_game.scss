@@ -889,7 +889,7 @@
         @include d_f(flex, center, center);
         flex: none;
         height: 10%;
-        min-height: 40px;
+        min-height: 30px;
         padding: 5px;
         background: map-get($bg_color, darkbrown);
 
@@ -1249,7 +1249,7 @@
         @include radius_hidden(5px 0 0 5px);
         flex-direction: column;
         width: 35px;
-        height: 150px;
+        height: 140px;
         border: 1px solid map-get($bg_color, secondary);
         border-width: 1px 0 1px 1px;
         margin: auto;
