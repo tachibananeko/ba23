@@ -20,15 +20,14 @@
     @include mw_md {
         grid-template-rows: minmax(0, 1fr) 50px;
         grid-template-columns: minmax(0, 1fr);
-        grid-template-areas:"main main"
-                            "menu menu";
+        grid-template-areas:"main"
+                            "menu";
     }
     
-    @include mw_xs {
-        grid-template-rows: minmax(0, 1fr);
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-areas:"main";
-    }
+    // @include mw_xs {
+    //     grid-template-rows: minmax(0, 1fr);
+    //     grid-template-areas:"main";
+    // }
     // .frame__menu
     &__menu {
         grid-area: menu;
@@ -40,11 +39,11 @@
             position: relative;
         }
 
-        @include mw_xs {
-            position: fixed;
-            bottom: 0;
-            display: none;
-        }
+        // @include mw_xs {
+        //     position: fixed;
+        //     bottom: 0;
+        //     display: none;
+        // }
     }
 
     // .frame__main
