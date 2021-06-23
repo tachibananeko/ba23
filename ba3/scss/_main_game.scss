@@ -863,6 +863,8 @@
         font-size: 0;
         order: -3;
 
+        display: none;
+
         @include mw_ms{
             height: 30px;
             padding-top: 0;
