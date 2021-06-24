@@ -10,8 +10,7 @@
     padding-bottom: env(safe-area-inset-bottom);
     grid-template-rows: minmax(0, 1fr);
     grid-template-columns: 130px minmax(0, 1fr);
-    grid-template-areas:"menu main"
-                        "menu main";
+    grid-template-areas:"menu main";
     margin: auto;
     @include mw_lg {
         grid-template-columns: 80px minmax(0, 1fr);
