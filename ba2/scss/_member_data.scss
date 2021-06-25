@@ -31,11 +31,8 @@
             margin-bottom: 20px;
 
             @include coarse{
-                .lobby__marquee{
-                    display: none;
-                }
+                display: none;
             }
-            
         }
         
         .otherpage__btn{
