@@ -81,17 +81,24 @@
 
             .game_type{
                 @include d_f(flex, center, center);
-                @include radius_hidden(5px);
                 width: 100%;
                 max-width: 300px;
 
-                @include mw_xs{
-                    @include radius_hidden(0 5px 5px 0);
-                }
                 // .game_type__btn
                 &__btn{
                     @include btn_set(50%, 40px, map-get($btn_color, lightgary));
                     border: 1px solid map-get($bg_color, secondary);
+                    
+                    &:first-child{
+                        @include radius_hidden(5px 0 0 5px);
+
+                        @include mw_xs{
+                            @include radius_hidden(0);
+                        }
+                    }
+                    &:last-child{
+                        @include radius_hidden(0 5px 5px 0);
+                    }
 
                     &:before{
                         @include btn_hoverlight02;
