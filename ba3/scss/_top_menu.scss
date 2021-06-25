@@ -288,6 +288,10 @@
         margin-right: 0;
     }
 
+    @include coarse{
+        margin-right: 0;
+    }
+
     &::before{
         @include pos_abs(5px, 5px, unset, unset);
         content: 'NEWS';

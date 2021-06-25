@@ -1,21 +1,3 @@
-.frame{
-    &.--member_data{
-        display: block;
-        @include mw_md{
-            display: grid;
-        }
-        .frame__menu{
-            display: none;
-            @include mw_md{
-                display: flex;
-            }
-        }
-        .frame__main{
-            display: block;
-            height: 100%;
-        }
-    }
-}
 .frame__main__otherinside{
     &.--member_data{
         width: 100%;
@@ -25,38 +7,50 @@
 .member_data{
     width: 100%;
     height: 100%;
-    // member_data__title
+
+    // .member_data__title
     &__title{
         @include d_f(flex, center, center);
-        height: 50px;
+        @include border(0 0 1px, map-get($border_color, primary));
+        height: 35px;
+        font-weight: bold;
         font-size: 20px;
         background: map-get($bg_color, secondary_vl);
     }
-    // member_data__content
+    // .member_data__content
     &__content{
-        height: calc(100% - 50px);
-        padding: 0 100px;
-        background: linear-gradient(to bottom, #3D1E0A 0%, #140a0c 100%);
+        @include scrollbar(hidden, auto);
+        height: calc(100% - 35px);
+        padding: 30px 100px 20px;
+        background: map-get($bg_color, primary_vl);
         @include mw_xs{
             padding: 0;
         }
         .announcement{
-            display: flex;
-            align-items: center;
-            padding-top: 45px;
-            @include mw_xs{
-                padding-top: 20px;
+            @include d_f (flex, center, flex-end);
+            margin-bottom: 20px;
+
+            @include coarse{
+                .lobby__marquee{
+                    display: none;
+                }
             }
+            
         }
+        
         .otherpage__btn{
+            @include radius_hidden(5px);
             width: 100px;
-            border-radius: 5px;
+            height: 30px;
         }
+        
         .btn_box{
-            @include d_f (flex, center, space-between);
+            @include d_f (flex, center, space-between);            
+            margin-bottom: 20px;
+
             .chg_pswd__btn{
                 @include btn_set(140px, 40px, map-get($btn_color, orange));
-                @include radius_hidden(5px 5px 5px 5px);
+                @include radius_hidden(5px);
                 border: 1px solid map-get($bg_color, secondary);
                 &:before{
                     @include btn_hoverlight02;
@@ -66,7 +60,7 @@
                     font-weight: bold;
                 }
                 .hover_item{
-                    @include btn_hoveritem(map-get($btn_color, brown));
+                    @include btn_hoveritem(map-get($btn_color, lightorange));
                     box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
                     0 0 6px map-get($bg_color, secondary) inset;
                     &::before{
@@ -76,11 +70,11 @@
                 // _on效果
                 @include btn_on(map-get($txt_color, primary));
                 // 手指效果
-                @include btn_hoverHandler(1px, map-get($txt_color, primary));
+                @include btn_hoverHandler(1px, map-get($txt_color, white));
             }
+
             .game_type{
                 @include d_f(flex, center, center);
-                padding: 20px 0;
                 // .game_type__btn
                 &__btn{
                     @include btn_set(140px, 40px, map-get($btn_color, lightgary));
@@ -113,9 +107,11 @@
                 }
             }
         }
+
         .account{
-            margin-bottom: 30px;
-            // account__info
+            margin-bottom: 20px;
+
+            // .account__info
             &__info{
                 @include d_f(flex, center, flex-start);
                 & + .account__info{
@@ -123,42 +119,56 @@
                 }
                 .icon_member,
                 .icon_balance{
-                    width: 20px;
-                    height: 20px;
+                    width: 15px;
+                    height: 15px;
                 }
             }
+
+            // .account__title
             &__title{
-                margin: 0 30px 0 15px;
+                margin: 0 20px 0 10px;
             }
+
+            // .account__data
             &__data{
                 @include d_f(flex, center, flex-start);
-                width: 240px;
-                height: 40px;
-                background: #333;
+                min-width: 250px;
+                height: 30px;
+                background:  map-get($bg_color, darkgray);
                 color: map-get($txt_color, white);
-                border-radius: 5px;
-                padding-left: 10px;
+                border-radius: 3px;
+                padding: 0 10px;
             }
         }
         .limit{
-            width: 100%;
+            @include radius_hidden(3px 3px 0 0);
+
+            // .limit__table
             &__table{
                 width: 100%;
                 text-align: center;
-                @include radius_hidden(5px 5px 0 0);
+                
                 th,
                 td{
-                    height: 50px;
-                    border-width: 0 1px 1px 0;
-                    border-style: solid;
-                    border-color: #403d3b;
+                    padding: 10px 5px;
                 }
+
                 th{
                     background: map-get($bg_color, primary_vl);
+                    color: map-get($txt_color, white);
                 }
+
                 td{
-                    background: map-get($bg_color, td_titlegray);
+                    background: map-get($bg_color, td_gray);
+                    border-width: 0 1px 1px 0; 
+                    border-style: solid;
+                    border-color: map-get($bg_color, gray);
+
+                    &:last-child{
+                        border-right: none;
+                    }
                     &:first-child{
+                        background: map-get($bg_color, td_titlegray);
                         color: map-get($txt_color, white);
                     }
                 }

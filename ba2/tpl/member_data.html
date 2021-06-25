@@ -25,7 +25,7 @@
         選擇桌次展開.--tableOpen
         卡片all展開.--cardOpen
     -->
-    <div class="frame --member_data" id="frame">
+    <div class="frame" id="frame">
         <!-- 左邊menu -->
         <!-- 打開人頭內按鈕 .--active -->
         <aside class="frame__menu">
@@ -92,13 +92,43 @@
 
         <!-- iframe放置區 -->
         <main class="frame__main">
+            <!-- 上方menu -->
+            <nav class="frame__main__nav">
+                <!-- 返回按鈕 -->
+                <button class="back_btn"></button>
+                <!-- 返回按鈕 end -->
+                
+                <div class="lobby__marquee">
+                    <span style="animation: marquee_move 25s linear infinite;">
+                        Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Et consequuntur velit impedit. Animi officiis, sint eius
+                        dignissimos quis non fugiat dicta deleniti iste aut sapiente consequatur facere. Iure,
+                        omnis corrupti?
+                    </span>
+                </div>
+
+                <!-- 全螢幕 -->
+                <!-- 縮小螢幕 --zoomout -->
+                <button class="zoom_btn">
+                    <span class="zoom_btn__txt">全螢幕</span>
+                    <span class="zoom_btn__txt --in">正常螢幕</span>
+                </button>
+                <!-- 全螢幕 end -->
+            </nav>
+            <!-- 上方menu end -->
+
+
+
+
             <!-- 主內容 -->
             <div class="frame__main__otherinside --member_data">
                 <div class="member_data">
                     <div class="member_data__title">會員資料</div>
                     <div class="member_data__content">
                         <div class="announcement">
-                            <div class="lobby__marquee">
+                            
+                            <!-- 到時候記得打開 -->
+                            <div class="lobby__marquee" style="display: none;">
                                 <span style="animation: marquee_move 25s linear infinite;">
                                     Lorem ipsum dolor sit amet
                                     consectetur adipisicing elit. Et consequuntur velit impedit. Animi officiis, sint eius
