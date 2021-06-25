@@ -129,11 +129,13 @@
             // .account__info
             &__info{
                 @include d_f(flex, center, flex-start);
+
                 & + .account__info{
                     margin-top: 10px;
                 }
                 .icon_member,
                 .icon_balance{
+                    flex: none;
                     width: 15px;
                     height: 15px;
                 }
@@ -142,17 +144,22 @@
             // .account__title
             &__title{
                 margin: 0 20px 0 10px;
+                flex: none;
             }
 
             // .account__data
             &__data{
-                @include d_f(flex, center, flex-start);
                 min-width: 200px;
                 height: 30px;
+                line-height: 30px;
                 background:  map-get($bg_color, darkgray);
                 color: map-get($txt_color, white);
                 border-radius: 3px;
                 padding: 0 10px;
+
+                @include mw_xs{
+                    flex: 1 1 100%;
+                }
             }
         }
         .limit{
