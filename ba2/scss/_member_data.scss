@@ -24,7 +24,7 @@
         padding: 30px 100px 20px;
         background: map-get($bg_color, primary_vl);
         @include mw_xs{
-            padding: 0;
+            padding: 20px 10px;
         }
         .announcement{
             @include d_f (flex, center, flex-end);
@@ -49,9 +49,15 @@
             margin-bottom: 20px;
 
             .chg_pswd__btn{
-                @include btn_set(140px, 40px, map-get($btn_color, orange));
+                @include btn_set(150px, 40px, map-get($btn_color, orange));
                 @include radius_hidden(5px);
                 border: 1px solid map-get($bg_color, secondary);
+
+                @include mw_xs{
+                    max-width: calc(100% / 3);
+                    @include radius_hidden(5px 0 0 5px);
+                }
+
                 &:before{
                     @include btn_hoverlight02;
                 }
@@ -75,16 +81,18 @@
 
             .game_type{
                 @include d_f(flex, center, center);
+                @include radius_hidden(5px);
+                width: 100%;
+                max-width: 300px;
+
+                @include mw_xs{
+                    @include radius_hidden(0 5px 5px 0);
+                }
                 // .game_type__btn
                 &__btn{
-                    @include btn_set(140px, 40px, map-get($btn_color, lightgary));
+                    @include btn_set(50%, 40px, map-get($btn_color, lightgary));
                     border: 1px solid map-get($bg_color, secondary);
-                    &:first-child{
-                        @include radius_hidden(5px 0 0 5px);
-                    }
-                    &:last-child{
-                        @include radius_hidden(0 5px 5px 0);
-                    }
+
                     &:before{
                         @include btn_hoverlight02;
                     }
@@ -132,7 +140,7 @@
             // .account__data
             &__data{
                 @include d_f(flex, center, flex-start);
-                min-width: 250px;
+                min-width: 200px;
                 height: 30px;
                 background:  map-get($bg_color, darkgray);
                 color: map-get($txt_color, white);
