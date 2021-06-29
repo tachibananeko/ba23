@@ -14,6 +14,10 @@
         width: 100%;
         padding: 20px 0;
 
+        @include mw_xs{
+            padding: 10px 0;
+        }
+
         // .func_btn
         &_btn{
             max-width: 150px;
@@ -36,7 +40,7 @@
 
     @include mw_ms{
         width: 100%;
-        height: calc(100% - 295px);
+        height: calc(100% - 225px);
     }
     
     @include mw_xs {
@@ -49,7 +53,7 @@
 
         @include mw_ms{
             width: 100%;
-            height: 200px;
+            height: 150px;
             order: -1;
             margin-bottom: 20px;
         }
@@ -122,6 +126,10 @@
             }
         }
     }
+    .--scroll{
+        height: calc(100% - 35px);
+        @include scrollbar(hidden, auto);
+    }
 
     // .agree__online
     &__online{
@@ -163,8 +171,6 @@
 
     // .agree__line
     &__line{
-        @include scrollbar(hidden, auto);
-        height: calc(100% - 140px);
         padding: 20px 40px;
 
         li{
