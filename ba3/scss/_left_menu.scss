@@ -42,6 +42,7 @@
         max-width: 300px;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
+        font-size: 0;
         margin-bottom: 20px;
         transition: bottom .5s ease-in-out,
         opacity .5s .4s ease-in-out;
@@ -105,7 +106,7 @@
                 max-width: none;
                 display: inline-block;
                 background: map-get($bg_color, black_alpha);
-                margin: auto auto 1px 10px;
+                margin-left: 10px;
                 // &::after{
                 //     border: 1px solid map-get($bg_color, secondary);
                 // }
