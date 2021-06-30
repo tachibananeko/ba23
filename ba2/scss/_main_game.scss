@@ -11,7 +11,7 @@
 
         // 桌次資訊.video__function__info
         &__info{
-            @include border(0 0 1px, map-get($border_color , secondary));
+            @include border(0 0 1px, map-get($border_color , primary));
             flex: none;
             padding: 5px 10px;
             background: map-get($bg_color, brown_gradual_vl);
@@ -1463,7 +1463,7 @@
         }
 
         // 莊
-            &.--player {
+            &.--banker {
                 &::before {
                     background: map-get($btn_color, red);
                 }
@@ -1474,7 +1474,7 @@
             }
 
             // 閒
-            &.--banker {
+            &.--player {
                 &::before {
                     background: map-get($btn_color, blue);
                 }
