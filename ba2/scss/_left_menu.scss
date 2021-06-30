@@ -52,6 +52,14 @@
         transition: bottom .5s ease-in-out,
         opacity .5s .4s ease-in-out;
 
+        &::before{
+            content: '(' attr(data-txt) ')';
+            display: block;
+            color: map-get($txt_color, warn);
+            font-size: 12px;
+            text-align: center;
+        }
+
         @include mw_md {
             @include border(0 0 1px, map-get($border_color, secondary));
             position: fixed;
