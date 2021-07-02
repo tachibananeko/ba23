@@ -1,0 +1,450 @@
+.frame{
+    &.--statement{
+        @include mw_xs{
+            position: relative;
+            overflow: hidden;
+        }
+    }
+}
+.statement{
+    // statement__title
+    &__title{
+        @include d_f(flex, center, center);
+        @include border(0 0 1px, map-get($border_color, primary));
+        height: 35px;
+        font-weight: bold;
+        font-size: 20px;
+        background: map-get($bg_color, secondary_vl);
+    }
+    // statement__content
+    &__content{
+        @include mw_xs{
+            padding-bottom: 20px;
+            background: map-get($bg_color, primary_vl);
+        }
+        .announcement{
+            @include d_f (flex, center, flex-end);
+            padding: 20px 30px;
+            background: #391C09;
+            @include coarse{
+                display: none;
+            }
+            .otherpage__btn{
+                border-radius: 5px;
+                overflow: hidden;
+                width: 100px;
+                height: 30px;
+            }
+        }
+        .search{
+            @include d_f(flex, center, center);
+            padding: 10px 0;
+            color: map-get($txt_color, white);
+            background: map-get($bg_color, primary_vl);
+            @include mw_xs{
+                flex-wrap: wrap;
+                padding: 10px 40px 0;
+                background: transparent;
+            }
+            // search__title
+            &__title{
+                @include mw_xs{
+                    display: none;
+                }
+            }
+            .select_style{
+                @include radius_hidden(5px);
+                width: auto;
+                margin: 0 10px;
+                @include mw_xs{
+                    width: 120px;
+                    margin: 0;
+                    margin-bottom: 20px;
+                    &.--first{
+                        order: 0;
+                        margin-right: 10px;
+                    }
+                    &.--second{
+                        order: 2;
+                        margin-right: 10px;
+                    }
+                    &.--third{
+                        order: 4;
+                        margin-left: 10px;
+                    }
+                }
+                select{
+                    background: #333;
+                    padding: 0 15px;
+                }
+            }
+            .em_dash{
+                @include mw_xs{
+                    order: 3;
+                    margin-bottom: 20px;
+                }
+            }
+            .record__btn{
+                @include btn_set(120px, 30px, map-get($btn_color, orange));
+                @include radius_hidden(5px);
+                border: 1px solid map-get($bg_color, secondary);
+                margin-left: 10px;
+                @include mw_xs{
+                    order: 1;
+                    margin-left: 25px;
+                    margin-bottom: 20px;
+                }
+                &:before{
+                    @include btn_hoverlight02;
+                }
+                &:after{
+                    @include btn_txt(center, map-get($txt_color, primary), transparent);
+                    font-weight: bold;
+                }
+                .hover_item{
+                    @include btn_hoveritem(map-get($btn_color, lightorange));
+                    box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
+                    0 0 6px map-get($bg_color, secondary) inset;
+                    &::before{
+                        @include btn_hoverlight02;
+                    }
+                }
+                // _on效果
+                @include btn_on(map-get($txt_color, primary));
+                // 手指效果
+                @include btn_hoverHandler(1px, map-get($txt_color, white));
+            }
+        }
+        .statement_table,
+        .vendor_table,
+        .total_table{
+            width: 100%;
+            text-align: center;
+            thead{
+                @include mw_xs{
+                    display: none;
+                }
+            }
+            .statement_box,
+            .vendor_box{
+                @include mw_xs{
+                    display: block;
+                    margin-bottom: 15px;
+                    padding: 0 15px;
+                }
+            }
+            th,
+            td{
+                width: 20%;
+                height: 50px;
+                color: map-get($txt_color, white);
+                border-width: 0 1px 1px 0;
+                border-style: solid;
+                border-color: #5A5A5A;
+            }
+            th{
+                background: map-get($bg_color, td_titlegray);
+            }
+            td{
+                background: map-get($bg_color, td_gray);
+                @include mw_xs{
+                    position: relative;
+                    @include d_f(flex, center, flex-start);
+                    width: 100%;
+                    padding-left: 130px;
+                    border-width: 0 0 1px 0;
+                    &:before{
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        content: attr(data-txt);
+                        @include d_f(flex, center, center);
+                        width: 120px;
+                        height: 100%;
+                        background: #4D4D4D;
+                        border-bottom: 1px solid #4D4D4D;
+                    }
+                }
+            }
+        }
+        .total_table{
+            @include mw_xs{
+                position: absolute;
+                bottom: -150px;
+                &.--on{
+                    bottom: 50px;
+                }
+            }
+            td{
+                color: #f00;
+                @include mw_xs{
+                    border: 0;
+                    &:before{
+                        color: map-get($txt_color , white);
+                    }
+                }
+            }
+            td:first-child{
+                color: map-get($txt_color, white);
+                background: map-get($bg_color, td_titlegray);
+                @include mw_xs{
+                    position: absolute;
+                    top: -30px;
+                    width: 120px;
+                    height: 30px;
+                    justify-content: center;
+                    padding: 0;
+                    @include radius_hidden(5px 5px 0 0);
+                    font-weight: bold;
+                    color: map-get($txt_color, black);
+                    background: map-get($btn_color, primary);
+                    &:before{
+                        content: none;
+                    }
+                    &:after{
+                        @include btn_hoverlight02;
+                    }
+                }
+            }
+        }
+    }
+}
+.history_data{
+    // history_data__title
+    &__title{
+        @include d_f(flex, center, center);
+        @include border(0 0 1px, map-get($border_color, primary));
+        height: 35px;
+        font-weight: bold;
+        font-size: 20px;
+        background: map-get($bg_color, secondary_vl);
+    }
+    // history_data__content
+    &__content{
+        @include mw_xs{
+            padding-bottom: 20px;
+            background: map-get($bg_color, primary_vl);
+        }
+        .announcement{
+            @include d_f (flex, center, flex-end);
+            padding: 20px 30px;
+            background: #391C09;
+            @include coarse{
+                display: none;
+            }
+            .otherpage__btn{
+                border-radius: 5px;
+                overflow: hidden;
+                width: 100px;
+                height: 30px;
+            }
+        }
+        .func_bar{
+            @include d_f(flex, center, flex-start);
+            padding: 10px 15px;
+            color: map-get($txt_color, white);
+            background: map-get($bg_color, primary_vl);
+            @include mw_xs{
+                background: transparent;
+            }
+            // func_bar__title
+            &__title{
+                margin-right: auto;
+            }
+            .refresh__btn,
+            .return__btn{
+                @include btn_set(120px, 30px, map-get($btn_color, orange));
+                @include radius_hidden(5px);
+                border: 1px solid map-get($bg_color, secondary);
+                margin-left: 10px;
+                &:before{
+                    @include btn_hoverlight02;
+                }
+                &:after{
+                    @include btn_txt(center, map-get($txt_color, primary), transparent);
+                    font-weight: bold;
+                }
+                .hover_item{
+                    @include btn_hoveritem(map-get($btn_color, lightorange));
+                    box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
+                    0 0 6px map-get($bg_color, secondary) inset;
+                    &::before{
+                        @include btn_hoverlight02;
+                    }
+                }
+                // _on效果
+                @include btn_on(map-get($txt_color, primary));
+                // 手指效果
+                @include btn_hoverHandler(1px, map-get($txt_color, white));
+            }
+            .return__btn{
+                @include btn_set(120px, 30px, map-get($btn_color, purple));
+                @include coarse{
+                    display: none;
+                }
+            }
+        }
+        .history_data_table{
+            width: 100%;
+            text-align: center;
+            @include mw_xs{
+                display: block;
+                tbody{
+                    display: block;
+                }
+            }
+            thead{
+                @include mw_xs{
+                    display: none;
+                }
+            }
+            .history_data_box{
+                @include mw_xs{
+                    display: block;
+                    margin-bottom: 15px;
+                    padding: 0 15px;
+                    width: 100%;
+                }
+            }
+            th,
+            td{
+                color: map-get($txt_color, white);
+                border-width: 0 1px 1px 0;
+                border-style: solid;
+                border-color: #5A5A5A;
+            }
+            th{
+                background: map-get($bg_color, td_titlegray);
+                padding: 15px 0;
+            }
+            td{
+                background: map-get($bg_color, td_gray);
+                padding: 10px 0;
+                @include mw_xs{
+                    position: relative;
+                    @include d_f(flex, center, flex-start);
+                    width: 100%;
+                    padding: 0;
+                    border-width: 0 0 1px 0;
+                    padding: 5px 0 5px 130px;
+                    &:before{
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        content: attr(data-txt);
+                        @include d_f(flex, center, center);
+                        width: 120px;
+                        height: 100%;
+                        background: #4D4D4D;
+                        margin-right: 10px;
+                        box-sizing: content-box;
+                        border-bottom: 1px solid #4D4D4D;
+                    }
+                }
+            }
+            .time{
+                span{
+                    display: block;
+                }
+            }
+            .bet_amount{
+                .reason{
+                    display: none;
+                }
+                &.--cancel{
+                    .amount{
+                        text-decoration: line-through;
+                    }
+                    .reason{
+                        display: block;
+                        color: #4D4D4D;
+                        background: #F3CB19;
+                        width: 90px;
+                        margin: auto;
+                        @include radius_hidden(5px);
+                        @include mw_xs{
+                            margin: 0 5px 0 auto;
+                        }
+                    }
+                }
+            }
+            .result{
+                @include mw_xs{
+                    flex-wrap: wrap;
+                }
+                // result__box
+                &__box{
+                    @include d_f(flex, center, flex-start);
+                    padding: 0 10px;
+                    @include mw_xs{
+                        padding-left: 0;
+                        width: 100%;
+                    }
+                    &:first-child{
+                        justify-content: space-between;
+                    }
+                    & + .result__box{
+                        margin-top: 5px;
+                    }
+                    .icon_result{
+                        width: 20px;
+                        height: 15px;
+                    }
+                    .title{
+                        @include d_f(flex, center, flex-start);
+                        position: relative;
+                        z-index: 0;
+                        padding: 0 2px;
+                        margin-right: 10px;
+                        &:before{
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                            content: '';
+                            display: block;
+                            width: 20px;
+                            height: 20px;
+                            z-index: -1;
+                            @include radius_hidden(3px);
+                        }
+                        &.--player:before{
+                            background: #3679B6;
+                        }
+                        &.--banker:before{
+                            background: #E83635;
+                        }
+                    }
+                    .w25{
+                        @include d_f(flex, center, flex-start);
+                        padding: 0 5px;
+                    }
+                    .spade:before{
+                        content: '♠';
+                        color: map-get($txt_color, black);
+                        margin-right: 5px;
+                    }
+                    .club:before{
+                        content: '♣';
+                        color: map-get($txt_color, black);
+                        margin-right: 5px;
+                    }
+                    .heart:before{
+                        content: '♥';
+                        color: map-get($txt_color, red);
+                        margin-right: 5px;
+                    }
+                    .diam:before{
+                        content: '♦';
+                        color: map-get($txt_color, red);
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
