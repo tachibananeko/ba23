@@ -73,18 +73,24 @@
 
         // 語系.logArea__from__Language
         &__Language{
-            @include d_f(inline-flex, center, flex-start);
-            min-width: 50px;
+            @include d_f(inline-flex, center, space-between);
+            min-width: 80px;
             margin-bottom: 30px;
 
             select{
-                width: calc(100% - 30px);
+                width: calc(100% - 10px);
+                background-color: transparent;
                 color: map-get($txt_color, primary);
                 font-size: 14px;
             }
 
+            option{
+                background: map-get($bg_color, brown);
+                color: map-get($txt_color, white);
+            }
+
             i{
-                width: 30px;
+                width: 10px;
                 height: 10px;
                 pointer-events: none;
             }
