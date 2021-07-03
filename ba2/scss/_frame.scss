@@ -168,9 +168,11 @@
         
         // 其他頁面 .frame__main__otherinside
         &__otherinside {
-            @include scrollbar(hidden, auto);
-            
             grid-area: inside;
+
+            @include mw_md {
+                @include scrollbar(hidden, auto);
+            }
         }
     }
 }

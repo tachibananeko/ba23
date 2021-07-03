@@ -207,7 +207,8 @@
             // 手指效果
             @include btn_hoverHandler(1px, map-get($txt_color, white)){
                 border-image: map-get($border_color, secondary);
-            };
+            
+}
             
         }
     }

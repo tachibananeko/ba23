@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
+    <title>Welcome</title>
+
+    <link rel="stylesheet" href="../style/all.min.css">
+
+</head>
+
+<body ontouchstart="">
+    <!-- 歷史紀錄 start-->
+    <div class="statement">
+        <div class="statement__title">百家樂賽事歷史資料</div>
+
+
+        <!-- 表格內容 -->
+        <div class="statement__content">
+            <div class="announcement">
+                <div class="lobby__marquee">
+                    <span style="animation: marquee_move 25s linear infinite;">
+                        Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Et consequuntur velit impedit. Animi officiis, sint eius
+                        dignissimos quis non fugiat dicta deleniti iste aut sapiente consequatur facere. Iure,
+                        omnis corrupti?
+                    </span>
+                </div>
+                <button class="otherpage__btn" data-txt="歷史公告">
+                    <span class="hover_item"></span>
+                </button>
+            </div>
+            <div class="func_bar">
+                <span class="func_bar__title">2021-02-22 星期一</span>
+                <button class="refresh__btn" data-txt="更新"><span class="hover_item"></span></button>
+                <button class="return__btn" data-txt="回歷史資料"><span class="hover_item"></span></button>
+            </div>
+
+
+
+            <!-- 歷史紀錄table start -->
+            <table class="normal_table --detail">
+                <thead>
+                    <tr>
+                        <th class="w6">編號</th>
+                        <th class="w10">下注時間<br>(美東)</th>
+                        <th class="w6">桌號</th>
+                        <th class="w5">靴號</th>
+                        <th class="w5">局號</th>
+                        <th class="w5">玩法</th>
+                        <th class="w11">下注金額</th>
+                        <th class="w10">派彩</th>
+                        <th class="w10">退佣</th>
+                        <th class="w8">有效金額</th>
+                        <th class="w16">結果</th>
+                        <th class="w8">狀態</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="normal_box">
+                        <td data-txt="注單編號">32782</td>
+                        <td data-txt="下注時間" class="time">
+                            <span>2021-02-22</span>
+                            <span>01:43:33</span>
+                            <span>293083</span>
+                        </td>
+                        <td data-txt="桌號">MB2001</td>
+                        <td data-txt="靴號">1</td>
+                        <td data-txt="局號">10</td>
+                        <td data-txt="玩法">莊</td>
+                        <!-- 取消時 刪除線加上 .--cancel -->
+                        <td data-txt="下注金額" class="bet_amount --cancel">
+                            <span class="amount">5000</span>
+                            <span class="reason">現場未開放</span>
+                        </td>
+                        <td data-txt="派彩">0.00</td>
+                        <td data-txt="退佣">0.00</td>
+                        <td data-txt="有效金額">0</td>
+                        <td data-txt="結果" class="result">
+                            <div class="result__box">
+                                <code>和局,閒對</code>
+                                <i class="icon_result"></i>
+                            </div>
+                            <div class="result__box">
+                                <i class="title --player" data-txt="閒"></i>
+                                <span class="spade">10</span>
+                                <span class="club">10</span>
+                                <span class="diam">3</span>
+                            </div>
+                            <div class="result__box">
+                                <i class="title --banker" data-txt="莊"></i>
+                                <span class="heart">4</span>
+                                <span class="heart">K</span>
+                                <span class="diam">9</span>
+                            </div>
+                        </td>
+                        <td data-txt="狀態">已派彩</td>
+                    </tr>
+
+                    <!-- 以下展示用 -->
+                    <tr class="normal_box">
+                        <td data-txt="注單編號">32782</td>
+                        <td data-txt="下注時間" class="time">
+                            <span>2021-02-22</span>
+                            <span>01:43:33</span>
+                            <span>293083</span>
+                        </td>
+                        <td data-txt="桌號">MB2001</td>
+                        <td data-txt="靴號">1</td>
+                        <td data-txt="局號">10</td>
+                        <td data-txt="玩法">莊</td>
+                        <td data-txt="下注金額" class="bet_amount">
+                            <span class="amount">5000</span>
+                            <span class="reason">現場未開放</span>
+                        </td>
+                        <td data-txt="派彩">0.00</td>
+                        <td data-txt="退佣">0.00</td>
+                        <td data-txt="有效金額">0</td>
+                        <td data-txt="結果" class="result">
+                            <div class="result__box">
+                                <code>和局,閒對</code>
+                                <i class="icon_result"></i>
+                            </div>
+                            <div class="result__box">
+                                <i class="title --player" data-txt="閒"></i>
+                                <span class="spade">10</span>
+                                <span class="club">10</span>
+                                <span class="diam">3</span>
+                            </div>
+                            <div class="result__box">
+                                <i class="title --banker" data-txt="莊"></i>
+                                <span class="heart">4</span>
+                                <span class="heart">K</span>
+                                <span class="diam">9</span>
+                            </div>
+                        </td>
+                        <td data-txt="狀態">已派彩</td>
+                    </tr>
+                    <tr class="normal_box">
+                        <td data-txt="注單編號">32782</td>
+                        <td data-txt="下注時間" class="time">
+                            <span>2021-02-22</span>
+                            <span>01:43:33</span>
+                            <span>293083</span>
+                        </td>
+                        <td data-txt="桌號">MB2001</td>
+                        <td data-txt="靴號">1</td>
+                        <td data-txt="局號">10</td>
+                        <td data-txt="玩法">莊</td>
+                        <td data-txt="下注金額" class="bet_amount">
+                            <span class="amount">5000</span>
+                            <span class="reason">現場未開放</span>
+                        </td>
+                        <td data-txt="派彩">0.00</td>
+                        <td data-txt="退佣">0.00</td>
+                        <td data-txt="有效金額">0</td>
+                        <td data-txt="結果" class="result">
+                            <div class="result__box">
+                                <code>和局,閒對</code>
+                                <i class="icon_result"></i>
+                            </div>
+                            <div class="result__box">
+                                <i class="title --player" data-txt="閒"></i>
+                                <span class="spade">10</span>
+                                <span class="club">10</span>
+                                <span class="diam">3</span>
+                            </div>
+                            <div class="result__box">
+                                <i class="title --banker" data-txt="莊"></i>
+                                <span class="heart">4</span>
+                                <span class="heart">K</span>
+                                <span class="diam">9</span>
+                            </div>
+                        </td>
+                        <td data-txt="狀態">已派彩</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- 歷史紀錄table end -->
+        </div>
+        <!-- 表格內容 end -->
+    </div>
+    <!-- 歷史紀錄 end-->
+</body>
+
+<script src="../script/tpl.js"></script>
+
+</html>

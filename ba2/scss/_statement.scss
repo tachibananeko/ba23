@@ -1,13 +1,12 @@
-.frame{
-    &.--statement{
-        @include mw_xs{
-            position: relative;
-            overflow: hidden;
-        }
-    }
-}
 .statement{
-    // statement__title
+    width: 100%;
+    height: 100%;
+
+    @include mw_md{
+        height: auto;
+    }
+
+    // .statement__title
     &__title{
         @include d_f(flex, center, center);
         @include border(0 0 1px, map-get($border_color, primary));
@@ -16,84 +15,57 @@
         font-size: 20px;
         background: map-get($bg_color, secondary_vl);
     }
-    // statement__content
-    &__content{
+
+    .announcement{
+        padding: 10px 20px;
+        background: map-get($bg_color, lightbrown);
+        margin-bottom: 0;
+
         @include mw_xs{
-            padding-bottom: 20px;
+            padding: 10px;
+        }
+    }
+
+    // .statement__content
+    &__content{
+        position: relative;
+
+        @include mw_xs{
+            padding-bottom: 10px;
             background: map-get($bg_color, primary_vl);
+            overflow: hidden;
         }
-        .announcement{
-            @include d_f (flex, center, flex-end);
-            padding: 20px 30px;
-            background: #391C09;
-            @include coarse{
-                display: none;
-            }
-            .otherpage__btn{
-                border-radius: 5px;
-                overflow: hidden;
-                width: 100px;
-                height: 30px;
-            }
-        }
+
+        // 交易紀錄搜尋列
         .search{
             @include d_f(flex, center, center);
-            padding: 10px 0;
+            padding: 10px 20px;
             color: map-get($txt_color, white);
             background: map-get($bg_color, primary_vl);
+
             @include mw_xs{
                 flex-wrap: wrap;
-                padding: 10px 40px 0;
+                padding: 10px;
                 background: transparent;
             }
-            // search__title
-            &__title{
-                @include mw_xs{
-                    display: none;
-                }
+
+            // 廠商search
+            @at-root .--statementVendor .search{
+                justify-content: flex-end;
             }
-            .select_style{
-                @include radius_hidden(5px);
-                width: auto;
-                margin: 0 10px;
-                @include mw_xs{
-                    width: 120px;
-                    margin: 0;
-                    margin-bottom: 20px;
-                    &.--first{
-                        order: 0;
-                        margin-right: 10px;
-                    }
-                    &.--second{
-                        order: 2;
-                        margin-right: 10px;
-                    }
-                    &.--third{
-                        order: 4;
-                        margin-left: 10px;
-                    }
-                }
-                select{
-                    background: #333;
-                    padding: 0 15px;
-                }
+            @at-root .--statementVendor .--data{
+                display: none;
             }
-            .em_dash{
-                @include mw_xs{
-                    order: 3;
-                    margin-bottom: 20px;
-                }
-            }
+
             .record__btn{
                 @include btn_set(120px, 30px, map-get($btn_color, orange));
-                @include radius_hidden(5px);
+                @include radius_hidden();
                 border: 1px solid map-get($bg_color, secondary);
-                margin-left: 10px;
+                
                 @include mw_xs{
-                    order: 1;
-                    margin-left: 25px;
-                    margin-bottom: 20px;
+                    margin-left: 20px;
                 }
+
                 &:before{
                     @include btn_hoverlight02;
                 }
@@ -109,158 +81,37 @@
                         @include btn_hoverlight02;
                     }
                 }
-                // _on效果
-                @include btn_on(map-get($txt_color, primary));
+                
                 // 手指效果
                 @include btn_hoverHandler(1px, map-get($txt_color, white));
             }
         }
-        .statement_table,
-        .vendor_table,
-        .total_table{
-            width: 100%;
-            text-align: center;
-            thead{
-                @include mw_xs{
-                    display: none;
-                }
-            }
-            .statement_box,
-            .vendor_box{
-                @include mw_xs{
-                    display: block;
-                    margin-bottom: 15px;
-                    padding: 0 15px;
-                }
-            }
-            th,
-            td{
-                width: 20%;
-                height: 50px;
-                color: map-get($txt_color, white);
-                border-width: 0 1px 1px 0;
-                border-style: solid;
-                border-color: #5A5A5A;
-            }
-            th{
-                background: map-get($bg_color, td_titlegray);
-            }
-            td{
-                background: map-get($bg_color, td_gray);
-                @include mw_xs{
-                    position: relative;
-                    @include d_f(flex, center, flex-start);
-                    width: 100%;
-                    padding-left: 130px;
-                    border-width: 0 0 1px 0;
-                    &:before{
-                        position: absolute;
-                        top: 0;
-                        bottom: 0;
-                        left: 0;
-                        content: attr(data-txt);
-                        @include d_f(flex, center, center);
-                        width: 120px;
-                        height: 100%;
-                        background: #4D4D4D;
-                        border-bottom: 1px solid #4D4D4D;
-                    }
-                }
-            }
-        }
-        .total_table{
-            @include mw_xs{
-                position: absolute;
-                bottom: -150px;
-                &.--on{
-                    bottom: 50px;
-                }
-            }
-            td{
-                color: #f00;
-                @include mw_xs{
-                    border: 0;
-                    &:before{
-                        color: map-get($txt_color , white);
-                    }
-                }
-            }
-            td:first-child{
-                color: map-get($txt_color, white);
-                background: map-get($bg_color, td_titlegray);
-                @include mw_xs{
-                    position: absolute;
-                    top: -30px;
-                    width: 120px;
-                    height: 30px;
-                    justify-content: center;
-                    padding: 0;
-                    @include radius_hidden(5px 5px 0 0);
-                    font-weight: bold;
-                    color: map-get($txt_color, black);
-                    background: map-get($btn_color, primary);
-                    &:before{
-                        content: none;
-                    }
-                    &:after{
-                        @include btn_hoverlight02;
-                    }
-                }
-            }
-        }
-    }
-}
-.history_data{
-    // history_data__title
-    &__title{
-        @include d_f(flex, center, center);
-        @include border(0 0 1px, map-get($border_color, primary));
-        height: 35px;
-        font-weight: bold;
-        font-size: 20px;
-        background: map-get($bg_color, secondary_vl);
-    }
-    // history_data__content
-    &__content{
-        @include mw_xs{
-            padding-bottom: 20px;
-            background: map-get($bg_color, primary_vl);
-        }
-        .announcement{
-            @include d_f (flex, center, flex-end);
-            padding: 20px 30px;
-            background: #391C09;
-            @include coarse{
-                display: none;
-            }
-            .otherpage__btn{
-                border-radius: 5px;
-                overflow: hidden;
-                width: 100px;
-                height: 30px;
-            }
-        }
+
+        // 賽事歷史功能bar
         .func_bar{
             @include d_f(flex, center, flex-start);
-            padding: 10px 15px;
+            padding: 10px 20px;
             color: map-get($txt_color, white);
             background: map-get($bg_color, primary_vl);
+
             @include mw_xs{
                 background: transparent;
             }
-            // func_bar__title
+            // .func_bar__title
             &__title{
                 margin-right: auto;
             }
             .refresh__btn,
             .return__btn{
                 @include btn_set(120px, 30px, map-get($btn_color, orange));
-                @include radius_hidden(5px);
+                @include radius_hidden();
                 border: 1px solid map-get($bg_color, secondary);
-                margin-left: 10px;
+                margin-left: 20px;
+
                 &:before{
                     @include btn_hoverlight02;
                 }
+
                 &:after{
                     @include btn_txt(center, map-get($txt_color, primary), transparent);
                     font-weight: bold;
@@ -273,178 +124,275 @@
                         @include btn_hoverlight02;
                     }
                 }
-                // _on效果
-                @include btn_on(map-get($txt_color, primary));
+
                 // 手指效果
                 @include btn_hoverHandler(1px, map-get($txt_color, white));
             }
+
             .return__btn{
                 @include btn_set(120px, 30px, map-get($btn_color, purple));
                 @include coarse{
                     display: none;
                 }
-            }
-        }
-        .history_data_table{
-            width: 100%;
-            text-align: center;
-            @include mw_xs{
-                display: block;
-                tbody{
-                    display: block;
-                }
-            }
-            thead{
-                @include mw_xs{
-                    display: none;
-                }
-            }
-            .history_data_box{
-                @include mw_xs{
-                    display: block;
-                    margin-bottom: 15px;
-                    padding: 0 15px;
-                    width: 100%;
-                }
-            }
-            th,
-            td{
-                color: map-get($txt_color, white);
-                border-width: 0 1px 1px 0;
-                border-style: solid;
-                border-color: #5A5A5A;
-            }
-            th{
-                background: map-get($bg_color, td_titlegray);
-                padding: 15px 0;
-            }
-            td{
-                background: map-get($bg_color, td_gray);
-                padding: 10px 0;
-                @include mw_xs{
-                    position: relative;
-                    @include d_f(flex, center, flex-start);
-                    width: 100%;
-                    padding: 0;
-                    border-width: 0 0 1px 0;
-                    padding: 5px 0 5px 130px;
-                    &:before{
-                        position: absolute;
-                        top: 0;
-                        bottom: 0;
-                        left: 0;
-                        content: attr(data-txt);
-                        @include d_f(flex, center, center);
-                        width: 120px;
-                        height: 100%;
-                        background: #4D4D4D;
-                        margin-right: 10px;
-                        box-sizing: content-box;
-                        border-bottom: 1px solid #4D4D4D;
-                    }
-                }
-            }
-            .time{
-                span{
-                    display: block;
-                }
-            }
-            .bet_amount{
-                .reason{
-                    display: none;
-                }
-                &.--cancel{
-                    .amount{
-                        text-decoration: line-through;
-                    }
-                    .reason{
-                        display: block;
-                        color: #4D4D4D;
-                        background: #F3CB19;
-                        width: 90px;
-                        margin: auto;
-                        @include radius_hidden(5px);
-                        @include mw_xs{
-                            margin: 0 5px 0 auto;
-                        }
-                    }
-                }
-            }
-            .result{
-                @include mw_xs{
-                    flex-wrap: wrap;
-                }
-                // result__box
-                &__box{
-                    @include d_f(flex, center, flex-start);
-                    padding: 0 10px;
-                    @include mw_xs{
-                        padding-left: 0;
-                        width: 100%;
-                    }
-                    &:first-child{
-                        justify-content: space-between;
-                    }
-                    & + .result__box{
-                        margin-top: 5px;
-                    }
-                    .icon_result{
-                        width: 20px;
-                        height: 15px;
-                    }
-                    .title{
-                        @include d_f(flex, center, flex-start);
-                        position: relative;
-                        z-index: 0;
-                        padding: 0 2px;
-                        margin-right: 10px;
-                        &:before{
-                            position: absolute;
-                            top: 0;
-                            bottom: 0;
-                            left: 0;
-                            right: 0;
-                            margin: auto;
-                            content: '';
-                            display: block;
-                            width: 20px;
-                            height: 20px;
-                            z-index: -1;
-                            @include radius_hidden(3px);
-                        }
-                        &.--player:before{
-                            background: #3679B6;
-                        }
-                        &.--banker:before{
-                            background: #E83635;
-                        }
-                    }
-                    .w25{
-                        @include d_f(flex, center, flex-start);
-                        padding: 0 5px;
-                    }
-                    .spade:before{
-                        content: '♠';
-                        color: map-get($txt_color, black);
-                        margin-right: 5px;
-                    }
-                    .club:before{
-                        content: '♣';
-                        color: map-get($txt_color, black);
-                        margin-right: 5px;
-                    }
-                    .heart:before{
-                        content: '♥';
-                        color: map-get($txt_color, red);
-                        margin-right: 5px;
-                    }
-                    .diam:before{
-                        content: '♦';
-                        color: map-get($txt_color, red);
-                        margin-right: 5px;
-                    }
+
+                .hover_item{
+                    @include btn_hoveritem(map-get($btn_color, lightpurple));
                 }
             }
         }
     }
+}
+
+
+    
+// 表格設定
+.normal_table{
+    width: 100%;
+    color: map-get($txt_color, white);
+    text-align: center;
+    margin: auto;
+
+    @include mw_xs{
+        width: calc(100% - 20px);
+    }
+
+    // 廠商表格
+    @at-root .--statementVendor .normal_table.--data,
+    &.--vendor{
+        display: none;
+    }
+
+    @at-root .--statementVendor .normal_table.--vendor{
+        display: table;
+    }
+    
+    thead{
+        @include mw_xs{
+            display: none;
+        }
+    }
+
+    .normal_box{
+        @include mw_xs{
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+
+    th,
+    td{
+        padding: 15px 5px;
+        border-width: 0 1px 1px 0;
+        border-style: solid;
+        border-color: map-get($bg_color, td_titlegray);
+
+        &:last-child{
+            border-right: none;
+        }
+    }
+    th{
+        background: map-get($bg_color, td_titlegray);
+    }
+    td{
+        background: map-get($bg_color, td_gray);
+
+        @include mw_xs{
+            position: relative;
+            @include d_f(flex, center, space-between);
+            width: 100%;
+            padding-left: 130px;
+            border-width: 0 0 1px 0;
+            &:before{
+                @include pos_abs(0, unset, 0, 0);
+                @include d_f(flex, center, center);
+                content: attr(data-txt);
+                width: 120px;
+                height: 100%;
+                background: map-get($bg_color, td_titlegray);
+                border-bottom: 1px solid map-get($bg_color, td_titlegray);
+                color: map-get($txt_color, white);
+            }
+        }
+    }
+
+    // 總計
+    &.--total{
+        @extend %transition;
+
+        @include mw_xs{
+            position: fixed;
+            top: calc(100% - 50px);
+            left: 10px;
+            border: 1px solid map-get($bg_color, secondary);
+            transform: translateY(0);
+
+            &.--on{
+                box-shadow: 0 -3px 10px map-get($bg_color, darkgray);
+                transform: translateY(-100%);
+            }
+        }
+
+        td{
+            background: map-get($bg_color, td_titlegray);
+            color: map-get($txt_color , yellow);
+
+            @include mw_xs{
+                width: auto;
+                background: map-get($bg_color, td_gray);
+
+                &:before{
+                    color: map-get($txt_color , white);
+                }
+            }
+        }
+        th{
+            color: map-get($txt_color, white);
+
+            @include mw_xs{
+                @include pos_abs(unset, unset, 100%, 0);
+                @include d_f(flex, center, center);
+                @include radius_hidden(5px 5px 0 0);
+                min-width: 120px;
+                height: 30px;
+                padding: 0;
+                background: map-get($btn_color, primary);
+                box-shadow: 0 0 0 1px map-get($bg_color, secondary) inset;
+                border: none;
+                color: map-get($txt_color, black);
+                cursor: pointer;
+                font-weight: bold;
+
+                &:before{
+                    content: none;
+                }
+                &:after{
+                    @include btn_hoverlight02;
+                }
+
+                // 手指效果
+                @include hoverHandler{
+                    filter: brightness(120%);
+                }
+            }
+        }
+    }
+    
+
+
+    // history_data.html 以下細單專用樣式
+    &.--detail{
+        font-size: 14px;
+
+        @include mw_ms{
+            font-size: 12px;
+        }
+
+        @include mw_xs{
+            font-size: 16px;
+        }
+    }
+    .time{
+        span{
+            display: block;
+        }
+    }
+
+    .bet_amount{
+        .reason{
+            display: none;
+        }
+        &.--cancel{
+            .amount{
+                text-decoration: line-through;
+            }
+
+            .reason{
+                display: block;
+                padding: 0 5px;
+                color: map-get($bg_color, td_titlegray);
+                background: map-get($bg_color, yellow);
+                border-radius: 3px;
+                margin: auto;
+
+                @include mw_xs{
+                    margin: 0 5px 0 auto;
+                }
+            }
+        }
+    }
+
+    // 結果細部設定
+    .result{
+        @include mw_xs{
+            flex-wrap: wrap;
+        }
+
+        // .result__box
+        &__box{
+            @include d_f(flex, center, space-between);
+            width: 100%;
+            
+            & + .result__box{
+                margin-top: 5px;
+            }
+
+            .icon_result{
+                @extend %hand;
+                width: 20px;
+                height: 15px;
+
+                // 手指效果
+                @include hoverHandler{
+                    opacity: 0.7;
+                }
+            }
+
+            .title{
+                @include d_f(flex, center, flex-start);
+                position: relative;
+                padding: 0 3px;
+                border-radius: 3px;
+
+                &.--banker{
+                    background: map-get($bg_color, bank);
+                }
+
+                &.--player{
+                    background: map-get($bg_color, play);
+                }
+
+                &:after{
+                    content: attr(data-txt);
+                }
+            }
+            
+            span{
+                width: 25%;
+                text-align: left;
+
+                &::before{
+                    font-size: 20px;
+                    margin-right: 5px;
+                }
+
+                &.spade::before{
+                    content: '♠';
+                    color: map-get($txt_color, black);
+                }
+                &.club::before{
+                    content: '♣';
+                    color: map-get($txt_color, black);
+                }
+                &.heart::before{
+                    content: '♥';
+                    color: map-get($txt_color, red);
+                }
+                &.diam::before{
+                    content: '♦';
+                    color: map-get($txt_color, red);
+                }
+            }
+        }
+    }
+    
 }

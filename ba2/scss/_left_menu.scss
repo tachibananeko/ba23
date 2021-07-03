@@ -35,7 +35,7 @@
 
         @include mw_md{
             height: 100%;
-            background-color: map-get($bg_color, darkbrown);
+            background-color: map-get($bg_color, darkgray);
             cursor: pointer!important;
             margin-bottom: 0;
         }

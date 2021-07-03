@@ -34,10 +34,8 @@
 
 .select_style{
     position: relative;
-    width: calc(100% - 100px);
+    min-width: 120px;
     height: 30px;
-    background: map-get($bg_color , darkbrown);
-    border-radius: 3px;
 
     &::after{
         @include pos_abs(0, 5px, 0, unset);
@@ -49,8 +47,34 @@
     select{
         width: 100%;
         height: 100%;
-        padding: 0 10px;
+        padding: 0 20px 0 10px;
+        background: map-get($bg_color, darkgray);
+        border-radius: 3px;
         color: map-get($txt_color, white);
+    }
+}
+
+// select組合
+.select_group{
+    @include d_f(flex, center, space-between);
+    margin: 0 20px;
+
+    @include mw_xs{
+        margin: 10px 0 0;
+        order: 1;
+    }
+
+    .select_style:first-child{
+        margin-right: 20px;
+
+        &::before {
+            @include pos_abs(0, unset, 0, calc(100% + 5px));
+            content: '';
+            width: 10px;
+            height: 1px;
+            background: map-get($bg_color, white);
+            margin: auto;
+        }
     }
 }
 
@@ -186,5 +210,18 @@
         // 手指效果
         @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
     }
+}
 
+// 可點擊字串
+.txtlink_style{
+    @extend %hand;
+    color: map-get($txt_color, secondary02);
+    font-weight: bold;
+    text-decoration: underline;
+
+    // 手指效果
+    @include hoverHandler{
+        color: map-get($txt_color, primary);
+    
+}
 }

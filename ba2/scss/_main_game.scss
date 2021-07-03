@@ -304,7 +304,7 @@
             display: block;
             width: 100px;
             height: 30px;
-            background: map-get($bg_color, darkbrown);
+            background: map-get($bg_color, darkgray);
             transform: perspective(70px) rotateX(-45deg);
             transform-origin: 0 100%;
         }
@@ -542,10 +542,7 @@
     .otherpage{
         width: 100%;
         height: 40px;
-        flex: none;
         padding: 5px;
-        background: map-get($bg_color, primary_vl);
-        font-size: 0;
 
         @include mw_ms{
             width: 40%;
@@ -559,35 +556,11 @@
         // .otherpage__btn
         &__btn{
             @include btn_set(calc(100% / 3), 100%, map-get($btn_color, lightgreen));
-            @include border(1px 0, map-get($border_color, primary));
 
             @include mw_ms{
                 width: calc(100% / 2);
                 &:nth-child(2){
                     display: none;
-                }
-            }
-
-            &:first-child{
-                @include radius_hidden(3px 0 0 3px);
-            }
-            &:last-child{
-                @include radius_hidden(0 3px 3px 0);
-            }
-
-            &::before{
-                @include btn_hoverlight02;
-            }
-            &::after{
-                @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
-            }
-
-            .hover_item{
-                @include btn_hoveritem(map-get($btn_color, green));
-                box-shadow: 0 0 1px map-get($bg_color, secondary) inset,
-                0 0 3px map-get($bg_color, secondary) inset;
-                &::before {
-                    @include btn_hoverlight02;
                 }
             }
 
@@ -614,16 +587,13 @@
                     background-image: map-get($btn_color, green);
                 }
             }
-
-            // 手指效果
-            @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
         }
     }
 
     // 熱況直播
     .live{
         padding: 5px;
-        background: map-get($bg_color, darkbrown);
+        background: map-get($bg_color, darkgray);
         
         @include mw_ms{
             width: 60%;
@@ -891,7 +861,7 @@
         height: 10%;
         min-height: 30px;
         padding: 5px;
-        background: map-get($bg_color, darkbrown);
+        background: map-get($bg_color, darkgray);
 
         @include mw_ms{
             padding: 0;
@@ -966,7 +936,7 @@
         &__item{
             @include d_f(flex, center, space-around);
             padding: 3px 10px;
-            background: map-get($bg_color, darkbrown);
+            background: map-get($bg_color, darkgray);
 
             @include mw_ms{
                 justify-content: space-between;
@@ -1013,7 +983,7 @@
         &__percent {
             @include pos_abs(0, 0, 0, 0);
             @include d_f(flex, center, center);
-            background: map-get($bg_color, darkbrown);
+            background: map-get($bg_color, darkgray);
             margin: auto;
 
             // 無統計資料
@@ -1080,7 +1050,8 @@
             // 手指效果
             @include hoverHandler{
                 opacity: .6;
-            };
+            
+}
         }
 
         // 珠路圖.road__group__img

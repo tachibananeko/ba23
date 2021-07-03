@@ -133,7 +133,7 @@
 
     .triangle {
         @include pos_abs(0, 5px, 0, unset);
-        @include triangle(12px, map-get($bg_color, darkbrown), bottom);
+        @include triangle(12px, map-get($bg_color, darkgray), bottom);
         display: inline-block;
         margin: auto;
         animation: shake 2s infinite;
@@ -169,7 +169,8 @@
         .triangle{
             border-top-color: map-get($bg_color, secondary);
         }
-    };
+    
+}
 
     
 }

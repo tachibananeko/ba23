@@ -53,8 +53,6 @@
     position: relative;
     width: calc(100% - 100px);
     height: 30px;
-    background: map-get($bg_color , black);
-    border-radius: 3px;
 
     &::after{
         @include pos_abs(0, 5px, 0, unset);
@@ -67,6 +65,8 @@
         width: 100%;
         height: 100%;
         padding: 0 10px;
+        background: map-get($bg_color , black);
+        border-radius: 3px;
         color: map-get($txt_color, primary);
     }
 }
