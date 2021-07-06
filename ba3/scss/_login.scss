@@ -26,7 +26,8 @@
 
     @include mw_xs{
         height: 100%;
-        background-position: center 90%;
+        background-position: center bottom;
+        background-size: 350px;
     }
 
     // 宣傳文.logArea__txt
@@ -105,6 +106,10 @@
                 font-weight: bold;
                 font-size: 18px;
                 text-align: center;
+
+                &::placeholder{
+                    color: map-get($txt_color, primary);
+                }
             }
         }
 
