@@ -153,36 +153,24 @@
 
         // 登入按鈕.logArea__from_btn
         &_btn{
-            @include btn_set(100%, 40px, transparent);
+            @include btn_set(100%, 40px, map-get($bg_color, gold));
             border:1px solid map-get($bg_color, secondary);
             border-radius: 40px;
             margin-bottom: 30px;
 
             &::after{
-                @include btn_txt(center,map-get($txt_color, primary), transparent);
+                @include btn_txt(center,map-get($txt_color, secondary), transparent);
                 
                 font-weight: bold;
             }
 
             .hover_item{
-                @include btn_hoveritem(map-get($bg_color, gold));
+                @include btn_hoveritem(map-get($bg_color, lightbrown));
                 border-radius: 40px;
             }
 
-            i{
-                position: relative;
-                width: 15px;
-                height: 15px;
-                margin-right: 10px;
-                filter: brightness(150%);
-            }
-
             // 手指效果
-            @include btn_hoverHandler(1px, map-get($txt_color, secondary)){
-                i{
-                    filter: brightness(10%);
-                }
-            }
+            @include btn_hoverHandler(1px, map-get($txt_color, primary));
         }
 
     }
