@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="notranslate" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="google" content="notranslate">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
+    <title>Welcome</title>
+
+    <link rel="stylesheet" href="../style/all.min.css">
+
+    <!-- icon -->
+    <link rel="shortcut icon" href="/favicon_icon.ico">
+    <link rel="icon" href="/favicon_icon.ico">
+    <link rel="apple-touch-icon" type="image/png" href="/favicon_icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/favicon_icon.png">
+
+</head>
+
+<body ontouchstart="">
+    <!-- 
+        電投有卡.--telType 
+        電投無卡.--telType+.--noCard
+        網投有卡 無需class
+        網投無卡.--noOrder
+
+        視訊放大 在上方狀態後加上.--bigTv
+        選擇桌次展開.--tableOpen
+        卡片all展開.--cardOpen
+    -->
+    <div class="history_data">
+        <div class="history_data__title">投注明細</div>
+        <div class="history_data__content">
+            <div class="search">
+                <label class="select_style">
+                    <select>
+                        <option value="">2021-02</option>
+                        <option value="">2021-01</option>
+                        <option value="">2020-12</option>
+                        <option value="">2020-11</option>
+                    </select>
+                </label>
+                <label class="select_style">
+                    <select>
+                        <option value="">2021-02-25</option>
+                        <option value="">2021-02-24</option>
+                        <option value="">2021-02-23</option>
+                        <option value="">2021-02-22</option>
+                    </select>
+                </label>
+                <label class="select_style">
+                    <select>
+                        <option value="">PPS1-1(RMB)</option>
+                    </select>
+                </label>
+                <label class="select_style">
+                    <select>
+                        <option value="">上桌</option>
+                    </select>
+                </label>
+                <button class="return_btn" data-txt="返回">
+                    <span class="hover_item"></span>
+                    <i></i>
+                </button>
+                <button class="cancel_wager_btn" data-txt="取消單">
+                    <span class="hover_item"></span>
+                    <i></i>
+                </button>
+            </div>
+            <div class="info">
+                <div class="info__box">
+                    <span class="info__title">狀態</span>
+                    <span class="info__data">未結帳</span>
+                </div>
+                <div class="info__box">
+                    <span class="info__title">額度</span>
+                    <span class="info__data">500,000</span>
+                </div>
+                <div class="info__box">
+                    <span class="info__title">餘額</span>
+                    <span class="info__data">450,000</span>
+                </div>
+                <div class="info__box">
+                    <span class="info__title">洗碼</span>
+                    <span class="info__data">0</span>
+                </div>
+                <div class="info__box">
+                    <span class="info__title">本卡總洗碼數</span>
+                    <span class="info__data">0</span>
+                </div>
+            </div>
+            <table class="normal_table --data">
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>開始時間</th>
+                        <th>離開時間</th>
+                        <th>輸贏</th>
+                        <th>洗碼</th>
+                        <th>小費</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="normal_box">
+                        <td data-txt="日期">2021-02-25</td>
+                        <td data-txt="開始時間" class="time">
+                            <span>2021-02-25</span>
+                            <span>14:54:03</span>
+                        </td>
+                        <td data-txt="離開時間" class="time">
+                            <span>2021-02-25</span>
+                            <span>14:58:39</span>
+                        </td>
+                        <td data-txt="輸贏">0</td>
+                        <td data-txt="洗碼">200,000</td>
+                        <td data-txt="小費">0</td>
+                    </tr>
+                    <tr class="normal_box">
+                        <td data-txt="日期">2021-02-25</td>
+                        <td data-txt="開始時間" class="time">
+                            <span>2021-02-25</span>
+                            <span>14:54:03</span>
+                        </td>
+                        <td data-txt="離開時間" class="time">
+                            <span>2021-02-25</span>
+                            <span>14:58:39</span>
+                        </td>
+                        <td data-txt="輸贏">0</td>
+                        <td data-txt="洗碼">200,000</td>
+                        <td data-txt="小費">0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+<script src="../script/tpl.js"></script>
+
+</html>

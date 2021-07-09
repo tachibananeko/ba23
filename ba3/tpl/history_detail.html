@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="notranslate" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="google" content="notranslate">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
+    <title>Welcome</title>
+
+    <link rel="stylesheet" href="../style/all.min.css">
+
+    <!-- icon -->
+    <link rel="shortcut icon" href="/favicon_icon.ico">
+    <link rel="icon" href="/favicon_icon.ico">
+    <link rel="apple-touch-icon" type="image/png" href="/favicon_icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/favicon_icon.png">
+
+</head>
+
+<body ontouchstart="">
+    <!-- 
+        電投有卡.--telType 
+        電投無卡.--telType+.--noCard
+        網投有卡 無需class
+        網投無卡.--noOrder
+
+        視訊放大 在上方狀態後加上.--bigTv
+        選擇桌次展開.--tableOpen
+        卡片all展開.--cardOpen
+    -->
+    <div class="history_detail">
+        <div class="info">
+            <div class="info__box">
+                <span class="info__title">卡號</span>
+                <span class="info__data">PPPT1-2</span>
+            </div>
+            <div class="info__box">
+                <span class="info__title">額度</span>
+                <span class="info__data">200,000</span>
+            </div>
+            <div class="info__box">
+                <span class="info__title">餘額</span>
+                <span class="info__data">200,000</span>
+            </div>
+            <button class="return_btn" data-txt="返回">
+                <span class="hover_item"></span>
+                <i></i>
+            </button>
+            <button class="cancel_wager_btn" data-txt="關閉取消單">
+                <span class="hover_item"></span>
+                <i></i>
+            </button>
+            <button class="refresh_btn" data-txt="取消單">
+                <span class="hover_item"></span>
+                <i></i>
+            </button>
+        </div>
+        <div class="table_box">
+            <div class="title">百家樂</div>
+            <table class="normal_table">
+                <thead>
+                    <tr>
+                        <th class="w10">下注時間</th>
+                        <th class="w8">卡號</th>
+                        <th class="w8">桌號</th>
+                        <th class="w5">靴號</th>
+                        <th class="w5">局號</th>
+                        <th class="w7">莊</th>
+                        <th class="w7">閒</th>
+                        <th class="w7">和</th>
+                        <th class="w7">莊對</th>
+                        <th class="w7">閒對</th>
+                        <th class="w7">派彩</th>
+                        <th class="w12">有效投注額</th>
+                        <th class="w10">結果</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="normal_box">
+                        <td data-txt="下注時間" class="first_row time w10">
+                            <span>2021-02-25</span>
+                            <span>11:44:48</span>
+                        </td>
+                        <td data-txt="卡號" class="first_row w8">1</td>
+                        <td data-txt="桌號" class="first_row w8">WM83</td>
+                        <td data-txt="靴號" class="first_row w5">3</td>
+                        <td data-txt="局號" class="first_row w5">4</td>
+                        <td data-txt="莊" class="w7"></td>
+                        <td data-txt="閒" class="w7">10,000</td>
+                        <td data-txt="和" class="w7"></td>
+                        <td data-txt="莊對" class="w7"></td>
+                        <td data-txt="閒對" class="w7"></td>
+                        <td data-txt="派彩" class="last_row w7">-10,000</td>
+                        <td data-txt="有效投注額" class="last_row w12">10,000</td>
+                        <td data-txt="結果" class="last_row w10">
+                            <!-- 莊:--banker/閒:--player/和:--tie -->
+                            <span class="result --banker">莊</span>
+                        </td>
+                    </tr>
+                    <tr class="normal_box">
+                        <td data-txt="下注時間" class="first_row time w10">
+                            <span>2021-02-25</span>
+                            <span>11:44:48</span>
+                        </td>
+                        <td data-txt="卡號" class="first_row w8">1</td>
+                        <td data-txt="桌號" class="first_row w8">WM83</td>
+                        <td data-txt="靴號" class="first_row w5">3</td>
+                        <td data-txt="局號" class="first_row w5">4</td>
+                        <td data-txt="莊" class="w7">10,000</td>
+                        <td data-txt="閒" class="w7"></td>
+                        <td data-txt="和" class="w7"></td>
+                        <td data-txt="莊對" class="w7"></td>
+                        <td data-txt="閒對" class="w7"></td>
+                        <td data-txt="派彩" class="last_row w7">-10,000</td>
+                        <td data-txt="有效投注額" class="last_row w12">10,000</td>
+                        <td data-txt="結果" class="last_row w10">
+                            <span>現場異動</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="cancel_wager">取消單</button>
+            <div class="cancel_wager_box" style="display: none;">
+                <table class="normal_table">
+                    <thead>
+                        <tr>
+                            <th class="w10">下注時間</th>
+                            <th class="w8">卡號</th>
+                            <th class="w8">桌號</th>
+                            <th class="w5">靴號</th>
+                            <th class="w5">局號</th>
+                            <th class="w7">莊</th>
+                            <th class="w7">閒</th>
+                            <th class="w7">和</th>
+                            <th class="w7">莊對</th>
+                            <th class="w7">閒對</th>
+                            <th class="w7">派彩</th>
+                            <th class="w12">有效投注額</th>
+                            <th class="w10">結果</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="normal_box">
+                            <td data-txt="下注時間" class="first_row time w10">
+                                <span>2021-02-25</span>
+                                <span>11:44:48</span>
+                            </td>
+                            <td data-txt="卡號" class="first_row w8">1</td>
+                            <td data-txt="桌號" class="first_row w8">WM83</td>
+                            <td data-txt="靴號" class="first_row w5">3</td>
+                            <td data-txt="局號" class="first_row w5">4</td>
+                            <td data-txt="莊" class="w7"></td>
+                            <td data-txt="閒" class="w7">10,000</td>
+                            <td data-txt="和" class="w7"></td>
+                            <td data-txt="莊對" class="w7"></td>
+                            <td data-txt="閒對" class="w7"></td>
+                            <td data-txt="派彩" class="last_row w7">-10,000</td>
+                            <td data-txt="有效投注額" class="last_row w12">10,000</td>
+                            <td data-txt="結果" class="last_row w10"></td>
+                        </tr>
+                        <tr class="normal_box">
+                            <td data-txt="下注時間" class="first_row time w10">
+                                <span>2021-02-25</span>
+                                <span>11:44:48</span>
+                            </td>
+                            <td data-txt="卡號" class="first_row w8">1</td>
+                            <td data-txt="桌號" class="first_row w8">WM83</td>
+                            <td data-txt="靴號" class="first_row w5">3</td>
+                            <td data-txt="局號" class="first_row w5">4</td>
+                            <td data-txt="莊" class="w7">10,000</td>
+                            <td data-txt="閒" class="w7"></td>
+                            <td data-txt="和" class="w7"></td>
+                            <td data-txt="莊對" class="w7"></td>
+                            <td data-txt="閒對" class="w7"></td>
+                            <td data-txt="派彩" class="last_row w7">-10,000</td>
+                            <td data-txt="有效投注額" class="last_row w12">10,000</td>
+                            <td data-txt="結果" class="last_row w10">現場異動</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="../script/tpl.js"></script>
+
+</html>

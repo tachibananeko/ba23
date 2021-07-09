@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
+    <title>Welcome</title>
+
+    <link rel="stylesheet" href="../style/all.min.css">
+
+</head>
+
+<body ontouchstart="">
+    <!-- 
+        電投有卡.--telType 
+        電投無卡.--telType+.--noCard
+        網投有卡 無需class
+        網投無卡.--noOrder
+
+        視訊放大 在上方狀態後加上.--bigTv
+        選擇桌次展開.--tableOpen
+        卡片all展開.--cardOpen
+    -->
+    <div class="frame" id="frame">
+        <!-- 左邊menu -->
+        <!-- 打開人頭內按鈕 .--active -->
+        <aside class="frame__menu">
+            <!-- 客戶資訊 -->
+            <div class="menu__info">
+                <div class="menu__info__logo"></div>
+                <button class="menu__info_btn"></button>
+                <div class="menu__info__txt">
+                    <span class="name">LoremLoremLoremLoremLoremLoremLoremLoremLoremLorem</span>
+                    <span class="amount">200,000,000</span>
+                </div>
+            </div>
+            <!-- 客戶資訊 end -->
+
+            <!-- 分頁按鈕 -->
+            <div class="menu__main">
+                <!-- 基本按鈕 -->
+                <!-- 當前頁面.--on -->
+                <ul class="--myself" id="myself">
+                    <li data-txt="槍手桌號" class="--PR">
+                        MW2000
+                    </li>
+                    <li data-txt="返回大廳">
+                        <span class="hover_item"></span>
+                        <i class="icon_backlobby"></i>
+                    </li>
+                    <li data-txt="投注明細">
+                        <span class="hover_item"></span>
+                        <i class="icon_history"></i>
+                    </li>
+                    <li data-txt="遊戲規則">
+                        <span class="hover_item"></span>
+                        <i class="icon_rule"></i>
+                    </li>
+                    <li data-txt="選擇卡片">
+                        <span class="hover_item"></span>
+                        <i class="icon_card"></i>
+                    </li>
+                    <li data-txt="選擇線路">
+                        <span class=" hover_item"></span>
+                        <i class="icon_line"></i>
+                    </li>
+                    <li data-txt="登出">
+                        <span class=" hover_item"></span>
+                        <i class="icon_logout"></i>
+                    </li>
+                </ul>
+                <!-- 基本按鈕 end -->
+            </div>
+            <!-- 分頁按鈕 end -->
+        </aside>
+        <!-- 左邊menu end -->
+
+
+
+
+
+        <!-- iframe放置區 -->
+        <main class="frame__main">
+            <!-- 上方menu -->
+            <nav class="frame__main__nav">
+                <!-- 跑馬燈 -->
+                <div class="lobby__marquee">
+                    <span style="animation: marquee_move 25s linear infinite;">Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Et consequuntur velit impedit. Animi officiis, sint eius
+                        dignissimos quis non fugiat dicta deleniti iste aut sapiente consequatur facere. Iure,
+                        omnis corrupti?</span>
+                </div>
+                <!-- 跑馬燈 end -->
+
+                <!-- 全螢幕 -->
+                <!-- 縮小螢幕 --zoomout -->
+                <button class="zoom_btn">
+                    <span class="zoom_btn__txt">全螢幕</span>
+                    <span class="zoom_btn__txt --in">正常螢幕</span>
+                </button>
+                <!-- 全螢幕 end -->
+            </nav>
+            <!-- 上方menu end -->
+            
+
+
+
+
+            <!-- 主內容 -->
+            <div class="frame__main__otherinside --history_view">
+                <div class="history_view">
+                    <div class="history_view__title">投注明細</div>
+                    <div class="history_view__content">
+                        <div class="search">
+                            <label class="select_style">
+                                <select>
+                                    <option value="">2021-02</option>
+                                    <option value="">2021-01</option>
+                                    <option value="">2020-12</option>
+                                    <option value="">2020-11</option>
+                                </select>
+                            </label>
+                            <label class="select_style">
+                                <select>
+                                    <option value="">2021-02-25</option>
+                                    <option value="">2021-02-24</option>
+                                    <option value="">2021-02-23</option>
+                                    <option value="">2021-02-22</option>
+                                </select>
+                            </label>
+                            <label class="select_style">
+                                <select>
+                                    <option value="">PPS1-1(RMB)</option>
+                                </select>
+                            </label>
+                            <label class="select_style">
+                                <select>
+                                    <option value="">上桌</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="info">
+                            <div class="info__box">
+                                <span class="info__title">狀態</span>
+                                <span class="info__data">未結帳</span>
+                            </div>
+                            <div class="info__box">
+                                <span class="info__title">額度</span>
+                                <span class="info__data">500,000</span>
+                            </div>
+                            <div class="info__box">
+                                <span class="info__title">餘額</span>
+                                <span class="info__data">450,000</span>
+                            </div>
+                            <div class="info__box">
+                                <span class="info__title">洗碼</span>
+                                <span class="info__data">0</span>
+                            </div>
+                            <div class="info__box">
+                                <span class="info__title">本卡總洗碼數</span>
+                                <span class="info__data">0</span>
+                            </div>
+                        </div>
+                        <table class="normal_table --data">
+                            <thead>
+                                <tr>
+                                    <th>Shoes</th>
+                                    <th>桌號</th>
+                                    <th>本金</th>
+                                    <th>開始時間</th>
+                                    <th>結束時間</th>
+                                    <th>上下數</th>
+                                    <th>餘額</th>
+                                    <th>洗碼</th>
+                                    <th>小費</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="normal_box">
+                                    <td data-txt="Shoes">2</td>
+                                    <td data-txt="桌號">WM83</td>
+                                    <td data-txt="本金">97,500</td>
+                                    <td data-txt="開始時間" class="time">
+                                        <span>2021-02-25</span>
+                                        <span>11:44:48</span>
+                                    </td>
+                                    <td data-txt="結束時間" class="time">
+                                        <span>2021-02-25</span>
+                                        <span>11:44:48</span>
+                                    </td>
+                                    <td data-txt="上下數">-500</td>
+                                    <td data-txt="餘額">97,000</td>
+                                    <td data-txt="洗碼">0</td>
+                                    <td data-txt="小費">0</td>
+                                </tr>
+                                <tr class="normal_box">
+                                    <td data-txt="Shoes">2</td>
+                                    <td data-txt="桌號">WM83</td>
+                                    <td data-txt="本金">97,500</td>
+                                    <td data-txt="開始時間" class="time">
+                                        <span>2021-02-25</span>
+                                        <span>11:44:48</span>
+                                    </td>
+                                    <td data-txt="結束時間" class="time">
+                                        <span>2021-02-25</span>
+                                        <span>11:44:48</span>
+                                    </td>
+                                    <td data-txt="上下數">-500</td>
+                                    <td data-txt="餘額">97,000</td>
+                                    <td data-txt="洗碼">0</td>
+                                    <td data-txt="小費">0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="normal_table --total">
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <span class="pc">有效下注量</span>
+                                        <span class="ph">Total</span>
+                                    </th>
+                                    <td class="empty"></td>
+                                    <td class="empty"></td>
+                                    <td class="empty"></td>
+                                    <td class="empty"></td>
+                                    <td data-txt="上下數">-500</td>
+                                    <td data-txt="餘額">97,000</td>
+                                    <td data-txt="洗碼">0</td>
+                                    <td data-txt="小費">0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- 主內容 end -->
+            
+        </main>
+    </div>
+</body>
+
+<script src="../script/tpl.js"></script>
+
+</html>
