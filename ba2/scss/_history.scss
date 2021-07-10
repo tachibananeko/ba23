@@ -1,8 +1,8 @@
-.statement{
+.history{
     width: 100%;
     height: 100%;
 
-    // .statement__title
+    // .history__title
     &__title{
         @include d_f(flex, center, center);
         @include border(0 0 1px, map-get($border_color, primary));
@@ -22,7 +22,7 @@
         }
     }
 
-    // .statement__content
+    // .history__content
     &__content{
         position: relative;
         min-height: 100%;
@@ -144,12 +144,14 @@
     
 // 表格設定
 .table_group{
-    width: calc(100% - 20px);
-    margin: auto;
-    
-    &:not(.--total){
-        padding-top: 10px;
-    }
+    @include mw_xs{
+        width: calc(100% - 20px);
+        margin: auto;
+        
+        &:not(.--total){
+            padding-top: 10px;
+        }
+    }    
 }
 .normal_table{
     width: 100%;

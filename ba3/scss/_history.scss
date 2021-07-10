@@ -1,15 +1,12 @@
-.history_view,
-.history_data{
-    // history_view__title
-    // history_data__title
+.history_view{
+    // .history_view__title
     &__title{
         @include d_f(flex, center, center);
         height: 35px;
         font-size: 20px;
         background: map-get($bg_color, primary_vl);
     }
-    // history_view__content
-    // history_data__content
+    // .history_view__content
     &__content{
         @include mw_xs{
             padding-bottom: 20px;
@@ -91,7 +88,7 @@
                 justify-content: space-between;
                 padding: 0 15px;
             }
-            // info__box
+            // .info__box
             &__box{
                 & + .info__box{
                     margin-left: 45px;
@@ -100,7 +97,7 @@
                     }
                 }
             }
-            // info__title
+            // .info__title
             &__title{
                 color: #FFFDB4;
             }
@@ -120,7 +117,6 @@
             }
             th,
             td{
-                width: calc(100% / 9);
                 text-align: center;
                 height: 50px;
                 border-width: 0 1px 1px 0;
@@ -233,18 +229,6 @@
         }
     }
 }
-.history_data{
-    // history_data__content
-    &__content{
-        .normal_table{
-            &.--total{
-                @include mw_xs{
-                    top: 100%;
-                }
-            }
-        }
-    }
-}
 .history_detail{
     .info{
         @include d_f(flex, center, center);
@@ -256,7 +240,7 @@
             justify-content: flex-start;
             padding: 15px 15px 0;
         }
-        // info__box
+        // .info__box
         &__box{
             @include mw_xs{
                 width: 50%;
@@ -274,7 +258,7 @@
                 }
             }
         }
-        // info__title
+        // .info__title
         &__title{
             color: #FFFDB4;
         }
