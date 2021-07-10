@@ -15,12 +15,15 @@
         @include mw_xs{
             padding-bottom: 10px;
         }
+
+        // 搜尋列
         .search{
-            @include d_f(flex, center, flex-start);
+            @include d_f(flex, center, center);
             padding: 10px 20px;
             background: map-get($bg_color, black);
 
             @include mw_xs{
+                justify-content: flex-start;
                 flex-wrap: wrap;
                 padding: 10px 0 0 10px;
             }
@@ -42,18 +45,18 @@
                 }
             }
         }
+
         // 功能按鈕
         .return_btn,
+        .refresh_btn,
         .cancel_wager_btn{
             @include btn_set(auto, 30px, map-get($btn_color, lightblue));
             @include radius_hidden();
             @include mr_distance;
-            min-width: 120px;
             padding: 0 10px;
             border: 1px solid map-get($bg_color, lightblue);
 
             @include mw_xs{
-                min-width: 100px;
                 margin-bottom: 10px;
             }
 
@@ -80,6 +83,17 @@
             // 手指效果
             @include btn_hoverHandler(1px, map-get($txt_color, primary));
         }
+        .refresh_btn{
+            background: map-get($btn_color, orange);
+            border-color: map-get($bg_color, secondary)
+            ;
+            i{
+                @include btn_i(map-get($bg_color, i_gold));
+            }
+            .hover_item{
+                @include btn_hoveritem(map-get($btn_color, lightorange));
+            }
+        }
         .cancel_wager_btn{
             background: map-get($btn_color, green);
             border-color: map-get($bg_color, lightgreen)
@@ -92,13 +106,17 @@
                 @include btn_hoveritem(map-get($btn_color, lightgreen));
             }
         }
+
+        // 客戶資訊
         .info{
             @include border(1px 0, map-get($border_color, secondary));
             padding: 5px 20px;
             background: map-get($bg_color, darkblue_vl);
+            text-align: center;
 
             @include mw_xs{
                 padding: 5px 10px 0;
+                text-align: left;
             }
             
             // .info__box
@@ -262,34 +280,47 @@
 
     // 電投細單
     &.--detail{
+        padding-top: 0;
+        
+        @include mw_sm{
+            font-size: 12px;
+        }
+
         caption{
             @include border(0 0 1px, map-get($border_color, secondary));
             padding: 5px 0;
             background: map-get($bg_color, primary_vl);
             font-weight: bold;
+            font-size: 16px;
+
+            &.--cancel{
+                background: map-get($btn_color, lightblue_vl);
+            }
         }
 
         .normal_box{
-            
             @include mw_xs{
                 @include d_f(flex, unset, flex-start);
+                padding-top: 35px;
                 flex-wrap: wrap;
-                font-size: 12px;
                 margin-bottom: 0;
 
                 td{
-                    display: block;
-                    padding: 45px 0 10px;
-                    text-align: center;
+                    padding: 10px 0;
+                    justify-content: center;
 
                     &::before{
                         width: 100%;
                         height: 35px;
+                        border: none;
+                        top: auto;
+                        bottom: 100%;
                     }
                 }
 
                 .first_row{
                     width: calc(100% / 5);
+                    margin-bottom: 35px;
                     
                     &::before{
                         background: map-get($bg_color, darkblue_vl_re);
@@ -297,23 +328,40 @@
                 }
                 .midd_row{
                     width: calc(100% / 5);
+                    margin-bottom: 35px;
                 }
                 .last_row{
                     width: calc(100% / 3);
                 }
             }
         }
+        .result{
+            color: map-get($txt_color, secondary);
+            font-weight: bold;
+            
+            // 有結果
+            &:empty{
+                color: map-get($txt_color, primary);
 
-        .result::before{
-            content: '';
-            @at-root .--banker ::before{
+                &::before{
+                @include d_f(flex, center, center);
+                content: attr(data-txt);
+                width: 25px;
+                height: 25px;
+                border-radius: 25px;
+                font-size: 16px;
+                margin: auto;
 
+                @at-root .--banker::before{
+                    background: map-get($bg_color, bank);
+                }
+                @at-root .--player::before{
+                    background: map-get($bg_color, play);
+                }
+                @at-root .--tie::before{
+                    background: map-get($bg_color, tie);
+                }
             }
-            @at-root .--player ::before{
-
-            }
-            @at-root .--tie ::before{
-
             }
         }
     }
