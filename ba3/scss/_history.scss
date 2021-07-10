@@ -259,4 +259,62 @@
             }
         }
     }
+
+    // 電投細單
+    &.--detail{
+        caption{
+            @include border(0 0 1px, map-get($border_color, secondary));
+            padding: 5px 0;
+            background: map-get($bg_color, primary_vl);
+            font-weight: bold;
+        }
+
+        .normal_box{
+            
+            @include mw_xs{
+                @include d_f(flex, unset, flex-start);
+                flex-wrap: wrap;
+                font-size: 12px;
+                margin-bottom: 0;
+
+                td{
+                    display: block;
+                    padding: 45px 0 10px;
+                    text-align: center;
+
+                    &::before{
+                        width: 100%;
+                        height: 35px;
+                    }
+                }
+
+                .first_row{
+                    width: calc(100% / 5);
+                    
+                    &::before{
+                        background: map-get($bg_color, darkblue_vl_re);
+                    }
+                }
+                .midd_row{
+                    width: calc(100% / 5);
+                }
+                .last_row{
+                    width: calc(100% / 3);
+                }
+            }
+        }
+
+        .result::before{
+            content: '';
+            @at-root .--banker ::before{
+
+            }
+            @at-root .--player ::before{
+
+            }
+            @at-root .--tie ::before{
+
+            }
+        }
+    }
 }
