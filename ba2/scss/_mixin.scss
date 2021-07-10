@@ -395,7 +395,7 @@ $breakpoints: (
 	}
 }
 
-@mixin mw_ms {
+@mixin mw_sm {
 	@media screen and (max-width: map-get($breakpoints, "pad_vl")) {
 		@content;
 	}

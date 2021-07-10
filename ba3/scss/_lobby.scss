@@ -22,7 +22,7 @@
     font-size: 14px;
     margin-bottom: 20px;
 
-    @include mw_ms{
+    @include mw_sm{
         width: 100%;
     }
 
@@ -98,7 +98,7 @@
             border-top: none;
             margin: auto;
 
-            @include mw_ms{
+            @include mw_sm{
                 width: 25%;
                 border-radius: 0 0 10px 10px;
             }

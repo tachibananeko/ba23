@@ -116,7 +116,7 @@
                 background: map-get($btn_color, secondary_vl);
                 margin-bottom: 2px;
 
-                @include mw_ms{
+                @include mw_sm{
                     border-radius: 0;
                 }
             }

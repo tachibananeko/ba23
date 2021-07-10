@@ -34,7 +34,7 @@
             margin-right: 0;
         }
 
-        @include mw_ms{
+        @include mw_sm{
             width: calc(100% / 2 - 30px);
             
             &:nth-child(even){

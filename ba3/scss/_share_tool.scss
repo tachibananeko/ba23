@@ -21,7 +21,7 @@
 }
 
 .show_xs{
-    @include mw_ms{
+    @include mw_sm{
         display: none;
     }
     @include mw_xs{
@@ -64,7 +64,7 @@
     select{
         width: 100%;
         height: 100%;
-        padding: 0 10px;
+        padding: 0 20px 0 10px;
         background: map-get($bg_color , black);
         border-radius: 3px;
         color: map-get($txt_color, primary);
@@ -227,5 +227,19 @@
                 border-color: map-get($bg_color, lightblue);
             }
         }
+    }
+}
+
+// 可點擊字串
+.txtlink_style{
+    @extend %hand;
+    color: map-get($txt_color, win);
+    font-weight: bold;
+    text-decoration: underline;
+
+    // 手指效果
+    @include hoverHandler{
+        color: map-get($txt_color, play);
+    
     }
 }

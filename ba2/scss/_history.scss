@@ -286,7 +286,7 @@
     &.--detail{
         font-size: 14px;
 
-        @include mw_ms{
+        @include mw_sm{
             font-size: 12px;
         }
 

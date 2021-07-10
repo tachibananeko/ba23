@@ -90,7 +90,7 @@
             @include mw_md {
                 @include scrollbar(hidden, auto);
             }
-            @include mw_ms {
+            @include mw_sm {
                 grid-template-areas:"video"
                                     "order"
                                     "road";
@@ -119,7 +119,7 @@
                 grid-area: video;
                 
                 background-color: map-get($bg_color, black);
-                @include mw_ms{
+                @include mw_sm{
                     grid-area: 1 / 1 / 2 / 2;
                 }
             }
@@ -130,7 +130,7 @@
                 background-color: map-get($bg_color, black);
                 z-index: 2;
 
-                @include mw_ms {
+                @include mw_sm {
                     grid-area: auto;
                     display: none;
 
@@ -144,7 +144,7 @@
             .order {
                 grid-area: order;
 
-                @include mw_ms {
+                @include mw_sm {
                     grid-area: 2 / 1 / 3 / 2;
 
                     // 選擇桌次展開
@@ -158,7 +158,7 @@
                 grid-area: road;
                 background-color: map-get($bg_color, white);
 
-                @include mw_ms {
+                @include mw_sm {
                     min-height: 130px;
 
                     // 選擇桌次展開
@@ -173,7 +173,7 @@
 
                 z-index: 3;
 
-                @include mw_ms {
+                @include mw_sm {
                     grid-area: 1 / 1 / 2 / 2;
                 }
             }
@@ -281,7 +281,7 @@
                         "table details"
                         "road road";
 
-    @include mw_ms{
+    @include mw_sm{
         grid-template-areas:"video"
                             "order"
                             "road";
@@ -319,7 +319,7 @@
                         "table details"
                         "road road";
     
-    @include mw_ms{
+    @include mw_sm{
         grid-template-areas:"video"
                             "road";
         grid-template-rows: 60vw minmax(200px, 300px);
@@ -339,7 +339,7 @@
 .--telType .order {
     grid-area: 1 / 2 / 3 / 3;
 
-    @include mw_ms{
+    @include mw_sm{
         grid-area: auto;
     }
 }

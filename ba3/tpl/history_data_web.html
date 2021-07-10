@@ -12,11 +12,7 @@
 
     <link rel="stylesheet" href="../style/all.min.css">
 
-    <!-- icon -->
-    <link rel="shortcut icon" href="/favicon_icon.ico">
-    <link rel="icon" href="/favicon_icon.ico">
-    <link rel="apple-touch-icon" type="image/png" href="/favicon_icon.png">
-    <link rel="apple-touch-icon-precomposed" href="/favicon_icon.png">
+    
 
 </head>
 
@@ -31,9 +27,10 @@
         選擇桌次展開.--tableOpen
         卡片all展開.--cardOpen
     -->
-    <div class="history_data">
-        <div class="history_data__title">投注明細</div>
-        <div class="history_data__content">
+    <div class="history">
+        <div class="history__title">投注明細</div>
+        <div class="history__content">
+            <!-- 搜尋列 -->
             <div class="search">
                 <label class="select_style">
                     <select>
@@ -56,11 +53,6 @@
                         <option value="">PPS1-1(RMB)</option>
                     </select>
                 </label>
-                <label class="select_style">
-                    <select>
-                        <option value="">上桌</option>
-                    </select>
-                </label>
                 <button class="return_btn" data-txt="返回">
                     <span class="hover_item"></span>
                     <i></i>
@@ -70,6 +62,11 @@
                     <i></i>
                 </button>
             </div>
+            <!-- 搜尋列 end -->
+
+
+
+            <!-- 客戶資訊 -->
             <div class="info">
                 <div class="info__box">
                     <span class="info__title">狀態</span>
@@ -92,79 +89,90 @@
                     <span class="info__data">0</span>
                 </div>
             </div>
-            <table class="normal_table --data">
-                <thead>
-                    <tr>
-                        <th>時間</th>
-                        <th>Shoes</th>
-                        <th>桌/靴/局</th>
-                        <th>莊</th>
-                        <th>閒</th>
-                        <th>和</th>
-                        <th>莊對</th>
-                        <th>閒對</th>
-                        <th>結果</th>
-                        <th>公關</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="normal_box">
-                        <td data-txt="時間" class="time">
-                            <span>2021-02-25</span>
-                            <span>11:44:48</span>
-                        </td>
-                        <td data-txt="Shoes">2</td>
-                        <td data-txt="桌/靴/局">
-                            <span>WM83</span>
-                            <span>1/2</span>
-                        </td>
-                        <td data-txt="莊">0</td>
-                        <td data-txt="閒">500</td>
-                        <td data-txt="和">0</td>
-                        <td data-txt="莊對">0</td>
-                        <td data-txt="閒對">0</td>
-                        <td data-txt="結果">-500</td>
-                        <td data-txt="公關">Awei</td>
-                    </tr>
-                    <tr class="normal_box">
-                        <td data-txt="時間" class="time">
-                            <span>2021-02-25</span>
-                            <span>11:44:48</span>
-                        </td>
-                        <td data-txt="Shoes">2</td>
-                        <td data-txt="桌/靴/局">
-                            <span>WM83</span>
-                            <span>1/2</span>
-                        </td>
-                        <td data-txt="莊">0</td>
-                        <td data-txt="閒">500</td>
-                        <td data-txt="和">0</td>
-                        <td data-txt="莊對">0</td>
-                        <td data-txt="閒對">0</td>
-                        <td data-txt="結果">-500</td>
-                        <td data-txt="公關">Awei</td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="normal_table --total">
-                <tbody>
-                    <tr>
-                        <th>
-                            <span class="pc">有效下注量</span>
-                            <span class="ph">Total</span>
-                        </th>
-                        <td class="empty"></td>
-                        <td class="empty"></td>
-                        <td data-txt="莊">0</td>
-                        <td data-txt="閒">500</td>
-                        <td data-txt="和">0</td>
-                        <td data-txt="莊對">0</td>
-                        <td data-txt="閒對">0</td>
-                        <td data-txt="結果">-500</td>
-                        <td data-txt="公關">Awei</td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- 客戶資訊 end -->
+
+
+
+            <!-- 表單內容 -->
+            <!-- 負數加上 .txt_yellow -->
+            <div id="history_data" class="table_group">
+                <table class="normal_table">
+                    <thead>
+                        <tr>
+                            <th class="w12">時間</th>
+                            <th class="w8">Shoes</th>
+                            <th class="w12">桌/靴/局</th>
+                            <th class="w10">莊</th>
+                            <th class="w10">閒</th>
+                            <th class="w8">和</th>
+                            <th class="w8">莊對</th>
+                            <th class="w8">閒對</th>
+                            <th class="w12">結果</th>
+                            <th class="w12">公關</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="normal_box">
+                            <td data-txt="時間">
+                                2021-02-25 11:44:48
+                            </td>
+                            <td data-txt="Shoes">2</td>
+                            <td data-txt="桌/靴/局">
+                                WM83 / 1 / 2
+                            </td>
+                            <td data-txt="莊">0</td>
+                            <td data-txt="閒">500</td>
+                            <td data-txt="和">0</td>
+                            <td data-txt="莊對">0</td>
+                            <td data-txt="閒對">0</td>
+                            <td data-txt="結果" class="txt_yellow">-500</td>
+                            <td data-txt="公關">Awei</td>
+                        </tr>
+                        <tr class="normal_box">
+                            <td data-txt="時間">
+                                2021-02-25 11:44:48
+                            </td>
+                            <td data-txt="Shoes">2</td>
+                            <td data-txt="桌/靴/局">
+                                WM83 / 1 / 2
+                            </td>
+                            <td data-txt="莊">0</td>
+                            <td data-txt="閒">500</td>
+                            <td data-txt="和">0</td>
+                            <td data-txt="莊對">0</td>
+                            <td data-txt="閒對">0</td>
+                            <td data-txt="結果" class="txt_yellow">-500</td>
+                            <td data-txt="公關">Awei</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 表單內容 end -->
+
+
+
+            <!-- 總計 -->
+            <!-- 點擊展開加上 --on -->
+            <div id="history_total" class="table_group --total">
+                <table class="normal_table">
+                    <tbody>
+                        <tr>
+                            <th class="w12">
+                                總計
+                            </th>
+                            <td colspan="2" class="w20"></td>
+                            <td data-txt="莊" class="w10">0</td>
+                            <td data-txt="閒" class="w10">500</td>
+                            <td data-txt="和" class="w8">0</td>
+                            <td data-txt="莊對" class="w8">0</td>
+                            <td data-txt="閒對" class="w8">0</td>
+                            <td data-txt="結果" class="w12 txt_yellow">-500</td>
+                            <td data-txt="公關" class="w12">Awei</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 總計 end -->
         </div>
     </div>
 </body>

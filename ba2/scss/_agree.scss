@@ -33,7 +33,7 @@
     height: calc(100% - 75px);
     border-top: none;
 
-    @include mw_ms{
+    @include mw_sm{
         border-radius: 0;
     }
 
@@ -53,7 +53,7 @@
             border-top: none;
             margin: auto;
 
-            @include mw_ms{
+            @include mw_sm{
                 width: 80%;
                 border-radius: 0 0 10px 10px;
             }

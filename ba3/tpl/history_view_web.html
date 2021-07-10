@@ -110,10 +110,12 @@
 
 
             <!-- 主內容 -->
-            <div class="frame__main__otherinside --history_view">
-                <div class="history_view">
-                    <div class="history_view__title">投注明細</div>
-                    <div class="history_view__content">
+            <div class="frame__main__otherinside">
+                <div class="history">
+                    <div class="history__title">投注明細</div>
+                    
+                    <div class="history__content">
+                        <!-- 搜尋列 -->
                         <div class="search">
                             <label class="select_style">
                                 <select>
@@ -142,97 +144,115 @@
                                 </select>
                             </label>
                         </div>
+                        <!-- 搜尋列 end -->
+
+
+
+                        <!-- 客戶資訊 -->
                         <div class="info">
-                            <div class="info__box">
-                                <span class="info__title">狀態</span>
-                                <span class="info__data">未結帳</span>
-                            </div>
-                            <div class="info__box">
-                                <span class="info__title">額度</span>
-                                <span class="info__data">500,000</span>
-                            </div>
-                            <div class="info__box">
-                                <span class="info__title">餘額</span>
-                                <span class="info__data">450,000</span>
-                            </div>
-                            <div class="info__box">
-                                <span class="info__title">洗碼</span>
-                                <span class="info__data">0</span>
-                            </div>
-                            <div class="info__box">
-                                <span class="info__title">本卡總洗碼數</span>
-                                <span class="info__data">0</span>
-                            </div>
+                            <span class="info__box">
+                                <code class="info__title">狀態</code>
+                                <code class="info__data">未結帳</code>
+                            </span>
+                            <span class="info__box">
+                                <code class="info__title">額度</code>
+                                <code class="info__data">500,000</code>
+                            </span>
+                            <span class="info__box">
+                                <code class="info__title">餘額</code>
+                                <code class="info__data">450,000</code>
+                            </span>
+                            <span class="info__box">
+                                <code class="info__title">洗碼</code>
+                                <code class="info__data">0</code>
+                            </span>
+                            <span class="info__box">
+                                <code class="info__title">本卡總洗碼數</code>
+                                <code class="info__data">0</code>
+                            </span>
                         </div>
-                        <table class="normal_table --data">
-                            <thead>
-                                <tr>
-                                    <th>Shoes</th>
-                                    <th>桌號</th>
-                                    <th>本金</th>
-                                    <th>開始時間</th>
-                                    <th>結束時間</th>
-                                    <th>上下數</th>
-                                    <th>餘額</th>
-                                    <th>洗碼</th>
-                                    <th>小費</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="normal_box">
-                                    <td data-txt="Shoes">2</td>
-                                    <td data-txt="桌號">WM83</td>
-                                    <td data-txt="本金">97,500</td>
-                                    <td data-txt="開始時間" class="time">
-                                        <span>2021-02-25</span>
-                                        <span>11:44:48</span>
-                                    </td>
-                                    <td data-txt="結束時間" class="time">
-                                        <span>2021-02-25</span>
-                                        <span>11:44:48</span>
-                                    </td>
-                                    <td data-txt="上下數">-500</td>
-                                    <td data-txt="餘額">97,000</td>
-                                    <td data-txt="洗碼">0</td>
-                                    <td data-txt="小費">0</td>
-                                </tr>
-                                <tr class="normal_box">
-                                    <td data-txt="Shoes">2</td>
-                                    <td data-txt="桌號">WM83</td>
-                                    <td data-txt="本金">97,500</td>
-                                    <td data-txt="開始時間" class="time">
-                                        <span>2021-02-25</span>
-                                        <span>11:44:48</span>
-                                    </td>
-                                    <td data-txt="結束時間" class="time">
-                                        <span>2021-02-25</span>
-                                        <span>11:44:48</span>
-                                    </td>
-                                    <td data-txt="上下數">-500</td>
-                                    <td data-txt="餘額">97,000</td>
-                                    <td data-txt="洗碼">0</td>
-                                    <td data-txt="小費">0</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table class="normal_table --total">
-                            <tbody>
-                                <tr>
-                                    <th>
-                                        <span class="pc">有效下注量</span>
-                                        <span class="ph">Total</span>
-                                    </th>
-                                    <td class="empty"></td>
-                                    <td class="empty"></td>
-                                    <td class="empty"></td>
-                                    <td class="empty"></td>
-                                    <td data-txt="上下數">-500</td>
-                                    <td data-txt="餘額">97,000</td>
-                                    <td data-txt="洗碼">0</td>
-                                    <td data-txt="小費">0</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <!-- 客戶資訊 end -->
+
+
+
+                        <!-- 表單內容 -->
+                        <!-- 可點擊字串加上 .txtlink_style 負數加上 .txt_yellow -->
+                        <div id="history_data" class="table_group">
+                            <table class="normal_table">
+                                <thead>
+                                    <tr>
+                                        <th class="w7">Shoes</th>
+                                        <th class="w13">桌號</th>
+                                        <th class="w15">本金</th>
+                                        <th class="w12">開始時間</th>
+                                        <th class="w12">結束時間</th>
+                                        <th class="w12">上下數</th>
+                                        <th class="w15">餘額</th>
+                                        <th class="w7">洗碼</th>
+                                        <th class="w7">小費</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="normal_box">
+                                        <td data-txt="Shoes">2</td>
+                                        <td data-txt="桌號">WM83</td>
+                                        <td data-txt="本金">97,500</td>
+                                        <td data-txt="開始時間">
+                                            2021-02-25
+                                            11:44:48
+                                        </td>
+                                        <td data-txt="結束時間">
+                                            2021-02-25
+                                            11:44:48
+                                        </td>
+                                        <td data-txt="上下數" class="txtlink_style txt_yellow">-500</td>
+                                        <td data-txt="餘額">97,000</td>
+                                        <td data-txt="洗碼">0</td>
+                                        <td data-txt="小費">0</td>
+                                    </tr>
+                                    <tr class="normal_box">
+                                        <td data-txt="Shoes">2</td>
+                                        <td data-txt="桌號">WM83</td>
+                                        <td data-txt="本金">97,500</td>
+                                        <td data-txt="開始時間">
+                                            2021-02-25
+                                            11:44:48
+                                        </td>
+                                        <td data-txt="結束時間">
+                                            2021-02-25
+                                            11:44:48
+                                        </td>
+                                        <td data-txt="上下數" class="txtlink_style">5500</td>
+                                        <td data-txt="餘額">97,000</td>
+                                        <td data-txt="洗碼">0</td>
+                                        <td data-txt="小費">0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- 表單內容 end -->
+
+
+
+                        <!-- 總計 -->
+                        <!-- 點擊展開加上 --on -->
+                        <div id="history_total" class="table_group --total">
+                            <table class="normal_table">
+                                <tbody>
+                                    <tr>
+                                        <th class="w7">
+                                            總計
+                                        </th>
+                                        <td colspan="4" class="w52"></td>
+                                        <td data-txt="上下數" class="txtlink_style" class="w12">5000</td>
+                                        <td data-txt="餘額" class="w15">97,000</td>
+                                        <td data-txt="洗碼" class="w7">0</td>
+                                        <td data-txt="小費" class="w7">0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- 總計 end -->
                     </div>
                 </div>
             </div>

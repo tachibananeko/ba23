@@ -18,7 +18,7 @@
     padding-top: 5%;
     background: url(../images/img_login.png) no-repeat 35% bottom / 600px;
 
-    @include mw_ms{
+    @include mw_sm{
         min-height: auto;
         padding-top: 0;
         background-position: 10% 60%;
@@ -42,7 +42,7 @@
         text-align: right;
         opacity: 0.9;
 
-        @include mw_ms{
+        @include mw_sm{
             font-size: 40px;
             width: 50%;
         }        

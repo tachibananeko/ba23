@@ -29,7 +29,7 @@
                     font-size: 16px;
                     font-weight: bold;
                 }
-                @include mw_ms {
+                @include mw_sm {
                     font-size: 12px;
                     margin-bottom: 0;
                 }
@@ -52,7 +52,7 @@
                 &[data-txt=""]::after{
                     content: none;
                 }
-                @include mw_ms{
+                @include mw_sm{
                     min-width: 100px;
                     &::before {
                         font-size: 40px;
@@ -123,7 +123,7 @@
             white-space: nowrap;
             z-index: 4;
 
-            @include mw_ms{
+            @include mw_sm{
                 position: fixed;
                 top: 10px;
             }
@@ -246,7 +246,7 @@
                 content: '';
             }
 
-            @include mw_ms {
+            @include mw_sm {
                 content: none;
             }
             
@@ -350,7 +350,7 @@
                 display: flex;
             }
         }
-        @include mw_ms {
+        @include mw_sm {
             position: static;
             display: flex;
         }
@@ -366,7 +366,7 @@
                 width: 115px;
             }
 
-            @include mw_ms {
+            @include mw_sm {
                 margin: 0 5px 5px;
             }
 
@@ -459,14 +459,14 @@
     // 996以下會員資訊
     @at-root .order .memberInfo{
         display: none;
-        @include mw_ms{
+        @include mw_sm{
             display: flex;
             order: -2;
         }
     }
     // 996以上會員資訊
     @at-root .road .memberInfo {
-        @include mw_ms{
+        @include mw_sm{
             display: none;
         }
     }
@@ -529,7 +529,7 @@
         flex-direction: column;
         order: -3;
 
-        @include mw_ms{
+        @include mw_sm{
             flex-direction: row;
         }
         
@@ -544,7 +544,7 @@
         height: 40px;
         padding: 5px;
 
-        @include mw_ms{
+        @include mw_sm{
             width: 40%;
         }
         @include mw_xs{
@@ -557,7 +557,7 @@
         &__btn{
             @include btn_set(calc(100% / 3), 100%, map-get($btn_color, lightgreen));
 
-            @include mw_ms{
+            @include mw_sm{
                 width: calc(100% / 2);
                 &:nth-child(2){
                     display: none;
@@ -595,7 +595,7 @@
         padding: 5px;
         background: map-get($bg_color, darkgray);
         
-        @include mw_ms{
+        @include mw_sm{
             width: 60%;
             order: -1;
         }
@@ -807,7 +807,7 @@
         height: 70px;
         background: map-get($bg_color, primary_vl);
 
-        @include mw_ms{
+        @include mw_sm{
             height: 50px;
             justify-content: center;
             order: -1;
@@ -820,11 +820,11 @@
             height: 50px;
             flex: none;
 
-            @include mw_ms {
+            @include mw_sm {
                 margin: 0 20px;
             }
 
-            @include mw_ms {
+            @include mw_sm {
                 width: 40px;
                 height: 40px;
                 margin: 0 5px;
@@ -835,7 +835,7 @@
                 width: 70px;
                 height: 70px;
                 
-                @include mw_ms {
+                @include mw_sm {
                     width: 50px;
                     height: 50px;
                 }
@@ -846,7 +846,7 @@
                 width: 70px;
                 height: 70px;
 
-                @include mw_ms {
+                @include mw_sm {
                     width: 50px;
                     height: 50px;
                 }
@@ -863,7 +863,7 @@
         padding: 5px;
         background: map-get($bg_color, darkgray);
 
-        @include mw_ms{
+        @include mw_sm{
             padding: 0;
         }
 
@@ -874,7 +874,7 @@
             &:first-child{
                 @include radius_hidden(5px 0 0 5px);
 
-                @include mw_ms{
+                @include mw_sm{
                     border-radius: 0;
                 }
                 
@@ -909,7 +909,7 @@
                 background: map-get($btn_color, lightred);
                 border-radius: 0 5px 5px 0;
 
-                @include mw_ms{
+                @include mw_sm{
                     border-radius: 0;
                 }
                 .hover_item {
@@ -938,7 +938,7 @@
             padding: 3px 10px;
             background: map-get($bg_color, darkgray);
 
-            @include mw_ms{
+            @include mw_sm{
                 justify-content: space-between;
                 padding-right: 30px;
             }
@@ -1023,7 +1023,7 @@
                 flex-wrap: wrap;
                 height: 50%;
 
-                @include mw_ms{
+                @include mw_sm{
                     height: 33.33%;
                 }
 
@@ -1073,7 +1073,7 @@
     @at-root .--telType.--cardOpen .detail{
         display: none;
 
-        @include mw_ms{
+        @include mw_sm{
             display: flex;
         }
     }
@@ -1100,7 +1100,7 @@
                 display: none;
             }
         }
-        @include mw_ms{
+        @include mw_sm{
             width: calc(100% / 2 - 2px);
             height: 100%;
 
@@ -1109,7 +1109,7 @@
             }
         }
 
-        @include mw_ms {
+        @include mw_sm {
             max-width: 250px;
             background: map-get($bg_color, black_alpha);
         }
@@ -1127,7 +1127,7 @@
                 display: none;
             }
 
-            @include mw_ms {
+            @include mw_sm {
                 display: flex;
                 font-size: 14px;
             }
@@ -1170,7 +1170,7 @@
             @include d_f(flex, unset, flex-start);
         }
 
-        @include mw_ms{
+        @include mw_sm{
             display: none;
         }
 
@@ -1228,7 +1228,7 @@
 
         display: none;
 
-        @include mw_ms{
+        @include mw_sm{
             display: flex;
         }
 
@@ -1387,7 +1387,7 @@
                 font-size: 18px;
             }
 
-            @include mw_ms{
+            @include mw_sm{
                 font-size: 14px;
                 flex: 0 0 45px;
             }
@@ -1412,7 +1412,7 @@
                 height: 40px;
             }
 
-            @include mw_ms{
+            @include mw_sm{
                 flex: 0 0 50px;
             }
 

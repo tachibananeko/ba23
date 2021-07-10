@@ -23,7 +23,7 @@
         position: relative;
         height: 100%;
 
-        @include mw_ms {
+        @include mw_sm {
             display: none;
             height: auto;
             flex-direction: column;
@@ -39,7 +39,7 @@
         border: 1px solid map-get($bg_color, secondary);
         font-weight: bold;
         
-        @include mw_ms {
+        @include mw_sm {
             height: 30px;
         }
         &::before {
@@ -67,7 +67,7 @@
         
         display: none;
         
-        @include mw_ms {
+        @include mw_sm {
             display: block;
             height: 30px;
         }
@@ -111,7 +111,7 @@
     
     display: none;
 
-    @include mw_ms{
+    @include mw_sm{
         display: block;
     }
 

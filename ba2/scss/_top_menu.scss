@@ -24,7 +24,7 @@
         height: 100%;
         border: 1px solid map-get($bg_color, secondary);
 
-        @include mw_ms {
+        @include mw_sm {
             display: none;
             height: auto;
             flex-direction: column;
@@ -39,7 +39,7 @@
         @include btn_set(60px, 100%, map-get($btn_color, darkbrown));
         font-weight: bold;
         
-        @include mw_ms {
+        @include mw_sm {
             height: 30px;
         }
         &::before {
@@ -67,7 +67,7 @@
         border: 1px solid map-get($bg_color, secondary);
         
         display: none;
-        @include mw_ms {
+        @include mw_sm {
             display: block;
             height: 30px;
         }
@@ -111,7 +111,7 @@
     
     display: none;
 
-    @include mw_ms{
+    @include mw_sm{
         display: block;
     }
 
@@ -138,7 +138,7 @@
         margin: auto;
         animation: shake 2s infinite;
 
-        @include mw_ms {
+        @include mw_sm {
             content: '';
         }
 
@@ -271,7 +271,7 @@
     font-size: 0;
     margin-right: 20px;
 
-    @include mw_ms{
+    @include mw_sm{
         width: 100px;
     }
     
@@ -284,7 +284,7 @@
         @include btn_set(calc(100% / 2), 100%, map-get($btn_color, lightgreen));
         @include border(1px 0, map-get($border_color, primary));
 
-        @include mw_ms{
+        @include mw_sm{
             width: 100%;
         }
 
@@ -319,7 +319,7 @@
                 background-image: map-get($btn_color, lightorange);
             }
 
-            @include mw_ms{
+            @include mw_sm{
                 display: none;
             }
         }

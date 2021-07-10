@@ -38,7 +38,7 @@
     border: 1px solid map-get($bg_color, blue);
     border-top: none;
 
-    @include mw_ms{
+    @include mw_sm{
         width: 100%;
         height: calc(100% - 225px);
     }
@@ -51,7 +51,7 @@
     &.--txt{
         width: calc(60% - 10px);
 
-        @include mw_ms{
+        @include mw_sm{
             width: 100%;
             height: 150px;
             order: -1;
