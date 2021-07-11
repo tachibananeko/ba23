@@ -35,7 +35,7 @@
             <!-- 客戶資訊 end -->
 
             <!-- 分頁按鈕 -->
-            <div class="menu__main">
+            <div class="menu__main" id="menu__main">
                 <!-- 廠商按鈕 -->
                 <!-- 當前頁面.--on -->
                 <ul class="--api">
@@ -89,9 +89,9 @@
             <!-- 上方menu -->
             <nav class="frame__main__nav">
                 <!-- 返回按鈕 -->
-                <button class="back_btn"></button>
+                <button class="back_btn" id="back_btn"></button>
                 <!-- 返回按鈕 end -->
-                
+
                 <!-- 先藏起來之後加回 -->
                 <div class="lobby__marquee" style="display: none;">
                     <span style="animation: marquee_move 25s linear infinite;">
@@ -122,7 +122,7 @@
                 <div class="history">
                     <div class="history__title">交易紀錄</div>
 
-                    
+
 
                     <!-- 表格內容 -->
                     <!-- 可點擊字串加上 .txtlink_style -->
@@ -274,7 +274,7 @@
                             <table class="normal_table">
                                 <tbody>
                                     <tr>
-                                        <th class="w20">總計</th>
+                                        <th class="w20" id="totalOn">總計</th>
                                         <td data-txt="交易金額" class="w20">5000.00</td>
                                         <td data-txt="派彩金額" class="w20">5000.00</td>
                                         <td data-txt="利潤淨額" class="w20">0.00</td>

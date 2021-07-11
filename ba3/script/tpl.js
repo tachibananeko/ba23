@@ -42,7 +42,8 @@ $('#videobig_btn').click(function() {
 // padList 加上none
 
 $(window).resize(function() {
-    start()
+    start();
+    $('#history_total').removeClass('--on')
 })
 
 function start() {
@@ -133,4 +134,42 @@ $('#phChange li').click(function() {
             $('#padList03').css('display', 'flex');
             break;
     }
+})
+
+$('#agreeBtn button').click(function() {
+    let dataTxt = $(this).attr('data-txt')
+    switch (dataTxt) {
+        case '確定':
+            window.location.href = "lobby.html";
+            break;
+        case '取消':
+            window.location.href = "login.html";
+            break;
+    }
+})
+
+$('.lobbyTb__foot__btn').click(function() {
+    window.location.href = "main_game.html";
+})
+
+$('#myself li').click(function() {
+    let dataTxt = $(this).attr('data-txt')
+    switch (dataTxt) {
+        case '返回大廳':
+            window.location.href = "lobby.html";
+            break;
+        case '投注明細':
+            window.location.href = "history_view_web.html";
+            break;
+        case '遊戲規則':
+            window.location.href = "game_rule.html";
+            break;
+        case '登出':
+            window.location.href = "login.html";
+            break;
+    }
+})
+
+$('#totalOn').click(function() {
+    $('#history_total').toggleClass('--on')
 })

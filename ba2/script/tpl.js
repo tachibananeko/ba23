@@ -203,3 +203,56 @@ $('#closeBtn01').click(function() {
 $('#closeBtn02').click(function() {
     $('#padList02').css('display', 'none')
 })
+
+
+$('#agreeBtn button').click(function() {
+    let dataTxt = $(this).attr('data-txt')
+    switch (dataTxt) {
+        case '確定':
+            window.location.href = "lobby.html";
+            break;
+        case '取消':
+            window.location.href = "login.html";
+            break;
+    }
+})
+
+$('.lobbyTb__foot__btn').click(function() {
+    window.location.href = "main_game.html";
+})
+
+$('#myself li').click(function() {
+    let dataTxt = $(this).attr('data-txt')
+    switch (dataTxt) {
+        case '交易紀錄':
+            window.location.href = "history_view.html";
+            break;
+        case '遊戲規則':
+            window.location.href = "game_rule.html";
+            break;
+        case '會員資料':
+            window.location.href = "member_data.html";
+            break;
+        case '登出':
+            window.location.href = "login.html";
+            break;
+    }
+})
+
+$('#menu__main li').click(function() {
+    let dataTxt = $(this).attr('data-txt');
+    switch (dataTxt) {
+        case '百家樂':
+            window.location.href = "lobby.html";
+            break;
+    }
+})
+
+$('#totalOn').click(function() {
+    $('#history_total').toggleClass('--on')
+})
+
+// 返回上一頁
+$('#back_btn').click(function() {
+    history.back()
+})
