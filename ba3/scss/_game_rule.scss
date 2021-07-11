@@ -69,7 +69,7 @@
                 background-size: 25px 25px;
                 pointer-events: none;
                 transform: rotate(-45deg);
-                transform-origin: 8% 5%;
+                transform-origin: 8% 10%;
             }
             &:after{
                 @include pos_abs(0, 0, 0, 0);
