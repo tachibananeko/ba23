@@ -44,7 +44,7 @@
         background: map-get($bg_color, primary_vl);
 
         span{
-            @include pos_abs(0, 0, auto, 0);
+            @include pos_a(trbl, 0, 0, auto, 0);
             @include radius_hidden(0 0 20px 20px);
             display: block;
             width: 40%;

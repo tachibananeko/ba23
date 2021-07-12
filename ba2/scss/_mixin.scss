@@ -10,11 +10,38 @@
 	right: $right;
 	left: $left;
 }
+
+// 定位
+@function pos-chtext($data) {
+    @if $data=='T' {
+        @return top;
+    }
+    @else if $data=='R' {
+        @return right;
+    }
+    @else if $data=='B' {
+        @return bottom;
+    }
+    @else if $data=='L' {
+        @return left;
+    }
+}
+
+@mixin pos_a ($direction, $val...) {
+    $result: ();
+    $data: to-upper-case($direction);
+    @for $i from 1 through str-length($data) {
+        $result: append($result, str-slice($data, $i, $i));
+        #{pos-chtext(nth($result, $i))}:#{if(length($val)==1,$val,nth($val,$i))};
+    }
+}
+
 @mixin d_f($flex, $ai, $jc) {
 	display: $flex;
 	align-items: $ai;
 	justify-content: $jc;
 }
+
 @mixin bg_set($x, $y, $repeat, $size) {
 	background-position: $x $y;
 	background-repeat: $repeat;
@@ -196,6 +223,166 @@
 	border-image: $border_img;
 }
 
+
+
+// RWD相關
+$breakpoints: (
+	pc: 1280px,
+	big_pad: 1180px,
+	pad: 1024px,
+	pad_vl: 996px,
+	ph: 599px
+);
+
+@mixin mw_xl {
+	@media screen and (max-width: map-get($breakpoints, "pc")) {
+		@content;
+	}
+}
+
+@mixin mw_lg {
+	@media screen and (max-width: map-get($breakpoints, "big_pad")) {
+		@content;
+	}
+}
+
+@mixin mw_md {
+	@media screen and (max-width: map-get($breakpoints, "pad")) {
+		@content;
+	}
+}
+
+@mixin mw_sm {
+	@media screen and (max-width: map-get($breakpoints, "pad_vl")) {
+		@content;
+	}
+}
+
+@mixin mw_xs {
+	@media screen and (max-width: map-get($breakpoints, "ph")) {
+		@content;
+	}
+}
+
+// 僅在pc顯示
+@mixin fine {
+	@media (pointer: fine) and (max-resolution: 2dppx),
+	screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2),
+	(-moz-touch-enabled: 0){
+		@content;
+	}
+}
+// 僅在ph顯示
+@mixin coarse{
+	@media (pointer: coarse),
+	(-moz-touch-enabled: 1),
+	screen and (pointer: fine) and (min-resolution: 2dppx) and (max-width: 1023px){
+		@content;
+	}
+}
+
+
+// 手指hover相關
+// 一般
+[class*="_btn"]:not(:disabled),
+%hand {
+	cursor: pointer;
+}
+
+%no_hand {
+	cursor: default;
+	transition: none;
+}
+
+// 一般滑過
+@mixin hoverHandler {
+	@media (pointer: fine) and (max-resolution: 2dppx),
+	screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2),
+	(-moz-touch-enabled: 0) {
+		&:hover {
+			@content;
+		}
+	}
+	&:active {
+		@content;
+	}
+
+	transition: all .2s ease-in-out;
+}
+
+// 按鈕滑過
+@mixin btn_hoverHandler($border, $txt) {
+
+	@media (pointer: fine) and (max-resolution: 2dppx),
+	screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2),
+	(-moz-touch-enabled: 0) {
+		&:hover {
+			border-width: $border;
+			@content;
+
+			&::after {
+				color: $txt;
+			}
+
+			.hover_item {
+				opacity: 1;
+			}
+		}
+	}
+
+	&:active {
+		border-width: $border;
+		@content;
+
+		&::after {
+			color: $txt;
+		}
+
+		.hover_item {
+			transition: none;
+			opacity: 1;
+		}
+	}
+}
+
+// 寬度距離設定
+@function distance($count: 4) {
+	@return 5px * $count;
+}
+@mixin mr_distance {
+	margin-right: distance();
+	@include mw_xs{
+		margin-right: distance(2);
+	}
+}
+
+
+$num: 100; 
+@while $num > 0 {
+	.w#{$num} {
+		width: $num * 1%;
+	}
+	.w#{$num}px {
+		width: $num + px !important;
+	}
+	.mb#{$num} {
+		margin-bottom: $num + px;
+	}
+	.mt#{$num} {
+		margin-top: $num + px;
+	}
+
+	$num: $num - 1;
+}
+
+
+
+
+
+
+
+
+
 // 百家按鈕基本組件
 @mixin btn_set($width, $height, $bg){
 	position: relative;
@@ -364,156 +551,4 @@ $chips: (
 		display: inline-block;
 		background:url(../images/chips_#{$name}.png) no-repeat center / contain;
 	}
-}
-
-
-
-// RWD相關
-$breakpoints: (
-	pc: 1280px,
-	big_pad: 1180px,
-	pad: 1024px,
-	pad_vl: 996px,
-	ph: 599px
-);
-
-@mixin mw_xl {
-	@media screen and (max-width: map-get($breakpoints, "pc")) {
-		@content;
-	}
-}
-
-@mixin mw_lg {
-	@media screen and (max-width: map-get($breakpoints, "big_pad")) {
-		@content;
-	}
-}
-
-@mixin mw_md {
-	@media screen and (max-width: map-get($breakpoints, "pad")) {
-		@content;
-	}
-}
-
-@mixin mw_sm {
-	@media screen and (max-width: map-get($breakpoints, "pad_vl")) {
-		@content;
-	}
-}
-
-@mixin mw_xs {
-	@media screen and (max-width: map-get($breakpoints, "ph")) {
-		@content;
-	}
-}
-
-// 僅在pc顯示
-@mixin fine {
-	@media (pointer: fine) and (max-resolution: 2dppx),
-	screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2),
-	(-moz-touch-enabled: 0){
-		@content;
-	}
-}
-// 僅在ph顯示
-@mixin coarse{
-	@media (pointer: coarse),
-	(-moz-touch-enabled: 1),
-	screen and (pointer: fine) and (min-resolution: 2dppx) and (max-width: 1023px){
-		@content;
-	}
-}
-
-
-// 手指hover相關
-// 一般
-[class*="_btn"]:not(:disabled),
-%hand {
-	cursor: pointer;
-}
-
-%no_hand {
-	cursor: default;
-	transition: none;
-}
-
-// 一般滑過
-@mixin hoverHandler {
-	@media (pointer: fine) and (max-resolution: 2dppx),
-	screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2),
-	(-moz-touch-enabled: 0) {
-		&:hover {
-			@content;
-		}
-	}
-	&:active {
-		@content;
-	}
-
-	transition: all .2s ease-in-out;
-}
-
-// 按鈕滑過
-@mixin btn_hoverHandler($border, $txt) {
-
-	@media (pointer: fine) and (max-resolution: 2dppx),
-	screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2),
-	(-moz-touch-enabled: 0) {
-		&:hover {
-			border-width: $border;
-			@content;
-
-			&::after {
-				color: $txt;
-			}
-
-			.hover_item {
-				opacity: 1;
-			}
-		}
-	}
-
-	&:active {
-		border-width: $border;
-		@content;
-
-		&::after {
-			color: $txt;
-		}
-
-		.hover_item {
-			transition: none;
-			opacity: 1;
-		}
-	}
-}
-
-// 寬度距離設定
-@function distance($count: 4) {
-	@return 5px * $count;
-}
-@mixin mr_distance {
-	margin-right: distance();
-	@include mw_xs{
-		margin-right: distance(2);
-	}
-}
-
-
-$num: 100; 
-@while $num > 0 {
-	.w#{$num} {
-		width: $num * 1%;
-	}
-	.w#{$num}px {
-		width: $num + px !important;
-	}
-	.mb#{$num} {
-		margin-bottom: $num + px;
-	}
-	.mt#{$num} {
-		margin-top: $num + px;
-	}
-
-	$num: $num - 1;
 }
