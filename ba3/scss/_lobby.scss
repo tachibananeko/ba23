@@ -112,7 +112,11 @@
                 background-size: 25px 25px;
                 pointer-events: none;
                 transform: rotate(-45deg);
-                transform-origin: 8% 10%;                
+                transform-origin: 8% 10%;
+                
+                @include mw_xs{
+                    transform-origin: 8% 5%;
+                }               
             }
 
             &::after{
@@ -309,6 +313,7 @@
 
                 &::after{
                     text-shadow: none;
+                    z-index: 1;
                 }
             }
         }

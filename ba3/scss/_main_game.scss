@@ -449,7 +449,7 @@
 // 下注區與珠路共用 會員資訊
 .memberInfo {
     @include d_f(flex, center, space-between);
-    @include border(1px 0, map-get($border_color, secondary));
+    @include border(1px 0 0, map-get($border_color, secondary));
     padding: 5px 10px;
     background: map-get($bg_color, darkblue);
     font-size: 14px;
@@ -466,7 +466,6 @@
         @include mw_xs{
             font-size: 12px;
             padding: 3px 5px;
-            border-width: 1px 0 0;
         }
     }
     // 996以上會員資訊
@@ -859,7 +858,7 @@
         height: 35px;
         flex: none;
         padding: 5px 5px 0;
-        background: map-get($bg_color, darkblue_vl);
+        background: map-get($bg_color, black);
         font-size: 0;
         order: -3;
 
@@ -991,7 +990,9 @@
     // 結果統計
     .totalCount{
         @extend %hand;
+        @include border(1px 0 0, map-get($border_color, secondary));
         position: relative;
+        background: map-get($bg_color, darkblue_vl);
 
         @include mw_xs{
             display: none;
@@ -1001,7 +1002,6 @@
         &__item{
             @include d_f(flex, center, space-around);
             padding: 3px 10px;
-            background: map-get($bg_color, darkblue_vl);
 
             @include mw_sm{
                 justify-content: space-between;
@@ -1048,7 +1048,6 @@
         &__percent {
             @include pos_a(trbl, 0);
             @include d_f(flex, center, center);
-            background: map-get($bg_color, darkblue_vl);
             margin: auto;
 
             // 無統計資料

@@ -285,7 +285,7 @@
         grid-template-areas:"video"
                             "order"
                             "road";
-        grid-template-rows: 60vw 47px minmax(200px, 300px);
+        grid-template-rows: 60vw 60px minmax(200px, 300px);
 
         // 選擇桌次展開
         @at-root .--telType.--tableOpen .frame__main__inside{
@@ -310,6 +310,10 @@
                                 "road";
             grid-template-rows: 60vw 1fr 1fr minmax(200px, 300px);
         }
+    }
+
+    @include mw_xs{
+        grid-template-rows: 60vw 48px minmax(200px, 300px);
     }
 }
 // 主要區塊配置 電投無卡 網投無卡
