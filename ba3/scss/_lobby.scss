@@ -312,8 +312,7 @@
                 }
 
                 &::after{
-                    text-shadow: none;
-                    z-index: 1;
+                    text-shadow: none !important;
                 }
             }
         }
