@@ -3,13 +3,7 @@
 %txtshadow{
 	text-shadow: 2px 2px hsla(354, 29%, 7%, 0.5);
 }
-@mixin pos_abs($top:unset , $right:unset , $bottom:unset , $left:unset){
-	position: absolute;
-	top: $top;
-	bottom: $bottom;
-	right: $right;
-	left: $left;
-}
+
 // 定位
 @function pos-chtext($data) {
     @if $data=='T' {
@@ -83,7 +77,7 @@
         margin: 2px;
 
 		&::before{
-			@include pos_abs($xy, unset, unset, $xy);
+			@include pos_a(tl, $xy);
 			content: none;
 			display: block;
 			width: ($box / 2);
@@ -402,7 +396,7 @@ $num: 100;
 }
 // 內部span漸層
 @mixin btn_hoveritem($bg_img) {
-	@include pos_abs(0, unset, unset, 0);	
+	@include pos_a(tl, 0);
 	width: 100%;
 	height: 100%;
 	background: $bg_img;
@@ -412,7 +406,7 @@ $num: 100;
 }
 // 按鈕圓弧反光層
 @mixin btn_hoverlight01($bgx) {
-	@include pos_abs(0, unset, unset, 0);
+	@include pos_a(tl, 0);
 	content: '';
 	width: 100%;
 	height: 100%;
@@ -422,7 +416,7 @@ $num: 100;
 }
 // 按鈕切角反光層
 @mixin btn_hoverlight02 {
-	@include pos_abs(0, unset, unset, 0);
+	@include pos_a(tl, 0);
 	content: '';
 	width: 100%;
 	height: 100%;
@@ -430,7 +424,7 @@ $num: 100;
 }
 // 按鈕50%銳利反光層
 @mixin btn_hoverlight03 {
-	@include pos_abs(0, unset, unset, 0);
+	@include pos_a(tl, 0);
 	content: '';
 	width: 100%;
 	height: 100%;

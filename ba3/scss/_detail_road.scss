@@ -9,6 +9,51 @@
     }
 }
 
+// title
+.detailRoad__title{
+    @include d_f(flex, center, flex-start);
+    position: relative;
+    width: 200px;
+    height: 40px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+
+    @include mw_xs{
+        width: 100%;
+        justify-content: center;
+    }
+
+    &::before{
+        @include pos_a(tbl, 0, 0, -20px);
+        content: '';
+        width: 100%;
+        background: map-get($btn_color, lightblue_vl);
+        border-top-right-radius: 5px;
+        transform: skewX(35deg);
+
+        @include mw_xs{
+            border-radius: 0;
+            left: 0;
+            transform: none;
+        }
+    }
+
+    &::after{
+        content: attr(data-txt);
+        position: relative;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    i{
+        position: relative;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+}
+
 // 圖文內容
 .detailRoad__info{
     @include d_f(flex, unset, flex-start);

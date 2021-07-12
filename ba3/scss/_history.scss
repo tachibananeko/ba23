@@ -200,7 +200,7 @@
             padding-left: 130px;
             border-width: 0 0 1px 0;
             &:before{
-                @include pos_abs(0, unset, 0, 0);
+                @include pos_a(tbl, 0);
                 @include d_f(flex, center, center);
                 content: attr(data-txt);
                 width: 120px;
@@ -250,7 +250,7 @@
             color: map-get($txt_color, white);
 
             @include mw_xs{
-                @include pos_abs(unset, unset, 100%, 0);
+                @include pos_a(bl, 100%, 0);
                 @include d_f(flex, center, center);
                 @include radius_hidden(5px 5px 0 0);
                 min-width: 120px;

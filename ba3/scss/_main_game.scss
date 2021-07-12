@@ -71,7 +71,7 @@
             z-index: 0;
 
             &::after{
-                @include pos_abs(5px, 0, unset, unset);
+                @include pos_a(tr, 5px, 0);
                 content: 'NEWS';
                 padding: 2px 3px;
                 background: map-get($bg_color, red);
@@ -111,7 +111,7 @@
         // 選擇卡片呼叫公關
         .PR_btn{
             @include btn_set(auto, 30px, map-get($btn_color, green));
-            @include pos_abs (unset, unset, calc(100% + 10px), 380px);
+            @include pos_a(bl, calc(100% + 10px), 380px);
             @include radius_hidden();
             padding: 0 10px;
             border: 1px solid map-get($bg_color, lightgreen);
@@ -158,7 +158,7 @@
         // 開始遊戲按鈕
         .start_btn{
             @include btn_set(190px, 150px, url(../images/start_btn.png) no-repeat center / contain);
-            @include pos_abs(unset, 0, 0, 0);
+            @include pos_a(rbl, 0);
             margin: auto;
 
             display: none;
@@ -177,7 +177,7 @@
             }
             &::before,
             &::after{
-                @include pos_abs(54px, unset, unset, 0);
+                @include pos_a(tl, 54px, 0);
                 @include bg_txt(map-get($bg_color, gold), 30px);
                 width: 100%;
                 line-height: 52px;
@@ -195,13 +195,13 @@
 
         // 連線訊號燈.video__function__speed
         &__speed{
-            @include pos_abs(unset, 0, 0, unset);
+            @include pos_a(rb, 0);
             padding: 5px 10px 5px 5px;
             font-size: 14px;
             text-shadow: 1px 1px map-get($txt_color, shadow);
 
             &::before{
-                @include pos_abs(0, 100%, 0, unset);
+                @include pos_a(trb, 0, 100%, 0);
                 content: '';
                 width: 8px;
                 height: 8px;
@@ -246,7 +246,7 @@
         }
 
         &::before{
-            @include pos_abs(0, unset, 0, calc(50% + 50px));
+            @include pos_a(tbl, 0, 0, calc(50% + 50px));
             @include triangle(10px, map-get($bg_color, secondary), bottom);
             content: none;
             margin: auto;
@@ -339,7 +339,7 @@
         padding: 5px;
 
         @include mw_lg{
-            @include pos_abs(30px, unset, unset, 0);
+            @include pos_a(tl, 30px, 0);
             max-height: 100px;
             display: none;
 
@@ -541,7 +541,7 @@
         // 上桌按鈕
         .uptable_btn{
             @include btn_set(100px, 45px, url(../images/uptable_btn.png) no-repeat center / contain);
-            @include pos_abs(unset, 0, 50%, 0);
+            @include pos_a(rbl, 0, 50%, 0);
             margin: auto;
             z-index: 1;
             
@@ -679,7 +679,7 @@
         }
 
         .total_amount {
-            @include pos_abs(0, 5px, unset, unset);
+            @include pos_a(tr, 0, 5px);
             @include border(0 0 1px, map-get($border_color, secondary));
             min-width: 50px;
             padding: 2px 10px;
@@ -691,7 +691,7 @@
         }
 
         .amount {
-            @include pos_abs(unset, unset, 25px, 5px);
+            @include pos_a(bl, 25px, 5px);
             @include border(1px, map-get($border_color, primary));
             min-width: 50px;
             height: 25px;
@@ -707,7 +707,7 @@
 
             &_btn {
                 @include btn_set(23px, 23px, transparent);
-                @include pos_abs(0, 0, unset, unset);
+                @include pos_a(tr, 0);
                 background: url(../images/icon_x.svg) no-repeat center / 50%;
 
                 // 手指效果
@@ -718,7 +718,7 @@
         }
 
         .coin {
-            @include pos_abs(unset, 0, 0, unset);
+            @include pos_a(rb, 0);
             width: 75px;
             max-height: 60%;
             transform: scale(.8);
@@ -932,7 +932,7 @@
 
     // 卡號all.cardAll
     .cardAll {
-        @include pos_abs(30px, unset, unset, 0);
+        @include pos_a(tl, 30px, 0);
         @include scrollbar(hidden, auto);
         width: 100%;
         height: calc(100% - 30px);
@@ -1027,7 +1027,7 @@
                 }
 
                 &.--pair::before{
-                    @include pos_abs(-1px, unset, unset, -1px);
+                    @include pos_a(tl, -1px);
                     content: '';
                     width: 6px;
                     height: 6px;
@@ -1037,7 +1037,7 @@
                 }
 
                 &::after{
-                    @include pos_abs(unset, unset, unset, calc(100% + 5px));
+                    @include pos_a(l, calc(100% + 5px));
                     content: attr(data-num);
                     font-size: 16px;
                 }
@@ -1103,7 +1103,7 @@
         // 切換珠路按鈕
         .roadChange_btn{
             @include btn_set(30px, 30px, url(../images/icon_changeroad.svg) no-repeat center / contain);
-            @include pos_abs(0, 10px, 0, unset);
+            @include pos_a(trb, 0, 10px, 0);
             margin: auto;
             opacity: .3;
 
@@ -1248,7 +1248,7 @@
 
     // ph切換title.detail__phChange
     &__phChange{
-        @include pos_abs(0, 0, 0, unset);
+        @include pos_a(trb, 0);
         @include d_f(flex, center, center);
         @include radius_hidden(5px 0 0 5px);
         flex-direction: column;
@@ -1304,7 +1304,7 @@
     // 好路提示設定按鈕
     .goodroad_btn{
         @include btn_set(30px, 100%, url(../images/icon_setting.svg) no-repeat center / 70%);
-        @include pos_abs(0, unset, 0, 0);
+        @include pos_a(tbl, 0);
         margin: auto;
 
         @at-root .--on>.goodroad_btn {
@@ -1320,7 +1320,7 @@
     // 好路提示關閉按鈕
     .close_btn{
         @include btn_set(30px, 100%, url(../images/icon_x.svg) no-repeat center / 50%);
-        @include pos_abs(0, -3px, 0, unset);
+        @include pos_a(trb, 0, -3px, 0);
         margin: auto;
         
         display: none;
@@ -1674,7 +1674,7 @@
     }
 
     &__group{
-        @include pos_abs(20px, unset, unset, 0);
+        @include pos_a(tl, 20px, 0);
         max-height: none;
         height: 200px;
 
@@ -1722,18 +1722,18 @@
     }
 
     .cardTitle{
-        @include pos_abs(unset, unset, calc(100% + 20px), 0);
+        @include pos_a(bl, calc(100% + 20px), 0);
         background: transparent;
     }
     
     .cardAll{
-        @include pos_abs(-20px, unset, unset, 0);
+        @include pos_a(tl, -20px, 0);
         height: calc(100% + 20px);
     }
 }
 // 電投有卡
 .--telType.--bigTv .cardTitle{
-    @include pos_abs(unset, unset, calc(100% + 50px), 0);
+    @include pos_a(bl, calc(100% + 50px), 0);
 
     @at-root .--telType.--bigTv.--cardOpen .cardTitle,
     .--telType.--bigTv.--tableOpen .cardTitle{

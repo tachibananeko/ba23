@@ -81,7 +81,7 @@
     position: relative;
 
     &::after{
-        @include pos_abs(calc(100% + 5px), unset, unset, 0);
+        @include pos_a(tl, calc(100% + 5px), 0);
         @include border(1px, map-get($border_color, primary ));
         content: attr(data-txt);
         background: map-get($bg_color , black_alpha );
@@ -136,7 +136,7 @@
     }
 
     .triangle {
-        @include pos_abs(0, 5px, 0, unset);
+        @include pos_a(trb, 0, 5px, 0);
         @include triangle(12px, map-get($bg_color, black), bottom);
         display: inline-block;
         margin: auto;
@@ -293,7 +293,7 @@
     }
 
     &::before{
-        @include pos_abs(5px, 5px, unset, unset);
+        @include pos_a(tr, 5px);
         content: 'NEWS';
         padding: 2px 3px;
         background: map-get($bg_color, red);
@@ -301,7 +301,7 @@
         z-index: 1;
     }
     &::after{
-        @include pos_abs(5px, 0, unset, unset);
+        @include pos_a(tr, 5px, 0);
         content: '';
         width: 5px;
         height: 18px;

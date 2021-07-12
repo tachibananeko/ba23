@@ -192,7 +192,7 @@
 .PRmini{
     @extend %hand;
     @include btn_set(130px, auto, map-get($btn_color, lightblue_vl));
-    @include pos_abs(unset, unset, 0, 0);
+    @include pos_a(bl, 0);
     @include d_f(flex, center, center);
     @include border(1px 0, map-get($border_color, gold));
     flex-direction: column;
@@ -235,7 +235,7 @@
         }
         
         &::before{
-            @include pos_abs(unset, 0, calc(100% + 10px), 0);
+            @include pos_a(rbl, 0, calc(100% + 10px), 0);
             content: attr(data-txt);
             color: map-get($txt_color, yellow);
             font-size: 12px;

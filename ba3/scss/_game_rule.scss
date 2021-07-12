@@ -30,7 +30,7 @@
         }
 
         &::before{
-            @include pos_abs(0, unset, unset, 0);
+            @include pos_a(tl, 0);
             content: '';
             width: 100%;
             height: 2500%;
@@ -47,7 +47,7 @@
         }
         
         span{
-            @include pos_abs(0, 0, auto, 0);
+            @include pos_a(trl, 0);
             @include radius_hidden(0 0 20px 20px);
             width: 40%;
             height: 100%;
@@ -61,7 +61,7 @@
             }
 
             &:before{
-                @include pos_abs(0, unset, unset, -15px);
+                @include pos_a(tl, 0, -15px);
                 content: '';
                 width: 100%;
                 height: 2000%;
@@ -84,7 +84,7 @@
 
         
         .close_btn{
-            @include pos_abs(0, 10px, 0, unset);
+            @include pos_a(trb, 0, 10px, 0);
             margin: auto;
         }
     }

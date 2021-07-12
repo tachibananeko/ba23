@@ -71,7 +71,7 @@
         }
 
         &::before{
-            @include pos_abs(0, unset, unset, 0);
+            @include pos_a(tl, 0);
             content: '';
             width: 100%;
             height: 2000%;
@@ -88,7 +88,7 @@
         }
 
         span{
-            @include pos_abs(0, 0, auto, 0);
+            @include pos_a(trl, 0);
             @include radius_hidden(0 0 20px 20px);
             display: block;
             width: 40%;
@@ -103,7 +103,7 @@
             }
 
             &::before {
-                @include pos_abs(0, unset, unset, 0);
+                @include pos_a(tl, 0);
                 content: '';
                 width: 100%;
                 height: 2000%;
@@ -140,7 +140,7 @@
 
         .refreshLine_btn{
             @include btn_set(auto, 30px, map-get($btn_color, orange_hl));
-            @include pos_abs(15px, 20px, unset, unset);
+            @include pos_a(tr, 15px, 20px);
             @include radius_hidden();
             border: 1px solid map-get($bg_color, secondary);
             padding: 10px;
@@ -195,7 +195,7 @@
                 background: map-get($btn_color, lightgreen);
 
                 &::before{
-                    @include pos_abs(0, unset, 0, 10px);
+                    @include pos_a(tbl, 0, 0, 10px);
                     content: '';
                     width: 25px;
                     height: 25px;
