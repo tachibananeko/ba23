@@ -90,10 +90,10 @@
 
         // title桌號 .lobbyTb__title__no
         &__no {
-            @include pos_a(trl, -5px, 0, 0);
+            @include pos_a(trl, 0);
             @include radius_hidden(0 0 20px 20px);
             width: 33%;
-            height: 100%;
+            height: calc(100% - 5px);
             border: 2px solid map-get($bg_color, secondary);
             border-top: none;
             margin: auto;
@@ -120,7 +120,8 @@
             }
 
             &::after{
-                @include pos_a(rbl, 0);
+                @include pos_a(trbl, 0);
+                @include d_f(flex, center, center);
                 @include bg_txt(map-get($bg_color, secondary_vl), 24px);
                 content: attr(data-txt);
                 margin: auto;
@@ -307,8 +308,7 @@
                     content: attr(data-txt);
                     padding: 0 10px;
                     font-weight: bold;
-                    text-shadow: 0 0 1px map-get($txt_color, yellow),
-                    0 0 5px map-get($txt_color, shadow);
+                    text-shadow: none !important;
                 }
 
                 &::after{
