@@ -52,7 +52,7 @@
         }
 
         &:after{
-            @include pos_abs(calc(100% - 10px), 20px, unset, unset);
+            @include pos_a(tr, calc(100% - 10px), 20px);
             content: attr(data-txt);
             color: map-get($txt_color, white);
             font-style: normal;
@@ -107,7 +107,7 @@
                 position: relative;
 
                 &::before{
-                    @include pos_abs(0, unset, 0, 10px);
+                    @include pos_a(tbl, 0, 0, 10px);
                     content: '';
                     width: 20px;
                     height: 20px;
@@ -116,7 +116,7 @@
                 }
 
                 &::after{
-                    @include pos_abs(unset, 10px, 10px, unset);
+                    @include pos_a(rb, 10px);
                     content: attr(data-txt);
                     font-size: 18px;
                 }
@@ -220,7 +220,7 @@
             margin-left: 15px;
 
             &::before{
-                @include pos_abs(0, calc(100% + 5px), 0, unset);
+                @include pos_a(trb, 0, calc(100% + 5px), 0);
                 content: '';
                 width: 1px;
                 height: 80%;

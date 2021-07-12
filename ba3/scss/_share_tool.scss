@@ -85,7 +85,7 @@
         margin-right: 5px;
 
         &::before{
-            @include pos_abs(0, 0, 0, 0);
+            @include pos_a(trbl, 0);
             content: none;
             width: calc(100% - 4px);
             height: calc(100% - 4px);

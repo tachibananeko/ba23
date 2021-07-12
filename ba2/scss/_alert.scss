@@ -20,7 +20,7 @@
         background: map-get($bg_color, secondary_vl);
 
         &::before{
-            @include pos_abs(0, 0, 0, 0);
+            @include pos_a(trbl, 0);
             content: '';
             width: calc(100% - 4px);
             height: calc(100% - 4px);
@@ -124,7 +124,7 @@
             margin: 25px 0 10px;
             
             &::before{
-                @include pos_abs(unset, 0, calc(100% + 10px), 0);
+                @include pos_a(rbl, 0, calc(100% + 10px), 0);
                 content: attr(data-txt);
                 font-size: 12px;
                 margin: auto;
@@ -132,7 +132,8 @@
             }
             
             div {
-                @include pos_abs(0, 0, 0, 0);
+                @include pos_a(trbl, 0);
+                content: '';
                 border: 2px solid map-get($bg_color, white);
                 border-radius: 50%;
                 box-shadow: 0 0 5px map-get($bg_color, secondary);
@@ -186,7 +187,7 @@
 
     // 好路提示設定
     .roadSet{
-        @include pos_abs(unset, 0, 0, unset);
+        @include pos_a(rb, 0);
         @include d_f(flex, unset, center);
         @include radius_hidden(5px);
         flex-direction: column;
@@ -204,7 +205,7 @@
         }
 
         &::before{
-            @include pos_abs(0, 0, 0, 0);
+            @include pos_a(trbl, 0);
             content: '';
             width: calc(100% - 4px);
             height: calc(100% - 4px);
@@ -223,7 +224,7 @@
             text-align: center;
 
             .roadSet_btn{
-                @include pos_abs(0, 20px, 0, unset);
+                @include pos_a(trb, 0, 20px, 0);
                 @include d_f(flex, center, flex-start);
                 color: map-get($txt_color, primary);
                 font-size: 14px;
@@ -262,7 +263,7 @@
 
             .--allChecked{
                 @extend %hand;
-                @include pos_abs(unset, unset, 20px, 20px);
+                @include pos_a(bl, 20px);
                 @include d_f(flex, center, center);
                 color: map-get($txt_color, primary);
                 font-size: 14px;
@@ -290,7 +291,7 @@
                 margin-bottom: 20px;
 
                 &::before{
-                    @include pos_abs(0, 0, 0, 0);
+                    @include pos_a(trbl, 0);
                     content: '';
                     width: calc(100% - 2px);
                     height: calc(100% - 2px);

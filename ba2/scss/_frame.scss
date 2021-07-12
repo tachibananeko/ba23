@@ -146,7 +146,7 @@
                 background-color: map-get($bg_color, white);
 
                 @include mw_sm {
-                    min-height: 350px;
+                    min-height: 250px;
 
                     // 選擇桌次展開
                     @at-root .--tableOpen .road {

@@ -23,7 +23,7 @@
         }
 
         &::before{
-            @include pos_abs(0, 0, 0, 0);
+            @include pos_a(trbl, 0);
             content: '';
             width: calc(100% - 4px);
             height: calc(100% - 4px);
@@ -161,7 +161,7 @@
             }
             
             div {
-                @include pos_abs(0, 0, 0, 0);
+                @include pos_a(trbl, 0);
                 border: 2px solid map-get($bg_color, white);
                 border-radius: 50%;
                 box-shadow: 0 0 5px map-get($bg_color, lightblue);
@@ -233,7 +233,7 @@
         }
 
         &::before{
-            @include pos_abs(0, 0, 0, 0);
+            @include pos_a(trbl, 0);
             content: '';
             width: calc(100% - 4px);
             height: calc(100% - 4px);
@@ -319,7 +319,7 @@
                 margin-bottom: 20px;
 
                 &::before{
-                    @include pos_abs(0, 0, 0, 0);
+                    @include pos_a(trbl, 0);
                     content: '';
                     width: calc(100% - 2px);
                     height: calc(100% - 2px);

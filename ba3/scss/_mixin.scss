@@ -10,6 +10,32 @@
 	right: $right;
 	left: $left;
 }
+// 定位
+@function pos-chtext($data) {
+    @if $data=='T' {
+        @return top;
+    }
+    @else if $data=='R' {
+        @return right;
+    }
+    @else if $data=='B' {
+        @return bottom;
+    }
+    @else if $data=='L' {
+        @return left;
+    }
+}
+@mixin pos_a ($direction, $val...) {
+	position: absolute;
+
+    $result: ();
+    $data: to-upper-case($direction);
+    @for $i from 1 through str-length($data) {
+        $result: append($result, str-slice($data, $i, $i));
+        #{pos-chtext(nth($result, $i))}:#{if(length($val)==1,$val,nth($val,$i))};
+    }
+}
+
 @mixin d_f($flex, $ai, $jc) {
 	display: $flex;
 	align-items: $ai;
@@ -146,7 +172,7 @@
 @mixin load_set($scale, $color) {
 	.load_item {
 		@include d_f(flex, center, center);
-		@include pos_abs(0, 0, 0, 0);
+		@include pos_a(trbl, 0);
 		width: 150px;
 		height: 150px;
 		color: $color;
@@ -158,7 +184,7 @@
 
 		&::before,
 		&::after {
-			@include pos_abs(0, 0, 0, 0);
+			@include pos_a(trbl, 0);
 			content: "\0020";
 			border-radius: 100px;
 			border: 5px solid $color;
@@ -412,7 +438,7 @@ $num: 100;
 }
 // 按鈕50%模糊反光層
 @mixin btn_hoverlight04 {
-	@include pos_abs(0, 0, 0, 0);
+	@include pos_a(trbl, 0);
 	content: '';
 	width: calc(100% - 6px);
 	height: calc(100% - 6px);
@@ -421,15 +447,15 @@ $num: 100;
 }
 // ba3投注按鈕光點
 @mixin btn_i($bg_img) {
-	@include pos_abs(0, 0, 0, 0);
+	@include pos_a(trbl, 0);
 	background: linear-gradient(to right, transparent 0%, $bg_img 50%, transparent 100%) 0 3% / 100% 2px no-repeat;
 	&::before{
-		@include pos_abs(0, 0, 0, 0);
+		@include pos_a(trbl, 0);
 		content:'';
 		background: linear-gradient(to right, transparent 0%, $bg_img 50%, transparent 100%) 0 97% / 100% 2px no-repeat;
 	}
 	&::after{
-		@include pos_abs(0, 0, 0, 0);
+		@include pos_a(trbl, 0);
 		content:'';
 		background: radial-gradient(ellipse at center, $bg_img 3%, transparent 40%) 0 -50% / 100% 150% no-repeat;
 	}

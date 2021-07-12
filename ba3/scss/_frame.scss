@@ -244,7 +244,7 @@
         }
         
         div {
-            @include pos_abs(0, 0, 0, 0);
+            @include pos_a(trbl, 0);
             border: 2px solid map-get($bg_color, white);
             border-radius: 50%;
             box-shadow: 0 0 5px map-get($bg_color, lightblue);

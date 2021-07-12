@@ -5,7 +5,7 @@
 
     // .video__function
     &__function{
-        @include pos_abs(0, 0, 0, 0);
+        @include pos_a(trbl, 0);
         @include d_f(flex, flex-start, flex-start);
         margin: auto;
 
@@ -310,7 +310,7 @@
         }
         &::after{
             @include btn_txt(center, map-get($txt_color, yellow), map-get($txt_color, shadow));
-            @include pos_abs(0, 0, 0, 0);
+            @include pos_a(trbl, 0);
             margin: auto;
             transform: translateZ(0);
         }
@@ -550,7 +550,7 @@
             }
             &::before,
             &::after{
-                @include pos_abs(0, 0, 0, 0);
+                @include pos_a(trbl, 0);
                 @include bg_txt(map-get($bg_color, gold), 25px);
                 line-height: 45px;
                 font-weight: bold;
@@ -581,7 +581,7 @@
 
             // 不能下注
             &.--nobet::after {
-                @include pos_abs(0, 0, 0, 0);
+                @include pos_a(trbl, 0);
                 content: '';
                 background: map-get($bg_color, black_alpha);
                 margin: auto;
@@ -620,7 +620,7 @@
 
         // 下注區內容物
         .shine {
-            @include pos_abs(0, 0, 0, 0);
+            @include pos_a(trbl, 0);
             background: map-get($bg_color, secondary_alpha);
             margin: auto;
             animation: shine .8s ease infinite;
@@ -1046,7 +1046,7 @@
 
         // 百分比.totalCount__percent
         &__percent {
-            @include pos_abs(0, 0, 0, 0);
+            @include pos_a(trbl, 0);
             @include d_f(flex, center, center);
             background: map-get($bg_color, darkblue_vl);
             margin: auto;
@@ -1272,7 +1272,7 @@
 
             &::after{
                 @include btn_txt(center, map-get($txt_color, primary), transparent);
-                @include pos_abs(0, 0, 0, 0);
+                @include pos_a(trbl, 0);
                 margin: auto;
                 writing-mode: vertical-lr;
             }

@@ -38,7 +38,7 @@
     height: 30px;
 
     &::after{
-        @include pos_abs(0, 5px, 0, unset);
+        @include pos_a(trb, 0, 5px, 0);
         @include triangle(8px, map-get($txt_color, white), bottom);
         content: '';
         margin: auto;
@@ -68,7 +68,7 @@
         margin-right: 20px;
 
         &::before {
-            @include pos_abs(0, unset, 0, calc(100% + 5px));
+            @include pos_a(tbl, 0, 0, calc(100% + 5px));
             content: '';
             width: 10px;
             height: 1px;
@@ -92,7 +92,7 @@
         margin-right: 5px;
 
         &::before{
-            @include pos_abs(0, 0, 0, 0);
+            @include pos_a(trbl, 0);
             content: none;
             width: calc(100% - 4px);
             height: calc(100% - 4px);
@@ -113,51 +113,6 @@
 
 
 // 可共用元件
-// title
-.tool__title{
-    @include d_f(flex, center, flex-start);
-    position: relative;
-    width: 200px;
-    height: 40px;
-    padding-left: 10px;
-    margin-bottom: 20px;
-    overflow: hidden;
-
-    @include mw_xs{
-        width: 100%;
-        justify-content: center;
-    }
-
-    &::before{
-        @include pos_abs(0, 0, 0, -20px);
-        content: '';
-        width: 100%;
-        background: map-get($bg_color, secondary_vl);
-        border-top-right-radius: 5px;
-        transform: skewX(35deg);
-
-        @include mw_xs{
-            border-radius: 0;
-            left: 0;
-            transform: none;
-        }
-    }
-
-    &::after{
-        content: attr(data-txt);
-        position: relative;
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    i{
-        position: relative;
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-    }
-}
-
 // 左上關閉按鈕
 .close_btn{
     @include btn_set(20px, 20px, url(../images/icon_x.svg) no-repeat center / 80%);

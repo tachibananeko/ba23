@@ -5,7 +5,7 @@
 
     // .video__function
     &__function{
-        @include pos_abs(0, 0, 0, 0);
+        @include pos_a(trbl, 0);
         @include d_f(flex, flex-start, flex-start);
         margin: auto;
 
@@ -74,7 +74,7 @@
             z-index: 0;
 
             &::after{
-                @include pos_abs(5px, 0, unset, unset);
+                @include pos_a(tr, 5px, 0);
                 content: 'NEWS';
                 padding: 2px 3px;
                 background: map-get($bg_color, red);
@@ -115,7 +115,7 @@
 
         // 選擇卡片呼叫公關
         .PR {
-            @include pos_abs(unset, unset, calc(100% + 10px), 320px);
+            @include pos_a(bl, calc(100% + 10px), 320px);
             @include radius_hidden(5px);
             width: 300px;
             height: 30px;
@@ -129,7 +129,7 @@
             }
 
             @include mw_xs{
-                @include pos_abs(auto, unset, 0, 0);
+                @include pos_a(tbl, auto, 0, 0);
                 width: 250px;
                 border-radius: 5px 5px 0 0;
             }
@@ -180,14 +180,14 @@
 
         // 連線訊號燈.video__function__speed
         &__speed{
-            @include pos_abs(unset, 0, 0, unset);
+            @include pos_a(rb, 0);
             padding: 5px 10px 5px 5px;
             color: map-get($txt_color, white);
             font-size: 14px;
             text-shadow: 1px 1px map-get($txt_color, shadow);
 
             &::before{
-                @include pos_abs(0, 100%, 0, unset);
+                @include pos_a(trb, 0, 100%, 0);
                 content: '';
                 width: 8px;
                 height: 8px;
@@ -229,7 +229,7 @@
         }
 
         &::before{
-            @include pos_abs(0, unset, 0, 10px);
+            @include pos_a(tbl, 0, 0, 10px);
             @include triangle(10px, map-get($bg_color, secondary), bottom);
             content: none;
             margin: auto;
@@ -293,7 +293,7 @@
         }
         &::after{
             @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
-            @include pos_abs(0, unset, 0, 30px);
+            @include pos_a(tbl, 0, 0, 30px);
             width: auto;
             font-size: 14px;
             margin: auto;
@@ -341,7 +341,7 @@
         padding: 5px;
 
         @include mw_lg{
-            @include pos_abs(30px, unset, unset, 0);
+            @include pos_a(tl, 30px, 0);
             max-height: 100px;
             display: none;
 
@@ -491,7 +491,7 @@
         }
         
         &::before{
-            @include pos_abs(0, unset, 0, 5px);
+            @include pos_a(tbl, 0, 0, 5px);
             content: '';
             width: 20px;
             background: url(../images/icon_hidelimit.svg) no-repeat center / 80%;
@@ -615,7 +615,7 @@
             overflow: hidden;
 
             &:before{
-                @include pos_abs(0, -10px, 0, unset);
+                @include pos_a(trb, 0, -10px, 0);
                 content: '';
                 width: 60px;
                 background: map-get($btn_color, primary);
@@ -625,7 +625,7 @@
             }
 
             &::after{
-                @include pos_abs(unset, 5px, unset, unset);
+                @include pos_a(r, 5px);
                 content: attr(data-txt);
                 color: map-get($txt_color, secondary);
                 font-weight: bold;
@@ -668,7 +668,7 @@
 
             // 不能下注
             &.--nobet::after {
-                @include pos_abs(0, 0, 0, 0);
+                @include pos_a(trbl, 0);
                 content: '';
                 background: map-get($bg_color, black_alpha);
                 margin: auto;
@@ -707,7 +707,7 @@
 
         // 下注區內容物
         .shine {
-            @include pos_abs(0, 0, 0, 0);
+            @include pos_a(trbl, 0);
             background: map-get($bg_color, secondary_alpha);
             margin: auto;
             animation: shine .8s ease infinite;
@@ -766,7 +766,7 @@
         }
 
         .amount {
-            @include pos_abs(unset, unset, 25px, 5px);
+            @include pos_a(bl, 25px, 5px);
             @include border(1px, map-get($border_color, primary));
             min-width: 50px;
             height: 25px;
@@ -782,7 +782,7 @@
 
             &_btn {
                 @include btn_set(23px, 23px, transparent);
-                @include pos_abs(0, 0, unset, unset);
+                @include pos_a(tr, 0);
                 background: url(../images/icon_x.svg) no-repeat center / 50%;
 
                 // 手指效果
@@ -793,7 +793,7 @@
         }
 
         .coin {
-            @include pos_abs(unset, 0, 0, unset);
+            @include pos_a(rb, 0);
             width: 75px;
             max-height: 60%;
             transform: scale(.8);
@@ -962,7 +962,7 @@
                 }
 
                 &.--pair::before{
-                    @include pos_abs(-1px, unset, unset, -1px);
+                    @include pos_a(tl, -1px);
                     content: '';
                     width: 6px;
                     height: 6px;
@@ -972,7 +972,7 @@
                 }
 
                 &::after{
-                    @include pos_abs(unset, unset, unset, calc(100% + 5px));
+                    @include pos_a(l, calc(100% + 5px));
                     content: attr(data-num);
                     font-size: 16px;
                 }
@@ -981,7 +981,7 @@
 
         // 百分比.totalCount__percent
         &__percent {
-            @include pos_abs(0, 0, 0, 0);
+            @include pos_a(trbl, 0);
             @include d_f(flex, center, center);
             background: map-get($bg_color, darkgray);
             margin: auto;
@@ -1043,7 +1043,7 @@
         // 切換珠路按鈕
         .roadChange_btn{
             @include btn_set(30px, 30px, url(../images/icon_changeroad.svg) no-repeat center / contain);
-            @include pos_abs(0, 10px, 0, unset);
+            @include pos_a(trb, 0, 10px, 0);
             margin: auto;
             opacity: .3;
 
@@ -1215,7 +1215,7 @@
 
     // ph切換title.detail__phChange
     &__phChange{
-        @include pos_abs(0, 0, 0, unset);
+        @include pos_a(trb, 0);
         @include d_f(flex, center, center);
         @include radius_hidden(5px 0 0 5px);
         flex-direction: column;
@@ -1245,7 +1245,7 @@
 
             &::after{
                 @include btn_txt(center, map-get($txt_color, secondary), transparent);
-                @include pos_abs(0, 0, 0, 0);
+                @include pos_a(trbl, 0);
                 margin: auto;
                 writing-mode: vertical-lr;
             }
@@ -1303,7 +1303,7 @@
     // 好路提示設定按鈕
     .goodroad_btn{
         @include btn_set(30px, 100%, url(../images/icon_setting.svg) no-repeat center / 70%);
-        @include pos_abs(0, unset, 0, 0);
+        @include pos_a(tbl, 0);
         filter: brightness(200%);
         margin: auto;
 
@@ -1320,7 +1320,7 @@
     // 好路提示關閉按鈕
     .close_btn{
         @include btn_set(30px, 100%, url(../images/icon_x.svg) no-repeat center / 50%);
-        @include pos_abs(0, -3px, 0, unset);
+        @include pos_a(trb, 0, -3px, 0);
         margin: auto;
 
         display: none;
@@ -1545,7 +1545,7 @@
     }
 
     &__group{
-        @include pos_abs(20px, unset, unset, 0);
+        @include pos_a(tl, 20px, 0);
         max-height: none;
         height: 200px;
 
@@ -1592,12 +1592,12 @@
     }
 
     .cardTitle{
-        @include pos_abs(unset, unset, calc(100% + 20px), 0);
+        @include pos_a(bl, calc(100% + 20px), 0);
         background: transparent;
     }
     
     .cardAll{
-        @include pos_abs(-20px, unset, unset, 0);
+        @include pos_a(tl, -20px, 0);
         height: calc(100% + 20px);
     }
 }

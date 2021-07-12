@@ -115,7 +115,7 @@
             }
 
             &::after{
-                @include pos_abs(0, 0, 0, 0);
+                @include pos_a(trbl, 0);
                 content: attr(data-txt);
                 color: map-get($txt_color, yellow);
                 font-size: 20px;

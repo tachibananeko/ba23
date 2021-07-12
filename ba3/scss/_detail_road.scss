@@ -54,7 +54,7 @@
         }
 
         &::before{
-            @include pos_abs(0, 0, 0, 0);
+            @include pos_a(trbl, 0);
             content: '';
             width: calc(100% - 4px);
             height: calc(100% - 4px);
