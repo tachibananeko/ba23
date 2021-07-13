@@ -252,11 +252,15 @@
 
     // 內頁彈出選擇線路(demo版本)
     &.--alert{
-        
         width: 100%;
         height: 100%;
-        padding: 10px;
+        padding: 20px 0;
         background: map-get($bg_color, black_alpha);
+        border: none;
+
+        @include mw_xs{
+            padding: 0;
+        }
 
         .agree__title,
         .--scroll{
@@ -269,6 +273,11 @@
         }
         .--scroll{
             @include border(0 1px 1px, map-get($border_color, darkblue));
+            max-height: 500px;
+
+            @include mw_xs{
+                border: none;
+            }
         }
     }
 }
