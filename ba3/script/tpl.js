@@ -167,6 +167,9 @@ $('#myself li').click(function() {
         case '登出':
             window.location.href = "login.html";
             break;
+        case '選擇線路':
+            window.location.href = "chice_line.html";
+            break;
     }
 })
 
