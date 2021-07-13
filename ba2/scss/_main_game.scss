@@ -355,6 +355,10 @@
             display: flex;
         }
 
+        @include mw_xs{
+            padding: 5px 0;
+        }
+
         li{
             @extend %hand;
             @include btn_set(125px, 35px, map-get($btn_color, primary));
