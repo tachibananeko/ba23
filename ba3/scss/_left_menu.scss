@@ -44,8 +44,6 @@
         border-top-right-radius: 3px;
         font-size: 0;
         margin-bottom: 20px;
-        transition: bottom .5s ease-in-out,
-        opacity .5s .4s ease-in-out;
 
         @include mw_md {
             @include border(0 0 1px, map-get($border_color, secondary));
@@ -62,6 +60,8 @@
             @at-root .--active .menu__info__txt {
                 bottom: 50px;
                 opacity: 1;
+                transition: bottom .5s ease-in-out,
+                            opacity .5s .4s ease-in-out;
             }
         }
         .name{

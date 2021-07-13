@@ -50,8 +50,6 @@
         border-top-right-radius: 3px;
         font-size: 0;
         margin-bottom: 20px;
-        transition: bottom .5s ease-in-out,
-        opacity .5s .4s ease-in-out;
 
         &::before{
             content: '(' attr(data-txt) ')';
@@ -74,8 +72,10 @@
             opacity: 0;
 
             @at-root .--active .menu__info__txt {
-                bottom: 245px;
+                bottom: 205px;
                 opacity: 1;
+                transition: bottom .5s ease-in-out,
+                            opacity .5s .4s ease-in-out;
             }
         }
         .name{
@@ -286,8 +286,6 @@
 
         // 一般 btn收進去
         &.--myself {
-            transition: bottom .5s, opacity .5s .4s;
-
             @include mw_md {
                 position: fixed;
                 max-width: 300px;
@@ -303,6 +301,8 @@
                 @at-root .--active ul.--myself {
                     bottom: 50px;
                     opacity: 1;
+                    transition: bottom .5s ease-in-out,
+                                opacity .5s .4s ease-in-out;
                 }
 
                 li {

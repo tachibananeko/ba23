@@ -173,3 +173,7 @@ $('#myself li').click(function() {
 $('#totalOn').click(function() {
     $('#history_total').toggleClass('--on')
 })
+
+$('.menu__info_btn').click(function () {
+    $('.frame__menu').toggleClass('--active')
+})

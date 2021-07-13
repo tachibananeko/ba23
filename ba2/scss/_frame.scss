@@ -24,7 +24,7 @@
     &__menu {
         grid-area: menu;
         background: map-get($bg_color, primary);
-        z-index: 3;
+        z-index: 5;
         @include mw_md{
             @include scrollbar(auto, hidden);
             @include d_f(flex, center, center);

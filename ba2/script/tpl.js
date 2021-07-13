@@ -256,3 +256,8 @@ $('#totalOn').click(function() {
 $('#back_btn').click(function() {
     history.back()
 })
+
+// 打開客戶資訊
+$('.menu__info_btn').click(function () {
+    $('.frame__menu').toggleClass('--active')
+})
