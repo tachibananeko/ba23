@@ -177,6 +177,11 @@ $('#totalOn').click(function() {
     $('#history_total').toggleClass('--on')
 })
 
+// 返回上一頁
+$('#back_btn').click(function () {
+    history.back()
+})
+
 $('.menu__info_btn').click(function () {
     $('.frame__menu').toggleClass('--active')
 })
