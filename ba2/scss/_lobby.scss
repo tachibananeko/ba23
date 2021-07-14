@@ -67,7 +67,6 @@
                     &::before{
                         @include pos_a(trbl, 0);
                         @include bg_txt(map-get($bg_color, gold), 70px);
-                        content: attr(data-txt);
                         text-shadow: none;
                     }
                 }
@@ -306,7 +305,6 @@
             }
             &::after {
                 @include bg_txt(map-get($bg_color, gold), 20px);
-                content: attr(data-txt);
                 position: relative;
                 width: 100%;
             }
@@ -447,7 +445,6 @@
             &::after{
                 @include bg_txt(map-get($bg_color, gold), 32px);
                 position: absolute;
-                content: attr(data-txt);
                 font-weight: bold;
                 text-shadow: 0 0 3px map-get($bg_color, black),
                     0 0 5px map-get($bg_color, black);
@@ -493,7 +490,6 @@
                     @include d_f(flex, center, center);
                     @include bg_txt(map-get($bg_color, alert_bg), 20px);
                     position: absolute;
-                    content: attr(data-txt);
                     padding: 0 10px;
                     font-weight: bold;
                     text-shadow: 0 0 1px map-get($txt_color, primary), 0 0 3px map-get($txt_color, primary);

@@ -50,7 +50,6 @@
         &:after{
             @include pos_a(tl, calc(100% - 10px), 0);
             @include bg_txt(map-get($bg_color, gold), 30px);
-            content: attr(data-txt);
             font-style: normal;
         }
     }

@@ -65,8 +65,8 @@
     &__1st {
         @include radius_hidden();
         border: 1px solid map-get($bg_color, secondary);
-        
         display: none;
+        
         @include mw_sm {
             display: block;
             height: 30px;

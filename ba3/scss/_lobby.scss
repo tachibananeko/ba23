@@ -122,7 +122,6 @@
             &::after{
                 @include pos_a(rbl, 3px);
                 @include bg_txt(map-get($bg_color, secondary_vl), 24px);
-                content: attr(data-txt);
                 margin: auto;
                 font-weight: bold;
                 text-align: center;
@@ -258,7 +257,6 @@
             &::after{
                 @include bg_txt(map-get($bg_color, gold), 32px);
                 position: absolute;
-                content: attr(data-txt);
                 font-weight: bold;
                 text-shadow: 0 0 3px map-get($bg_color, black),
                     0 0 5px map-get($bg_color, black);
@@ -304,7 +302,6 @@
                     @include d_f(flex, center, center);
                     @include bg_txt(map-get($bg_color, primary), 20px);
                     position: absolute;
-                    content: attr(data-txt);
                     padding: 0 10px;
                     font-weight: bold;
                     text-shadow: 0 0 1px map-get($txt_color, yellow),

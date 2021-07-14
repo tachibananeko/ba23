@@ -1,7 +1,11 @@
 
 // 常用設定
 %txtshadow{
-	text-shadow: 2px 2px hsla(354, 29%, 7%, 0.5);
+	text-shadow: 2px 2px map-get($shadow, shadow);
+}
+// 動畫
+%transition {
+	transition: all .3s ease-in-out;
 }
 
 // 定位
@@ -36,11 +40,6 @@
 	justify-content: $jc;
 }
 
-@mixin bg_set($x, $y, $repeat, $size) {
-	background-position: $x $y;
-	background-repeat: $repeat;
-	background-size: $size;
-}
 // 多行縮字點點點
 @mixin omission($line, $height) {
 	display: -webkit-box;
@@ -55,10 +54,7 @@
 	overflow-y: $y;
 	-webkit-overflow-scrolling: $open;
 }
-// 動畫
-%transition {
-	transition: all .3s ease-in-out;
-}
+
 
 // 自定義
 // 勾勾
@@ -85,7 +81,7 @@
 			height: ($box / 3);
 			border-width: 0 0 $boder $boder;
 			border-style:  solid;
-			border-color: map-get($bg_color , white);
+			border-color: map-get($bg_color, white);
 			transform: rotate(-48deg);
 		}
 	}
@@ -163,6 +159,13 @@
 	}
 }
 
+// 漸層線
+@mixin border($border_px, $border_img) {
+	border: 1px solid #000;
+	border-width: $border_px;
+	border-image: $border_img;
+}
+
 // loading元件
 @mixin load_set($scale, $color) {
 	.load_item {
@@ -210,12 +213,7 @@
 	}
 }
 
-// 漸層線
-@mixin border($border_px, $border_img) {
-	border: 1px solid #000;
-	border-width: $border_px;
-	border-image: $border_img;
-}
+
 
 
 
@@ -345,6 +343,7 @@ $breakpoints: (
 }
 @mixin mr_distance {
 	margin-right: distance();
+
 	@include mw_xs{
 		margin-right: distance(2);
 	}
