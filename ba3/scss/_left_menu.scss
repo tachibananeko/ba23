@@ -58,10 +58,12 @@
             transform: translate3d(0, 100%, 0);
             transition: all .3s ease-in-out;
             opacity: 0;
+            pointer-events: none;
 
             @at-root .--active .menu__info__txt {
                 opacity: 1;
                 transform: translate3d(0, 0, 0);
+                pointer-events: auto;
             }
         }
         .name{
@@ -197,6 +199,7 @@
     @include scrollbar(auto, hidden);
     @include mw_md{
         @include d_f(inline-flex, center, flex-start);
+        height: 50px;
     }
     ul{
         @include mw_md {
