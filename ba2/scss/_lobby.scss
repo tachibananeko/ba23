@@ -235,6 +235,11 @@
         width: 45px;
         height: 60px;
         background: url(../images/icon_lobby_vip.svg) no-repeat center top / contain;
+
+        @include mw_xs{
+            width: 40px;
+            height: 50px;
+        }
     }
 
     &.--i_ex i::before,
@@ -265,6 +270,10 @@
         padding: 0 10px 0 120px;
         background: map-get($bg_color, primary);
 
+        @include mw_xs{
+            padding-left: 100px;
+        }
+
         &::before{
             @include pos_a(trbl, 0);
             content: '';
@@ -275,6 +284,10 @@
         // title限紅 .lobbyTb__title__limit
         &__limit {
             position: relative;
+
+            @include mw_xs{
+                font-size: 12px;
+            }
 
             &::before {
                 content: attr(data-info);
@@ -288,10 +301,13 @@
             @include pos_a(tbl, 0);
             width: 120px;
             height: 100%;
-            padding-left: 10px;
             font-weight: bold;
             margin: auto;
             overflow: hidden;
+
+            @include mw_xs{
+                width: 100px;
+            }
 
             &::before{
                 @include pos_a(tl, 0, -10px);
@@ -306,7 +322,11 @@
             &::after {
                 @include bg_txt(map-get($bg_color, gold), 20px);
                 position: relative;
-                width: 100%;
+                width: calc(100% - 20px);
+
+                @include mw_xs{
+                    font-size: 16px;
+                }
             }
         }
 
