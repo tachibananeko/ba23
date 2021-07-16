@@ -106,7 +106,7 @@
             &::before {
                 @include pos_a(tl, 0);
                 content: '';
-                width: 100%;
+                width: 150%;
                 height: 2000%;
                 background: map-get($bg_color, darkblue);
                 background-size: 25px 25px;
