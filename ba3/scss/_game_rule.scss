@@ -19,68 +19,8 @@
     }
     // .game_rule__title
     &__title{
+        @include title_diamondBG;
         @include d_f(flex, center, flex-start);
-        position: relative;
-        height: 35px;
-        background: map-get($bg_color, primary_vl);
-        overflow: hidden;
-
-        @include mw_xs{
-            background: transparent;
-        }
-
-        &::before{
-            @include pos_a(tl, 0);
-            content: '';
-            width: 100%;
-            height: 2500%;
-            background: linear-gradient(-137deg, #004889 0%, #001940 100%);
-            background-size: 25px 25px;
-            pointer-events: none;
-            transform: rotate(-45deg);
-            transform-origin: 2% 5%;
-            opacity: .4;
-
-            @include mw_xs{
-                opacity: 0;
-            }
-        }
-        
-        span{
-            @include pos_a(trl, 0);
-            @include radius_hidden(0 0 20px 20px);
-            width: 40%;
-            height: 100%;
-            border: 2px solid map-get($bg_color, secondary);
-            border-top: none;
-            margin: auto;
-
-            @include mw_xs{
-                width: 80%;
-                border-radius: 0 0 10px 10px;
-            }
-
-            &:before{
-                @include pos_a(tl, 0, -15px);
-                content: '';
-                width: 100%;
-                height: 2000%;
-                background: linear-gradient(-137deg, #001940 0%, #000) 100%;
-                background-size: 25px 25px;
-                pointer-events: none;
-                transform: rotate(-45deg);
-                transform-origin: 8% 10%;
-            }
-            &:after{
-                @include pos_a(trbl, 0);
-                content: attr(data-txt);
-                color: map-get($txt_color, yellow);
-                font-size: 20px;
-                font-weight: bold;
-                text-align: center;
-                margin: auto;
-            }
-        }
 
         
         .close_btn{
