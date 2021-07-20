@@ -1247,7 +1247,8 @@
             font-size: 14px;
             font-weight: bold;
 
-            &::after{
+            &::after,
+            code {
                 @include btn_txt(center, map-get($txt_color, secondary), transparent);
                 @include pos_a(trbl, 0);
                 margin: auto;
@@ -1267,28 +1268,38 @@
                 &::after{
                     color: map-get($txt_color, secondary);
                     animation: word_change 3s linear infinite;
+                }
+                code{
+                    color: map-get($txt_color, secondary);
+                    animation: word_change02 3s linear infinite;
 
                     @keyframes word_change {
                         0%,
                         20%,
                         80%,
                         100%{
-                            content: attr(data-txt);
                             opacity: 1;
                         }
+
                         30%,
                         71% {
-                            content: attr(data-txt);
                             opacity: 0;
                         }
+                    }
+                    @keyframes word_change02 {
+                        0%,
+                        20%,
+                        30%,
                         31%,
-                        70% {
-                            content: attr(data-txt02);
+                        70%,
+                        71%,
+                        80%,
+                        100%,{
                             opacity: 0;
                         }
+
                         40%,
                         60% {
-                            content: attr(data-txt02);
                             opacity: 1;
                         }
                     }
