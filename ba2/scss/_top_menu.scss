@@ -133,13 +133,15 @@
 
     .triangle {
         @include pos_a(trb, 0, 5px, 0);
-        @include triangle(12px, map-get($bg_color, darkgray), bottom);
+        @include triangle(12px, map-get($bg_color, black), bottom);
         display: inline-block;
         margin: auto;
         animation: shake 2s infinite;
-
-        @include mw_sm {
-            content: '';
+        
+        // 選擇桌次展開
+        @at-root .--tableOpen .triangle{
+            transform: rotateX(180deg);
+            animation: shake_up 2s infinite;
         }
 
         @keyframes shake {
@@ -162,6 +164,25 @@
                 transform: translateY(3px);
             }
         }
+        @keyframes shake_up {
+                10%,
+                30%,
+                50%,
+                70%,
+                90% {
+                    -webkit-transform: translateY(-3px) rotateX(180deg);
+                    transform: translateY(-3px) rotateX(180deg);
+                }
+                0%,
+                20%,
+                40%,
+                60%,
+                80%,
+                100% {
+                    -webkit-transform: translateY(3px) rotateX(180deg);
+                    transform: translateY(3px) rotateX(180deg);
+                }
+            }
     }
 
     // 手指效果
