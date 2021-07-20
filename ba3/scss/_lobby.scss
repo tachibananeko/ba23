@@ -120,7 +120,7 @@
             }
 
             &::after{
-                @include pos_a(rbl, 0 3px 0);
+                @include pos_a(rbl, 0, 3px, 0);
                 @include bg_txt(map-get($bg_color, secondary_vl), 24px);
                 margin: auto;
                 font-weight: bold;
