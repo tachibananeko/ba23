@@ -505,17 +505,11 @@
                 width: 65%;
                 height: 100%;
 
-                &::before,
-                &::after{
-                    @include d_f(flex, center, center);
-                    @include bg_txt(map-get($bg_color, alert_bg), 20px);
+                &::before{
+                    @include bg_txt(map-get($bg_color, brown_gradual_vl), 20px);
                     position: absolute;
                     padding: 0 10px;
                     font-weight: bold;
-                    text-shadow: 0 0 1px map-get($txt_color, primary), 0 0 3px map-get($txt_color, primary);
-                }
-
-                &::after{
                     text-shadow: none;
                 }
             }
