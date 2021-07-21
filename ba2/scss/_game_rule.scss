@@ -68,10 +68,7 @@
         height: calc(100% - 35px);
         padding: 0 60px 20px;
         background: map-get($bg_color, darkgray);
-
-        @include mw_md{
-            padding: 0 60px 20px;
-        }
+        
         @include mw_xs{
             padding: 0 0 20px;
         }
@@ -213,9 +210,8 @@
                     }
                     // .directions__title
                     &__title{
+                        @include d_f(flex, unset, center);
                         @include border(0 0 1px, map-get($border_color, primary));
-                        display: flex;
-                        justify-content: center;
                         padding: 5px;
                         font-size: 18px;
                         color: map-get($txt_color, secondary02);
@@ -291,7 +287,6 @@
                     }
                 }
                 .directions__title{
-                    justify-content: space-between;
                     border-radius: 5px 5px 0 0;
                 }
                 .directions__item{
