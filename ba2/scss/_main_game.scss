@@ -729,6 +729,35 @@
                     opacity: 0;
                 }
             }
+
+            // 贏牌效果
+            &.--win{
+                animation: shine_win 1s ease-in-out 2 both;
+
+                &::after{
+                    content: '';
+                    @include pos_a(trbl, 0);
+                    @include border(2px, map-get($border_color, primary));
+                    margin: auto;
+                }
+
+                @keyframes shine_win {
+                    0% {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+
+                    50% {
+                        transform: scale(1.05);
+                        opacity: 0;
+                    }
+
+                    100% {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                }
+            }
         }
 
         .odd {
