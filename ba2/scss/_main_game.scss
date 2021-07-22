@@ -397,13 +397,10 @@
                 justify-content: flex-start;
             }
             >i {
-                position: absolute;
+                @include pos_a(trb, 0, 10px, 0);
                 display: block;
                 width: 35px;
                 height: 16px;
-                top: 0;
-                bottom: 0;
-                right: 10px;
                 margin: auto;
 
                 @include mw_lg{
@@ -416,14 +413,11 @@
             }
             &.--i_ex>i::before,
             &.--i_fast>i::after {
+                @include pos_a(trb, 0, -20px, 0);
                 content: '';
-                position: absolute;
                 width: 20px;
                 height: 20px;
                 background: url(../images/icon_ex.svg) no-repeat center / contain;
-                top: 0;
-                bottom: 0;
-                right: -20px;
                 margin: auto;
             }
             &.--i_fast>i::after {

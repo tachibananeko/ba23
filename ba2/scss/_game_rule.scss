@@ -126,12 +126,8 @@
                 z-index: 0;
                 overflow: hidden;
                 &:before{
+                    @include pos_a(tl, 0, -20px);
                     content: '';
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    left: -20px;
-                    right: 0;
                     width: 200px;
                     background: map-get($bg_color, secondary_vl);
                     border-top-right-radius: 5px;
