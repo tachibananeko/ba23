@@ -1,0 +1,895 @@
+.auto_bet{
+    position: relative;
+    height: 100%;
+    .rule{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        border-width: 2px;
+        border-style: solid;
+        border-image: linear-gradient(to right, #9c6932, #fcf7b7, #9c6932) 5 5;
+        z-index: 2;
+        // rule__box
+        &__box{
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            font-size: 13px;
+            background: linear-gradient(to bottom, #41210B 0%, #000 100%);
+        }
+        // rule__title
+        &__title{
+            position: relative;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 20px;
+            color: #F2BC79;
+            background: linear-gradient(to bottom, #41210B 0%, #000 100%);
+            .close_btn{
+                @include pos_a(tbr, 0, 0, 20px);
+                margin: auto;
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+            }
+        }
+        // rule__content
+        &__content{
+            text-align: center;
+            width: 100%;
+            height: calc(100% - 50px);
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 10px 0;
+            -webkit-overflow-scrolling: touch;
+        }
+        // rule__txt
+        &__txt{
+            padding: 20px 100px;
+            text-align: left;
+            color: map-get($txt_color, primary);
+            @include mw_xs{
+                padding: 20px 15px;
+            }
+            h1{
+                font-size: 16px;
+                line-height: 25px;
+                margin-bottom: 30px;
+            }
+            h2{
+                position: relative;
+                padding: 8px 20px;
+                background: linear-gradient(to bottom, #F2BD79 0%, #513724 100%);
+                font-size: 15px;
+                margin-bottom: 20px;
+                border-radius: 4px;
+                text-align: center;
+                &:before{
+                    content: '';
+                    @include pos_a(tblr, 0, 0, 0, 0);
+                    display: block;
+                    width: calc(100% - 4px);
+                    height: calc(100% - 4px);
+                    background: map-get($bg_color, black);
+                    border-radius: 2px;
+                    margin: auto;
+                }
+            }
+            span{
+                position: relative;
+                color: #FFF5CC;
+            }
+            ul{
+                padding: 0 30px;
+                font-size: 14px;
+                margin-bottom: 30px;
+                li{
+                    line-height: 20px;
+                    margin-bottom: 15px;
+                    list-style-type: disc;
+                }
+            }
+            .ps{
+                padding-left: 30px;
+                color: map-get($txt_color, white);
+            }
+        }
+        // rule__img_box
+        &__img_box{
+            .road{
+                display: inline-block;
+                max-width: 300px;
+                width: 100%;
+                background: linear-gradient(135deg, #F2BE78 0%, #3D2D21 100%);
+                margin: 10px 20px;
+                padding: 2px;
+                border-radius: 5px;
+                // road__title
+                &__title{
+                    @include d_f(flex, center, center);
+                    color: #E2B171;
+                    height: 50px;
+                    font-size: 20px;
+                    background: linear-gradient(to bottom, #41210B 0%, #000 100%);
+                    border-width: 0 0 1px;
+                    border-style: solid;
+                    border-image: linear-gradient(to right, transparent, #9c6932, #fcf7b7, #9c6932, transparent) 5 5;
+                }
+                // road__content
+                &__content{
+                    background: #000;
+                }
+                // road__img
+                &__img{
+                    position: relative;
+                    display: inline-block;
+                    width: 145px;
+                    height: 145px;
+                    margin: 20px 0;
+                    &.--rule1{
+                        background: url(../images/rule1.jpg) 0 0 no-repeat;
+                    }
+                    &.--rule2{
+                        background: url(../images/rule2.jpg) 0 0 no-repeat;
+                    }
+                    &.--rule3{
+                        background: url(../images/rule3.jpg) 0 0 no-repeat;
+                    }
+                    &.--rule4{
+                        background: url(../images/rule4.jpg) 0 0 no-repeat;
+                    }
+                    &.--rule5{
+                        background: url(../images/rule5.jpg) 0 0 no-repeat;
+                    }
+                    &.--rule6{
+                        background: url(../images/rule6.jpg) 0 0 no-repeat;
+                    }
+                    &:before{
+                        content: '';
+                        @include pos_a(tlr, calc(100% + 20px), 0, 0);
+                        height: 1px;
+                        background: linear-gradient(to right, transparent, #9c6932, #fcf7b7, #9c6932, transparent);
+                    }
+                }
+                // road__txt
+                &__txt{
+                    padding: 10px 0;
+                }
+            }
+        }
+    }
+    // auto_bet__title
+    &__title{
+        position: relative;
+        @include d_f(flex, center, center);
+        height: 50px;
+        color: map-get($txt_color, secondary02);
+        background: linear-gradient(to bottom, #41210B 0%, #000 100%);
+        .number{
+            @include pos_a(tbl, 0, 0, 10px);
+            margin: auto;
+            height: 22px;
+            color: map-get($txt_color, white);
+            @include mw_xs{
+                font-size: 12px;
+                height: 16px;
+            }
+            span{
+                background: #000;
+                padding: 3px 5px;
+                border-radius: 5px;
+            }
+        }
+        .btn_box{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 15px;
+            margin: auto;
+            height: 22px;
+            .icon_help_btn{
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+            }
+            .close_btn{
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+    // auto_bet__content
+    &__content{
+        height: calc(100% - 50px);
+        .btn_list{
+            @include d_f(flex, center, flex-start);
+            width: 100%;
+            li{
+                @include d_f(flex, center, center);
+                width: 25%;
+                height: 50px;
+                background: #333;
+                cursor: pointer;
+                @include btn_hoverHandler(none, map-get($txt_color, primary)){
+                    background: map-get($bg_color, secondary_vl);
+                }
+                &.--on{
+                    background: map-get($bg_color, secondary_vl);
+                }
+            }
+        }
+        .content_box{
+            height: calc(100% - 50px);
+            // settings start
+            @at-root .settings{
+                height: 100%;
+                // settings__list
+                &__list{
+                    @include d_f(flex, center, flex-start);
+                    height: 70px;
+                    color: map-get($txt_color, white);
+                    background: #1A1A1A;
+                }
+                // settings__item
+                &__item{
+                    width: 25%;
+                    height: 100%;
+                    div{
+                        height: 50%;
+                        @include d_f(flex, center, center);
+                    }
+                }
+                @at-root .switch_btn_box{
+                    @include d_f(flex, center, flex-start);
+                    height: 50px;
+                    .switch_btn{
+                        width: 50%;
+                        height: 100%;
+                        color: map-get($txt_color, primary);
+                        background: #333;
+                        @include btn_hoverHandler(none, map-get($txt_color, primary)){
+                            background: map-get($bg_color, secondary_vl);
+                        }
+                        &.--on{
+                            background: map-get($bg_color, secondary_vl);
+                        }
+                    }
+                }
+                // settings__box
+                &__box{
+                    height: calc(100% - 220px);
+                    background: linear-gradient(to bottom, #41210B 0%, #000 100%);
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                    -webkit-overflow-scrolling: touch;
+                    @include mw_xs{
+                        height: calc(100% - 170px);
+                        padding-bottom: 10px;
+                    }
+                    .table_box{
+                        width: 100%;
+                        color: #cdcdcd;
+                        background: #1A1A1A;
+                        padding: 10px;
+                        .table_list{
+                            @include d_f(flex, flex-start, flex-start);
+                            flex-wrap: wrap;
+                            margin: auto;
+                        }
+                        .table_item{
+                            @at-root .check_mark{
+                                padding: 10px 15px;
+                                display: block;
+                                cursor: pointer;
+                                input{
+                                    display: none;
+                                    &:checked + span{
+                                        background: #349ed2;
+                                    }
+                                    &:checked ~ tt{
+                                        color: map-get($txt_color, primary);
+                                    }
+                                }
+                                span{
+                                    position: relative;
+                                    display: inline-block;
+                                    width: 14px;
+                                    height: 14px;
+                                    background: #7D7D7D;
+                                    border-radius: 50%;
+                                    margin-right: 3px;
+                                    vertical-align: middle;
+                                    &:before{
+                                        content: '';
+                                        position: absolute;
+                                        display: block;
+                                        width: 6px;
+                                        height: 3px;
+                                        top: 3px;
+                                        right: 3px;
+                                        transform: rotate(-48deg);
+                                        border: 2px solid #FFF;
+                                        border-top: none;
+                                        border-right: none;
+                                    }
+                                }
+                                tt{
+                                    vertical-align: middle;
+                                }
+                            }
+                        }
+                    }
+                    .road{
+                        width: 100%;
+                        padding: 10px 0;
+                        // road__list
+                        &__list{
+                            width: 100%;
+                            margin: auto;
+                            @include d_f(flex, center, space-around);
+                            @include mw_xs{
+                                justify-content: flex-start;
+                                flex-wrap: wrap;
+                                padding: 0 10px;
+                            }
+                        }
+                        // road__item
+                        &__item{
+                            color: map-get($txt_color, white);
+                            @include mw_xs{
+                                margin: 5px;
+                            }
+                            .check_mark{
+                                width: 145px;
+                                height: 145px;
+                                padding: 0;
+                                @include mw_xs{
+                                    width: 75px;
+                                    height: 75px;
+                                }
+                                input:checked{
+                                    & ~ .road__box{
+                                        background: linear-gradient(135deg, #F2BE78 0%,#3D2D21 100%);
+                                        .road__txt{
+                                            background: linear-gradient(to bottom, #41210B 0%, #000 100%);
+                                        }
+                                        .road__img{
+                                            &.--road1{
+                                                background: url('../images/road1.svg')no-repeat top/cover;
+                                            }
+                                            &.--road2{
+                                                background: url('../images/road2.svg')no-repeat top/cover;
+                                            }
+                                            &.--road3{
+                                                background: url('../images/road3.svg')no-repeat top/cover;
+                                            }
+                                            &.--road4{
+                                                background: url('../images/road4.svg')no-repeat top/cover;
+                                            }
+                                            &.--road5{
+                                                background: url('../images/road5.svg')no-repeat top/cover;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        // road__box
+                        &__box{
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            padding: 2px;
+                            border-radius: 5px;
+                        }
+                        // road__txt
+                        &__txt{
+                            @include d_f(flex, center, center);
+                            width: 100%;
+                            height: 40px;
+                            border-top-right-radius: 5px;
+                            border-top-left-radius: 5px;
+                            background: linear-gradient(to bottom, rgba(152,152,152,1) 0%,rgba(152,152,152,1) 50%,rgba(0,0,0,1) 100%);
+                            @include mw_xs{
+                                height: 16px;
+                                font-size: 12px;
+                            }
+                        }
+                        // road__img
+                        &__img{
+                            width: 100%;
+                            height: 100px;
+                            @include mw_xs{
+                                height: calc(100% - 16px);
+                            }
+                            &.--road1{
+                                background: url('../images/road_gray1.svg')no-repeat top/cover;
+                            }
+                            &.--road2{
+                                background: url('../images/road_gray1.svg')no-repeat top/cover;
+                            }
+                            &.--road3{
+                                background: url('../images/road_gray2.svg')no-repeat top/cover;
+                            }
+                            &.--road4{
+                                background: url('../images/road_gray3.svg')no-repeat top/cover;
+                            }
+                            &.--road5{
+                                background: url('../images/road_gray3.svg')no-repeat top/cover;
+                            }
+                        }
+                    }
+                    .all_btn{
+                        width: 100%;
+                        height: 50px;
+                        color: #cdcdcd;
+                        background: map-get($bg_color, td_titlegray);
+                    }
+                    .risk{
+                        // risk__title
+                        &__title{
+                            @include d_f(flex, center,center);
+                            height: 50px;
+                            background: linear-gradient(to bottom, #41210B 0%, #000 100%);
+                        }
+                        // risk__info
+                        &__info{
+                            display: inline-block;
+                            width: 25px;
+                            height: 25px;
+                            margin-left: 5px;
+                            .icon_info_btn{
+                                width: 100%;
+                                height: 100%;
+                                vertical-align: middle;
+                            }
+                        }
+                        // risk__content
+                        &__content{
+                            @include d_f(flex, center, center);
+                            height: 0;
+                            overflow: hidden;
+                            transition-duration: .3s;
+                            padding: 0 45px;
+                            background: #1A1A1A;
+                            &.--on{
+                                height: auto;
+                                padding: 10px 45px;
+                                border-width: 2px 0;
+                                border-style: solid;
+                                border-image: linear-gradient( to right, rgba(0,0,0,0) 0%, rgba(130,116,70,1) 50%, rgba(0,0,0,0) 100%) 5 5;
+                            }
+                        }
+                    }
+                    .bet_settings{
+                        @include d_f(flex, center, center);
+                        width: 100%;
+                        flex-wrap: wrap;
+                        padding-top: 35px;
+                        // bet_settings__item
+                        &__item{
+                            @include d_f(flex, center, center);
+                            width: 25%;
+                            flex-wrap: wrap;
+                            @include mw_xs{
+                                width: 50%;
+                            }
+                        }
+                        // bet_settings__title
+                        &__title,
+                        &__info{
+                            width: 100%;
+                            text-align: center;
+                            @include mw_xs{
+                                font-size: 14px;
+                            }
+                        }
+                        // bet_settings__info
+                        &__info{
+                            color: map-get($txt_color, white);
+                            @include mw_xs{
+                                font-size: 12px;
+                            }
+                        }
+                        // bet_settings__input
+                        &__input{
+                            width: 70%;
+                            height: 30px;
+                            border: none;
+                            border-bottom: solid 1px #787878;
+                            color: map-get($txt_color, primary);
+                            background: #393939;
+                            text-align: center;
+                            margin-top: 5px;
+                            &::placeholder{
+                                color: map-get($txt_color, primary);
+                            }
+                        }
+                    }
+                }
+                .success_message{
+                    height: 30px;
+                    text-align: center;
+                    color: map-get($txt_color, white);
+                }
+                .confirm_btn_box{
+                    @include d_f(flex, center, center);
+                    width: 100%;
+                    height: 50px;
+                    .confirm_btn{
+                        @include btn_set(180px, 50px, map-get($btn_color, lightblue));
+                        @include radius_hidden(5px);
+                        &::before{
+                            @include btn_hoverlight01(200%);
+                        }
+                        &::after{
+                            @include btn_txt(center, map-get($txt_color, white), map-get($txt_color, shadow));
+                            font-size: 24px;
+                        }
+                        .hover_item{
+                            @include btn_hoveritem(map-get($btn_color, blue));
+                            box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
+                                        0 0 6px map-get($bg_color, secondary) inset;
+                            &::before {
+                                @include btn_hoverlight01(200%);
+                            }
+                        }
+                        // 重置
+                        &.--reset{
+                            background: map-get($btn_color, orange);
+                            margin-left: 30px;
+                            .hover_item {
+                                background: map-get($btn_color, red);
+                            }
+                        }
+                        // 手指效果
+                        @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
+                    }
+                }
+            }
+            // settings end
+            // record start
+            .record{
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                // record__header
+                &__header,
+                &__footer{
+                    @include d_f(flex, center, center);
+                    width: 100%;
+                    height: 30px;
+                    background: #000;
+                }
+                &__header{
+                    position: relative;
+                    color: map-get($txt_color, white);
+                    height: 50px;
+                    background: #1A1A1A;
+                    .dropdown{
+                        @include pos_a(tbr, 0, 0, 15px);
+                        width: 100px;
+                        height: 28px;
+                        font-size: 14px;
+                        padding: 3px 0;
+                        margin: auto;
+                        color: map-get($txt_color, black);
+                        display: flex;
+                        flex-direction: column;
+                        z-index: 1;
+                        // dropdown__btn
+                        &__btn{
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            flex: none;
+                            height: 24px;
+                            padding: 0 5px 0 10px;
+                            cursor: pointer;
+                            border-radius: 3px;
+                            color: map-get($txt_color, white);
+                            background: #333;
+                            &:before{
+                                content: '';
+                                @include pos_a(tbr, 0, 3px, 10px);
+                                margin: auto 0;
+                                width: 6px;
+                                height: 6px;
+                                border-style: solid;
+                                border-width: 0 1px 1px 0;
+                                border-color: #fff;
+                                transform: rotate(45deg);
+                            }
+                        }
+                        // dropdown__list
+                        &__list{
+                            display: flex;
+                            flex-direction: column;
+                            background: #333;
+                            font-size: 14px;
+                            border-radius: 0 0 5px 5px;
+                            color: #fff7b3;
+                        }
+                        // dropdown__item
+                        &__item{
+                            width: 100%;
+                            padding: 5px 20px;
+                            cursor: pointer;
+                            border: 1px solid #212121;
+                            @include hoverHandler{
+                                color: map-get($txt_color, black);
+                                background: #F7EE8F;
+                                background: linear-gradient(180deg, #74491F 0%, #F7EE8F 35%, #F7EE8F 70%, #D4B055 100%);
+                            }
+                        }
+                    }
+                }
+                .bet_record{
+                    width: 100%;
+                    height: calc(100% - 215px);
+                    .title_table{
+                        table-layout: fixed;
+                        width: 100%;
+                        th{
+                            height: 50px;
+                            background: #4D4D4D;
+                        }
+                    }
+                    .content_table_box{
+                        height: calc(100% - 50px);
+                        overflow-x: hidden;
+                        overflow-y: auto;
+                        -webkit-overflow-scrolling: touch;
+                        .content_table{
+                            width: 100%;
+                            color: #ccc;
+                            text-align: center;
+                            .tr_title{
+                                background: #1A1A1A;
+                                th{
+                                    padding: 10px 0;
+                                }
+                            }
+                            .tr_content{
+                                background: #333;
+                                td{
+                                    padding: 5px 0;
+                                }
+                                & + .tr_content{
+                                    border-top: 1px solid #202020;
+                                }
+                                .td_content + .td_title{
+                                    border-left: 1px solid #202020;
+                                }
+                            }
+                            .td_title{
+                                color: #fef6ae;
+                                border-right: 1px solid #202020;
+                            }
+                        }
+                    }
+                }
+                .set_record{
+                    width: 100%;
+                    height: calc(100% - 165px);
+                    @include mw_xs{
+                        height: calc(100% - 215px);
+                    }
+                    .title_table{
+                        table-layout: fixed;
+                        width: 100%;
+                        th{
+                            height: 50px;
+                            background: #361B09;
+                        }
+                    }
+                    .content_table_box{
+                        height: calc(100% - 50px);
+                        overflow-x: hidden;
+                        overflow-y: auto;
+                        -webkit-overflow-scrolling: touch;
+                        .content_table{
+                            width: 100%;
+                            color: #ccc;
+                            text-align: center;
+                            .tr_title{
+                                background: #4D4D4D;
+                                th{
+                                    padding: 10px 0;
+                                }
+                            }
+                            .tr_content{
+                                background: #808080;
+                                td{
+                                    padding: 5px 0;
+                                }
+                                & + .tr_content{
+                                    border-top: 1px solid #202020;
+                                }
+                                .td_content + .td_title{
+                                    border-left: 1px solid #202020;
+                                }
+                            }
+                            .td_title{
+                                color: #fef6ae;
+                                border-right: 1px solid #202020;
+                            }
+                        }
+                    }
+                }
+                // record__footer
+                &__footer{
+                    justify-content: flex-end;
+                    height: 50px;
+                    padding: 0 15px;
+                    background: #0D0702;
+                    .total_txt{
+                        color: #F2BC79;
+                        margin-right: 90px;
+                    }
+                    .total_amount{
+                        color: map-get($txt_color, white);
+                    }
+                }
+                // record__page
+                &__page{
+                    @include d_f(flex, center,center);
+                    height: 50px;
+                    color: #F3BD77;
+                    background: #1A1A1A;
+                    span + span{
+                        margin-left: 65px;
+                    }
+                    b{
+                        color: map-get($txt_color, white);
+                    }
+                }
+                // record__btn
+                &__btn{
+                    @include d_f(flex, center, center);
+                    height: 65px;
+                    .page_btn{
+                        @include btn_set(180px, 50px, map-get($btn_color, lightblue));
+                        @include radius_hidden(5px);
+                        &::before{
+                            @include btn_hoverlight01(200%);
+                        }
+                        &::after{
+                            @include btn_txt(center, map-get($txt_color, white), map-get($txt_color, shadow));
+                            font-size: 24px;
+                        }
+                        .hover_item{
+                            @include btn_hoveritem(map-get($btn_color, blue));
+                            box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
+                                        0 0 6px map-get($bg_color, secondary) inset;
+                            &::before {
+                                @include btn_hoverlight01(200%);
+                            }
+                        }
+                        // 重置
+                        &.--next{
+                            background: map-get($btn_color, orange);
+                            margin-left: 30px;
+                            .hover_item {
+                                background: map-get($btn_color, red);
+                            }
+                        }
+                        // 手指效果
+                        @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
+                    }
+                }
+            }
+            // record end
+            // stat start
+            .stat{
+                width: 100%;
+                height: 100%;
+                // stat__content
+                &__content{
+                    width: 100%;
+                    height: calc(100% - 50px);
+                    padding: 0 15px;
+                    background: linear-gradient(to bottom, #41210B 0%, #000 100%);
+                }
+                // stat__icon
+                &__icon{
+                    width: 100%;
+                    padding: 25px 0 35px;
+                    color: #fcf6b2;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    span{
+                        position: relative;
+                        padding-left: 30px;
+                        font-size: 12px;
+                        &:before{
+                            content: '';
+                            @include pos_a(tbr, 0, 0, calc(100% - 25px));
+                            margin: auto;
+                            border-radius: 50%;
+                            width: 14px;
+                            height: 14px;
+                            background: #fed702;
+                        }
+                        &:first-child:before{
+                            background: #008ed6;
+                        }
+                    }
+                }
+                // stat__box
+                &__box{
+                    width: 90%;
+                    height: calc(100% - 76px);
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-content: flex-start;
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                    -webkit-overflow-scrolling: touch;
+                }
+                // stat__item
+                &__item{
+                    width: calc(50% - 15px);
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    color: #ccc;
+                    margin-bottom: 10px;
+                    @include mw_xs{
+                        width: 100%;
+                    }
+                    &:nth-child(even){
+                        margin-left: 15px;
+                        margin-right: 15px;
+                        @include mw_xs{
+                            margin-left: 0;
+                            margin-right: 0;
+                        }
+                    }
+                    .tb_num{
+                        @include d_f(flex, flex-end, flex-end);
+                        width: 70px;
+                        height: 100%;
+                        color: #fcf6b2;
+                        flex: 1;
+                        padding-right: 10px;
+                        white-space: nowrap;
+                    }
+                }
+                // stat__frq
+                // stat__rate
+                &__frq,
+                &__rate{
+                    flex: 1;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 15px;
+                }
+                // stat__diagram
+                &__diagram{
+                    width: 100%;
+                    height: 5px;
+                    margin-top: 5px;
+                    background: #333;
+                    position: relative;
+                }
+                // stat__cover
+                &__cover{
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    background: #008ed6;
+                    &.--rate{
+                        background: #fed702;
+                    }
+                }
+            }
+            // stat end
+        }
+    }
+}

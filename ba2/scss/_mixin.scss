@@ -518,7 +518,9 @@ $icon: (
 	'rule_chips',
 	'rule_poker',
 	'balance',
-	'result'
+	'result',
+	'help_btn',
+	'info_btn'
 );
 
 @each $name in $icon {

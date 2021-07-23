@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
+    <title>Welcome</title>
+
+    <link rel="stylesheet" href="../style/all.min.css">
+
+</head>
+
+<body ontouchstart="">
+    <!-- 
+        視訊放大 在上方狀態後加上.--bigTv
+        選擇桌次展開.--tableOpen
+        卡片all展開.--cardOpen
+    -->
+    <div class="frame" id="frame">
+        <!-- 左邊menu -->
+        <!-- 打開人頭內按鈕 .--active -->
+        <aside class="frame__menu">
+            <!-- 客戶資訊 -->
+            <div class="menu__info">
+                <div class="menu__info__logo"></div>
+                <button class="menu__info_btn"></button>
+                <div class="menu__info__txt" data-txt="試玩帳號">
+                    <span class="name">LoremLoremLoremLoremLoremLoremLoremLoremLoremLorem</span>
+                    <span class="amount">200,000,000</span>
+                </div>
+            </div>
+            <!-- 客戶資訊 end -->
+
+            <!-- 分頁按鈕 -->
+            <div class="menu__main" id="menu__main">
+                <!-- 廠商按鈕 -->
+                <!-- 當前頁面.--on -->
+                <ul class="--api">
+                    <li data-txt="百家樂">
+                        <span class="hover_item"></span>
+                        <i class="icon_ibo"></i>
+                    </li>
+                    <li data-txt="鬥雞">
+                        <span class="hover_item"></span>
+                        <i class="icon_cockfight"></i>
+                    </li>
+                    <li data-txt="A5彩票">
+                        <span class="hover_item"></span>
+                        <i class="icon_a5"></i>
+                    </li>
+                </ul>
+                <!-- 廠商按鈕 end -->
+
+                <!-- 基本按鈕 -->
+                <!-- 當前頁面.--on -->
+                <ul class="--myself" id="myself">
+                    <li data-txt="交易紀錄">
+                        <span class="hover_item"></span>
+                        <i class="icon_history"></i>
+                    </li>
+                    <li data-txt="會員資料">
+                        <span class="hover_item"></span>
+                        <i class="icon_info"></i>
+                    </li>
+                    <li data-txt="遊戲規則">
+                        <span class="hover_item"></span>
+                        <i class="icon_rule"></i>
+                    </li>
+                    <li data-txt="登出">
+                        <span class=" hover_item"></span>
+                        <i class="icon_logout"></i>
+                    </li>
+                </ul>
+                <!-- 基本按鈕 end -->
+            </div>
+            <!-- 分頁按鈕 end -->
+        </aside>
+        <!-- 左邊menu end -->
+
+
+
+
+
+        <!-- iframe放置區 -->
+        <main class="frame__main">
+            <!-- 上方menu -->
+            <nav class="frame__main__nav">
+                <!-- 返回按鈕 -->
+                <button class="back_btn" id="back_btn"></button>
+                <!-- 返回按鈕 end -->
+
+                <!-- 先藏起來之後加回 -->
+                <div class="lobby__marquee" style="display: none;">
+                    <span style="animation: marquee_move 25s linear infinite;">
+                        Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Et consequuntur velit impedit. Animi officiis, sint eius
+                        dignissimos quis non fugiat dicta deleniti iste aut sapiente consequatur facere. Iure,
+                        omnis corrupti?
+                    </span>
+                </div>
+
+                <!-- 全螢幕 -->
+                <!-- 縮小螢幕 --zoomout -->
+                <button class="zoom_btn">
+                    <span class="zoom_btn__txt">全螢幕</span>
+                    <span class="zoom_btn__txt --in">正常螢幕</span>
+                </button>
+                <!-- 全螢幕 end -->
+            </nav>
+            <!-- 上方menu end -->
+
+
+
+
+            <!-- 主內容 -->
+            <div class="frame__main__otherinside">
+                <div class="auto_bet">
+                    <!-- 好路說明start -->
+                    <div class="rule" style="display: none;">
+                        <div class="rule__box">
+                            <div class="rule__title">
+                                <span>好路追注</span>
+                                <button class="close_btn"></button>
+                            </div>
+                            <div class="rule__content">
+                                <div class="rule__txt">
+                                    <h1>
+                                    百家樂好路追注功能是一款可以幫助用戶<span class="txt_white">在線情況下繼續追注好路的功能</span>，用戶只需要預先設定好一定條件、包括桌台、好路、注金等數值，即可啟用該功能。同時，該功能內置的眾多風險規避條件以及好路統計數據，可為用戶出謀劃策、保駕護航，用戶只需動動手指，即可坐享其成。
+                                    </h1>
+                                    <h2><span>用戶設置</span></h2>
+                                    <ul>
+                                        <li>用戶選擇自己所需要下注的桌台與好路，並且設定好每一注的金額後，即可運行本程序，<span class="txt_white">每當桌台出現您所選擇的好路時，即會自動幫您下注所設定的金額。</span></li>
+                                    </ul>
+                                    <h2><span>功能設置</span></h2>
+                                    <ul>
+                                        <li>設置運行時間最大不能超過1440分鐘，當運行時間達到用戶設置的時限後，即會停止運行好路追注。</li>
+                                        <li class="txt_white">當遊戲在例行維護時，系統將會自動停止好路追注功能。</li>
+                                        <li>每筆下注金額根據用戶遊戲類型的最小限紅到最大限紅之間。</li>
+                                    </ul>
+                                    <h2><span>當餘額低於_____元。自動停止追注 (最低金額為1元)</span></h2>
+                                    <ul>
+                                        <li>當可用額度低於或等於設定金額後，系統就不再繼續自動追注，填寫金額不能低於單注最低金額</li>
+                                    </ul>
+                                    <h2><span>盈利金額設置</span></h2>
+                                    <ul>
+                                        <li>您可以設定一個金額數值，當下注盈利達到您設置的金額數值時（0表示無限制），即會自動幫您停止好路追注。</li>
+                                    </ul>
+                                    <h2><span>何謂好路趨勢？</span></h2>
+                                    <ul>
+                                        <li>本遊戲內設定的好路共有長莊，長閒，一閒兩莊，一莊兩閒，大路單跳，共5種。詳情請查閲好路詳解。</li>
+                                        <li>有一些特定的好路，如果接下來的開牌結果是符合其好路構成模型的，這樣的牌路稱之為該牌路的好路趨勢，且牌路會一直顯示符合該好路。</li>
+                                    </ul>
+                                </div>
+                                <div class="rule__img_box">
+                                    <div class="road">
+                                        <div class="road__title">長莊</div>
+                                        <div class="road__content">
+                                            <div class="road__img --rule1"></div>
+                                            <div class="road__txt">一直追注莊</div>
+                                        </div>
+                                    </div>
+                                    <div class="road">
+                                        <div class="road__title">長閒</div>
+                                        <div class="road__content">
+                                            <div class="road__img --rule2"></div>
+                                            <div class="road__txt">一直追注閒</div>
+                                        </div>
+                                    </div>
+                                    <div class="road">
+                                        <div class="road__title">大路單跳</div>
+                                        <div class="road__content">
+                                            <div class="road__img --rule3"></div>
+                                            <div class="road__txt">(莊閒莊閒) 追注一次莊</div>
+                                        </div>
+                                    </div>
+                                    <div class="road">
+                                        <div class="road__title">大路單跳</div>
+                                        <div class="road__content">
+                                            <div class="road__img --rule4"></div>
+                                            <div class="road__txt">(閒莊閒莊) 追注一次閒</div>
+                                        </div>
+                                    </div>
+                                    <div class="road">
+                                        <div class="road__title">一廳兩房(莊)</div>
+                                        <div class="road__content">
+                                            <div class="road__img --rule5"></div>
+                                            <div class="road__txt">追注一次莊</div>
+                                        </div>
+                                    </div>
+                                    <div class="road">
+                                        <div class="road__title">一廳兩房(閒)</div>
+                                        <div class="road__content">
+                                            <div class="road__img --rule6"></div>
+                                            <div class="road__txt">追注一次閒</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rule__txt">
+                                    <h2><span>注意事項</span></h2>
+                                    <ul>
+                                        <li class="txt_white">本功能下注時，均為免傭，並且只能下莊、閒。</li>
+                                        <li>本網站為真人即時視像設置，若有發生特殊情況將依照本網站公告之辦法處理。</li>
+                                        <li>洗牌中途如有牌只不慎掉落台底或是離開鏡頭範圍，則監場將即時另取新牌更換,重新洗牌。</li>
+                                        <li>派牌中途，荷官不慎拉出2或3張陰牌，則由監場按照正確位置給予更正。</li>
+                                        <li>如不需博牌，但荷官又拉多一張牌，則由監場將此牌放置在牌靴底下做為下一局銷牌，然後牌局照舊進行。</li>
+                                        <li>如牌局沒有銷牌,而牌已開啟2張或以上(可以看見牌面),則該局將會取消,並更換新靴。</li>
+                                        <li>在遊戲過程中，如果有一張牌發現在鞋盒翻開 ，則該牌和所有的賭注都視為有效，並繼續正常遊戲，但是，如果遊戲中有提供保險，則保險無效。</li>
+                                        <li>在遊戲過程上，如果荷官忘記提供保險卡，掃瞄下暴露了卡，我們將視為保險無效和喪失，遊戲將繼續正常運行。</li>
+                                        <li>在遊戲過程中，如果荷官忘記掃瞄卡，導致在位置上錯誤。我們將重新安排閒和莊初始牌，無效保險，遊戲將繼續正常運行。</li>
+                                        <li>最終解釋權歸公司所有。</li>
+                                    </ul>
+                                    <div class="ps">
+                                        本網站為真人現場操作，若有操作失誤，請各位會員見諒。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 好路說明end -->
+                    <div class="auto_bet__title">
+                        <div class="number">
+                            當前使用人數:
+                            <span>178</span>
+                        </div>
+                        <span>百家樂好路追注</span>
+                        <div class="btn_box">
+                            <button class="icon_help_btn"></button>
+                            <button class="close_btn"></button>
+                        </div>
+                    </div>
+                    <div class="auto_bet__content">
+                        <ul class="btn_list">
+                            <li class="--on">追注設置</li>
+                            <li>追注紀錄</li>
+                            <li>設置紀錄</li>
+                            <li>統計</li>
+                        </ul>
+                        <div class="content_box">
+                            <!-- 追注設置start -->
+                            <div class="settings" style="display: none1;">
+                                <ul class="settings__list">
+                                    <li class="settings__item">
+                                        <div>下注金額</div>
+                                        <div>0.00</div>
+                                    </li>
+                                    <li class="settings__item">
+                                        <div>輸贏</div>
+                                        <div>0.00</div>
+                                    </li>
+                                    <li class="settings__item">
+                                        <div>下注場次</div>
+                                        <div>0/0</div>
+                                    </li>
+                                    <li class="settings__item">
+                                        <div>剩餘時間</div>
+                                        <div>49分鐘</div>
+                                    </li>
+                                </ul>
+                                <div class="switch_btn_box">
+                                    <button class="switch_btn --on">桌臺選擇</button>
+                                    <button class="switch_btn">好路選擇</button>
+                                </div>
+                                <div class="settings__box">
+                                    <!-- 桌臺選擇start -->
+                                    <div class="table_box">
+                                        <ul class="table_list">
+                                            <li class="table_item">
+                                                <label class="check_mark">
+                                                    <input type="checkbox">
+                                                    <span></span>
+                                                    <tt>MB2001</tt>
+                                                </label>
+                                            </li>
+                                            <li class="table_item">
+                                                <label class="check_mark">
+                                                    <input type="checkbox">
+                                                    <span></span>
+                                                    <tt>MB2002</tt>
+                                                </label>
+                                            </li>
+                                            <li class="table_item">
+                                                <label class="check_mark">
+                                                    <input type="checkbox">
+                                                    <span></span>
+                                                    <tt>MB2003</tt>
+                                                </label>
+                                            </li>
+                                            <li class="table_item">
+                                                <label class="check_mark">
+                                                    <input type="checkbox">
+                                                    <span></span>
+                                                    <tt>MB2004</tt>
+                                                </label>
+                                            </li>
+                                            <li class="table_item">
+                                                <label class="check_mark">
+                                                    <input type="checkbox">
+                                                    <span></span>
+                                                    <tt>MB2005</tt>
+                                                </label>
+                                            </li>
+                                            <li class="table_item">
+                                                <label class="check_mark">
+                                                    <input type="checkbox">
+                                                    <span></span>
+                                                    <tt>MB2006</tt>
+                                                </label>
+                                            </li>
+                                            <li class="table_item">
+                                                <label class="check_mark">
+                                                    <input type="checkbox">
+                                                    <span></span>
+                                                    <tt>MB2007</tt>
+                                                </label>
+                                            </li>
+                                            <li class="table_item">
+                                                <label class="check_mark">
+                                                    <input type="checkbox">
+                                                    <span></span>
+                                                    <tt>MB2008</tt>
+                                                </label>
+                                            </li>
+                                            <li class="table_item">
+                                                <label class="check_mark">
+                                                    <input type="checkbox">
+                                                    <span></span>
+                                                    <tt>MB2009</tt>
+                                                </label>
+                                            </li>
+                                            <li class="table_item">
+                                                <label class="check_mark">
+                                                    <input type="checkbox">
+                                                    <span></span>
+                                                    <tt>MB2010</tt>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- 桌臺選擇end -->
+                                    <!-- 好路選擇start -->
+                                    <div class="road" style="display: none;">
+                                        <ul class="road__list">
+                                            <li class="road__item">
+                                                <label class="check_mark">
+                                                    <input type="checkbox">
+                                                    <div class="road__box">
+                                                        <div class="road__txt">長莊</div>
+                                                        <div class="road__img --road1"></div>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li class="road__item">
+                                                <label class="check_mark">
+                                                    <input type="checkbox">
+                                                    <div class="road__box">
+                                                        <div class="road__txt">長閒</div>
+                                                        <div class="road__img --road2"></div>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li class="road__item">
+                                                <label class="check_mark">
+                                                    <input type="checkbox">
+                                                    <div class="road__box">
+                                                        <div class="road__txt">大路單跳</div>
+                                                        <div class="road__img --road3"></div>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li class="road__item">
+                                                <label class="check_mark">
+                                                    <input type="checkbox">
+                                                    <div class="road__box">
+                                                        <div class="road__txt">一廳兩房(莊)</div>
+                                                        <div class="road__img --road4"></div>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li class="road__item">
+                                                <label class="check_mark">
+                                                    <input type="checkbox">
+                                                    <div class="road__box">
+                                                        <div class="road__txt">一廳兩房(閒)</div>
+                                                        <div class="road__img --road5"></div>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- 好路選擇end -->
+                                    <button class="all_btn">
+                                        <label class="check_mark">
+                                            <input type="checkbox">
+                                            <span></span>
+                                            <tt>ALL</tt>
+                                        </label>
+                                    </button>
+                                    <div class="risk">
+                                        <div class="risk__title">
+                                            風險設置
+                                            <i class="risk__info">
+                                                <i class="icon_info_btn"></i>
+                                            </i>
+                                        </div>
+                                        <!-- 展開加上--on -->
+                                        <div class="risk__content">
+                                            請注意！！每注下注金額會因為各桌跟額及會員限額導致無法追注
+                                            <br>
+									        盈利金額,自動停止追注,0表示無限制
+                                        </div>
+                                    </div>
+                                    <ul class="bet_settings">
+                                        <li class="bet_settings__item">
+                                            <div class="bet_settings__title">每注下注金額</div>
+                                            <div class="bet_settings__info">20-50000</div>
+                                            <input type="tel" class="bet_settings__input" placeholder="0">
+                                        </li>
+                                        <li class="bet_settings__item">
+                                            <div class="bet_settings__title">追注時間</div>
+                                            <div class="bet_settings__info">最多1440分鐘</div>
+                                            <input type="tel" class="bet_settings__input" placeholder="0">
+                                        </li>
+                                        <li class="bet_settings__item">
+                                            <div class="bet_settings__title">餘額低於</div>
+                                            <div class="bet_settings__info">自動停止追注(最低金額為1元)</div>
+                                            <input type="tel" class="bet_settings__input" placeholder="1">
+                                        </li>
+                                        <li class="bet_settings__item">
+                                            <div class="bet_settings__title">盈利金額</div>
+                                            <div class="bet_settings__info">自動停止追注(0表示無限制)</div>
+                                            <input type="tel" class="bet_settings__input" placeholder="0">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- 設置成功訊息 -->
+                                <div class="success_message" style="display: none;">
+                                    助手已設置成功，已開始追注！
+                                </div>
+                                <div class="confirm_btn_box">
+                                    <button class="confirm_btn" data-txt="確認">
+                                        <span class="hover_item"></span>
+                                    </button>
+                                    <button class="confirm_btn --reset" data-txt="重置">
+                                        <span class="hover_item"></span>
+                                    </button>
+                                    <button class="confirm_btn" data-txt="停止" style="display: none;">
+                                        <span class="hover_item"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- 追注設置end -->
+                            <!-- 追注紀錄&設置紀錄start -->
+                            <div class="record" style="display: none;">
+                                <div class="record__header">
+                                    <div class="dropdown">
+                                        <ul class="dropdown__block --pc">
+                                            <li>
+                                                <span class="dropdown__btn">
+                                                    <span>全部</span>
+                                                </span>
+                                            </li>
+                                            <ul class="dropdown__list" style="display: none;">
+                                                <li class="dropdown__item">全部</li>
+                                                <li class="dropdown__item">今日報表</li>
+                                                <li class="dropdown__item">昨日報表</li>
+                                                <li class="dropdown__item">本週報表</li>
+                                            </ul>
+                                        </ul>
+                                        <div class="dropdown__block --ph" style="display: none;">
+                                            <span class="dropdown__btn"></span>
+                                            <select class="dropdown__select">
+                                                <option value="all">全部</option>
+                                                <option value="today">今日報表</option>
+                                                <option value="yesterday">昨日報表</option>
+                                                <option value="week">本週報表</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 追注紀錄start -->
+                                <div class="bet_record">
+                                    <table class="title_table">
+                                        <thead>
+                                            <tr>
+                                                <th class="w20">No.</th>
+                                                <th class="w20">下注時間</th>
+                                                <th class="w20">好路類型</th>
+                                                <th class="w20">金額</th>
+                                                <th class="w20">輸贏/結果</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <div class="content_table_box">
+                                        <table class="content_table">
+                                            <tbody>
+                                                <tr class="tr_title">
+                                                    <th class="w20">1</th>
+                                                    <th class="w20">undefined</th>
+                                                    <th class="w20">undefined</th>
+                                                    <th class="w20">0</th>
+                                                    <th class="w20">結算中</th>
+                                                </tr>
+                                                <tr class="tr_content">
+                                                    <td colspan="2" class="td_title">台桌名稱</td>
+                                                    <td colspan="3">
+                                                        <tt>1桌</tt>
+                                                        <tt>1</tt>靴
+                                                        <tt>1</tt>局
+                                                    </td>
+                                                </tr>
+                                                <tr class="tr_content">
+                                                    <td colspan="2" class="td_title">單號</td>
+                                                    <td colspan="3">1</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- 追注紀錄end -->
+                                <!-- 設置紀錄start -->
+                                <div class="set_record" style="display: none;">
+                                    <table class="title_table">
+                                        <thead>
+                                            <tr>
+                                                <th class="w25">No.</th>
+                                                <th class="w25">遊戲編號</th>
+                                                <th class="w25">開始時間</th>
+                                                <th class="w25">結束時間</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <div class="content_table_box">
+                                        <table class="content_table">
+                                            <tbody>
+                                                <tr class="tr_title">
+                                                    <th class="w25">1</th>
+                                                    <th class="w25">29</th>
+                                                    <th class="w25">
+                                                        <span>2021-07-07</span>
+                                                        <span>03:26:48</span>
+                                                    </th>
+                                                    <th class="w25">
+                                                        <span style="display: none;">2021-07-07</span>
+                                                        <span style="display: none;">03:26:48</span>
+                                                        <span>運行中</span>
+                                                    </th>
+                                                </tr>
+                                                <tr class="tr_content">
+                                                    <td class="td_title">下注場次</td>
+                                                    <td class="td_content">0/0</td>
+                                                    <td class="td_title">派彩</td>
+                                                    <td class="td_content">0.00</td>
+                                                </tr>
+                                                <tr class="tr_content">
+                                                    <td class="td_title">金額</td>
+                                                    <td class="td_content">0.00</td>
+                                                    <td class="td_title">輸贏</td>
+                                                    <td class="td_content">0.00</td>
+                                                </tr>
+                                                <tr class="tr_title">
+                                                    <th class="w25">1</th>
+                                                    <th class="w25">29</th>
+                                                    <th class="w25">
+                                                        <span>2021-07-07</span>
+                                                        <span>03:26:48</span>
+                                                    </th>
+                                                    <th class="w25">
+                                                        <span style="display: none;">2021-07-07</span>
+                                                        <span style="display: none;">03:26:48</span>
+                                                        <span>運行中</span>
+                                                    </th>
+                                                </tr>
+                                                <tr class="tr_content">
+                                                    <td class="td_title">下注場次</td>
+                                                    <td class="td_content">0/0</td>
+                                                    <td class="td_title">派彩</td>
+                                                    <td class="td_content">0.00</td>
+                                                </tr>
+                                                <tr class="tr_content">
+                                                    <td class="td_title">金額</td>
+                                                    <td class="td_content">0.00</td>
+                                                    <td class="td_title">輸贏</td>
+                                                    <td class="td_content">0.00</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- 設置紀錄end -->
+                                <div class="record__footer">
+                                    <span class="total_txt">統計輸贏金額</span>
+                                    <span class="total_amount">0.00</span>
+                                </div>
+                                <div class="record__page">
+                                    <span>每頁顯示 <b>20</b></span>
+                                    <span>共計 <b>0</b>筆</span>
+                                    <span>頁次 <b>1/1</b></span>
+                                </div>
+                                <div class="record__btn">
+                                    <button class="page_btn --prev" data-txt="上一頁">
+                                        <span class="hover_item"></span>
+                                    </button>
+                                    <button class="page_btn --next" data-txt="下一頁">
+                                        <span class="hover_item"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- 追注紀錄&設置紀錄end -->
+                            <!-- 統計start -->
+                            <div class="stat" style="display: none;">
+                                <div class="switch_btn_box">
+                                    <button class="switch_btn --on">桌臺好路頻率/勝率</button>
+                                    <button class="switch_btn">好路頻率/勝率</button>
+                                </div>
+                                <div class="stat__content">
+                                    <div class="stat__icon">
+                                        <span>好路頻率</span>
+                                        <span>好路勝率</span>
+                                    </div>
+                                    <div class="stat__box">
+                                        <!-- 桌臺start -->
+                                        <div class="stat__item">
+                                            <span class="tb_num">MB2001</span>
+                                            <div class="stat__frq">
+                                                <span class="stat__num">173</span>
+                                                <i class="stat__diagram">
+                                                    <i class="stat__cover" style="width: 100%;"></i>
+                                                </i>
+                                            </div>
+                                            <div class="stat__rate">
+                                                <span class="stat__num">6%</span>
+                                                <i class="stat__diagram">
+                                                    <i class="stat__cover --rate" style="width: 6%;"></i>
+                                                </i>
+                                            </div>
+                                        </div>
+                                        <div class="stat__item">
+                                            <span class="tb_num">MB2001</span>
+                                            <div class="stat__frq">
+                                                <span class="stat__num">173</span>
+                                                <i class="stat__diagram">
+                                                    <i class="stat__cover" style="width: 100%;"></i>
+                                                </i>
+                                            </div>
+                                            <div class="stat__rate">
+                                                <span class="stat__num">6%</span>
+                                                <i class="stat__diagram">
+                                                    <i class="stat__cover --rate" style="width: 6%;"></i>
+                                                </i>
+                                            </div>
+                                        </div>
+                                        <div class="stat__item">
+                                            <span class="tb_num">MB2001</span>
+                                            <div class="stat__frq">
+                                                <span class="stat__num">173</span>
+                                                <i class="stat__diagram">
+                                                    <i class="stat__cover" style="width: 100%;"></i>
+                                                </i>
+                                            </div>
+                                            <div class="stat__rate">
+                                                <span class="stat__num">6%</span>
+                                                <i class="stat__diagram">
+                                                    <i class="stat__cover --rate" style="width: 6%;"></i>
+                                                </i>
+                                            </div>
+                                        </div>
+                                        <!-- 桌臺end -->
+                                        <!-- 好路start -->
+                                        <div class="stat__item" style="display: none;">
+                                            <span class="tb_num">長莊</span>
+                                            <div class="stat__frq">
+                                                <span class="stat__num">173</span>
+                                                <i class="stat__diagram">
+                                                    <i class="stat__cover" style="width: 100%;"></i>
+                                                </i>
+                                            </div>
+                                            <div class="stat__rate">
+                                                <span class="stat__num">6%</span>
+                                                <i class="stat__diagram">
+                                                    <i class="stat__cover --rate" style="width: 6%;"></i>
+                                                </i>
+                                            </div>
+                                        </div>
+                                        <div class="stat__item" style="display: none;">
+                                            <span class="tb_num">長閒</span>
+                                            <div class="stat__frq">
+                                                <span class="stat__num">173</span>
+                                                <i class="stat__diagram">
+                                                    <i class="stat__cover" style="width: 100%;"></i>
+                                                </i>
+                                            </div>
+                                            <div class="stat__rate">
+                                                <span class="stat__num">6%</span>
+                                                <i class="stat__diagram">
+                                                    <i class="stat__cover --rate" style="width: 6%;"></i>
+                                                </i>
+                                            </div>
+                                        </div>
+                                        <div class="stat__item" style="display: none;">
+                                            <span class="tb_num">大路單跳</span>
+                                            <div class="stat__frq">
+                                                <span class="stat__num">173</span>
+                                                <i class="stat__diagram">
+                                                    <i class="stat__cover" style="width: 100%;"></i>
+                                                </i>
+                                            </div>
+                                            <div class="stat__rate">
+                                                <span class="stat__num">6%</span>
+                                                <i class="stat__diagram">
+                                                    <i class="stat__cover --rate" style="width: 6%;"></i>
+                                                </i>
+                                            </div>
+                                        </div>
+                                        <div class="stat__item" style="display: none;">
+                                            <span class="tb_num">一廳兩房(莊)</span>
+                                            <div class="stat__frq">
+                                                <span class="stat__num">173</span>
+                                                <i class="stat__diagram">
+                                                    <i class="stat__cover" style="width: 100%;"></i>
+                                                </i>
+                                            </div>
+                                            <div class="stat__rate">
+                                                <span class="stat__num">6%</span>
+                                                <i class="stat__diagram">
+                                                    <i class="stat__cover --rate" style="width: 6%;"></i>
+                                                </i>
+                                            </div>
+                                        </div>
+                                        <div class="stat__item" style="display: none;">
+                                            <span class="tb_num">一廳兩房(閒)</span>
+                                            <div class="stat__frq">
+                                                <span class="stat__num">173</span>
+                                                <i class="stat__diagram">
+                                                    <i class="stat__cover" style="width: 100%;"></i>
+                                                </i>
+                                            </div>
+                                            <div class="stat__rate">
+                                                <span class="stat__num">6%</span>
+                                                <i class="stat__diagram">
+                                                    <i class="stat__cover --rate" style="width: 6%;"></i>
+                                                </i>
+                                            </div>
+                                        </div>
+                                        <!-- 好路end -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 統計end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 主內容 end -->
+        </main>
+    </div>
+</body>
+
+<script src="../script/tpl.js"></script>
+
+</html>
