@@ -337,7 +337,7 @@ $breakpoints: (
 	}
 }
 
-// 寬度距離設定
+// 距離設定
 @function distance($count: 4) {
 	@return 5px * $count;
 }
@@ -349,7 +349,22 @@ $breakpoints: (
 	}
 }
 
+$direction: (
+    t: top,
+    r: right,
+	b: bottom,
+	l: left,
 
+);
+@each $name, $value in $direction{
+	@for $num from 1 through 20 {
+		.m#{$name}#{$num} {
+			margin-#{$value}: $num + px;
+		}
+	}
+}
+
+// 寬度設定
 $num: 100; 
 @while $num > 0 {
 	.w#{$num} {
@@ -357,12 +372,6 @@ $num: 100;
 	}
 	.w#{$num}px {
 		width: $num + px !important;
-	}
-	.mb#{$num} {
-		margin-bottom: $num + px;
-	}
-	.mt#{$num} {
-		margin-top: $num + px;
 	}
 
 	$num: $num - 1;
