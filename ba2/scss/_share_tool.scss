@@ -79,31 +79,7 @@
 }
 
 .radio_style{
-    @include d_f(inline-flex, center, flex-start);
-    @extend %hand;
-
-    span{
-        position: relative;
-        width: 15px;
-        height: 15px;
-        display: block;
-        background: map-get($bg_color, white);
-        border-radius: 3px;
-        margin-right: 5px;
-
-        &::before{
-            @include pos_a(trbl, 0);
-            content: none;
-            width: calc(100% - 4px);
-            height: calc(100% - 4px);
-            background: map-get($bg_color, lightblue);
-            margin: auto;
-        }
-
-        @at-root .radio_style input:checked + span::before{
-            content: '';
-        }
-    }
+    @include radio(12px, map-get($bg_color, white));
 }
 
 .checkbox_style{

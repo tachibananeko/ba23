@@ -158,43 +158,55 @@
                                     <div class="road">
                                         <div class="road__title">長莊</div>
                                         <div class="road__content">
-                                            <div class="road__img --rule1"></div>
-                                            <div class="road__txt">一直追注莊</div>
+                                            <div class="img" data-txt="長莊">
+                                                <img src="../images/img_road01.svg">
+                                            </div>
+                                            <div class="txt">一直追注莊</div>
                                         </div>
                                     </div>
                                     <div class="road">
                                         <div class="road__title">長閒</div>
                                         <div class="road__content">
-                                            <div class="road__img --rule2"></div>
-                                            <div class="road__txt">一直追注閒</div>
+                                            <div class="img" data-txt="長閒">
+                                            <img src="../images/img_road02.svg">
+                                        </div>
+                                            <div class="txt">一直追注閒</div>
                                         </div>
                                     </div>
                                     <div class="road">
                                         <div class="road__title">大路單跳</div>
                                         <div class="road__content">
-                                            <div class="road__img --rule3"></div>
-                                            <div class="road__txt">(莊閒莊閒) 追注一次莊</div>
+                                            <div class="img" data-txt="大路單跳">
+                                                <img src="../images/img_road04.svg">
+                                            </div>
+                                            <div class="txt">(莊閒莊閒) 追注一次莊</div>
                                         </div>
                                     </div>
                                     <div class="road">
                                         <div class="road__title">大路單跳</div>
                                         <div class="road__content">
-                                            <div class="road__img --rule4"></div>
-                                            <div class="road__txt">(閒莊閒莊) 追注一次閒</div>
+                                            <div class="img" data-txt="大路單跳">
+                                                <img src="../images/img_road04.svg">
+                                            </div>
+                                            <div class="txt">(閒莊閒莊) 追注一次閒</div>
                                         </div>
                                     </div>
                                     <div class="road">
                                         <div class="road__title">一廳兩房(莊)</div>
                                         <div class="road__content">
-                                            <div class="road__img --rule5"></div>
-                                            <div class="road__txt">追注一次莊</div>
+                                            <div class="img" data-txt="一廳兩房(莊)">
+                                                <img src="../images/img_road05.svg">
+                                            </div>
+                                            <div class="txt">追注一次莊</div>
                                         </div>
                                     </div>
                                     <div class="road">
                                         <div class="road__title">一廳兩房(閒)</div>
                                         <div class="road__content">
-                                            <div class="road__img --rule6"></div>
-                                            <div class="road__txt">追注一次閒</div>
+                                            <div class="img" data-txt="一廳兩房(閒)">
+                                                <img src="../images/img_road06.svg">
+                                            </div>
+                                            <div class="txt">追注一次閒</div>
                                         </div>
                                     </div>
                                 </div>
@@ -220,218 +232,253 @@
                         </div>
                     </div>
                     <!-- 好路說明end -->
+                    
+
+
+
+
+
+
+
+
+                    
+                    <!-- 好路追注 -->
                     <div class="auto_bet__title">
                         <div class="number">
                             當前使用人數:
                             <span>178</span>
                         </div>
-                        <span>百家樂好路追注</span>
-                        <div class="btn_box">
-                            <button class="icon_help_btn"></button>
-                            <button class="close_btn"></button>
-                        </div>
+                        百家樂好路追注
+                        <button class="icon_help_btn"></button>
+                        <button class="close_btn"></button>
                     </div>
+
+
+
+
+                    <!-- 好路追注內容 -->
                     <div class="auto_bet__content">
+                        <!-- 切換頁面btn -->
                         <ul class="btn_list">
-                            <li class="--on">追注設置</li>
-                            <li>追注紀錄</li>
-                            <li>設置紀錄</li>
-                            <li>統計</li>
+                            <li class="--on" data-txt="追注設置">
+                                <span class="hover_item"></span>
+                            </li>
+                            <li data-txt="追注紀錄">
+                                <span class="hover_item"></span>
+                            </li>
+                            <li data-txt="設置紀錄">
+                                <span class="hover_item"></span>
+                            </li>
+                            <li data-txt="統計">
+                                <span class="hover_item"></span>
+                            </li>
                         </ul>
+                        <!-- 切換頁面btn end -->
+
+
+
+                        <!-- 內容區 -->
                         <div class="content_box">
                             <!-- 追注設置start -->
-                            <div class="settings" style="display: none1;">
+                            <!-- 好路選擇時 加上.--goodroad -->
+                            <div class="settings --goodroad" style="display: none;">
                                 <ul class="settings__list">
-                                    <li class="settings__item">
+                                    <li>
                                         <div>下注金額</div>
                                         <div>0.00</div>
                                     </li>
-                                    <li class="settings__item">
+                                    <li>
                                         <div>輸贏</div>
                                         <div>0.00</div>
                                     </li>
-                                    <li class="settings__item">
+                                    <li>
                                         <div>下注場次</div>
                                         <div>0/0</div>
                                     </li>
-                                    <li class="settings__item">
+                                    <li>
                                         <div>剩餘時間</div>
                                         <div>49分鐘</div>
                                     </li>
                                 </ul>
-                                <div class="switch_btn_box">
-                                    <button class="switch_btn --on">桌臺選擇</button>
-                                    <button class="switch_btn">好路選擇</button>
-                                </div>
+                                <ul class="btn_list">
+                                    <li class="--on" data-txt="桌臺選擇">
+                                        <span class="hover_item"></span>
+                                    </li>
+                                    <li data-txt="好路選擇">
+                                        <span class="hover_item"></span>
+                                    </li>
+                                </ul>
+                                
                                 <div class="settings__box">
                                     <!-- 桌臺選擇start -->
-                                    <div class="table_box">
-                                        <ul class="table_list">
-                                            <li class="table_item">
-                                                <label class="check_mark">
-                                                    <input type="checkbox">
-                                                    <span></span>
-                                                    <tt>MB2001</tt>
-                                                </label>
-                                            </li>
-                                            <li class="table_item">
-                                                <label class="check_mark">
-                                                    <input type="checkbox">
-                                                    <span></span>
-                                                    <tt>MB2002</tt>
-                                                </label>
-                                            </li>
-                                            <li class="table_item">
-                                                <label class="check_mark">
-                                                    <input type="checkbox">
-                                                    <span></span>
-                                                    <tt>MB2003</tt>
-                                                </label>
-                                            </li>
-                                            <li class="table_item">
-                                                <label class="check_mark">
-                                                    <input type="checkbox">
-                                                    <span></span>
-                                                    <tt>MB2004</tt>
-                                                </label>
-                                            </li>
-                                            <li class="table_item">
-                                                <label class="check_mark">
-                                                    <input type="checkbox">
-                                                    <span></span>
-                                                    <tt>MB2005</tt>
-                                                </label>
-                                            </li>
-                                            <li class="table_item">
-                                                <label class="check_mark">
-                                                    <input type="checkbox">
-                                                    <span></span>
-                                                    <tt>MB2006</tt>
-                                                </label>
-                                            </li>
-                                            <li class="table_item">
-                                                <label class="check_mark">
-                                                    <input type="checkbox">
-                                                    <span></span>
-                                                    <tt>MB2007</tt>
-                                                </label>
-                                            </li>
-                                            <li class="table_item">
-                                                <label class="check_mark">
-                                                    <input type="checkbox">
-                                                    <span></span>
-                                                    <tt>MB2008</tt>
-                                                </label>
-                                            </li>
-                                            <li class="table_item">
-                                                <label class="check_mark">
-                                                    <input type="checkbox">
-                                                    <span></span>
-                                                    <tt>MB2009</tt>
-                                                </label>
-                                            </li>
-                                            <li class="table_item">
-                                                <label class="check_mark">
-                                                    <input type="checkbox">
-                                                    <span></span>
-                                                    <tt>MB2010</tt>
-                                                </label>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    <ul class="table_box">
+                                        <li>
+                                            <label class="settings_checkbox">
+                                                <input type="checkbox">
+                                                <span></span>
+                                                <code>MB2001</code>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="settings_checkbox">
+                                                <input type="checkbox">
+                                                <span></span>
+                                                <code>MB2001</code>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="settings_checkbox">
+                                                <input type="checkbox">
+                                                <span></span>
+                                                <code>MB2001</code>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="settings_checkbox">
+                                                <input type="checkbox">
+                                                <span></span>
+                                                <code>MB2001</code>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="settings_checkbox">
+                                                <input type="checkbox">
+                                                <span></span>
+                                                <code>MB2001</code>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="settings_checkbox">
+                                                <input type="checkbox">
+                                                <span></span>
+                                                <code>MB2001</code>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="settings_checkbox">
+                                                <input type="checkbox">
+                                                <span></span>
+                                                <code>MB2001</code>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="settings_checkbox">
+                                                <input type="checkbox">
+                                                <span></span>
+                                                <code>MB2001</code>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="settings_checkbox">
+                                                <input type="checkbox">
+                                                <span></span>
+                                                <code>MB2001</code>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="settings_checkbox">
+                                                <input type="checkbox">
+                                                <span></span>
+                                                <code>MB2001</code>
+                                            </label>
+                                        </li>
+                                    </ul>
+
+
+
                                     <!-- 桌臺選擇end -->
+                                    
                                     <!-- 好路選擇start -->
-                                    <div class="road" style="display: none;">
-                                        <ul class="road__list">
-                                            <li class="road__item">
-                                                <label class="check_mark">
-                                                    <input type="checkbox">
-                                                    <div class="road__box">
-                                                        <div class="road__txt">長莊</div>
-                                                        <div class="road__img --road1"></div>
-                                                    </div>
+                                    <div class="road_bg">
+                                        <ul class="road_list">
+                                            <li class="road_list__item">
+                                                <label>
+                                                    <input type="checkbox" name="" id="">
+                                                    <span class="road_list__item__img" data-txt="長莊">
+                                                        <img src="../images/img_road01.svg">
+                                                    </span>
                                                 </label>
                                             </li>
-                                            <li class="road__item">
-                                                <label class="check_mark">
-                                                    <input type="checkbox">
-                                                    <div class="road__box">
-                                                        <div class="road__txt">長閒</div>
-                                                        <div class="road__img --road2"></div>
-                                                    </div>
+                                            <li class="road_list__item">
+                                                <label>
+                                                    <input type="checkbox" name="" id="">
+                                                    <span class="road_list__item__img" data-txt="長閒">
+                                                        <img src="../images/img_road02.svg">
+                                                    </span>
                                                 </label>
                                             </li>
-                                            <li class="road__item">
-                                                <label class="check_mark">
-                                                    <input type="checkbox">
-                                                    <div class="road__box">
-                                                        <div class="road__txt">大路單跳</div>
-                                                        <div class="road__img --road3"></div>
-                                                    </div>
+                                            <li class="road_list__item">
+                                                <label>
+                                                    <input type="checkbox" name="" id="">
+                                                    <span class="road_list__item__img" data-txt="大路單跳">
+                                                        <img src="../images/img_road04.svg">
+                                                    </span>
                                                 </label>
                                             </li>
-                                            <li class="road__item">
-                                                <label class="check_mark">
-                                                    <input type="checkbox">
-                                                    <div class="road__box">
-                                                        <div class="road__txt">一廳兩房(莊)</div>
-                                                        <div class="road__img --road4"></div>
-                                                    </div>
+                                            <li class="road_list__item">
+                                                <label>
+                                                    <input type="checkbox" name="" id="">
+                                                    <span class="road_list__item__img" data-txt="一廳兩房(莊)">
+                                                        <img src="../images/img_road05.svg">
+                                                    </span>
                                                 </label>
                                             </li>
-                                            <li class="road__item">
-                                                <label class="check_mark">
-                                                    <input type="checkbox">
-                                                    <div class="road__box">
-                                                        <div class="road__txt">一廳兩房(閒)</div>
-                                                        <div class="road__img --road5"></div>
-                                                    </div>
+                                            <li class="road_list__item">
+                                                <label>
+                                                    <input type="checkbox" name="" id="">
+                                                    <span class="road_list__item__img" data-txt="一廳兩房(閒)">
+                                                        <img src="../images/img_road06.svg">
+                                                    </span>
                                                 </label>
                                             </li>
                                         </ul>
                                     </div>
                                     <!-- 好路選擇end -->
-                                    <button class="all_btn">
-                                        <label class="check_mark">
-                                            <input type="checkbox">
-                                            <span></span>
-                                            <tt>ALL</tt>
-                                        </label>
-                                    </button>
+
+
+
+                                    <label class="settings_checkbox --all">
+                                        <input type="checkbox">
+                                        <span></span>
+                                        <code>ALL</code>
+                                    </label>
+
+                                    <!-- 風險設置 -->
+                                    <!-- 警告展開加上.--on -->
                                     <div class="risk">
                                         <div class="risk__title">
-                                            風險設置
-                                            <i class="risk__info">
-                                                <i class="icon_info_btn"></i>
+                                            <i class="icon_info_btn">
                                             </i>
+                                            風險設置
                                         </div>
-                                        <!-- 展開加上--on -->
+                                        
                                         <div class="risk__content">
                                             請注意！！每注下注金額會因為各桌跟額及會員限額導致無法追注
-                                            <br>
-									        盈利金額,自動停止追注,0表示無限制
+                                            <br>盈利金額,自動停止追注,0表示無限制
                                         </div>
                                     </div>
+
+                                    <!-- 下注設定 -->
                                     <ul class="bet_settings">
                                         <li class="bet_settings__item">
-                                            <div class="bet_settings__title">每注下注金額</div>
-                                            <div class="bet_settings__info">20-50000</div>
-                                            <input type="tel" class="bet_settings__input" placeholder="0">
+                                            <div class="title">每注下注金額</div>
+                                            <div class="info">20-50000</div>
+                                            <input type="tel" class="input_style" placeholder="0">
                                         </li>
                                         <li class="bet_settings__item">
-                                            <div class="bet_settings__title">追注時間</div>
-                                            <div class="bet_settings__info">最多1440分鐘</div>
-                                            <input type="tel" class="bet_settings__input" placeholder="0">
+                                            <div class="title">追注時間</div>
+                                            <div class="info">最多1440分鐘</div>
+                                            <input type="tel" class="input_style" placeholder="0">
                                         </li>
                                         <li class="bet_settings__item">
-                                            <div class="bet_settings__title">餘額低於</div>
-                                            <div class="bet_settings__info">自動停止追注(最低金額為1元)</div>
-                                            <input type="tel" class="bet_settings__input" placeholder="1">
+                                            <div class="title">餘額低於</div>
+                                            <div class="info">自動停止追注(最低金額為1元)</div>
+                                            <input type="tel" class="input_style" placeholder="1">
                                         </li>
                                         <li class="bet_settings__item">
-                                            <div class="bet_settings__title">盈利金額</div>
-                                            <div class="bet_settings__info">自動停止追注(0表示無限制)</div>
-                                            <input type="tel" class="bet_settings__input" placeholder="0">
+                                            <div class="title">盈利金額</div>
+                                            <div class="info">自動停止追注(0表示無限制)</div>
+                                            <input type="tel" class="input_style" placeholder="0">
                                         </li>
                                     </ul>
                                 </div>
@@ -439,21 +486,29 @@
                                 <div class="success_message" style="display: none;">
                                     助手已設置成功，已開始追注！
                                 </div>
-                                <div class="confirm_btn_box">
-                                    <button class="confirm_btn" data-txt="確認">
+                                <div class="func">
+                                    <button class="func_btn" data-txt="確認">
                                         <span class="hover_item"></span>
                                     </button>
-                                    <button class="confirm_btn --reset" data-txt="重置">
-                                        <span class="hover_item"></span>
-                                    </button>
-                                    <button class="confirm_btn" data-txt="停止" style="display: none;">
+                                    <!-- 另一種狀態改為"停止" -->
+                                    <button class="func_btn --red" data-txt="重置">
                                         <span class="hover_item"></span>
                                     </button>
                                 </div>
                             </div>
                             <!-- 追注設置end -->
+                            
+
+
+
+
+
+
+
+
+
                             <!-- 追注紀錄&設置紀錄start -->
-                            <div class="record" style="display: none;">
+                            <div class="record" style="display: none1;">
                                 <div class="record__header">
                                     <div class="dropdown">
                                         <ul class="dropdown__block --pc">
@@ -520,6 +575,11 @@
                                     </div>
                                 </div>
                                 <!-- 追注紀錄end -->
+                                
+
+
+
+
                                 <!-- 設置紀錄start -->
                                 <div class="set_record" style="display: none;">
                                     <table class="title_table">
@@ -599,16 +659,25 @@
                                     <span>共計 <b>0</b>筆</span>
                                     <span>頁次 <b>1/1</b></span>
                                 </div>
-                                <div class="record__btn">
-                                    <button class="page_btn --prev" data-txt="上一頁">
+                                <div class="func">
+                                    <button class="func_btn" data-txt="上一頁">
                                         <span class="hover_item"></span>
                                     </button>
-                                    <button class="page_btn --next" data-txt="下一頁">
+                                    <button class="func_btn --red" data-txt="下一頁">
                                         <span class="hover_item"></span>
                                     </button>
-                                </div>
                             </div>
                             <!-- 追注紀錄&設置紀錄end -->
+
+
+
+
+
+
+
+
+
+                            
                             <!-- 統計start -->
                             <div class="stat" style="display: none;">
                                 <div class="switch_btn_box">
@@ -750,7 +819,10 @@
                             </div>
                             <!-- 統計end -->
                         </div>
+                        <!-- 內容區 -->
                     </div>
+                    <!-- 好路追注內容 end -->
+                    <!-- 好路追注 end -->
                 </div>
             </div>
             <!-- 主內容 end -->
