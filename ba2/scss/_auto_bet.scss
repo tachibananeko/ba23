@@ -41,6 +41,7 @@
     // 下方通用按鈕
     .func{
         padding: 10px 0;
+        background: map-get($bg_color, black);
     }
 
     // 好路追注說明
@@ -261,10 +262,13 @@
 
 // .settings start
 .settings{
+    @include d_f(flex, unset, flex-start);
+    flex-direction: column;
     height: 100%;
     
     // .settings__list
     &__list{
+        flex: none;
         height: 50px;
         font-size: 0;
 
@@ -279,6 +283,7 @@
     }
 
     .btn_list li{
+        flex: none;
         width: 50%;
     }
 
@@ -286,7 +291,7 @@
     // .settings__box
     &__box{
         @include scrollbar(hidden, auto);
-        height: calc(100% - 146px);
+        flex: 1 1 100%;
         background: map-get($bg_color, darkbrown_gradual);
 
         .table_box{
@@ -464,9 +469,11 @@
     }
     
     .success_message{
-        height: 30px;
-        text-align: center;
+        flex: none;
+        padding: 5px 10px;
         color: map-get($txt_color, white);
+        font-weight: bold;
+        text-align: center;
     }
 }
 // .settings end
@@ -498,39 +505,41 @@
     .content_table_box{
         @include scrollbar(hidden, auto);
         height: calc(100% - 40px);
-        
-        .content_table{
-            width: 100%;
-            text-align: center;
+    }
+    .content_table{
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
 
-            .tr_title{
-                background: map-get($bg_color, td_titlegray);
-                th{
-                    padding: 10px 5px;
-                }
+        .tr_title{
+            background: map-get($bg_color, td_titlegray);
+            th{
+                padding: 10px 5px;
             }
-            .tr_content{
-                background: map-get($bg_color, td_gray);
+        }
+        .tr_content{
+            background: map-get($bg_color, td_gray);
 
-                td{
-                    padding: 5px;
-                }
-                & + .tr_content{
-                    border-top: 1px solid map-get($bg_color, black);
-                }
-                .td_content + .td_title{
-                    border-left: 1px solid map-get($bg_color, black);
-                }
+            td{
+                padding: 5px;
             }
-            .td_title{
-                color: map-get($txt_color, win);
-                border-right: 1px solid map-get($bg_color, black);
+            & + .tr_content{
+                border-top: 1px solid map-get($bg_color, black);
             }
+            .td_content + .td_title{
+                border-left: 1px solid map-get($bg_color, black);
+            }
+        }
+        .td_title{
+            color: map-get($txt_color, win);
+            border-right: 1px solid map-get($bg_color, black);
         }
     }
 
+    // 追注紀錄
     .bet_record{
         width: 100%;
+        height: 100%;
         flex: 1 1 100%;
 
         .title_table{
@@ -538,10 +547,16 @@
             height: 40px;
             background: map-get($bg_color, td_titlegray);
         }
+
+        .tr_title{
+            background: map-get($bg_color, darkgray);
+        }
     }
 
+    // 設置紀錄
     .set_record{
         width: 100%;
+        height: 100%;
         flex: 1 1 100%;
         
         .title_table{
