@@ -259,6 +259,7 @@
                     <!-- 好路追注內容 -->
                     <div class="auto_bet__content">
                         <!-- 切換頁面btn -->
+                        <!-- 當前選項li加上.--on -->
                         <ul class="btn_list">
                             <li class="--on" data-txt="追注設置">
                                 <span class="hover_item"></span>
@@ -300,6 +301,9 @@
                                         <div>49分鐘</div>
                                     </li>
                                 </ul>
+
+                                <!-- 切換頁面btn -->
+                                <!-- 當前選項li加上.--on -->
                                 <ul class="btn_list">
                                     <li class="--on" data-txt="桌臺選擇">
                                         <span class="hover_item"></span>
@@ -308,6 +312,7 @@
                                         <span class="hover_item"></span>
                                     </li>
                                 </ul>
+                                <!-- 切換頁面btn end -->
                                 
                                 <div class="settings__box">
                                     <!-- 桌臺選擇start -->
@@ -510,33 +515,20 @@
                             <!-- 追注紀錄&設置紀錄start -->
                             <div class="record" style="display: none1;">
                                 <div class="record__header">
-                                    <div class="dropdown">
-                                        <ul class="dropdown__block --pc">
-                                            <li>
-                                                <span class="dropdown__btn">
-                                                    <span>全部</span>
-                                                </span>
-                                            </li>
-                                            <ul class="dropdown__list" style="display: none;">
-                                                <li class="dropdown__item">全部</li>
-                                                <li class="dropdown__item">今日報表</li>
-                                                <li class="dropdown__item">昨日報表</li>
-                                                <li class="dropdown__item">本週報表</li>
-                                            </ul>
-                                        </ul>
-                                        <div class="dropdown__block --ph" style="display: none;">
-                                            <span class="dropdown__btn"></span>
-                                            <select class="dropdown__select">
-                                                <option value="all">全部</option>
-                                                <option value="today">今日報表</option>
-                                                <option value="yesterday">昨日報表</option>
-                                                <option value="week">本週報表</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                    <label class="select_style">
+                                        <select name="" id="">
+                                            <option value="">全部</option>
+                                            <option value="">今日報表</option>
+                                            <option value="">昨日報表</option>
+                                            <option value="">本週報表</option>
+                                        </select>
+                                    </label>
                                 </div>
+
+
+                                
                                 <!-- 追注紀錄start -->
-                                <div class="bet_record">
+                                <div class="bet_record" style="display: none;">
                                     <table class="title_table">
                                         <thead>
                                             <tr>
@@ -581,7 +573,7 @@
 
 
                                 <!-- 設置紀錄start -->
-                                <div class="set_record" style="display: none;">
+                                <div class="set_record" style="display: none1;">
                                     <table class="title_table">
                                         <thead>
                                             <tr>
@@ -655,9 +647,9 @@
                                     <span class="total_amount">0.00</span>
                                 </div>
                                 <div class="record__page">
-                                    <span>每頁顯示 <b>20</b></span>
-                                    <span>共計 <b>0</b>筆</span>
-                                    <span>頁次 <b>1/1</b></span>
+                                    <span>每頁顯示<b>20</b></span>
+                                    <span>共計<b>0</b>筆</span>
+                                    <span>頁次<b>1/1</b></span>
                                 </div>
                                 <div class="func">
                                     <button class="func_btn" data-txt="上一頁">
@@ -666,6 +658,7 @@
                                     <button class="func_btn --red" data-txt="下一頁">
                                         <span class="hover_item"></span>
                                     </button>
+                                </div>
                             </div>
                             <!-- 追注紀錄&設置紀錄end -->
 
@@ -680,17 +673,30 @@
                             
                             <!-- 統計start -->
                             <div class="stat" style="display: none;">
-                                <div class="switch_btn_box">
-                                    <button class="switch_btn --on">桌臺好路頻率/勝率</button>
-                                    <button class="switch_btn">好路頻率/勝率</button>
-                                </div>
+                                <!-- 切換頁面btn -->
+                                <!-- 當前選項li加上.--on -->
+                                <ul class="btn_list">
+                                    <li class="--on" data-txt="桌臺好路頻率/勝率">
+                                        <span class="hover_item"></span>
+                                    </li>
+                                    <li data-txt="好路頻率/勝率">
+                                        <span class="hover_item"></span>
+                                    </li>
+                                </ul>
+                                <!-- 切換頁面btn end -->
+
                                 <div class="stat__content">
+                                    <!-- 右上提示 -->
                                     <div class="stat__icon">
                                         <span>好路頻率</span>
                                         <span>好路勝率</span>
                                     </div>
+                                    <!-- 右上提示 end -->
+
+
                                     <div class="stat__box">
                                         <!-- 桌臺start -->
+                                        <!-- 替換前方字串與後方線圖%數 -->
                                         <div class="stat__item">
                                             <span class="tb_num">MB2001</span>
                                             <div class="stat__frq">
@@ -737,8 +743,13 @@
                                             </div>
                                         </div>
                                         <!-- 桌臺end -->
+
+
+
+
+                                        
                                         <!-- 好路start -->
-                                        <div class="stat__item" style="display: none;">
+                                        <div class="stat__item">
                                             <span class="tb_num">長莊</span>
                                             <div class="stat__frq">
                                                 <span class="stat__num">173</span>
@@ -753,7 +764,7 @@
                                                 </i>
                                             </div>
                                         </div>
-                                        <div class="stat__item" style="display: none;">
+                                        <div class="stat__item">
                                             <span class="tb_num">長閒</span>
                                             <div class="stat__frq">
                                                 <span class="stat__num">173</span>
@@ -768,7 +779,7 @@
                                                 </i>
                                             </div>
                                         </div>
-                                        <div class="stat__item" style="display: none;">
+                                        <div class="stat__item">
                                             <span class="tb_num">大路單跳</span>
                                             <div class="stat__frq">
                                                 <span class="stat__num">173</span>
@@ -783,7 +794,7 @@
                                                 </i>
                                             </div>
                                         </div>
-                                        <div class="stat__item" style="display: none;">
+                                        <div class="stat__item">
                                             <span class="tb_num">一廳兩房(莊)</span>
                                             <div class="stat__frq">
                                                 <span class="stat__num">173</span>
@@ -798,7 +809,7 @@
                                                 </i>
                                             </div>
                                         </div>
-                                        <div class="stat__item" style="display: none;">
+                                        <div class="stat__item">
                                             <span class="tb_num">一廳兩房(閒)</span>
                                             <div class="stat__frq">
                                                 <span class="stat__num">173</span>
