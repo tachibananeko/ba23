@@ -44,160 +44,6 @@
         background: map-get($bg_color, black);
     }
 
-    // 好路追注說明
-    .rule{
-        @include border(1px, map-get($border_color, primary));
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        margin: 0 auto;
-        z-index: 2;
-        
-        // .rule__box
-        &__box{
-            width: 100%;
-            height: 100%;
-            background: map-get($bg_color, primary_vl);
-        }
-        // .rule__title
-        &__title{
-            position: relative;
-            height: 35px;
-            line-height: 35px;
-            background: map-get($bg_color, secondary_vl);
-            text-align: center;
-
-            span{
-                font-size: 20px;
-                font-weight: bold;
-            }
-        }
-        // .rule__content
-        &__content{
-            @include scrollbar(hidden, auto);
-            width: 100%;
-            height: calc(100% - 35px);
-        }
-        // .rule__txt
-        &__txt{
-            width: calc(100% - 200px);
-            padding: 20px 0;
-            margin: auto;
-
-            @include mw_xs{
-                width: 100%;
-                padding: 10px;
-            }
-            h1{
-                font-size: 16px;
-                line-height: 25px;
-                margin-bottom: 30px;
-            }
-            h2{
-                position: relative;
-                padding: 5px 10px;
-                background: map-get($bg_color, secondary_vl);
-                margin-bottom: 20px;
-                border-radius: 4px;
-                text-align: center;
-                
-                &:before{
-                    content: '';
-                    @include pos_a(tblr, 0);
-                    display: block;
-                    width: calc(100% - 4px);
-                    height: calc(100% - 4px);
-                    background: map-get($bg_color, black);
-                    border-radius: 2px;
-                    margin: auto;
-                }
-            }
-            span{
-                position: relative;
-                color: map-get($txt_color, primary);
-            }
-            ul{
-                padding: 0 30px;
-                font-size: 14px;
-                margin-bottom: 30px;
-
-                li{
-                    list-style-type: disc;
-
-                    + li{
-                        margin-top: 10px;
-                    }
-                }
-            }
-            .ps{
-                padding-left: 30px;
-                color: map-get($txt_color, white);
-                font-weight: bold;
-            }
-        }
-        // .rule__img_box
-        &__img_box{
-            @include d_f(flex, center, space-between);
-            flex-wrap: wrap;
-            width: calc(100% - 200px);
-            text-align: center;
-            margin: auto;
-
-            @include mw_xs{
-                width: 100%;
-                padding: 10px;
-                justify-content: center;
-            }
-
-            .road{
-                max-width: 300px;
-                width: 100%;
-                background: map-get($bg_color, secondary_vl);
-                padding: 2px;
-                border-radius: 5px;
-                margin-bottom: 20px;
-
-                // .road__title
-                &__title{
-                    @include border(1px, map-get($border_color , primary));
-                    padding: 5px;
-                    background: map-get($bg_color, primary_vl);
-                    color: map-get($txt_color, secondary02);
-                }
-                // .road__content
-                &__content{
-                    padding: 10px 20px;
-                    background: map-get($bg_color, black);
-                    color: map-get($txt_color, white);
-                }
-                // .road__img
-                .img{
-                    @include radius_hidden();
-                    position: relative;
-                    display: inline-block;
-                    width: 145px;
-                    border: 2px solid map-get($bg_color, secondary02);
-
-                    &::before{
-                        content: attr(data-txt);
-                        display: block;
-                        padding: 5px 10px;
-                        background: map-get($bg_color, primary_vl);
-                        font-size: 14px;
-                        text-align: left;
-                    }
-                }
-
-                .txt{
-                    @include border(1px 0 0, map-get($border_color, primary));
-                    padding-top: 5px;
-                    font-size: 14px;
-                    margin-top: 10px;
-                }
-            }
-        }
-    }
-
 
 
     // 好路追注設定 .auto_bet__title
@@ -249,6 +95,162 @@
     // .auto_bet__content
     &__content{
         height: calc(100% - 47px);
+    }
+}
+
+
+
+// 好路追注說明
+.good_rule{
+    @include border(1px, map-get($border_color, primary));
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    z-index: 2;
+    
+    // .good_rule__box
+    &__box{
+        width: 100%;
+        height: 100%;
+        background: map-get($bg_color, primary_vl);
+    }
+    // .good_rule__title
+    &__title{
+        position: relative;
+        height: 35px;
+        line-height: 35px;
+        background: map-get($bg_color, secondary_vl);
+        text-align: center;
+
+        span{
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+    // .good_rule__content
+    &__content{
+        @include scrollbar(hidden, auto);
+        width: 100%;
+        height: calc(100% - 35px);
+    }
+    // .good_rule__txt
+    &__txt{
+        width: calc(100% - 200px);
+        padding: 20px 0;
+        margin: auto;
+
+        @include mw_xs{
+            width: 100%;
+            padding: 10px;
+        }
+        h1{
+            font-size: 16px;
+            line-height: 25px;
+            margin-bottom: 30px;
+        }
+        h2{
+            position: relative;
+            padding: 5px 10px;
+            background: map-get($bg_color, secondary_vl);
+            margin-bottom: 20px;
+            border-radius: 4px;
+            text-align: center;
+            
+            &:before{
+                content: '';
+                @include pos_a(tblr, 0);
+                display: block;
+                width: calc(100% - 4px);
+                height: calc(100% - 4px);
+                background: map-get($bg_color, black);
+                border-radius: 2px;
+                margin: auto;
+            }
+        }
+        span{
+            position: relative;
+            color: map-get($txt_color, primary);
+        }
+        ul{
+            padding: 0 30px;
+            font-size: 14px;
+            margin-bottom: 30px;
+
+            li{
+                list-style-type: disc;
+
+                + li{
+                    margin-top: 10px;
+                }
+            }
+        }
+        .ps{
+            padding-left: 30px;
+            color: map-get($txt_color, white);
+            font-weight: bold;
+        }
+    }
+    // .good_rule__img_box
+    &__img_box{
+        @include d_f(flex, center, space-between);
+        flex-wrap: wrap;
+        width: calc(100% - 200px);
+        text-align: center;
+        margin: auto;
+
+        @include mw_xs{
+            width: 100%;
+            padding: 10px;
+            justify-content: center;
+        }
+
+        .road{
+            max-width: 300px;
+            width: 100%;
+            background: map-get($bg_color, secondary_vl);
+            padding: 2px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+
+            // .road__title
+            &__title{
+                @include border(1px, map-get($border_color , primary));
+                padding: 5px;
+                background: map-get($bg_color, primary_vl);
+                color: map-get($txt_color, secondary02);
+            }
+            // .road__content
+            &__content{
+                padding: 10px 20px;
+                background: map-get($bg_color, black);
+                color: map-get($txt_color, white);
+            }
+            // .road__img
+            .img{
+                @include radius_hidden();
+                position: relative;
+                display: inline-block;
+                width: 145px;
+                border: 2px solid map-get($bg_color, secondary02);
+
+                &::before{
+                    content: attr(data-txt);
+                    display: block;
+                    padding: 5px 10px;
+                    background: map-get($bg_color, primary_vl);
+                    font-size: 14px;
+                    text-align: left;
+                }
+            }
+
+            .txt{
+                @include border(1px 0 0, map-get($border_color, primary));
+                padding-top: 5px;
+                font-size: 14px;
+                margin-top: 10px;
+            }
+        }
     }
 }
 
@@ -326,11 +328,11 @@
         }
 
         // 好路選擇
-        .road_bg{
+        .roadList_bg{
             padding-top: 20px;
             background: map-get($bg_color, black);
         }
-        .road_list{
+        .roadList{
             @include d_f(flex, center, space-between);
             flex-wrap: wrap;
             width: calc(100% - 200px);
@@ -343,11 +345,11 @@
                 justify-content: flex-start;
             }
 
-            @at-root .--goodroad .road_list{
+            @at-root .--goodroad .roadList{
                 display: flex;
             }
 
-            // .road_list__item
+            // .roadList__item
             &__item{
                 width: 120px;
                 padding: 0 10px 20px;
@@ -356,7 +358,7 @@
                     display: none;
                 }
 
-                // .road_list__item__img
+                // .roadList__item__img
                 &__img{
                     @extend %hand;
                     width: 100%;
@@ -378,7 +380,7 @@
                     }
                 }
 
-                input:checked + .road_list__item__img{
+                input:checked + .roadList__item__img{
                     border-color: map-get($bg_color, secondary02);
 
                     &::before{
@@ -408,6 +410,11 @@
                 width: 20px;
                 height: 20px;
                 margin-right: 5px;
+
+                // 手指效果
+                @include hoverHandler{
+                    filter: brightness(150%);
+                }
             }
             // .risk__content
             &__content{
