@@ -79,7 +79,7 @@
 }
 
 .radio_style{
-    @include radio(12px, map-get($bg_color, white));
+    @include radio(12px, map-get($bg_color, lightbrown));
 }
 
 .checkbox_style{

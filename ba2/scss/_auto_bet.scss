@@ -606,40 +606,6 @@
             margin: 0 5px;
         }
     }
-    // .record__btn
-    &__btn{
-        @include d_f(flex, center, center);
-        height: 65px;
-        .page_btn{
-            @include btn_set(180px, 50px, map-get($btn_color, lightblue));
-            @include radius_hidden(5px);
-            &::before{
-                @include btn_hoverlight01(200%);
-            }
-            &::after{
-                @include btn_txt(center, map-get($txt_color, white), map-get($txt_color, shadow));
-                font-size: 24px;
-            }
-            .hover_item{
-                @include btn_hoveritem(map-get($btn_color, blue));
-                box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
-                            0 0 6px map-get($bg_color, secondary) inset;
-                &::before {
-                    @include btn_hoverlight01(200%);
-                }
-            }
-            // 重置
-            &.--next{
-                background: map-get($btn_color, orange);
-                margin-left: 30px;
-                .hover_item {
-                    background: map-get($btn_color, red);
-                }
-            }
-            // 手指效果
-            @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
-        }
-    }
 }
 // .record end
 
