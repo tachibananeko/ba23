@@ -95,7 +95,7 @@
             }
 
             // 開啟下拉選單
-            @at-root .--active .language_list{
+            @at-root .menu__info__language.--active .language_list{
                 transform: scale(1, 1);
             }
 
