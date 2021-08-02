@@ -39,7 +39,21 @@
             <div class="menu__info">
                 <div class="menu__info__logo"></div>
                 <button class="menu__info_btn"></button>
-                <div class="menu__info__txt">
+
+                <!-- pc語系選單 -->
+                <!-- 開啟下拉選單加上.--active -->
+                <div class="menu__info__language">
+                    <i class="icon_language"></i>
+                    <span>切換語系</span>
+                    <ul class="language_list">
+                        <li>繁體</li>
+                        <li>簡体</li>
+                        <li>English</li>
+                    </ul>
+                </div>
+                <!-- pc語系選單 end -->
+                
+                <div class="menu__info__txt" data-txt="試玩帳號">
                     <span class="name">LoremLoremLoremLoremLoremLoremLoremLoremLoremLorem</span>
                     <span class="amount">200,000,000</span>
                 </div>
@@ -78,6 +92,19 @@
                         <span class=" hover_item"></span>
                         <i class="icon_line"></i>
                     </li>
+                    <!-- ph語系選單 -->
+                    <li data-txt="切換語系" class="ph_language">
+                        <span class="hover_item"></span>
+                        <i class="icon_language"></i>
+                        <label>
+                            <select name="" id="">
+                                <option value="">繁體</option>
+                                <option value="">簡体</option>
+                                <option value="">English</option>
+                            </select>
+                        </label>
+                    </li>
+                    <!-- ph語系選單 end -->
                     <li data-txt="登出">
                         <span class=" hover_item"></span>
                         <i class="icon_logout"></i>
