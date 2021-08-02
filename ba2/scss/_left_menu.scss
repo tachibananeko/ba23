@@ -363,6 +363,15 @@
                 margin: auto;
                 opacity: 0;
             }
+
+            select{
+                width: 100%;
+                height: 100%;
+                padding-left: 35px;
+                background: map-get($bg_color, lightbrown);
+                color: map-get($txt_color, primary);
+                font-size: 14px;
+            }
         }
         
         i[class^="icon_"] {

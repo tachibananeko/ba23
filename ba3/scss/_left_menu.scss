@@ -395,6 +395,15 @@
                 margin: auto;
                 opacity: 0;
             }
+            
+
+            select{
+                width: 100%;
+                padding: 5px 10px;
+                background: map-get($bg_color, black);
+                color: map-get($txt_color, primary);
+                font-size: 14px;
+            }
         }
     }
 }
