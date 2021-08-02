@@ -4,6 +4,7 @@
     }
 }
 
+
 // 客戶資訊
 .menu__info{
     @include mw_md{
@@ -40,6 +41,78 @@
             margin-bottom: 0;
         }
         
+    }
+
+    // pc語系選單 .menu__info__language
+    &__language{
+        @extend %hand;
+        @include d_f(flex, center, flex-start);
+        @include border(0 0 1px, map-get($border_color, primary));
+        position: relative;
+        padding: 5px 10px;
+        font-size: 14px;
+        margin-bottom: 10px;
+        z-index: 2;
+
+        @include mw_lg{
+            padding: 5px;
+        }
+
+        @include mw_md{
+            display: none;
+        }
+
+        &::after{
+            @include triangle(8px, map-get($txt_color, primary), bottom);
+            content: '';
+            margin-left: 5px;
+            pointer-events: none;
+        }
+
+        i{
+            width: 15px;
+            height: 15px;
+            margin-right: 10px;
+
+            @include mw_lg{
+                display: none;
+            }
+        }
+
+        .language_list{
+            @extend %transition;
+            @include pos_a(tl, calc(100% + 1px), 0);
+            width: 100%;
+            padding: 3px 10px;
+            background: map-get($bg_color, black_alpha);
+            text-align: center;
+            transform: scale(1, 0);
+            transform-origin: center 0;
+
+            @include mw_lg{
+                padding: 3px 5px;
+                font-size: 12px;
+            }
+
+            // 開啟下拉選單
+            @at-root .--active .language_list{
+                transform: scale(1, 1);
+            }
+
+            li{
+                padding: 5px 0;
+        
+                // 手指效果
+                @include hoverHandler{
+                    background: map-get($bg_color, secondary_alpha);
+                    color: map-get($txt_color, white);
+                }
+            }
+
+            li + li{
+                @include border(1px 0 0, map-get($border_color, primary));
+            }
+        }
     }
 
     // .menu__info__txt
@@ -273,6 +346,22 @@
                         filter: none!important;
                     }
                 }
+            }
+        }
+
+        // ph語系選單
+        .ph_language{
+            display: none;
+
+            @include mw_md{
+                display: flex;
+            }
+
+            label {
+                @extend %hand;
+                @include pos_a(trbl, 0);
+                margin: auto;
+                opacity: 0;
             }
         }
         
