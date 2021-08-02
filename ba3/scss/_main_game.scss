@@ -399,7 +399,7 @@
             }
             &.--i_ex>i::before,
             &.--i_fast>i::after {
-                @include pos_a(trb, 0, 0,-20px);
+                @include pos_a(trb, 0, -20px, 0);
                 content: '';
                 width: 20px;
                 height: 20px;
