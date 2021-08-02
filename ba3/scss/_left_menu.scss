@@ -390,7 +390,6 @@
             }
 
             label {
-                @extend %hand;
                 @include pos_a(trbl, 0);
                 margin: auto;
                 opacity: 0;
@@ -398,6 +397,7 @@
             
 
             select{
+                @extend %hand;
                 width: 100%;
                 padding: 5px 10px;
                 background: map-get($bg_color, black);

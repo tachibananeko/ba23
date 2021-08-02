@@ -358,13 +358,13 @@
             }
 
             label {
-                @extend %hand;
                 @include pos_a(trbl, 0);
                 margin: auto;
                 opacity: 0;
             }
 
             select{
+                @extend %hand;
                 width: 100%;
                 height: 100%;
                 padding-left: 35px;
