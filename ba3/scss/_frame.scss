@@ -74,7 +74,7 @@
             grid-template-columns: 750px minmax(0, 1fr);
             grid-template-areas:"video order"
                                 "table order"
-                                "road details";
+                                "road detail";
             
             @include mw_lg{
                 grid-template-rows: 430px 30px minmax(200px, 250px);
@@ -162,13 +162,23 @@
             }
             
             .detail {
-                grid-area: details;
+                grid-area: detail;
 
                 z-index: 3;
 
                 @include mw_sm {
                     grid-area: 1 / 1 / 2 / 2;
                 }
+            }
+
+
+
+
+            .result{
+                grid-area: road;
+                
+                background: map-get($bg_color, black_alpha);
+                z-index: 2;
             }
         }
         
@@ -270,8 +280,8 @@
 // ============================================
 // 主要區塊配置 電投有卡
 .--telType .frame__main__inside{
-    grid-template-areas:"video details"
-                        "table details"
+    grid-template-areas:"video detail"
+                        "table detail"
                         "road road";
 
     @include mw_sm{
@@ -312,8 +322,8 @@
 // 主要區塊配置 電投無卡 網投無卡
 .--noCard .frame__main__inside,
 .--noOrder .frame__main__inside {
-    grid-template-areas:"video details"
-                        "table details"
+    grid-template-areas:"video detail"
+                        "table detail"
                         "road road";
     
     @include mw_sm{
