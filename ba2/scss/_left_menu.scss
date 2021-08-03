@@ -83,14 +83,12 @@
             @extend %transition;
             @include pos_a(tl, calc(100% + 1px), 0);
             width: 100%;
-            padding: 3px 10px;
             background: map-get($bg_color, black_alpha);
             text-align: center;
             transform: scale(1, 0);
             transform-origin: center 0;
 
             @include mw_lg{
-                padding: 3px 5px;
                 font-size: 12px;
             }
 
@@ -100,6 +98,7 @@
             }
 
             li{
+                position: relative;
                 padding: 5px 0;
         
                 // 手指效果
@@ -109,8 +108,13 @@
                 }
             }
 
-            li + li{
+            li + li::before{
+                @include pos_a(tlr, 0);
                 @include border(1px 0 0, map-get($border_color, primary));
+                content: '';
+                width: calc(100% - 20px);
+                height: 1px;
+                margin: auto;
             }
         }
     }
