@@ -78,6 +78,7 @@ $bg_color: (
     play_gradual_vl: linear-gradient(to bottom, #0072fa 0%, #0031ab) 80%,
     tie_gradual: linear-gradient(to right, #113924 0%, #000) 100%,
     gold: linear-gradient(#f2bd79, #fefdb3 50%, #f2bd79 90%),
+    gold_gradual: radial-gradient(circle at center ,rgba(#fefdb3,.0),rgba(#fefdb3,.0) 35%,rgba(#fefdb3,.1) 50%, rgba(#ffd300,.15) 65%,rgba(#ffd300,.15) 75%,rgba(#fefdb3,.025) 90%, rgba(#fefdb3,.0) 100%),
     alert_bg: linear-gradient(to top, #00326e 30%, #000f28 100%),
     white: #fff,
     gray: #b3b3b3,

@@ -145,7 +145,7 @@
                 background-color: map-get($bg_color, white);
 
                 @include mw_sm {
-                    min-height: 250px;
+                    // min-height: 250px;
 
                     // 選擇桌次展開
                     @at-root .--tableOpen .road {
@@ -162,6 +162,16 @@
                 @include mw_sm {
                     grid-area: 1 / 1 / 2 / 2;
                 }
+            }
+
+
+
+
+            .result{
+                grid-area: road;
+                
+                background: map-get($bg_color, black_alpha);
+                z-index: 2;
             }
         }
         
@@ -193,7 +203,8 @@
 }
 
 // 內層配置
-.--bigTv .detail{
+.--bigTv .detail,
+.--bigTv .result{
     display: none;
 }
 
