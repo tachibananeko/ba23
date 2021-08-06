@@ -23,10 +23,12 @@
                             "menu";
     }
     
-    // @include mw_xs {
-    //     grid-template-rows: minmax(0, 1fr);
-    //     grid-template-areas:"main";
-    // }
+    @include mw_ls{
+        grid-template-rows: minmax(0, 1fr);
+        grid-template-columns: 50px minmax(0, 1fr);
+        grid-template-areas:"menu main";
+    }
+
     // .frame__menu
     &__menu {
         grid-area: menu;
@@ -35,6 +37,10 @@
         @include mw_md{
             @include d_f(flex, center, center);
             position: relative;
+        }
+
+        @include mw_ls{
+            flex-direction: column;
         }
     }
 

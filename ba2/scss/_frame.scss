@@ -14,12 +14,20 @@
     @include mw_lg {
         grid-template-columns: 80px minmax(0, 1fr);
     }
+    
     @include mw_md {
         grid-template-rows: minmax(0, 1fr) 50px;
         grid-template-columns: minmax(0, 1fr);
         grid-template-areas:"main"
                             "menu";
     }
+
+    @include mw_ls {
+        grid-template-rows: minmax(0, 1fr);
+        grid-template-columns: 50px minmax(0, 1fr);
+        grid-template-areas: "menu main";
+    }
+
     // .frame__menu
     &__menu {
         grid-area: menu;
@@ -28,6 +36,10 @@
         @include mw_md{
             @include d_f(flex, center, center);
             position: relative;
+        }
+
+        @include mw_ls{
+            flex-direction: column;
         }
     }
 

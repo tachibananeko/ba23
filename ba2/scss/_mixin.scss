@@ -296,6 +296,13 @@ $breakpoints: (
 	}
 }
 
+// ph橫向
+@mixin mw_ls {
+	@media only screen and (max-height: 480px) and (max-width: 926px) {
+		@content;
+	}
+}
+
 // 僅在pc顯示
 @mixin fine {
 	@media (pointer: fine) and (max-resolution: 2dppx),

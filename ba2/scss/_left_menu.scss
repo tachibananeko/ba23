@@ -16,6 +16,10 @@
         z-index: 1;
     }
 
+    @include mw_ls {
+        height: 50px;
+    }
+
     // .menu__info__logo
     &__logo {
         padding-bottom: 80%;
@@ -135,6 +139,10 @@
             font-size: 12px;
             text-align: center;
         }
+        
+        &[data-txt=""]::before {
+            content: none;
+        }
 
         @include mw_md {
             @include border(0 0 1px, map-get($border_color, secondary));
@@ -157,6 +165,20 @@
                 pointer-events: auto;
             }
         }
+
+        @include mw_ls {
+            width: 200px;
+            top: 0;
+            right: auto;
+            bottom: auto;
+            left: 50px;
+            transform: translate3d(-100%, 0, 0);
+
+            @at-root .--active .menu__info__txt {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
         .name{
             display: block;
             position: relative;
@@ -178,6 +200,7 @@
             @include mw_lg{
                 max-width: calc(100% - 10px);
             }
+
             @include mw_md{
                 @include d_f(flex, center, flex-start);
                 max-width: 100%;
@@ -192,6 +215,10 @@
                     background: url(../images/icon_miniMem.svg) no-repeat center / contain;
                     margin-right: 10px;
                 }
+            }
+
+            @include mw_ls{
+                @include omission(2, 35px);
             }
 
             // 手指效果
@@ -287,15 +314,26 @@
 // 分頁按鈕
 .menu__main {
     @include scrollbar(auto, hidden);
+
     @include mw_md{
         @include d_f(inline-flex, center, flex-start);
         height: 50px;
     }
+
+    @include mw_ls{
+        @include scrollbar(hidden, auto);
+        height: calc(100% - 50px);
+    }
+
     ul{
         @include mw_md {
             @include d_f(inline-flex, center, flex-start);
             flex: none;
             height: 100%;
+        }
+
+        @include mw_ls{
+            flex-direction: column;
         }
 
         li {
@@ -311,6 +349,12 @@
                 flex-direction: column;
                 padding: 5px;
                 font-size: 12px;
+            }
+
+            @include mw_ls {
+                width: 50px;
+                height: auto;
+                padding: 5px 0;
             }
             
             &::after {
@@ -425,6 +469,19 @@
                     height: 15px;
                     margin: 0 10px 0 0;
                     filter: brightness(150%);
+                }
+            }
+
+            @include mw_ls{
+                width: 200px;
+                top: 137px;
+                right: auto;
+                bottom: auto;
+                left: 50px;
+                transform: translate3d(-100%, 0, 0);
+
+                @at-root .--active ul.--myself {
+                    transform: translate3d(0, 0, 0);
                 }
             }
         }
