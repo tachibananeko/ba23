@@ -15,7 +15,6 @@
         box-shadow: 3px 2px 3px map-get($bg_color, black_alpha);
         z-index: 1;
     }
-
     @include mw_ls {
         height: 50px;
     }
@@ -165,7 +164,6 @@
                 pointer-events: auto;
             }
         }
-
         @include mw_ls {
             width: 200px;
             top: 0;
@@ -200,7 +198,6 @@
             @include mw_lg{
                 max-width: calc(100% - 10px);
             }
-
             @include mw_md{
                 @include d_f(flex, center, flex-start);
                 max-width: 100%;
@@ -216,7 +213,6 @@
                     margin-right: 10px;
                 }
             }
-
             @include mw_ls{
                 @include omission(2, 35px);
             }
@@ -238,6 +234,9 @@
                     display: flex;
                     background: transparent;
                     margin: auto auto 5px;
+                }
+                @include mw_ls {
+                    display: -webkit-box;
                 }
             }
         }
@@ -319,7 +318,6 @@
         @include d_f(inline-flex, center, flex-start);
         height: 50px;
     }
-
     @include mw_ls{
         @include scrollbar(hidden, auto);
         height: calc(100% - 50px);
@@ -331,7 +329,6 @@
             flex: none;
             height: 100%;
         }
-
         @include mw_ls{
             flex-direction: column;
         }
@@ -350,7 +347,6 @@
                 padding: 5px;
                 font-size: 12px;
             }
-
             @include mw_ls {
                 width: 50px;
                 height: auto;
@@ -471,7 +467,6 @@
                     filter: brightness(150%);
                 }
             }
-
             @include mw_ls{
                 width: 200px;
                 top: 137px;

@@ -37,7 +37,6 @@
             @include d_f(flex, center, center);
             position: relative;
         }
-
         @include mw_ls{
             flex-direction: column;
         }
