@@ -12,12 +12,6 @@
 
     <link rel="stylesheet" href="../style/all.min.css">
 
-    <!-- icon -->
-    <link rel="shortcut icon" href="/favicon_icon.ico">
-    <link rel="icon" href="/favicon_icon.ico">
-    <link rel="apple-touch-icon" type="image/png" href="/favicon_icon.png">
-    <link rel="apple-touch-icon-precomposed" href="/favicon_icon.png">
-
 </head>
 
 <body ontouchstart="">
@@ -27,28 +21,40 @@
             <button class="close_btn"></button>
         </div>
         <div class="custom__content">
-            <div class="chips_auto01 --circle"></div>
-            <div class="chips_auto02 --circle"></div>
-            <div class="chips_10 --circle"></div>
-            <div class="chips_20 --circle"></div>
-            <div class="chips_50 --circle"></div>
-            <div class="chips_100 --circle"></div>
-            <div class="chips_200 --circle"></div>
-            <div class="chips_500 --circle"></div>
-            <div class="chips_1k --circle"></div>
-            <div class="chips_2k --circle"></div>
-            <div class="chips_5k --circle"></div>
-            <div class="chips_10k --rec"></div>
-            <div class="chips_50k --rec"></div>
-            <div class="chips_100k --rec"></div>
-            <span class="chip_txt">你最多可選擇5個常用籌碼</span>
-            <div class="btn_bg">
-                <button class="confirm_btn" data-txt="確定">
+
+            <!-- 籌碼 -->
+            <!-- 選中的籌碼加上.--on -->
+            <ul class="custom__content__chips">
+                <li class="chips_auto01  --on" data-txt="請輸入"></li>
+                <li class="chips_auto02" data-txt="請輸入"></li>
+                <li class="chips_10"></li>
+                <li class="chips_20"></li>
+                <li class="chips_50"></li>
+                <li class="chips_100"></li>
+                <li class="chips_200"></li>
+                <li class="chips_500"></li>
+                <li class="chips_1k"></li>
+                <li class="chips_2k"></li>
+                <li class="chips_5k"></li>
+                <li class="chips_10k"></li>
+                <li class="chips_50k"></li>
+                <li class="chips_100k"></li>
+            </ul>
+            <!-- 籌碼 end -->
+
+
+
+            <div class="chip_txt">你最多可選擇5個常用籌碼</div>
+
+
+
+            <div class="func">
+                <button class="func_btn" data-txt="確定">
                     <span class="hover_item"></span>
                 </button>
             </div>
             <div class="input_popup" style="display: none;">
-                <input type="text" placeholder="300">
+                <input type="tel" placeholder="請輸入籌碼金額">
                 <button class="enter_btn">OK</button>
                 <button class="close_btn"></button>
             </div>

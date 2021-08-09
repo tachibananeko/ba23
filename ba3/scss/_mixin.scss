@@ -650,6 +650,8 @@ $chips: (
 );
 @each $name in $chips {
 	.chips_#{$name} {
+		@extend %hand;
+        @extend %transition;
 		display: inline-block;
 		background:url(../images/chips_#{$name}.png) no-repeat center / contain;
 	}
