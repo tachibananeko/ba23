@@ -50,6 +50,7 @@ $bg_color: (
     bank: #ff302a,
     play: #0068ed,
     tie: #009245,
+    win: linear-gradient(to bottom, rgba(255, 255, 199, .7) 60%, rgba(160, 102, 42, .7) 100%),
     black_alpha: rgba(0, 0, 0, 0.7),
     secondary_alpha: #fdfcb350,
 );
