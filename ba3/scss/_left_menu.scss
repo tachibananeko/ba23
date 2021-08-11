@@ -68,7 +68,8 @@
         i{
             width: 18px;
             height: 18px;
-            margin-right: 5px;
+            filter: brightness(0) invert(1);
+            margin-right: 10px;
 
             @include mw_lg{
                 display: none;
@@ -422,7 +423,7 @@
         }
 
         // ph語系選單
-        .ph_language{
+        li.ph_language{
             display: none;
 
             @include mw_md{
