@@ -494,10 +494,20 @@
             @include d_f(flex, center, flex-start);
 
             .img{
+                position: relative;
                 display: block;
                 width: 35%;
                 height: 100%;
-                background: url(../images/icon_lock.svg) no-repeat center / 50% map-get($bg_color, black_alpha);
+
+                &::after{
+                    @include pos_a(trbl, 0);
+                    content: '';
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                    background: url(../images/icon_locked.svg) no-repeat center / 70% map-get($bg_color, black_alpha);
+                    margin: auto;
+                }
             }
             .txt{
                 @include d_f(flex, center, center);
