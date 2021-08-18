@@ -303,6 +303,7 @@
                     border-radius: 50%;
                     background: url(../images/icon_locked.svg) no-repeat center / 70% map-get($bg_color, black_alpha);
                     margin: auto;
+                    filter: brightness(200%);
                 }
             }
             .txt{
