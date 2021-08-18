@@ -393,7 +393,7 @@
             background: map-get($bg_color, darkgray);
 
             .load_item{
-                transform: scale(.9);
+                transform: scale(.85);
 
                 @include mw_xs{
                     transform: scale(.6);
