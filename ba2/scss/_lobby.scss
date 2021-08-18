@@ -388,12 +388,15 @@
 
         // 桌子loading .lobbyTb__road__loading
         &__loading{
-            @include load_set(.6, map-get($bg_color, secondary02));
+            @include load_set;
             padding-bottom: calc(100% * .1891);
-            
-            @include mw_xs{
-                .load_item{
-                    transform: scale(.4);
+            background: map-get($bg_color, darkgray);
+
+            .load_item{
+                transform: scale(.9);
+
+                @include mw_xs{
+                    transform: scale(.6);
                 }
             }
         }

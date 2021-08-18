@@ -179,56 +179,15 @@
 
         // 桌子loading .lobbyTb__road__loading
         &__loading {
+            @include load_set;
             padding-bottom: calc(100% * .1891);
             background: map-get($bg_color, darkgray);
 
             .load_item{
-                @include pos_a(trbl, 0);
-                width: 90px;
-                height: 90px;
-                border-radius: 50%;
-                overflow: hidden;
-                margin: auto;
+                transform: scale(.9);
 
-                &::before,
-                &::after{
-                    @include pos_a(trbl, 0);
-                    content: "";
-                    display: inline-block;
-                    border-radius: 50%;
-                }
-
-                // 漸層線
-                &::before{
-                    border-width: 40px;
-                    border-style: solid;
-                    border-image: linear-gradient(to top, #753F1F 0%, #D89951 10%, rgba(240, 216, 139, 0) 100%);
-                    border-image-slice: 30 30 30 0;
-                    
-                    animation: spinnaRot 1s infinite linear;
-
-                    @keyframes spinnaRot{
-                        100% {
-                                transform: rotate(360deg);
-                            }
-                    }
-                }
-                // 遮成圓形
-                &::after{
-                    border: 3px solid transparent;
-                    box-shadow: inset 0 0 0 3em map-get($bg_color, darkgray);
-                }
-
-                code{
-                    @include pos_a(trbl, 0);
-                    background: url(../images/logo_icash.svg) no-repeat center / 50%;
-                    margin: auto;
-                    z-index: 1;
-                }
-            }
-            @include mw_xs{
-                .load_item{
-                    transform: scale(.4);
+                @include mw_xs{
+                    transform: scale(.6);
                 }
             }
         }
