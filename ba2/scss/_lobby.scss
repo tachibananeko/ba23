@@ -373,7 +373,7 @@
             height: 100%;
         }
 
-        // 珠路上的廠商logo .lobbyTb__road__img
+        // 珠路上的廠商logo+珠路圖 .lobbyTb__road__img
         &__img{
             position: relative;
             [class^=icon_] {
@@ -383,6 +383,11 @@
                 right: 10px;
                 filter: grayscale(1);
                 opacity: 0.5;
+            }
+
+            // 珠路圖
+            img[src=""]{
+                display: none;
             }
         }
 

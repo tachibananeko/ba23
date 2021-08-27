@@ -176,6 +176,15 @@
             width: 100%;
             height: 100%;
         }
+        
+        // 珠路圖 .lobbyTb__road__img
+        &__img{
+            img[src=""]{
+                display: none;
+            }
+        }
+
+
 
         // 桌子loading .lobbyTb__road__loading
         &__loading {
