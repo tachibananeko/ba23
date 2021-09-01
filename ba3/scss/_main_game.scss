@@ -151,16 +151,14 @@
             @include btn_hoverHandler(1px, map-get($txt_color, primary));
         }
 
-        // 開始遊戲按鈕
-        .start_btn{
-            @include btn_set(190px, 150px, url(../images/start_btn.png) no-repeat center / contain);
+        // 換桌與開始遊戲按鈕
+        .apply_btn{
+            @include btn_set(190px, 150px, url(../images/changetable_btn.png) no-repeat center / contain);
             @include pos_a(rbl, 0);
             margin: auto;
 
-            display: none;
-
-            @at-root .--noOrder .start_btn{
-                display: block;
+            &.--start{
+                display: none;
             }
             
             @include mw_xs{
@@ -1852,6 +1850,20 @@
 
 
 // 電網投各種狀態============================================
+// .video內層細項設定
+// 電投有卡 電投無卡
+.--telType .apply_btn,
+.--noOrder .apply_btn{
+    display: none;
+}
+
+// 網投無卡
+.--noOrder .apply_btn.--start{
+    display: block;
+    background-image: url(../images/start_btn.png);
+}
+
+// -----------------------------------------
 // .order內層細項設定
 // 電投有卡 電投無卡
 .--telType [class^="order__"],
