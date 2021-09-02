@@ -1,3 +1,72 @@
+// 勾勾
+@mixin checktick($box, $xy, $boder, $bg) {
+	position: relative;
+
+	input{
+        display: none;
+    }
+
+	span{
+		position: relative;
+		display: inline-block;
+        width: $box;
+        height: $box;
+        background: $bg;
+        margin: 2px;
+
+		&::before{
+			@include pos_a(tl, $xy);
+			content: none;
+			display: block;
+			width: ($box / 2);
+			height: ($box / 3);
+			border-width: 0 0 $boder $boder;
+			border-style:  solid;
+			border-color: map-get($bg_color , white);
+			transform: rotate(-48deg);
+		}
+	}
+
+	input:checked + span::before{
+		content: '';
+	}
+	
+}
+
+// 單選圓圈
+@mixin radio($box, $bg) {
+    @extend %hand;
+	@include d_f(inline-flex, center, flex-start);
+
+	input{
+        display: none;
+    }
+
+	span{
+        position: relative;
+        width: $box;
+        height: $box;
+        display: block;
+        background: map-get($bg_color, white);
+		border-radius: $box;
+        margin-right: 5px;
+
+        &::before{
+            @include pos_a(trbl, 0);
+            content: none;
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+            background: $bg;
+			border-radius: 100%;
+            margin: auto;
+        }
+    }
+	
+	input:checked + span::before{
+		content: '';
+	}
+}
+
 // loading元件
 @mixin load_set {
 	.load_item{
