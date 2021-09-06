@@ -196,7 +196,7 @@
 // foot
 .logFoot{
     @include d_f(flex, center, center);    
-    padding: 50px 0 20px;
+    padding: 50px 0 5px;
     
     @include mw_md{
         display: none;
@@ -265,6 +265,25 @@
                 text-decoration: underline;
             }
         }
+    }
+}
+
+
+// copyright
+.logCopyright{
+    @include d_f(flex, flex-end, center);
+    padding-bottom: 10px;
+    font-size: 12px;
+    margin: 0 auto;
+
+    &::before{
+        content: '';
+        display: block;
+        flex: none;
+        width: 100px;
+        height: 32px;
+        background: url(../images/copyright_icash.png) no-repeat center / contain;
+        margin-right: 5px;
     }
 }
 

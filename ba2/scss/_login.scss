@@ -28,8 +28,8 @@
     }
 
     @include mw_xs{
-        height: 100%;
-        background-position: center 110%;
+        height: calc(100% - 60px);
+        background-position: center 100%;
         background-size: 350px;
     }
 
@@ -272,3 +272,22 @@
     }
 }
 
+
+
+// copyright
+.logCopyright {
+    @include d_f(flex, flex-end, center);
+    padding:5px 5px 10px;
+    font-size: 12px;
+    margin: 0 auto;
+
+    &::before {
+        content: '';
+        display: block;
+        flex: none;
+        width: 100px;
+        height: 32px;
+        background: url(../images/copyright_icash.png) no-repeat center / contain;
+        margin-right: 5px;
+    }
+}
