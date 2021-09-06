@@ -16,12 +16,12 @@
     flex-wrap: wrap;
     width: 100%;
     max-width: 1024px;
-    min-height: 550px;
+    min-height: 520px;
     padding-top: 5%;
     background: url(../images/img_login.png) no-repeat left bottom / 600px;
 
     @include mw_sm{
-        min-height: auto;
+        // min-height: auto;
         padding-top: 0;
         background-position: 10% 60%;
         background-size: 450px;
