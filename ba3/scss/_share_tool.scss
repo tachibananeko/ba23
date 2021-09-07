@@ -175,3 +175,32 @@
     
     }
 }
+
+// 大loading遮罩
+.loadingBg {
+    @include load_set;
+    @include pos_a(trbl, 0);
+    position: fixed;
+    background: map-get($bg_color, black_alpha);
+    margin: auto;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+
+    animation: temporary 3s both;
+
+    @keyframes temporary {
+        0% {
+            opacity: 1;
+        }
+
+        60% {
+            opacity: 1;
+        }
+
+        85% {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+}
