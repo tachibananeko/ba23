@@ -450,6 +450,7 @@
 // 下注區與珠路共用 會員資訊
 .memberInfo {
     @include d_f(flex, center, space-between);
+    flex: none;
     background: map-get($bg_color, primary_vl);
     color: map-get($txt_color, white);
     font-size: 14px;
@@ -524,6 +525,7 @@
     // 百2功能按鈕與熱況直播
     .more_function{
         @include d_f(flex, unset, unset);
+        flex: none;
         flex-direction: column;
         order: -3;
 
@@ -544,6 +546,7 @@
 
         @include mw_sm{
             width: 40%;
+            margin-right: 0;
         }
         @include mw_xs{
             width: 100%;

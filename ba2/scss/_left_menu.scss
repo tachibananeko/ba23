@@ -308,7 +308,7 @@
 
 // 分頁按鈕
 .menu__main {
-    @include scrollbar(auto, hidden);
+    // @include scrollbar(auto, hidden);
 
     @include mw_md{
         @include d_f(inline-flex, center, flex-start);
