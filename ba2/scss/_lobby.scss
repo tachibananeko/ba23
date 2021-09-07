@@ -18,6 +18,7 @@
         // title群組
         .titleGroup{
             @include d_f(flex, unset, space-between);
+            flex: none;
             flex-wrap: wrap;
             width: 100%;
 
