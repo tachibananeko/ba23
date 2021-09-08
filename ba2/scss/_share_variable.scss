@@ -1,3 +1,38 @@
+// 語系字體尺寸(自行新增修改$txt_size需要的語系內容與字型大小
+$txt_size: (
+    zh: (
+        xxx-large: 60px,
+        xx-large: 50px,
+        x-large: 40px,
+        large: 30px,
+        medium: 24px,
+        normal: 16px,
+        small: 14px,
+        x-small: 12px),
+    en: (
+        xxx-large: 60px,
+        xx-large: 50px,
+        x-large: 40px,
+        large: 30px,
+        medium: 24px,
+        normal: 14px,
+        small: 12px,
+        x-small: 12px));
+
+@mixin fz($size: "normal") {
+    @at-root & {
+        $zh: map-get($txt_size, zh);
+        font-size: map-get($zh, $size);
+    }
+
+    @at-root .en & {
+        $en: map-get($txt_size, en);
+        font-size: map-get($en, $size);
+    }
+}
+
+
+
 // 字體顏色
 $txt_color: (
     primary: #fbe2b0,
