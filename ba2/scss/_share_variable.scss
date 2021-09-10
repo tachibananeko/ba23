@@ -8,7 +8,8 @@ $txt_size: (
         medium: 24px,
         normal: 16px,
         small: 14px,
-        x-small: 12px),
+        x-small: 12px
+    ),
     en: (
         xxx-large: 60px,
         xx-large: 50px,
@@ -17,7 +18,9 @@ $txt_size: (
         medium: 24px,
         normal: 14px,
         small: 12px,
-        x-small: 12px));
+        x-small: 12px
+    )
+);
 
 @mixin fz($size: "normal") {
     @at-root & {
