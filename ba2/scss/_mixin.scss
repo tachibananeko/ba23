@@ -126,7 +126,7 @@
 
 // 漸層線
 @mixin border($border_px, $border_img) {
-	border: 1px solid #000;
+	border-style: solid;
 	border-width: $border_px;
 	border-image: $border_img;
 }
