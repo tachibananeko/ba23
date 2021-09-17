@@ -39,7 +39,7 @@
                 display: block;
                 font-weight: bold;
                 text-align: center;
-                
+
                 &::before{
                     content: attr(data-time);
                     font-size: 50px;
@@ -106,7 +106,7 @@
             @at-root .--bigTv .videobig_btn{
                 background-image: url(../images/icon_vedioSmall.svg);
             }
-            
+
             @include coarse{
                 display: none;
             }
@@ -249,7 +249,7 @@
             @include mw_sm {
                 content: none;
             }
-            
+
             @keyframes shake {
                 10%,
                 30%,
@@ -436,7 +436,7 @@
 
             &.--i_ex.--i_fast>i::after {
                 top: 8px;
-            }        
+            }
 
             // _on效果
             @include btn_on(map-get($txt_color, primary));
@@ -488,7 +488,7 @@
         @include mw_md {
             display: none;
         }
-        
+
         &::before{
             @include pos_a(tbl, 0, 0, 5px);
             content: '';
@@ -509,7 +509,7 @@
         .hover_item{
             @include btn_hoveritem(map-get($btn_color, primary_vl_re));
         }
-            
+
         // 手指效果
         @include btn_hoverHandler(0 0, map-get($txt_color, secondary ));
     }
@@ -532,12 +532,12 @@
         @include mw_sm{
             flex-direction: row;
         }
-        
+
         @include mw_xs{
             flex-direction: column;
         }
     }
-    
+
     // 免佣+多桌+好路按鈕.otherpage
     .otherpage{
         width: 100%;
@@ -595,7 +595,7 @@
     .live{
         padding: 5px;
         background: map-get($bg_color, darkgray);
-        
+
         @include mw_sm{
             width: 60%;
             order: -1;
@@ -622,7 +622,7 @@
                 background: map-get($btn_color, primary);
                 margin: auto;
                 transform: skewX(-30deg);
-                
+
             }
 
             &::after{
@@ -653,7 +653,7 @@
         &.--nocon{
             background: map-get($bg_color, nocon_area);
         }
-        
+
         .area_b,
         .area_p,
         .area_t,
@@ -853,7 +853,7 @@
             &.--on{
                 width: 70px;
                 height: 70px;
-                
+
                 @include mw_sm {
                     width: 50px;
                     height: 50px;
@@ -896,7 +896,7 @@
                 @include mw_sm{
                     border-radius: 0;
                 }
-                
+
             }
 
             &::before{
@@ -905,7 +905,7 @@
             &::after{
                 @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
                 font-size: 24px;
-                
+
             }
             .hover_item{
                 @include btn_hoveritem(map-get($btn_color, blue));
@@ -1021,7 +1021,7 @@
         }
     }
 
-    
+
 
 
     // 珠路包.road__group
@@ -1058,7 +1058,7 @@
                 }
             }
         }
-        
+
         // 切換珠路按鈕
         .roadChange_btn{
             @include btn_set(30px, 30px, url(../images/icon_changeroad.svg) no-repeat center / contain);
@@ -1069,7 +1069,7 @@
             // 手指效果
             @include hoverHandler{
                 opacity: .6;
-            
+
 }
         }
 
@@ -1168,7 +1168,7 @@
 
                 &::after {
                     @include btn_txt(center, map-get($txt_color, primary), transparent);
-                    
+
                     @at-root span.--on::after{
                         color: map-get($txt_color, secondary);
                     }
@@ -1255,7 +1255,7 @@
             top: unset;
             bottom: 40px;
         }
-        
+
         li{
             @extend %hand;
             @include btn_set(100%, 100%, map-get($btn_color, primary));
@@ -1747,7 +1747,7 @@
                     opacity: 1;
                 }
             }
-            
+
             // 英
             @at-root .--en .result__box__img{
                 background-image: url(../images/img_tie_en.png);
@@ -1890,7 +1890,7 @@
     &__chips{
         width: 40%;
     }
-    
+
     &__function{
         height: 60px;
     }
@@ -1899,7 +1899,7 @@
         @include pos_a(bl, calc(100% + 20px), 0);
         background: transparent;
     }
-    
+
     .cardAll{
         @include pos_a(tl, -20px, 0);
         height: calc(100% + 20px);

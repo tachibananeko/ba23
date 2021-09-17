@@ -14,7 +14,7 @@
     @include mw_lg {
         grid-template-columns: 80px minmax(0, 1fr);
     }
-    
+
     @include mw_md {
         grid-template-rows: minmax(0, 1fr) 50px;
         grid-template-columns: minmax(0, 1fr);
@@ -79,7 +79,7 @@
             grid-template-areas:"video order"
                                 "table order"
                                 "road details";
-            
+
             @include mw_lg{
                 grid-template-rows: 430px 30px minmax(200px, 250px);
                 grid-template-columns: 700px minmax(0, 1fr);
@@ -111,10 +111,10 @@
                     grid-template-rows: 60vw 1fr 1fr minmax(200px, 350px);
                 }
             }
-            
+
             .video {
                 grid-area: video;
-                
+
                 background-color: map-get($bg_color, black);
                 @include mw_sm{
                     grid-area: 1 / 1 / 2 / 2;
@@ -123,7 +123,7 @@
 
             .table {
                 grid-area: table;
-                
+
                 background-color: map-get($bg_color, black);
                 z-index: 2;
 
@@ -148,7 +148,7 @@
                     @at-root .--tableOpen .order {
                         grid-area: auto;
                     }
-                }                
+                }
             }
 
             .road {
@@ -164,7 +164,7 @@
                     }
                 }
             }
-            
+
             .detail {
                 grid-area: details;
 
@@ -180,12 +180,34 @@
 
             .result{
                 grid-area: road;
-                
+
                 background: map-get($bg_color, black_alpha);
                 z-index: 2;
             }
         }
-        
+
+        // 多桌 .frame__main__multi
+        &__multi{
+            grid-area: inside;
+
+            display: grid;
+            grid-template-rows: 450px minmax(400px, 450px) 50px;
+            grid-template-columns: 650px minmax(0, 1fr);
+            grid-template-areas:"video bet"
+                                "select bet"
+                                "footer footer";
+
+            .video_area{
+                grid-area: video;
+            }
+            .select_area{
+                grid-area: select;
+            }
+            .bet_area{
+                grid-area: bet;
+            }
+        }
+
         // 其他頁面 .frame__main__otherinside
         &__otherinside {
             grid-area: inside;

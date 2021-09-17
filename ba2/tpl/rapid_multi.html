@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
+    <title>Welcome</title>
+
+    <link rel="stylesheet" href="../style/all.min.css">
+
+</head>
+
+<body class="rapid_multi">
+    <div class="rapid__title">
+        <div class="bet__number">
+            <i>
+                <b>1</b>
+            </i>
+            <span>MB2001</span>
+        </div>
+        <div class="bet__amount">
+            投注金額
+            <span></span>
+        </div>
+        <div class="bet__status">
+            <button class="status__video">
+                <span>觀看視訊</span>
+            </button>
+            <div class="status__txt"></div>
+            <div class="status__txt --count"></div>
+            <button class="close_btn"></button>
+        </div>
+    </div>
+    <div class="rapid__content">
+        <div class="rapid__bet">
+            <div class="bet__table">
+                <div class="bet__area --top --player">
+                    <span class="bet__txt --odds">1</span>
+                    <span class="bet__txt --target">閒</span>
+                    <span class="bet__txt --limit">50~10,000</span>
+                    <div class="bet__flicker" style="display: none;"></div>
+                </div>
+                <div class="bet__area --top --banker">
+                    <span class="bet__txt --odds">0.96</span>
+                    <span class="bet__txt --target">莊</span>
+                    <span class="bet__txt --limit">22~200,000</span>
+                    <div class="bet__flicker" style="display: none;"></div>
+                </div>
+                <div class="bet__area --bot --player">
+                    <span class="bet__txt --odds">11.5</span>
+                    <span class="bet__txt --target">閒對</span>
+                    <span class="bet__txt --limit">50~16,000</span>
+                    <div class="bet__flicker" style="display: none;"></div>
+                </div>
+                <div class="bet__area --bot --tie">
+                    <span class="bet__txt --odds">8</span>
+                    <span class="bet__txt --target">和</span>
+                    <span class="bet__txt --limit">50~20,000</span>
+                    <div class="bet__flicker" style="display: none;"></div>
+                </div>
+                <div class="bet__area --bot --banker">
+                    <span class="bet__txt --odds">11</span>
+                    <span class="bet__txt --target">莊對</span>
+                    <span class="bet__txt --limit">50~15,000</span>
+                    <div class="bet__flicker" style="display: none;"></div>
+                </div>
+                <div class="bet__message" style="display: none;"></div>
+            </div>
+            <div class="bet__result">
+                <div class="result__stat">
+                    <i class="result__icon --banker"></i>
+                    <span class="result__txt">15</span>
+                </div>
+                <div class="result__stat">
+                    <i class="result__icon --player"></i>
+                    <span class="result__txt">19</span>
+                </div>
+                <div class="result__stat --tie">
+                    <i class="result__icon --tie"></i>
+                    <span class="result__txt">2</span>
+                </div>
+                <div class="result__stat --banker">
+                    <i class="result__icon --banker --pair"></i>
+                    <span class="result__txt">5</span>
+                </div>
+                <div class="result__stat --player">
+                    <i class="result__icon --player --pair"></i>
+                    <span class="result__txt">1</span>
+                </div>
+            </div>
+            <div class="bet__road"></div>
+            <div class="bet__mask"></div>
+        </div>
+        <div class="rapid__aside"></div>
+    </div>
+    <div class="rapid__loading" style="display: none;">
+        <div class="loading__img"></div>
+    </div>
+</body>
+
+</html>

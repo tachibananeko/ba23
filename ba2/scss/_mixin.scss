@@ -303,7 +303,7 @@ $direction: (
 }
 
 // 寬度設定
-$num: 100; 
+$num: 100;
 @while $num > 0 {
 	.w#{$num} {
 		width: $num * 1%;
