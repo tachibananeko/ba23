@@ -2315,7 +2315,7 @@ tt {
         grid-template-rows: minmax(0, 1fr) 50px;
     -ms-grid-columns: minmax(0, 1fr);
         grid-template-columns: minmax(0, 1fr);
-        grid-template-areas: "main" "menu";
+        grid-template-areas: "main" "menu";
   }
 }
 
@@ -2372,7 +2372,7 @@ tt {
       grid-template-rows: 50px minmax(0, 1fr);
   -ms-grid-columns: minmax(0, 1fr);
       grid-template-columns: minmax(0, 1fr);
-      grid-template-areas: "nav" "inside";
+      grid-template-areas: "nav" "inside";
 }
 
 @media screen and (max-width: 599px) {
@@ -2417,7 +2417,7 @@ tt {
       grid-template-rows: 480px 80px minmax(200px, 250px);
   -ms-grid-columns: 750px minmax(0, 1fr);
       grid-template-columns: 750px minmax(0, 1fr);
-      grid-template-areas: "video order" "table order" "road detail";
+      grid-template-areas: "video order" "table order" "road detail";
 }
 
 @media screen and (max-width: 1180px) {
@@ -2439,14 +2439,14 @@ tt {
 
 @media screen and (max-width: 996px) {
   .frame__main__inside {
-        grid-template-areas: "video" "order" "road";
+        grid-template-areas: "video" "order" "road";
     -ms-grid-rows: 50vw 1fr minmax(200px, 250px);
         grid-template-rows: 50vw 1fr minmax(200px, 250px);
     -ms-grid-columns: minmax(0, 1fr);
         grid-template-columns: minmax(0, 1fr);
   }
   .--tableOpen .frame__main__inside {
-        grid-template-areas: "video" "table" "order" "road";
+        grid-template-areas: "video" "table" "order" "road";
     -ms-grid-rows: 50vw 120px 1fr minmax(200px, 250px);
         grid-template-rows: 50vw 120px 1fr minmax(200px, 250px);
   }
@@ -2588,7 +2588,7 @@ tt {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 1px 0;
   -o-border-image: linear-gradient(to right, transparent 5%, #f2d77a 20%, #ffffc5 60%, #f2d77a 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, color-stop(5%, transparent), color-stop(20%, #f2d77a), color-stop(60%, #ffffc5), color-stop(80%, #f2d77a), to(transparent)) 1;
@@ -2707,17 +2707,17 @@ tt {
 }
 
 .--telType .frame__main__inside {
-      grid-template-areas: "video detail" "table detail" "road road";
+      grid-template-areas: "video detail" "table detail" "road road";
 }
 
 @media screen and (max-width: 996px) {
   .--telType .frame__main__inside {
-        grid-template-areas: "video" "order" "road";
+        grid-template-areas: "video" "order" "road";
     -ms-grid-rows: 60vw 60px minmax(200px, 300px);
         grid-template-rows: 60vw 60px minmax(200px, 300px);
   }
   .--telType.--tableOpen .frame__main__inside {
-        grid-template-areas: "video" "table" "order" "road";
+        grid-template-areas: "video" "table" "order" "road";
     -ms-grid-rows: 60vw 1fr 1fr minmax(200px, 300px);
         grid-template-rows: 60vw 1fr 1fr minmax(200px, 300px);
   }
@@ -2726,7 +2726,7 @@ tt {
         grid-template-rows: 60vw 200px minmax(200px, 300px);
   }
   .--telType.--cardOpen.--tableOpen .frame__main__inside {
-        grid-template-areas: "video" "table" "order" "road";
+        grid-template-areas: "video" "table" "order" "road";
     -ms-grid-rows: 60vw 1fr 1fr minmax(200px, 300px);
         grid-template-rows: 60vw 1fr 1fr minmax(200px, 300px);
   }
@@ -2741,19 +2741,19 @@ tt {
 
 .--noCard .frame__main__inside,
 .--noOrder .frame__main__inside {
-      grid-template-areas: "video detail" "table detail" "road road";
+      grid-template-areas: "video detail" "table detail" "road road";
 }
 
 @media screen and (max-width: 996px) {
   .--noCard .frame__main__inside,
   .--noOrder .frame__main__inside {
-        grid-template-areas: "video" "road";
+        grid-template-areas: "video" "road";
     -ms-grid-rows: 60vw minmax(200px, 300px);
         grid-template-rows: 60vw minmax(200px, 300px);
   }
   .--noCard.--tableOpen .frame__main__inside,
   .--noOrder.--tableOpen .frame__main__inside {
-        grid-template-areas: "video" "table" "road";
+        grid-template-areas: "video" "table" "road";
     -ms-grid-rows: 60vw 120px minmax(200px, 300px);
         grid-template-rows: 60vw 120px minmax(200px, 300px);
   }
@@ -2783,7 +2783,7 @@ tt {
       grid-template-rows: 550px 20px 200px 30px;
   -ms-grid-columns: minmax(0, 1fr);
       grid-template-columns: minmax(0, 1fr);
-      grid-template-areas: "video" "table" "order" "road";
+      grid-template-areas: "video" "table" "order" "road";
 }
 
 .--telType.--bigTv .frame__main__inside {
@@ -2791,14 +2791,14 @@ tt {
       grid-template-rows: 550px 20px 30px;
   -ms-grid-columns: minmax(0, 1fr);
       grid-template-columns: minmax(0, 1fr);
-      grid-template-areas: "video" "table" "road";
+      grid-template-areas: "video" "table" "road";
 }
 
 .--telType.--bigTv.--cardOpen .frame__main__inside,
 .--telType.--bigTv.--tableOpen .frame__main__inside {
   -ms-grid-rows: 550px 20px 100px 30px;
       grid-template-rows: 550px 20px 100px 30px;
-      grid-template-areas: "video" "table" "order" "road";
+      grid-template-areas: "video" "table" "order" "road";
 }
 
 .--telType.--bigTv .frame__main__inside .order {
@@ -2811,7 +2811,7 @@ tt {
       grid-template-rows: 550px 20px;
   -ms-grid-columns: minmax(0, 1fr);
       grid-template-columns: minmax(0, 1fr);
-      grid-template-areas: "video" "table";
+      grid-template-areas: "video" "table";
 }
 
 .--noCard.--bigTv.--tableOpen .frame__main__inside,
@@ -2895,7 +2895,7 @@ tt {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 0 0 1px;
   -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -2990,7 +2990,7 @@ tt {
   top: 0;
   left: 0;
   right: 0;
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 1px 0 0;
   -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -3012,7 +3012,7 @@ tt {
 
 @media screen and (max-width: 1024px) {
   .menu__info__txt {
-    border: 1px solid #000;
+    border-style: solid;
     border-width: 0 0 1px;
     -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
        border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -3390,7 +3390,7 @@ tt {
   opacity: 0;
   -webkit-transition: all .3s .1s ease-in-out;
   transition: all .3s .1s ease-in-out;
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 1px 0;
   -o-border-image: linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(#f2bd79), color-stop(50%, #ffffc5), to(#f2bd79)) 1;
@@ -3778,7 +3778,7 @@ tt {
   position: absolute;
   top: calc(100% + 5px);
   left: 0;
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 1px;
   -o-border-image: linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(#f2bd79), color-stop(50%, #ffffc5), to(#f2bd79)) 1;
@@ -4113,7 +4113,7 @@ tt {
   height: 30px;
   background: -webkit-gradient(linear, left bottom, left top, from(#f36428), to(#440010));
   background: linear-gradient(to top, #f36428 0%, #440010 100%);
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 1px;
   -o-border-image: linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(#f2bd79), color-stop(50%, #ffffc5), to(#f2bd79)) 1;
@@ -5051,7 +5051,7 @@ tt {
 }
 
 .agree__online {
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 0 0 1px;
   -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -5277,7 +5277,7 @@ tt {
 }
 
 .agree.--alert .--scroll {
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 0 1px 1px;
   -o-border-image: linear-gradient(to right, #001940 0%, #004889 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(#001940), to(#004889)) 1;
@@ -5368,7 +5368,7 @@ tt {
 }
 
 .--password .alert__box__title {
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 0 0 1px;
   -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -5599,7 +5599,7 @@ tt {
 }
 
 .alert .func_btn:nth-child(even) {
-  margin-left: 20px;
+  margin-left: 36px;
 }
 
 .alert .roadSet {
@@ -5654,7 +5654,7 @@ tt {
 }
 
 .alert .roadSet__title {
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 0 0 1px;
   -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -6045,7 +6045,7 @@ tt {
 }
 
 .lobbyTb__road {
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 1px 0;
   -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -6482,7 +6482,7 @@ tt {
   height: 100%;
   background: -webkit-gradient(linear, left top, right top, color-stop(30%, #00a6ed), to(#004889));
   background: linear-gradient(to right, #00a6ed 30%, #004889 100%);
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 1px 0;
   -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -6594,7 +6594,7 @@ tt {
 }
 
 .video__function__info {
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 0 0 1px;
   -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -7358,7 +7358,7 @@ tt {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 1px 0 0;
   -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -7728,7 +7728,7 @@ tt {
   position: absolute;
   top: 0;
   right: 5px;
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 0 0 1px;
   -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -7746,7 +7746,7 @@ tt {
   position: absolute;
   bottom: 25px;
   left: 5px;
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 1px;
   -o-border-image: linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(#f2bd79), color-stop(50%, #ffffc5), to(#f2bd79)) 1;
@@ -7913,7 +7913,7 @@ tt {
   width: calc(100% / 3);
   height: 100%;
   background: #0f2f66;
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 2px;
   -o-border-image: linear-gradient(to right, #63faff 0%, #37c6ff 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(#63faff), to(#37c6ff)) 1;
@@ -8479,7 +8479,7 @@ tt {
 }
 
 .road .totalCount {
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 1px 0 0;
   -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -8781,7 +8781,7 @@ tt {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 1px 0;
   -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -8835,7 +8835,7 @@ tt {
 }
 
 .detail__padChange {
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 1px 0;
   -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -9429,7 +9429,7 @@ tt {
 }
 
 .orderInfo > li + li {
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 1px 0 0;
   -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -9500,7 +9500,7 @@ tt {
 }
 
 .limitList li {
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 0 0 1px;
   -o-border-image: linear-gradient(to right, transparent 5%, #f2d77a 20%, #ffffc5 60%, #f2d77a 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, color-stop(5%, transparent), color-stop(20%, #f2d77a), color-stop(60%, #ffffc5), color-stop(80%, #f2d77a), to(transparent)) 1;
@@ -10367,7 +10367,7 @@ tt {
 }
 
 .detailRoad__info__item .title {
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 0 0 1px;
   -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -10610,7 +10610,7 @@ tt {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 0 0 1px;
   -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -11095,7 +11095,7 @@ tt {
 }
 
 .history__content .info {
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 1px 0;
   -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -11338,7 +11338,7 @@ tt {
 }
 
 .normal_table.--detail caption {
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 0 0 1px;
   -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -11451,7 +11451,7 @@ tt {
 }
 
 .custom__title {
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 0 0 1px;
   -o-border-image: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
@@ -11581,7 +11581,7 @@ tt {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border: 1px solid #000;
+  border-style: solid;
   border-width: 2px;
   -o-border-image: linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(#f2bd79), color-stop(50%, #ffffc5), to(#f2bd79)) 1;
