@@ -19,7 +19,7 @@
     // .channel__item
     &__item {
         @include d_f(flex, center, flex-start);
-        @include radius_hidden();
+        border-radius: 3px;
         position: relative;
         height: 100%;
         border: 1px solid map-get($bg_color, secondary);
@@ -76,6 +76,47 @@
     // 多桌視訊開關按鈕
     .video_switch{
         width: 40px;
+        // switch__icon
+        .switch{
+            &__icon{
+                @include pos_a(trbl, 0);
+                content: '';
+                background: url(../images/video_switch_unable.svg) center no-repeat;
+                background-size: 24px 20px;
+            }
+            // switch__txt
+            &__txt{
+                display: none;
+                @include pos_a(tl, 25px, 0);
+                width: 90px;
+                padding: 2px 0;
+                color: #D6C197;
+                text-shadow: none;
+                @include border(1px, linear-gradient(45deg, #9c6932, #fcf7b7, #9c6932) 5 5);
+                background: rgba(0, 0, 0, .7);
+                text-align: center;
+                z-index: 1;
+            }
+        }
+        @include hoverHandler{
+            .--open{
+                display: block;
+            }
+        }
+        &.--on{
+            cursor: pointer;
+            .switch__icon{
+                background-image: url(../images/video_switch_enable.svg);
+            }
+            @include hoverHandler{
+                .--close{
+                    display: block;
+                }
+                .--open{
+                    display: none;
+                }
+            }
+        }
     }
 }
 

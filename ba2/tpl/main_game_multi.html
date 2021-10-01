@@ -120,8 +120,12 @@
                     </button>
                     <!-- 768以下 輸入inline style display: flex; -->
                     <ul class="channel__item">
+                        <!-- 開啟視訊加上.--on -->
                         <li class="video_switch">
                             <span class="hover_item"></span>
+                            <i class="switch__icon"></i>
+                            <span class="switch__txt --open">開啟視訊</span>
+                            <span class="switch__txt --close">關閉視訊</span>
                         </li>
                         <li class="--on" data-txt="CH1">
                             <span class="hover_item"></span>
@@ -158,8 +162,13 @@
                 <!-- 視訊 -->
                 <div class="video_area">
                     <!-- 視訊iframe -->
-                    <div class="video__item"></div>
+                    <iframe class="video__frame"></iframe>
                     <!-- 視訊iframe end -->
+                    <!-- 暫停視訊 -->
+                    <div class="video__pause" style="display: none;">
+                        <span>視訊暫停傳送</span>
+                    </div>
+                    <!-- 暫停視訊end -->
                     <!-- 視訊上物件 -->
                     <div class="video__function">
                         <!-- 桌次資訊 -->
@@ -196,6 +205,84 @@
                         <!-- 訊號慢 .--slow -->
                         <div class="video__function__speed">150.48 KB/s</div>
                         <!-- 連線訊號燈end -->
+                        <!-- 開牌動畫 -->
+                        <div class="video__function__poker" style="display: none;">
+                            <div class="poker__win_amount">
+                                派彩金額
+                                <span></span>
+                            </div>
+                            <div class="poker__animation">
+                                <div class="animation__road --bkpl_0"></div>
+                            </div>
+                            <div class="poker__card --first">
+                                <div class="poker__back"></div>
+                                <img class="poker__img" src="" alt="">
+                            </div>
+                            <div class="poker__card --second">
+                                <div class="poker__back"></div>
+                                <img class="poker__img" src="" alt="">
+                            </div>
+                            <div class="poker__card --third">
+                                <div class="poker__back"></div>
+                                <img class="poker__img" src="" alt="">
+                            </div>
+                            <div class="poker__card --fourth">
+                                <div class="poker__back"></div>
+                                <img class="poker__img" src="" alt="">
+                            </div>
+                            <div class="poker__card --fifth">
+                                <div class="poker__back"></div>
+                                <img class="poker__img" src="" alt="">
+                            </div>
+                            <div class="poker__card --sixth">
+                                <div class="poker__back"></div>
+                                <img class="poker__img" src="" alt="">
+                            </div>
+                            <div class="poker__result --player">
+                                <span>閒</span>
+                                <i>8</i>
+                            </div>
+                            <div class="poker__result --banker">
+                                <span>莊</span>
+                                <i>8</i>
+                            </div>
+                        </div>
+                        <!-- 開牌動畫end -->
+                        <!-- 彈出視窗 -->
+                        <div class="video__function__pop">
+                            <div class="pop__item --tip" style="display: none;">
+                                <button class="tip__close">
+                                    <i></i>
+                                </button>
+                                <div class="tip__item --title">小費</div>
+                                <div class="tip__item">
+                                    <span>
+                                        桌號:
+                                        <b>MB2001</b>
+                                        桌
+                                    </span>
+                                </div>
+                                <div class="tip__item">
+                                    <span>小費</span>
+                                    <input type="text">
+                                </div>
+                                <div class="tip__item --btn">
+                                    <button>確定</button>
+                                </div>
+                            </div>
+                            <div class="pop__item --flycard" style="display: none;">
+                                <div class="flycard__item --title">是否確定要飛牌?</div>
+                                <div class="flycard__item --btn">
+                                    <button class="flycard__btn --confirm">確定</button>
+                                    <button class="flycard__btn --cancel">取消</button>
+                                </div>
+                            </div>
+                            <div class="pop__item --PR" style="display: none;">
+                                <button class="close_btn"></button>
+                                <span>呼叫公關中...請稍候</span>
+                            </div>
+                        </div>
+                        <!-- 彈出視窗end -->
                     </div>
                     <!-- 視訊上物件 end -->
                     <div class="video__chips" id="chips" style="display: none1;">
@@ -246,7 +333,7 @@
                                 <li class="goodroadList__item">
                                     <span class="hover_item"></span>
                                     <span class="goodroadList__item__tb">2001</span>
-                                    <span class="goodroadList__item__txt">拍拍球<i></i></span>
+                                    <span class="goodroadList__item__txt">拍拍黐<i></i></span>
                                     <span class="goodroadList__item__go">
                                         <i data-txt="立即前往"></i>
                                     </span>
@@ -286,7 +373,9 @@
                                         <i class="item__icon"></i>
                                         <b>MB2001</b>
                                         <i class="item__icon"></i>
-                                        <button class="item__video_btn"></button>
+                                        <button class="item__video_btn">
+                                            <span>觀看視訊</span>
+                                        </button>
                                     </div>
                                     <div class="item__content">
                                         <img src="" alt="">
@@ -315,7 +404,9 @@
                                         <i class="item__icon"></i>
                                         <b>MB2001</b>
                                         <i class="item__icon"></i>
-                                        <button class="item__video_btn"></button>
+                                        <button class="item__video_btn">
+                                            <span>觀看視訊</span>
+                                        </button>
                                     </div>
                                     <div class="item__content">
                                         <img src="" alt="">
@@ -344,7 +435,9 @@
                                         <i class="item__icon"></i>
                                         <b>MB2001</b>
                                         <i class="item__icon"></i>
-                                        <button class="item__video_btn"></button>
+                                        <button class="item__video_btn">
+                                            <span>觀看視訊</span>
+                                        </button>
                                     </div>
                                     <div class="item__content">
                                         <img src="" alt="">
@@ -373,7 +466,9 @@
                                         <i class="item__icon"></i>
                                         <b>MB2001</b>
                                         <i class="item__icon"></i>
-                                        <button class="item__video_btn"></button>
+                                        <button class="item__video_btn">
+                                            <span>觀看視訊</span>
+                                        </button>
                                     </div>
                                     <div class="item__content">
                                         <img src="" alt="">
@@ -396,33 +491,35 @@
                                 </div>
                             </div>
                             <div class="table__item">
-                                    <div class="item__bg"></div>
-                                    <div class="item__main">
-                                        <div class="item__title">
-                                            <i class="item__icon"></i>
-                                            <b>MB2001</b>
-                                            <i class="item__icon"></i>
-                                            <button class="item__video_btn"></button>
-                                        </div>
-                                        <div class="item__content">
-                                            <img src="" alt="">
-                                            <div class="item__mask">
-                                                <div class="mask__selected" style="display: none;">
-                                                    <b>1</b>
-                                                </div>
-                                                <div class="mask__unselected">
-                                                    <button>位置1</button>
-                                                    <button>位置2</button>
-                                                    <button>位置3</button>
-                                                    <button>位置4</button>
-                                                    <button>位置5</button>
-                                                    <button>位置6</button>
-                                                </div>
-                                                <div class="mask__dragon" style="display: none;"></div>
-                                                <div class="mask__lock" style="display: none;"></div>
+                                <div class="item__bg"></div>
+                                <div class="item__main">
+                                    <div class="item__title">
+                                        <i class="item__icon"></i>
+                                        <b>MB2001</b>
+                                        <i class="item__icon"></i>
+                                        <button class="item__video_btn">
+                                            <span>觀看視訊</span>
+                                        </button>
+                                    </div>
+                                    <div class="item__content">
+                                        <img src="" alt="">
+                                        <div class="item__mask">
+                                            <div class="mask__selected" style="display: none;">
+                                                <b>1</b>
                                             </div>
+                                            <div class="mask__unselected">
+                                                <button>位置1</button>
+                                                <button>位置2</button>
+                                                <button>位置3</button>
+                                                <button>位置4</button>
+                                                <button>位置5</button>
+                                                <button>位置6</button>
+                                            </div>
+                                            <div class="mask__dragon" style="display: none;"></div>
+                                            <div class="mask__lock" style="display: none;"></div>
                                         </div>
                                     </div>
+                                </div>
                             </div>
                         </div>
                     </div>
