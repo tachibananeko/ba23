@@ -209,7 +209,7 @@
 									<span></span>
 								</label>
 							</div>
-							<div class="mode_switch" id="bet_mode_switch" data-btn="免傭">
+							<div class="mode_switch" id="betArea_mode_switch" data-btn="免傭">
 								<label class="mode_switch__btn" id="mode_switch_btn">
                                     <input type="checkbox"  name="checkType" id="macheckType" >
                                     <div class="checkbox_bg"></div>
@@ -325,14 +325,15 @@
 
 
 
+                <!-- 選擇桌次&下注資訊 -->
                 <div class="selectTB" style="display: none;">
                     <!-- 點擊好路提示加上.--active -->
                     <div class="selectTB__info">
                         <button class="selectTB__btn --latest">最新投注</button>
                         <button class="selectTB__btn --good_road">好路提示<i class="setting_btn"></i></button>
                         <div class="selectTB__content --latest">
-                            <div class="latest_content" id="bet_ten_history">
-                                <ul class="bet_list" id="bet_list">
+                            <div class="latest_content" id="betArea_ten_history">
+                                <ul class="betArea_list" id="betArea_list">
                                     <li id="noData" class="no_data">尚未成立交易單</li>
                                 </ul>
                                 <div id="cancel_info" class="cancel_info" style="display:none;">
@@ -539,110 +540,106 @@
                         </div>
                     </div>
                 </div>
-                <div class="bet_area">
-                    <div class="bet__box">
-                        <div class="bet__empty">
-                            <div class="empty__box">
-								<div class="empty__title">
-									<b>1</b>
-									BACCARAT
-								</div>
-								<div class="empty__content" data-bp="閒">
-									PLAYER
-								</div>
-								<div class="empty__content" data-bp="莊">
-									BANKER
-								</div>
-							</div>
+                <!-- 選擇桌次&下注資訊 end -->
+                
+
+
+
+
+                <!-- 多桌下注 -->
+                <div class="betArea">
+                    <div class="betArea__box">
+                        <div class="empty">
+                            <div class="empty__title">
+                                <b>1</b>
+                                BACCARAT
+                            </div>
+                            <div class="empty__content" data-txt="閒">
+                                PLAYER
+                            </div>
+                            <div class="empty__content" data-txt="莊">
+                                BANKER
+                            </div>
                         </div>
-                        <iframe class="bet__frame" src="rapid_multi.html"></iframe>
+                        <iframe class="betArea__frame" src="rapid_multi.html"></iframe>
                     </div>
-                    <div class="bet__box">
-                        <div class="bet__empty">
-                            <div class="empty__box">
-								<div class="empty__title">
-									<b>2</b>
-									BACCARAT
-								</div>
-								<div class="empty__content" data-bp="閒">
-									PLAYER
-								</div>
-								<div class="empty__content" data-bp="莊">
-									BANKER
-								</div>
-							</div>
+                    <div class="betArea__box">
+                        <div class="empty">
+                            <div class="empty__title">
+                                <b>2</b>
+                                BACCARAT
+                            </div>
+                            <div class="empty__content" data-txt="閒">
+                                PLAYER
+                            </div>
+                            <div class="empty__content" data-txt="莊">
+                                BANKER
+                            </div>
                         </div>
-                        <iframe class="bet__frame"></iframe>
+                        <iframe class="betArea__frame"></iframe>
                     </div>
-                    <div class="bet__box">
-                        <div class="bet__empty">
-                            <div class="empty__box">
-								<div class="empty__title">
-									<b>3</b>
-									BACCARAT
-								</div>
-								<div class="empty__content" data-bp="閒">
-									PLAYER
-								</div>
-								<div class="empty__content" data-bp="莊">
-									BANKER
-								</div>
-							</div>
+                    <div class="betArea__box">
+                        <div class="empty">
+                            <div class="empty__title">
+                                <b>3</b>
+                                BACCARAT
+                            </div>
+                            <div class="empty__content" data-txt="閒">
+                                PLAYER
+                            </div>
+                            <div class="empty__content" data-txt="莊">
+                                BANKER
+                            </div>
                         </div>
-                        <iframe class="bet__frame"></iframe>
+                        <iframe class="betArea__frame"></iframe>
                     </div>
-                    <div class="bet__box">
-                        <div class="bet__empty">
-                            <div class="empty__box">
-								<div class="empty__title">
-									<b>4</b>
-									BACCARAT
-								</div>
-								<div class="empty__content" data-bp="閒">
-									PLAYER
-								</div>
-								<div class="empty__content" data-bp="莊">
-									BANKER
-								</div>
-							</div>
+                    <div class="betArea__box">
+                        <div class="empty">
+                            <div class="empty__title">
+                                <b>4</b>
+                                BACCARAT
+                            </div>
+                            <div class="empty__content" data-txt="閒">
+                                PLAYER
+                            </div>
+                            <div class="empty__content" data-txt="莊">
+                                BANKER
+                            </div>
                         </div>
-                        <iframe class="bet__frame"></iframe>
+                        <iframe class="betArea__frame"></iframe>
                     </div>
-                    <div class="bet__box">
-                        <div class="bet__empty">
-                            <div class="empty__box">
-								<div class="empty__title">
-									<b>5</b>
-									BACCARAT
-								</div>
-								<div class="empty__content" data-bp="閒">
-									PLAYER
-								</div>
-								<div class="empty__content" data-bp="莊">
-									BANKER
-								</div>
-							</div>
+                    <div class="betArea__box">
+                        <div class="empty">
+                            <div class="empty__title">
+                                <b>5</b>
+                                BACCARAT
+                            </div>
+                            <div class="empty__content" data-txt="閒">
+                                PLAYER
+                            </div>
+                            <div class="empty__content" data-txt="莊">
+                                BANKER
+                            </div>
                         </div>
-                        <iframe class="bet__frame"></iframe>
+                        <iframe class="betArea__frame"></iframe>
                     </div>
-                    <div class="bet__box">
-                        <div class="bet__empty">
-                            <div class="empty__box">
-								<div class="empty__title">
-									<b>6</b>
-									BACCARAT
-								</div>
-								<div class="empty__content" data-bp="閒">
-									PLAYER
-								</div>
-								<div class="empty__content" data-bp="莊">
-									BANKER
-								</div>
-							</div>
+                    <div class="betArea__box">
+                        <div class="empty">
+                            <div class="empty__title">
+                                <b>6</b>
+                                BACCARAT
+                            </div>
+                            <div class="empty__content" data-txt="閒">
+                                PLAYER
+                            </div>
+                            <div class="empty__content" data-txt="莊">
+                                BANKER
+                            </div>
                         </div>
-                        <iframe class="bet__frame"></iframe>
+                        <iframe class="betArea__frame"></iframe>
                     </div>
                 </div>
+                <!-- 多桌下注 end -->
             </div>
             <!-- 主內容 end -->
         </main>
