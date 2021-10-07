@@ -1,424 +1,172 @@
-// 多桌免傭&限額查詢
-.frame__main__multi .video__function{
-    bottom: auto;
-    height: calc(100% - 60px);
-}
-.video{
-    
-    // .video__frame
-    &__frame{
+.--multi .video {
+
+    // .video__frame 視訊iframe
+    &__frame,
+    &__pause,
+    .video__function {
         width: 100%;
         height: calc(100% - 50px);
     }
-    // .video__pause
-    &__pause{
+
+    // .video__pause 視訊暫停傳送
+    &__pause {
+        @include pos_a(trbl, 0);
         @include d_f(flex, center, center);
         background: map-get($bg_color, black);
         color: map-get($txt_color, yellow);
         font-size: 20px;
     }
+
     // .video__function
-    &__function{
-        // .video__function__switch
-        &__switch{
-            @include pos_a(tr, 0);
-            width: 135px;
+    &__function {
+        @include pos_a(trbl, 0, 0, unset, 0);
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: flex-start;
+
+        &::before{
+            @extend %txtshadow;
+            @include border(1px 0, map-get($border_color, primary));
+            content: attr(data-txt);
+            width: 100%;
+            background: map-get($bg_color, table_no);
+            padding: 2px 0;
+            text-align: center;
+        }
+
+        // .video__function__switch 免傭&限額查詢按鈕
+        &__switch {
+            width: 130px;
             height: 80px;
-            background-color: rgba(0, 0, 0, .5);
-            @at-root .mode_switch{
+            background: map-get($bg_color, black_alpha);
+
+            @at-root .mode_switch {
                 position: relative;
                 height: 50%;
-                &:before{
+
+                &:before {
                     content: attr(data-btn);
                     @include pos_a(tbl, 0, 0, 10px);
                     @include fz(x-small);
                     margin: auto;
-                    color: #fcffc5;
                     height: 18px;
                 }
+
                 // .mode_switch__btn
-                &__btn{
+                &__btn {
+                    @extend %hand;
+                    @extend %transition;
                     @include pos_a(trb, 0, 10px, 0);
-                    cursor: pointer;
                     display: block;
-                    width: 48px;
+                    width: 50px;
                     height: 20px;
-                    background: linear-gradient(90deg, rgba(254,248,232,1) 5%, rgba(245,219,122,1) 30%, rgba(189,150,83,1) 70%, rgba(93,55,42,1) 95%);
+                    background: map-get($bg_color, gold);
                     border-radius: 50px;
                     margin: auto 0;
-                    transition: transform 5s;
-                    .checkbox_bg{
+
+                    .checkbox_bg {
                         @include pos_a(trbl, 0);
-                        margin: auto;
-                        width: 94%;
-                        height: 94%;
-                        background: linear-gradient( to bottom, #444, #000);
+                        width: calc(100% - 2px);
+                        height: calc(100% - 2px);
+                        background: map-get($bg_color, primary_vl);
                         border-radius: 50px;
-                    }
-                    input[type="checkbox"]{
-                        display: none;
-                    }
-                    input[type="checkbox"]:checked + .checkbox_bg{
-                        background: linear-gradient( to bottom, #4e2542 0%, #873b72 25%, #291930 100%);
-                    }
-                    span{
-                        @include pos_a(trb, 0, 5px, 0);
-                        display: block;
                         margin: auto;
+                    }
+
+                    input[type="checkbox"]:checked+.checkbox_bg {
+                        background: map-get($bg_color, no_commission);
+                    }
+
+                    span {
+                        @extend %transition;
+                        @include pos_a(tlb, 0, 2px, 0);
+                        display: block;
                         width: 14px;
                         height: 14px;
-                        background: linear-gradient(90deg, #ccc 0%, #4d4d4d 50%, #1a1a1a 100%);
+                        background: map-get($bg_color, gray_gradual);
                         border-radius: 50%;
-                        border: 1px solid #000;
-                        transition: transform .3s;
+                        border: 1px solid map-get($bg_color, darkgray);
+                        margin: auto;
                     }
-                    input[type="checkbox"]:checked ~ span{
-                        transform: translateX(-23px);
-                        background: linear-gradient(90deg, rgba(254,248,232,1) 5%, rgba(245,219,122,1) 30%, rgba(189,150,83,1) 70%, rgba(93,55,42,1) 95%);
+
+                    input[type="checkbox"]:checked~span {
+                        transform: translateX(calc(200% + 3px));
+                        background: map-get($bg_color, gold);
+                        border: 1px solid map-get($bg_color, secondary);
                     }
                 }
             }
         }
+
         // .video__function__poker
-        &__poker{
+        &__poker {
             @include pos_a(bl, 0);
             width: 100%;
-            height: 150px;
-            background-color: rgba(0, 0, 0, .5);
-            .poker{
-                // .poker__win_amount
-                &__win_amount{
-                    @include pos_a(trl, 0);
-                    text-align: center;
-                    color: #ffffc5;
-                    font-size: 25px;
-                    text-shadow: 0 3px 1px #000;
-                }
-                // .poker__animation
-                &__animation{
-                    @include pos_a(rbl, 0, calc(100% + 30px), 0);
-                    margin: auto;
-                    width: 60px;
-                    height: 60px;
-                    .animation__road{
-                        width: 100%;
-                        height: 100%;
-                        background-position: center;
-                        background-size: contain;
-                        background-repeat: no-repeat;
-                        animation: circle-animate 3s both;
-                    }
-                }
-                // .poker__card
-                &__card{
-                    @include pos_a(tl, 74px, -443px);
-                    width: 40px;
-                    height: 60px;
-                    transform-style: preserve-3d;
-                    transition: 1.5s;
-                    &.--first{
-                        animation: cardMove_1 1.5s ease-in-out forwards;
-                    }
-                    &.--second{
-                        animation: cardMove_2 1.5s ease-in-out forwards;
-                    }
-                    &.--third{
-                        animation: cardMove_3 1.5s ease-in-out forwards;
-                    }
-                    &.--fourth{
-                        animation: cardMove_4 1.5s ease-in-out forwards;
-                    }
-                    &.--fifth{
-                        animation: cardMove_5 1.5s ease-in-out forwards;
-                    }
-                    &.--sixth{
-                        animation: cardMove_6 1.5s ease-in-out forwards;
-                    }
-                    @keyframes cardMove_1{
-                        0% { -webkit-transform: scale(0); -moz-transform: scale(0); -ms-transform: scale(0); transform: scale(0);}
-                        50% { top:55px; left:250px; -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); transform: scale(1);}
-                        100% { top:55px; left:250px; -moz-transform: rotateY(180deg); -ms-transform: rotateY(180deg); transform: rotateY(180deg);}
-                    }
-                    @keyframes cardMove_2{
-                        0% { transform: scale(0); -moz-transform: scale(0);}
-                        50% { top:55px; left:310px; transform: scale(1); -moz-transform: scale(1);}
-                        100% { top:55px; left:310px; -webkit-transform: rotateY(180deg); -moz-transform: rotateY(180deg); transform: rotateY(180deg);}
-                    }
-                    @keyframes cardMove_3{
-                        0% { -webkit-transform: scale(0); transform: scale(0);}
-                        50% { top:55px; left:200px; -webkit-transform: scale(1); transform: scale(1);}
-                        100% { top:55px; left:200px; -webkit-transform: rotateY(180deg); -moz-transform: rotateY(180deg); transform: rotateY(180deg);}
-                    }
-                    @keyframes cardMove_4{
-                        0% { -webkit-transform: scale(0); transform: scale(0);}
-                        50% { top:55px; left:360px; -webkit-transform: scale(1); transform: scale(1);}
-                        100% { top:55px; left:360px; -webkit-transform: rotateY(180deg); -moz-transform: rotateY(180deg); transform: rotateY(180deg);}
-                    }
-                    @keyframes cardMove_5{
-                        0% { -webkit-transform: scale(0) rotateZ(-90deg); transform: scale(0) rotateZ(-90deg);}
-                        50% { top:65px; left:140px; -webkit-transform: scale(1) rotateZ(-90deg); transform: scale(1) rotateZ(-90deg);}
-                        100% { top:65px; left:140px; -webkit-transform: rotateX(180deg) rotateZ(-90deg); -moz-transform: rotateX(180deg) rotateZ(-90deg); transform: rotateX(180deg) rotateZ(-90deg);}
-                    }
-                    @keyframes cardMove_6{
-                        0% { -webkit-transform: scale(0) rotateZ(-90deg); transform: scale(0) rotateZ(-90deg);}
-                        50% { top:65px; left:420px; -webkit-transform: scale(1) rotateZ(-90deg); transform: scale(1) rotateZ(-90deg);}
-                        100% { top:65px; left:420px; -webkit-transform: rotateX(180deg) rotateZ(-90deg); -moz-transform: rotateX(180deg) rotateZ(-90deg); transform: rotateX(180deg) rotateZ(-90deg);}
-                    }
-                }
-                // .poker__back
-                &__back{
-                    position: absolute;
-                    width: 40px;
-                    height: 60px;
-                    background: url(../images/cads_back.png) no-repeat 0 0;
-                    background-size: 40px;
-                    backface-visibility: hidden;
-                }
-                // .poker__img
-                &__img{
-                    position: absolute;
-                    width: 40px;
-                    height: 60px;
-                    backface-visibility: hidden;
-                    transform: rotateY(180deg);
-                }
-                // .poker__result
-                &__result{
-                    @include d_f(flex, flex-start, center);
-                    @include pos_a(t, 0);
-                    width: 40px;
-                    height: 120px;
-                    font-size: 30px;
-                    flex-wrap: wrap;
-                    align-content: space-between;
-                    span{
-                        text-shadow: 0 -1px #f2bd79, 0 1px #f2bd79, 0 1px #f2bd79, -1px 0 #f2bd79;
-                    }
-                    i{
-                        @include d_f(flex, center, center);
-                        width: 40px;
-                        height: 60px;
-                        border-radius: 5px;
-                        border: 1px solid #f2bd79;
-                        color: #f3eabd;
-                    }
-                    &.--player{
-                        left: 50px;
-                        color: #0072fa;
-                        i{
-                            background: linear-gradient(to bottom, #0072fa, #0031ab);
-                        }
-                    }
-                    &.--banker{
-                        right: 50px;
-                        color: #f00;
-                        i{
-                            background: linear-gradient(to bottom, #f00, #a50000);
-                        }
-                    }
-                }
-            }
-        }
-        // .video__function__pop
-        &__pop{
-            @include pos_a(trbl, 0);
-            pointer-events: none;
-            @at-root .pop__item{
-                @include pos_a(trbl, 0);
-                @include border(1px, linear-gradient( #9c6932, #fcf7b7, #9c6932) 1);
-                width: 250px;
-                height: 140px;
-                margin: auto;
-                pointer-events: auto;
-                background: rgba(0, 0, 0, .8);
-                &.--tip{
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: flex-start;
-                    align-content: space-around;
-                    padding: 5px;
-                    @at-root .tip__close{
-                        @include pos_a(tr, 5px);
-                        width: 25px;
-                        height: 25px;
-                        background: transparent;
-                        border: 0;
-                        &:before{
-                            content: '';
-                            @include pos_a(trbl, 0);
-                            margin: auto;
-                            background: linear-gradient(#a0662a, #ffffc7, #f4d97a, #b67c24);
-                            border-radius: 50%;
-                            border: 0;
-                        }
-                        &:after{
-                            content: '';
-                            @include pos_a(trbl, 2px);
-                            position: absolute;
-                            top: 2px;
-                            bottom: 2px;
-                            left: 2px;
-                            right: 2px;
-                            margin: auto;
-                            background: #000;
-                            border-radius: 50%;
-                        }
-                        i{
-                            @include pos_a(tl, 0);
-                            width: 100%;
-                            height: 100%;
-                            z-index: 1;
-                            &:before,
-                            &:after{
-                                content: '';
-                                @include pos_a(trbl, 0);
-                                position: absolute;
-                                width: 16px;
-                                height: 2px;
-                                margin: auto;
-                                background: #ffa;
-                                transform: rotate(45deg);
-                            }
-                            &:after{
-                                transform: rotate(135deg);
-                            }
-                        }
-                    }
-                    @at-root .tip__item{
-                        @include d_f(flex, center, flex-start);
-                        position: relative;
-                        width: 100%;
-                        height: 25px;
-                        color: #fff;
-                        padding-left: 20px;
-                        margin-bottom: 10px;
-                        &.--title{
-                            color: #f2e9be;
-                            padding-left: 30px;
-                            &:before{
-                                content: '';
-                                @include pos_a(tl, 0, 5px);
-                                width: 25px;
-                                height: 25px;
-                                background: url(../images/new_tip_pic.svg) center no-repeat;
-                            }
-                        }
-                        &.--btn{
-                            margin-bottom: 0;
-                            justify-content: center;
-                            padding-left: 0;
-                            button{
-                                @include btn_set(100px, 25px, linear-gradient(to top, #103a0c ,#225a14 40%,#498734 55%,#63a44b ,#8ac871));
-                                border: 0;
-                                border-radius: 5px;
-                                font-size: 16px;
-                                color: #fff;
-                            }
-                        }
-                        b{
-                            margin-left: 5px;
-                        }
-                        input{
-                            margin-left: 5px;
-                            height: 20px;
-                            border: 1px solid #3791D0;
-                            background: #fff;
-                        }
-                    }
-                }
-                &.--flycard{
-                    display: flex;
-                    justify-content: center;
-                    align-content: center;
-                    flex-wrap: wrap;
-                    @at-root .flycard{
-                        &__item{
-                            @include d_f(flex, center, center);
-                            width: 100%;
-                            &.--title{
-                                padding: 12px 0;
-                                color: #fff;
-                            }
-                            &.--btn{
-                                height: 30px;
-                            }
-                        }
-                        &__btn{
-                            @include border(1px 0, linear-gradient( to right, rgba(156, 105, 50, 0), #9c6932, #fcf7b7, #9c6932, rgba(156, 105, 50, 0)) 5 5);
-                            width: 65px;
-                            height: 100%;
-                            color: #f2ebbd;
-                            border-radius: 5px;
-                            &.--confirm{
-                                margin-right: 30px;
-                                background: linear-gradient(to top, #103a0c, #225a14 40%, #498734 55%, #63a44b, #8ac871);
-                            }
-                            &.--cancel{
-                                background: linear-gradient(to top, #000, #222 40%, #333 55%, #666, #999);
-                            }
-                        }
-                    }
-                }
-                &.--PR{
-                    @include d_f(flex, center, center);
-                    height: 80px;
-                    font-size: 20px;
-                    color: #ffa;
-                    border: 0;
-                    border-radius: 5px;
-                    .close_btn{
-                        @include pos_a(tr, 5px);
-                        width: 15px;
-                        height: 15px;
-                    }
-                }
+            height: 200px;
+            background: map-get($bg_color, black_alpha);
+
+            &::before{
+                @include pos_a(trl, 10px, 0, 0);
+                @include fz(medium);
+                content: attr(data-txt);
+                width: 100%;
+                color: map-get($txt_color, win);
+                text-align: center;
             }
         }
     }
-    // .video__chips
-    &__chips{
-        @include d_f(flex, center, flex-start);
-        width: 100%;
+
+    // 籌碼
+    .order__chips {
         height: 50px;
-        background: map-get($map: , $key: );
-        
-        [class*="chips"]{
-            @include d_f(flex, center, flex-start);
-            width: 45px;
-            height: 100%;
-            margin-left: 10px;
+        justify-content: center;
+
+        li {
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            
+            &.--on {
+                width: 55px;
+                height: 55px;
+            }
+
+            // 手指效果
+            @include hoverHandler {
+                width: 55px;
+                height: 55px;
+            }
         }
     }
 }
-.--multi{
-    .goodroadList__item{
-        &__tb{
-            @include mw_lg{
+.--multi {
+    .goodroadList__item {
+        &__tb {
+            @include mw_lg {
                 flex: 0 0 45px;
                 @include fz(small);
             }
         }
-        &__go{
-            @include mw_lg{
+
+        &__go {
+            @include mw_lg {
                 flex: 0 0 50px;
                 height: auto;
             }
         }
     }
 }
-.select{
-    // .select_area
-    &_area{
-        display: flex;
-    }
-    // .select__info
+.selectTB{
+    display: flex;
+
+    // .selectTB__info
     &__info{
         display: flex;
         flex-wrap: wrap;
         width: 200px;
         height: 100%;
     }
-    // .select__btn
+    // .selectTB__btn
     &__btn{
         width: 50%;
         height: 40px;
@@ -441,7 +189,7 @@
             background-image: url(../images/icon_setting_dark.svg);
         }
     }
-    // .select__content
+    // .selectTB__content
     &__content{
         position: relative;
         width: 100%;
@@ -477,8 +225,8 @@
         }
     }
     @at-root .--active{
-        .select{
-            // .select__btn
+        .selectTB{
+            // .selectTB__btn
             &__btn{
                 &.--latest{
                     color: map-get($txt_color, secondary02);
@@ -489,7 +237,7 @@
                     background: linear-gradient(to bottom, #ffffc5 0%, #f2d77a 20%, #3e3123 100%);
                 }
             }
-            // .select__content
+            // .selectTB__content
             &__content{
                 &.--latest{
                     display: none;
@@ -500,7 +248,7 @@
             }
         }
     }
-    // .select__table
+    // .selectTB__table
     &__table{
         width: calc(100% - 200px);
         .table{

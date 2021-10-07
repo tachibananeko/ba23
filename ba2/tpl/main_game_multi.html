@@ -186,7 +186,7 @@
                     <!-- 暫停視訊end -->
 
                     <!-- 視訊上物件 -->
-                    <div class="video__function">
+                    <div class="video__function" data-txt="MW2001">
 
                         <!-- 桌次資訊 -->
                         <div class="video__function__info">
@@ -218,121 +218,119 @@
 							</div>
                         </div>
                         <!-- 免傭&限額查詢按鈕 end -->
+
+
+
                         <!-- 連線訊號燈 -->
                         <!-- 訊號慢 .--slow -->
                         <div class="video__function__speed">150.48 KB/s</div>
                         <!-- 連線訊號燈end -->
+
+
+                        
                         <!-- 開牌動畫 -->
-                        <div class="video__function__poker" style="display: none;">
-                            <div class="poker__win_amount">
-                                派彩金額
-                                <span></span>
-                            </div>
-                            <div class="poker__animation">
-                                <div class="animation__road --bkpl_0"></div>
-                            </div>
-                            <div class="poker__card --first">
-                                <div class="poker__back"></div>
-                                <img class="poker__img" src="" alt="">
-                            </div>
-                            <div class="poker__card --second">
-                                <div class="poker__back"></div>
-                                <img class="poker__img" src="" alt="">
-                            </div>
-                            <div class="poker__card --third">
-                                <div class="poker__back"></div>
-                                <img class="poker__img" src="" alt="">
-                            </div>
-                            <div class="poker__card --fourth">
-                                <div class="poker__back"></div>
-                                <img class="poker__img" src="" alt="">
-                            </div>
-                            <div class="poker__card --fifth">
-                                <div class="poker__back"></div>
-                                <img class="poker__img" src="" alt="">
-                            </div>
-                            <div class="poker__card --sixth">
-                                <div class="poker__back"></div>
-                                <img class="poker__img" src="" alt="">
-                            </div>
-                            <div class="poker__result --player">
-                                <span>閒</span>
-                                <i>8</i>
-                            </div>
-                            <div class="poker__result --banker">
-                                <span>莊</span>
-                                <i>8</i>
+                        <div class="video__function__poker" data-txt="派彩金額 10000" style="display: none;">
+                            <div class="result__box">
+                                <!-- 閒 -->
+                                <div class="result__box__item --player">
+                                    <div class="txt" data-txt="閒">
+                                        8
+                                    </div>
+                                    <!-- 牌 -->
+                                    <ul class="poker">
+                                        <li id="pei_1">
+                                            <img class="poker_1st" id="poker_1" src="../images/porker_front.png">
+                                            <span class="poker_back"></span>
+                                        </li>
+                                        <li id="pei_2">
+                                            <img class="poker_2nd" id="poker_2" src="../images/porker_front.png">
+                                            <span class="poker_back"></span>
+                                        </li>
+                                        <li id="pei_3">
+                                            <img class="poker_3rd" id="poker_3" src="../images/porker_front.png">
+                                            <span class="poker_back"></span>
+                                        </li>
+                                    </ul>
+                                    <!-- 牌 end -->
+                                </div>
+                                <!-- 閒 end -->
+                            
+                            
+                            
+                            
+                            
+                                <!-- 莊贏.--banker 閒贏.--player -->
+                                <div class="result__box__img --banker">
+                                    <div class="shining">
+                                        <div class="shining__item sun1"></div>
+                                        <div class="shining__item sun2"></div>
+                                        <div class="shining__item sun3"></div>
+                                        <div class="shining__item sun4"></div>
+                                        <div class="shining__item sun5"></div>
+                                        <div class="shining__item sun6"></div>
+                                    </div>
+                                </div>
+                            
+                            
+                            
+                            
+                            
+                                <!-- 莊 -->
+                                <div class="result__box__item --banker">
+                                    <!-- 牌 -->
+                                    <ul class="poker">
+                                        <li id="pei_1">
+                                            <img class="poker_1st" id="poker_1" src="../images/porker_front.png">
+                                            <span class="poker_back"></span>
+                                        </li>
+                                        <li id="pei_2">
+                                            <img class="poker_2nd" id="poker_2" src="../images/porker_front.png">
+                                            <span class="poker_back"></span>
+                                        </li>
+                                        <li id="pei_3">
+                                            <img class="poker_3rd" id="poker_3" src="../images/porker_front.png">
+                                            <span class="poker_back"></span>
+                                        </li>
+                                    </ul>
+                                    <!-- 牌 end -->
+                            
+                            
+                            
+                                    <div class="txt" data-txt="莊">
+                                        10
+                                    </div>
+                                </div>
+                                <!-- 莊 end -->
                             </div>
                         </div>
                         <!-- 開牌動畫end -->
-                        <!-- 彈出視窗 -->
-                        <div class="video__function__pop">
-                            <div class="pop__item --tip" style="display: none;">
-                                <button class="tip__close">
-                                    <i></i>
-                                </button>
-                                <div class="tip__item --title">小費</div>
-                                <div class="tip__item">
-                                    <span>
-                                        桌號:
-                                        <b>MB2001</b>
-                                        桌
-                                    </span>
-                                </div>
-                                <div class="tip__item">
-                                    <span>小費</span>
-                                    <input type="text">
-                                </div>
-                                <div class="tip__item --btn">
-                                    <button>確定</button>
-                                </div>
-                            </div>
-                            <div class="pop__item --flycard" style="display: none;">
-                                <div class="flycard__item --title">是否確定要飛牌?</div>
-                                <div class="flycard__item --btn">
-                                    <button class="flycard__btn --confirm">確定</button>
-                                    <button class="flycard__btn --cancel">取消</button>
-                                </div>
-                            </div>
-                            <div class="pop__item --PR" style="display: none;">
-                                <button class="close_btn"></button>
-                                <span>呼叫公關中...請稍候</span>
-                            </div>
-                        </div>
-                        <!-- 彈出視窗end -->
                     </div>
                     <!-- 視訊上物件 end -->
-                    <div class="video__chips" id="chips" style="display: none1;">
-                        <div name="chip" class="chips_10" id="chip_10" data-value="10"><i></i></div>
-                        <div name="chip" class="chips_50" id="chip_50" data-value="50"><i></i></div>
-                        <div name="chip" class="chips_100" id="chip_100" data-value="100"><i></i></div>
-                        <div name="chip" class="chips_500" id="chip_500" data-value="500"><i></i></div>
-                        <div name="chip" class="chips_1k" id="chip_1000" data-value="1000"><i></i></div>
-                        <div name="chip" class="chips_5k" id="chip_5000" data-value="5000"><i></i></div>
-                        <div name="chip" class="chips_10k" id="chip_10000" data-value="10000"><i></i></div>
-                        <div name="chip" class="chips_50k" id="chip_50000" data-value="50000"><i></i></div>
-                        <div name="chip" class="chips_100k" id="chip_100000" data-value="100000"><i></i></div>
-                        <div name="chip" class="chips_500k" id="chip_500000" data-value="500000"><i></i></div>
-                        <div name="chip" class="chips_1m" id="chip_1000000" data-value="1000000"><i></i></div>
-                        <div name="chip" class="chips_5m" id="chip_5000000" data-value="5000000"><i></i></div>
-                    </div>
-                    <div class="video__chips --KR" id="chipskr" style="display: none;">
-                        <div name="chipkr" class="chips_1k" id="chipkr_1000" data-value="1000"><i></i></div>
-                        <div name="chipkr" class="chips_5k"  id="chipkr_5000" data-value="5000"><i></i></div>
-                        <div name="chipkr" class="chips_10k"  id="chipkr_10000" data-value="10000"><i></i></div>
-                        <div name="chipkr" class="chips_50k" id="chipkr_50000" data-value="50000"><i></i></div>
-                        <div name="chipkr" class="chips_100k"  id="chipkr_100000" data-value="100000"><i></i></div>
-                        <div name="chipkr" class="chips_500k" id="chipkr_500000" data-value="500000"><i></i></div>
-                        <div name="chipkr" class="chips_1m" id="chipkr_1000000" data-value="1000000"><i></i></div>
-                    </div>
+
+                    <!-- 籌碼 -->
+                    <!-- 當前籌碼 .--on -->
+                    <ul class="order__chips">
+                        <li class="chips_10"></li>
+                        <li class="chips_20"></li>
+                        <li class="chips_50"></li>
+                        <li class="chips_50k"></li>
+                        <li class="chips_100k"></li>
+                        <li class="chips_set"></li>
+                    </ul>
+                    <!-- 籌碼 end -->
                 </div>
                 <!-- 視訊 end -->
-                <div class="select_area">
+                
+
+
+
+
+                <div class="selectTB" style="display: none;">
                     <!-- 點擊好路提示加上.--active -->
-                    <div class="select__info">
-                        <button class="select__btn --latest">最新投注</button>
-                        <button class="select__btn --good_road">好路提示<i class="setting_btn"></i></button>
-                        <div class="select__content --latest">
+                    <div class="selectTB__info">
+                        <button class="selectTB__btn --latest">最新投注</button>
+                        <button class="selectTB__btn --good_road">好路提示<i class="setting_btn"></i></button>
+                        <div class="selectTB__content --latest">
                             <div class="latest_content" id="bet_ten_history">
                                 <ul class="bet_list" id="bet_list">
                                     <li id="noData" class="no_data">尚未成立交易單</li>
@@ -345,7 +343,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="select__content --good_road">
+                        <div class="selectTB__content --good_road">
                             <ul class="goodroadList">
                                 <li class="goodroadList__item">
                                     <span class="hover_item"></span>
@@ -374,7 +372,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="select__table">
+                    <div class="selectTB__table">
                         <div class="table__title">
                             選擇桌次
                             <button class="clear_btn" data-txt="清除選取">
