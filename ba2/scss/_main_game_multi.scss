@@ -4,26 +4,22 @@
     height: calc(100% - 60px);
 }
 .video{
-    // video_area
-    &_area{
-        position: relative;
-    }
-    // video__frame
-    &__frame,
-    &__pause{
-        @include pos_a(tl, 30px, 0);
+    
+    // .video__frame
+    &__frame{
         width: 100%;
-        height: calc(100% - 90px);
+        height: calc(100% - 50px);
     }
-    // video__pause
+    // .video__pause
     &__pause{
         @include d_f(flex, center, center);
-        color: #ababab;
-        background: linear-gradient(#000 0%, #333 50%, #000 100%);
+        background: map-get($bg_color, black);
+        color: map-get($txt_color, yellow);
+        font-size: 20px;
     }
-    // video__function
+    // .video__function
     &__function{
-        // video__function__switch
+        // .video__function__switch
         &__switch{
             @include pos_a(tr, 0);
             width: 135px;
@@ -40,7 +36,7 @@
                     color: #fcffc5;
                     height: 18px;
                 }
-                // mode_switch__btn
+                // .mode_switch__btn
                 &__btn{
                     @include pos_a(trb, 0, 10px, 0);
                     cursor: pointer;
@@ -83,14 +79,14 @@
                 }
             }
         }
-        // video__function__poker
+        // .video__function__poker
         &__poker{
             @include pos_a(bl, 0);
             width: 100%;
             height: 150px;
             background-color: rgba(0, 0, 0, .5);
             .poker{
-                // poker__win_amount
+                // .poker__win_amount
                 &__win_amount{
                     @include pos_a(trl, 0);
                     text-align: center;
@@ -98,7 +94,7 @@
                     font-size: 25px;
                     text-shadow: 0 3px 1px #000;
                 }
-                // poker__animation
+                // .poker__animation
                 &__animation{
                     @include pos_a(rbl, 0, calc(100% + 30px), 0);
                     margin: auto;
@@ -113,7 +109,7 @@
                         animation: circle-animate 3s both;
                     }
                 }
-                // poker__card
+                // .poker__card
                 &__card{
                     @include pos_a(tl, 74px, -443px);
                     width: 40px;
@@ -169,7 +165,7 @@
                         100% { top:65px; left:420px; -webkit-transform: rotateX(180deg) rotateZ(-90deg); -moz-transform: rotateX(180deg) rotateZ(-90deg); transform: rotateX(180deg) rotateZ(-90deg);}
                     }
                 }
-                // poker__back
+                // .poker__back
                 &__back{
                     position: absolute;
                     width: 40px;
@@ -178,7 +174,7 @@
                     background-size: 40px;
                     backface-visibility: hidden;
                 }
-                // poker__img
+                // .poker__img
                 &__img{
                     position: absolute;
                     width: 40px;
@@ -186,7 +182,7 @@
                     backface-visibility: hidden;
                     transform: rotateY(180deg);
                 }
-                // poker__result
+                // .poker__result
                 &__result{
                     @include d_f(flex, flex-start, center);
                     @include pos_a(t, 0);
@@ -223,7 +219,7 @@
                 }
             }
         }
-        // video__function__pop
+        // .video__function__pop
         &__pop{
             @include pos_a(trbl, 0);
             pointer-events: none;
@@ -379,13 +375,13 @@
             }
         }
     }
-    // video__chips
+    // .video__chips
     &__chips{
-        @include pos_a(bl, 0);
         @include d_f(flex, center, flex-start);
-        height: 60px;
         width: 100%;
-        background: linear-gradient(to bottom, #3e3123, #140a0c);
+        height: 50px;
+        background: map-get($map: , $key: );
+        
         [class*="chips"]{
             @include d_f(flex, center, flex-start);
             width: 45px;
@@ -394,7 +390,7 @@
         }
     }
 }
-.multi{
+.--multi{
     .goodroadList__item{
         &__tb{
             @include mw_lg{
@@ -411,18 +407,18 @@
     }
 }
 .select{
-    // select_area
+    // .select_area
     &_area{
         display: flex;
     }
-    // select__info
+    // .select__info
     &__info{
         display: flex;
         flex-wrap: wrap;
         width: 200px;
         height: 100%;
     }
-    // select__btn
+    // .select__btn
     &__btn{
         width: 50%;
         height: 40px;
@@ -445,7 +441,7 @@
             background-image: url(../images/icon_setting_dark.svg);
         }
     }
-    // select__content
+    // .select__content
     &__content{
         position: relative;
         width: 100%;
@@ -482,7 +478,7 @@
     }
     @at-root .--active{
         .select{
-            // select__btn
+            // .select__btn
             &__btn{
                 &.--latest{
                     color: map-get($txt_color, secondary02);
@@ -493,7 +489,7 @@
                     background: linear-gradient(to bottom, #ffffc5 0%, #f2d77a 20%, #3e3123 100%);
                 }
             }
-            // select__content
+            // .select__content
             &__content{
                 &.--latest{
                     display: none;
@@ -504,11 +500,11 @@
             }
         }
     }
-    // select__table
+    // .select__table
     &__table{
         width: calc(100% - 200px);
         .table{
-            // table__title
+            // .table__title
             &__title{
                 @include d_f(flex, center, center);
                 height: 40px;
@@ -544,7 +540,7 @@
                     @include btn_hoverHandler(1px, map-get($txt_color, primary));
                 }
             }
-            // table__content
+            // .table__content
             &__content{
                 @include d_f(flex, flex-start, flex-start);
                 @include scrollbar(hidden, auto);
@@ -557,7 +553,7 @@
                 position: relative;
                 border-radius: 0 0 5px 5px;
             }
-            // table__item
+            // .table__item
             &__item{
                 width: calc(100% / 2 - 8px);
                 height: 140px;
@@ -571,7 +567,7 @@
                     }
                 }
                 @at-root .item{
-                    // item__bg
+                    // .item__bg
                     &__bg{
                         @include pos_a(trbl, -2px);
                         background: #b0b0b0;
@@ -580,7 +576,7 @@
                             background: linear-gradient(to bottom, #f2bd79 0%, #563d29 100%);
                         }
                     }
-                    // item__main
+                    // .item__main
                     &__main{
                         position: relative;
                         display: flex;
@@ -591,7 +587,7 @@
                         overflow: hidden;
                         -webkit-user-select: none;
                     }
-                    // item__title
+                    // .item__title
                     &__title{
                         @include d_f(flex, center, center);
                         width: 100%;
@@ -611,7 +607,7 @@
                             margin: auto;
                         }
                     }
-                    // item__icon
+                    // .item__icon
                     &__icon{
                         @include pos_a(t, 0);
                         &:first-child{
@@ -643,13 +639,13 @@
                             background-image: url(../images/icon_exclusive.svg);
                         }
                     }
-                    // item__video_btn
+                    // .item__video_btn
                     &__video_btn{
                         @include pos_a(tr, 0);
                         width: 25px;
                         height: 100%;
                         border: 0;
-                        background: url(../images/video_btn_enable.svg) no-repeat;
+                        background: url(../images/icon_video_enable.svg) no-repeat;
                         background-position: center;
                         background-size: 18px 12px;
                         span{
@@ -668,7 +664,7 @@
                             }
                         }
                     }
-                    // item__content
+                    // .item__content
                     &__content{
                         position: relative;
                         width: 100%;
@@ -680,11 +676,11 @@
                             height: 100%;
                         }
                     }
-                    // item__mask
+                    // .item__mask
                     &__mask{
                         @include pos_a(trbl, 0);
                         @at-root .mask{
-                            // mask__selected
+                            // .mask__selected
                             &__selected{
                                 @include d_f(flex, center, center);
                                 width: 100%;
@@ -701,7 +697,7 @@
                                     border-radius: 50%;
                                 }
                             }
-                            // mask__unselected
+                            // .mask__unselected
                             &__unselected{
                                 @include d_f (flex, center, space-between);
                                 flex-wrap: wrap;
@@ -726,14 +722,14 @@
                                     }
                                 }
                             }
-                            // mask__dragon
+                            // .mask__dragon
                             &__dragon{
                                 width: 100%;
                                 height: 100%;
                                 opacity: .5;
                                 background: url(../images/dragon_ani.gif) center/cover no-repeat;
                             }
-                            // mask__lock
+                            // .mask__lock
                             &__lock{
                                 width: 100%;
                                 height: 100%;
@@ -747,7 +743,7 @@
     }
 }
 .bet{
-    // bet_area
+    // .bet_area
     &_area{
         @include d_f(flex, space-between, space-around);
         @include scrollbar(hidden, auto);
@@ -763,17 +759,17 @@
         background: map-get($bg_color, black);
         border-radius: 5px;
     }
-    // bet__box
+    // .bet__box
     &__box{
         display: flex;
         width: 65%;
         min-width: 320px;
     }
-    // bet__empty
+    // .bet__empty
     &__empty{
         width: 100%;
         .empty{
-            // empty__box
+            // .empty__box
             &__box{
                 width: calc(100% - 20px);
                 height: 180px;
@@ -797,7 +793,7 @@
                     background-color: #515151;
                 }
             }
-            // empty__title
+            // .empty__title
             &__title{
                 position: relative;
                 width: 100%;
@@ -819,7 +815,7 @@
                     font-size: 32px;
                 }
             }
-            // empty__content
+            // .empty__content
             &__content{
                 width: 50%;
                 height: 85px;
@@ -836,7 +832,7 @@
             }
         }
     }
-    // bet__frame
+    // .bet__frame
     &__frame{
         @include pos_a(tl, 0);
         width: 100%;
@@ -844,7 +840,7 @@
     }
 }
 .rapid{
-    // rapid_multi
+    // .rapid_multi
     &_multi{
         padding: 1px;
         width: 100%;
@@ -854,7 +850,7 @@
         background: linear-gradient(90deg, #B67C24 0%, #F4D97A 20%, #F4D97A 80%, #B67C24 100%);
         border-radius: 5px;
     }
-    // rapid__title
+    // .rapid__title
     &__title{
         @include border(0 0 1px 0, linear-gradient(to right, #bd904c 0%, #e5d9af 60%, #bd904c 100%) 1);
         width: 100%;
@@ -863,7 +859,7 @@
         background: linear-gradient(180deg, #42210B 0%, #14100B 50%, #000 100%);
         display: flex;
         @at-root .bet{
-            // bet__number
+            // .bet__number
             &__number{
                 @include d_f(flex, center, flex-start);
                 width: 90px;
@@ -900,7 +896,7 @@
                     text-shadow: 0 -1px 1px #F2BD79, 1px 0 1px #F2BD79, 0 1px 1px #F2BD79, -1px 0 1px #F2BD79;
                 }
             }
-            // bet__amount
+            // .bet__amount
             &__amount{
                 @include d_f(flex, center, flex-start);
                 width: 150px;
@@ -923,13 +919,13 @@
                     box-shadow: 1px 0 1px #2e2119, -1px 0 1px #2e2119;
                 }
             }
-            // bet__status
+            // .bet__status
             &__status{
                 @include d_f(flex, center, flex-end);
                 position: relative;
                 width: calc(100% - 230px);
                 .status{
-                    // status__video
+                    // .status__video
                     &__video{
                         @include pos_a(tl, 0);
                         width: 24px;
@@ -961,7 +957,7 @@
                             z-index: 2;
                         }
                     }
-                    // status__txt
+                    // .status__txt
                     &__txt{
                         color: map-get($txt_color, secondary02);
                         font-weight: bold;
@@ -981,7 +977,7 @@
             }
         }
     }
-    // rapid__content
+    // .rapid__content
     &__content{
         width: 100%;
         height: calc(100% - 25px);
@@ -990,14 +986,14 @@
         display: flex;
         background: linear-gradient(225deg, #313131, #000);
     }
-    // rapid__bet
+    // .rapid__bet
     &__bet{
         width: 250px;
         height: 100%;
         backface-visibility: hidden;
         position: relative;
         @at-root .bet{
-            // bet__table
+            // .bet__table
             &__table{
                 position: relative;
                 width: 100%;
@@ -1006,7 +1002,7 @@
                 flex-wrap: wrap;
                 background-color: #234d4c;
             }
-            // bet__area
+            // .bet__area
             &__area{
                 height: 60px;
                 border: 1px solid #1b090f;
@@ -1030,7 +1026,7 @@
                     box-shadow: 0 0 10px #fff;
                 }
             }
-            // bet__txt
+            // .bet__txt
             &__txt{
                 width: 100%;
                 display: block;
@@ -1061,7 +1057,7 @@
                     color: #009245;
                 }
             }
-            // bet__flicker
+            // .bet__flicker
             &__flicker{
                 @include pos_a(tl, 0);
                 width: 100%;
@@ -1082,7 +1078,7 @@
                     }
                 }
             }
-            // bet__message
+            // .bet__message
             &__message{
                 @include pos_a(trbl, 0);
                 @include d_f(flex, center, center);
@@ -1091,7 +1087,7 @@
                 text-shadow: 3px 3px 3px #000;
                 background: rgba(28,65,68,0.7);
             }
-            // bet__result
+            // .bet__result
             &__result{
                 width: 100%;
                 height: 20px;
@@ -1099,13 +1095,13 @@
                 background: linear-gradient(180deg, #42210B 0%, #14100B 50%, #000 100%);
                 @include d_f(flex, center, flex-start);
                 .result{
-                    // result__stat
+                    // .result__stat
                     &__stat{
                         @include d_f(flex, center, center);
                         width: 20%;
                         height: 100%;
                     }
-                    // result__icon
+                    // .result__icon
                     &__icon{
                         position: relative;
                         width: 10px;
@@ -1133,7 +1129,7 @@
                             }
                         }
                     }
-                    // result__txt
+                    // .result__txt
                     &__txt{
                         padding-left: 5px;
                         font-size: 14px;
@@ -1141,20 +1137,20 @@
                     }
                 }
             }
-            // bet__road
+            // .bet__road
             &__road{
                 width: 250px;
                 height: 50px;
                 background-color: #FFF;
                 border-radius: 0 0 0 5px;
             }
-            // bet__mask
+            // .bet__mask
             &__mask{
                 @include pos_a(trbl, 0);
                 @include d_f(flex, center, center);
                 background: rgba(0, 0, 0, .6);
                 .mask{
-                    // mask__win
+                    // .mask__win
                     &__win{
                         @include pos_a(t, 20px);
                         @include d_f(flex, center, center);
@@ -1162,7 +1158,7 @@
                         padding: 0 20px;
                         background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
                     }
-                    // mask__animation
+                    // .mask__animation
                     &__animation{
                         width: 45px;
                         height: 45px;
@@ -1229,7 +1225,7 @@
                         @at-root .TW .--bkpl_11,
                         .CN .--bkpl_11 { background-image: url(../images/bkpl_11.svg);}
                     }
-                    // mask__result
+                    // .mask__result
                     &__result{
                         @include d_f(flex, flex-start, center);
                         @include pos_a(t, calc(50% - 50px));
@@ -1268,7 +1264,7 @@
             }
         }
     }
-    // rapid__aside
+    // .rapid__aside
     &__aside{
         @include d_f(flex, center, space-between);
         width: calc(100% - 250px);
@@ -1276,7 +1272,7 @@
         flex-direction: column;
         font-size: 12px;
         @at-root .aside{
-            // aside__info
+            // .aside__info
             &__info{
                 @include d_f(flex, center, space-between);
                 position: relative;
@@ -1321,7 +1317,7 @@
                 text-shadow: 0 2px 2px #000;
                 overflow: hidden;
             }
-            // aside__bet
+            // .aside__bet
             &__bet{
                 width: 100%;
                 height: 100px;
@@ -1367,7 +1363,7 @@
                     @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
                 }
             }
-            // aside__road
+            // .aside__road
             &__road{
                 width: 100%;
                 height: 50px;
@@ -1405,7 +1401,7 @@
             }
         }
     }
-    // rapid__loading
+    // .rapid__loading
     &__loading{
         @include pos_a(trbl, 1px);
         margin: auto;

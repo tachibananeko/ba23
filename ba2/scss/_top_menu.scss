@@ -74,29 +74,24 @@
     }
 
     // 多桌視訊開關按鈕
-    .video_switch{
+    .videoSwitch{
         width: 40px;
-        // switch__icon
-        .switch{
-            &__icon{
-                @include pos_a(trbl, 0);
-                content: '';
-                background: url(../images/video_switch_unable.svg) center no-repeat;
-                background-size: 24px 20px;
-            }
-            // switch__txt
-            &__txt{
-                display: none;
-                @include pos_a(tl, 25px, 0);
-                width: 90px;
-                padding: 2px 0;
-                color: #D6C197;
-                text-shadow: none;
-                @include border(1px, linear-gradient(45deg, #9c6932, #fcf7b7, #9c6932) 5 5);
-                background: rgba(0, 0, 0, .7);
-                text-align: center;
-                z-index: 1;
-            }
+        // .videoSwitch__icon
+        &__icon{
+            @include pos_a(trbl, 0);
+            content: '';
+            background: url(../images/icon_video_unable.svg) center no-repeat;
+            background-size: 24px 20px;
+        }
+        // .videoSwitch__txt
+        &__txt{
+            @include pos_a(tl, 30px, 0);
+            @include border(1px, map-get($border_color, primary));
+            padding: 2px 5px;
+            background: map-get($bg_color, black_alpha);
+            white-space: nowrap;
+            display: none;
+            z-index: 1;
         }
         @include hoverHandler{
             .--open{
@@ -105,8 +100,8 @@
         }
         &.--on{
             cursor: pointer;
-            .switch__icon{
-                background-image: url(../images/video_switch_enable.svg);
+            .videoSwitch__icon {
+                background-image: url(../images/icon_video_enable.svg);
             }
             @include hoverHandler{
                 .--close{
@@ -117,30 +112,6 @@
                 }
             }
         }
-    }
-}
-
-// 好路追注
-.GR_btn{
-    @include btn_set(100px, 40px, map-get($btn_color, lightgreen));
-    @include border(1px 0, map-get($border_color, primary));
-    border-radius: 5px;
-    margin-left: auto;
-    &::before{
-        @include btn_hoverlight02;
-    }
-    &::after{
-        @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
-    }
-    // 手指效果
-    @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
-    .hover_item{
-        @include btn_hoveritem(map-get($btn_color, green));
-            box-shadow: 0 0 1px map-get($bg_color, secondary) inset,
-            0 0 3px map-get($bg_color, secondary) inset;
-            &::before {
-                @include btn_hoverlight02;
-            }
     }
 }
 
@@ -358,7 +329,6 @@
 
 // 多桌+好路按鈕.otherpage
 .otherpage{
-    width: 200px;
     height: 25px;
     flex: none;
     background: map-get($bg_color, primary_vl);
@@ -375,7 +345,7 @@
 
     // .otherpage__btn
     &__btn{
-        @include btn_set(calc(100% / 2), 100%, map-get($btn_color, lightgreen));
+        @include btn_set(100px, 100%, map-get($btn_color, lightgreen));
         @include border(1px 0, map-get($border_color, primary));
 
         @include mw_sm{

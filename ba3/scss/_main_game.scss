@@ -108,7 +108,7 @@
 
 
         // 選擇卡片呼叫公關
-        .PR_btn{
+        .pr_btn{
             @include btn_set(auto, 30px, map-get($btn_color, green));
             @include pos_a(bl, calc(100% + 10px), 380px);
             @include radius_hidden();

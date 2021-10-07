@@ -107,12 +107,13 @@
 
 
         <!-- iframe放置區 -->
-        <main class="frame__main multi">
+        <main class="frame__main --multi">
             <!-- 上方menu -->
             <nav class="frame__main__nav">
                 <!-- 返回按鈕 -->
                 <button class="back_btn" id="back_btn"></button>
                 <!-- 返回按鈕 end -->
+
                 <!-- 視訊頻道 -->
                 <div class="channel">
                     <button class="channel__1st --on" data-txt="CHT">
@@ -121,11 +122,11 @@
                     <!-- 768以下 輸入inline style display: flex; -->
                     <ul class="channel__item">
                         <!-- 開啟視訊加上.--on -->
-                        <li class="video_switch">
+                        <li class="videoSwitch">
                             <span class="hover_item"></span>
-                            <i class="switch__icon"></i>
-                            <span class="switch__txt --open">開啟視訊</span>
-                            <span class="switch__txt --close">關閉視訊</span>
+                            <i class="videoSwitch__icon"></i>
+                            <span class="videoSwitch__txt --open">開啟視訊</span>
+                            <span class="videoSwitch__txt --close">關閉視訊</span>
                         </li>
                         <li class="--on" data-txt="CH1">
                             <span class="hover_item"></span>
@@ -139,11 +140,24 @@
                     </ul>
                 </div>
                 <!-- 視訊頻道end -->
+
+                <!-- 跑馬燈 -->
+                <div class="lobby__marquee">
+                    <span style="animation: marquee_move 25s linear infinite;">Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Et consequuntur velit impedit. Animi officiis, sint eius
+                        dignissimos quis non fugiat dicta deleniti iste aut sapiente consequatur facere. Iure,
+                        omnis corrupti?</span>
+                </div>
+                <!-- 跑馬燈 end -->
+                
                 <!-- 好路追注 -->
-                <button class="GR_btn" data-txt="好路追注">
-                    <span class="hover_item"></span>
-                </button>
+                <div class="otherpage">
+                    <button class="otherpage__btn" data-txt="好路追注">
+                        <span class="hover_item"></span>
+                    </button>
+                </div>
                 <!-- 好路追注end -->
+                
                 <!-- 全螢幕 -->
                 <!-- 縮小螢幕 --zoomout -->
                 <button class="zoom_btn">
@@ -160,17 +174,20 @@
             <!-- 主內容 -->
             <div class="frame__main__multi">
                 <!-- 視訊 -->
-                <div class="video_area">
+                <div class="video">
                     <!-- 視訊iframe -->
                     <iframe class="video__frame"></iframe>
                     <!-- 視訊iframe end -->
+
                     <!-- 暫停視訊 -->
-                    <div class="video__pause" style="display: none;">
+                    <div class="video__pause" style="display: none1;">
                         <span>視訊暫停傳送</span>
                     </div>
                     <!-- 暫停視訊end -->
+
                     <!-- 視訊上物件 -->
                     <div class="video__function">
+
                         <!-- 桌次資訊 -->
                         <div class="video__function__info">
                             <ul class="txt">

@@ -114,7 +114,7 @@
 
 
         // 選擇卡片呼叫公關
-        .PR {
+        .pr {
             @include pos_a(bl, calc(100% + 10px), 320px);
             @include radius_hidden(5px);
             width: 300px;
@@ -134,7 +134,7 @@
                 border-radius: 5px 5px 0 0;
             }
 
-            // .PR__btn
+            // .pr__btn
             &__btn{
                 @include btn_set(calc(100% / 3), 100%, map-get($btn_color, lightgreen));
                 @include border(1px 0, map-get($border_color, primary));
@@ -543,6 +543,7 @@
         width: 100%;
         height: 40px;
         padding: 5px;
+        margin-right: 0;
 
         @include mw_sm{
             width: 40%;

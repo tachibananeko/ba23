@@ -197,7 +197,7 @@
 }
 
 // 呼叫公關縮小
-.PRmini{
+.pr_mini{
     @extend %hand;
     @include btn_set(130px, auto, map-get($btn_color, lightblue_vl));
     @include pos_a(bl, 0);
@@ -220,7 +220,7 @@
     }
 
 
-    // .PRmini__txt
+    // .pr_mini__txt
     &__txt{
         @extend %txtshadow;
 
