@@ -1,3 +1,4 @@
+// 視訊
 .--multi .video {
 
     // .video__frame 視訊iframe
@@ -139,350 +140,302 @@
         }
     }
 }
-.--multi {
-    .goodroadList__item {
-        &__tb {
-            @include mw_lg {
-                flex: 0 0 45px;
-                @include fz(small);
-            }
-        }
 
-        &__go {
-            @include mw_lg {
-                flex: 0 0 50px;
-                height: auto;
-            }
-        }
-    }
-}
+// 下注資訊&選擇桌次
 .selectTB{
     display: flex;
 
-    // .selectTB__info
-    &__info{
-        display: flex;
-        flex-wrap: wrap;
-        width: 200px;
-        height: 100%;
-    }
-    // .selectTB__btn
-    &__btn{
-        width: 50%;
-        height: 40px;
-        &.--latest{
-            color: map-get($txt_color, black);
-            background: linear-gradient(to bottom, #ffffc5 0%, #f2d77a 20%, #3e3123 100%);
-        }
-        &.--good_road{
-            @include d_f(inline-flex, center, space-around);
-            color: map-get($txt_color, secondary02);
-            background: linear-gradient(to bottom, #42210b, #14100b, #000);
-        }
-        .setting_btn{
-            display: block;
-            width: 20px;
-            height: 20px;
-            background: url(../images/icon_setting.svg) center/cover no-repeat;
-        }
-        @at-root .--active .setting_btn{
-            background-image: url(../images/icon_setting_dark.svg);
+    .detail__box{
+        flex: 0 0 200px;
+
+        &__title{
+            font-size: 14px;
         }
     }
-    // .selectTB__content
-    &__content{
-        position: relative;
-        width: 100%;
-        height: calc(100% - 40px);
-        &.--latest{
-            @at-root .latest_content{
-                @include fz(small);
-                width: 100%;
-                height: 100%;
-                color: #e6dcbe;
-                .bet_list{
-                    @include scrollbar(hidden, auto);
-                    height: 100%;
-                    li{
-                        height: auto;
-                        display: flex;
-                        flex-direction: column;
-                        padding: 0 5px;
-                    }
-                    .no_data{
-                        @include pos_a(trbl, 0);
-                        @include fz(small);
-                        height: 20px;
-                        color: #eee;
-                        margin: auto;
-                        text-align: center;
-                    }
-                }
-            }
-        }
-        &.--good_road{
-            display: none;
+
+    .goodroad_btn{
+        width: 25px;
+
+        @at-root .--on + .goodroad_btn{
+            filter: brightness(0%);
         }
     }
-    @at-root .--active{
-        .selectTB{
-            // .selectTB__btn
-            &__btn{
-                &.--latest{
-                    color: map-get($txt_color, secondary02);
-                    background: linear-gradient(to bottom, #42210b, #14100b, #000);
-                }
-                &.--good_road{
-                    color: map-get($txt_color, black);
-                    background: linear-gradient(to bottom, #ffffc5 0%, #f2d77a 20%, #3e3123 100%);
-                }
-            }
-            // .selectTB__content
-            &__content{
-                &.--latest{
-                    display: none;
-                }
-                &.--good_road{
-                    display: block;
-                }
-            }
-        }
-    }
+
     // .selectTB__table
     &__table{
-        width: calc(100% - 200px);
-        .table{
-            // .table__title
-            &__title{
-                @include d_f(flex, center, center);
-                height: 40px;
-                color: map-get($txt_color, secondary02);
-                &:before{
-                    display: none;
+        flex: 1 1 100%;
+    }
+
+    .table {
+        // .table__title
+        &__title {
+            @extend %txtshadow;
+            @include d_f(flex, center, center);
+            height: 35px;
+            color: map-get($txt_color, primary);
+
+            &::before{
+                content: none;
+            }
+
+            .clear_btn {
+                @include btn_set(80px, 25px, map-get($btn_color, lightred));
+                @include pos_a(trb, 0, 5px, 0);
+                border: 1px solid map-get($bg_color, secondary);
+                border-radius: 3px;
+                margin: auto;
+
+                &::before {
+                    @include btn_hoverlight01(200%);
                 }
-                .clear_btn{
-                    @include btn_set(80px, 30px, map-get($btn_color, lightred));
-                    @include pos_a(trb, 0, 20px, 0);
-                    border: 1px solid #f2d77a;
-                    margin: auto;
-                    border-radius: 5px;
-                    &::before{
+
+                &::after {
+                    @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
+                    @include fz(x-small);
+                }
+
+                .hover_item {
+                    @include btn_hoveritem(map-get($btn_color, red));
+                    box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
+                        0 0 6px map-get($bg_color, secondary) inset;
+
+                    &::before {
                         @include btn_hoverlight01(200%);
                     }
-                    &::after{
-                        @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
-                        @include fz(x-small);
+                }
+
+                // 手指效果
+                @include btn_hoverHandler(1px, map-get($txt_color, primary));
+            }
+        }
+
+        // .table__content
+        &__content {
+            @include d_f(flex, flex-start, flex-start);
+            @include scrollbar(hidden, auto);
+            position: relative;
+            width: 100%;
+            height: calc(100% - 35px);
+            align-content: flex-start;
+            flex-wrap: wrap;
+            padding: 5px 0;
+            background: map-get($bg_color, black);
+        }
+
+        // .table__item
+        &__item {
+            position: relative;
+            width: calc(100% / 2 - 10px);
+            height: 140px;
+            margin: 5px;
+            border-radius: 3px;
+
+            &::before{
+                content: '';
+
+            }
+
+            &:hover {
+                .mask__unselected {
+                    display: flex;
+                }
+            }
+
+            @at-root .item {
+
+                // .item__bg
+                &__bg {
+                    @include pos_a(trbl, -2px);
+                    background: #b0b0b0;
+                    border-radius: 5px;
+
+                    @at-root .--active .item__bg {
+                        background: linear-gradient(to bottom, #f2bd79 0%, #563d29 100%);
                     }
-                    .hover_item{
+                }
+
+                // .item__main
+                &__main {
+                    position: relative;
+                    display: flex;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 5px;
+                    flex-direction: column;
+                    overflow: hidden;
+                    -webkit-user-select: none;
+                }
+
+                // .item__title
+                &__title {
+                    @include d_f(flex, center, center);
+                    width: 100%;
+                    height: 40px;
+                    background: linear-gradient(180deg, #666666 0%, #121212 100%);
+                    border-radius: 5px 5px 0 0;
+                    color: map-get($txt_color, white);
+                    position: relative;
+                    text-align: center;
+                    text-shadow: 0px 2px #000;
+
+                    @at-root .--active .item__title {
+                        background: linear-gradient(to bottom, #000 0%, #14100b 50%, #42210b 100%);
+                    }
+
+                    b {
+                        @include pos_a(trbl, 0, 25px, 0, 0);
+                        height: 18px;
+                        margin: auto;
+                    }
+                }
+
+                // .item__icon
+                &__icon {
+                    @include pos_a(t, 0);
+
+                    &:first-child {
+                        left: 0;
+                    }
+
+                    &:nth-child(3) {
+                        right: 25px;
+                    }
+
+                    &.--vip {
+                        width: 30px;
+                        height: 100%;
+                        background: url(../images/icon_vip.svg) center/contain no-repeat;
+                    }
+
+                    &.--fast,
+                    &.--exclusive {
+                        width: 20px;
+                        height: 100%;
+                        background: url(../images/icon_fast.svg) no-repeat;
+                        background-position: center;
+                        background-size: 18px;
+                    }
+
+                    &.--exclusive {
+                        background: url(../images/icon_exclusive_en.svg) no-repeat;
+                        background-position: center;
+                        background-size: 18px;
+                    }
+
+                    @at-root .TW .--exclusive,
+                    .CN .--exclusive {
+                        background-image: url(../images/icon_exclusive.svg);
+                    }
+                }
+
+                // .item__video_btn
+                &__video_btn {
+                    @include pos_a(tr, 0);
+                    width: 25px;
+                    height: 100%;
+                    border: 0;
+                    background: url(../images/icon_video_enable.svg) no-repeat;
+                    background-position: center;
+                    background-size: 18px 12px;
+
+                    span {
+                        @include pos_a(tr, 30px, 0);
+                        @include border(1px, linear-gradient(45deg, #9c6932, #fcf7b7, #9c6932) 5 5);
+                        display: none;
+                        width: 90px;
+                        padding: 2px;
+                        color: #D6C197;
+                        background: rgba(0, 0, 0, .7);
+                        z-index: 2;
+                    }
+
+                    @include hoverHandler {
+                        span {
+                            display: block;
+                        }
+                    }
+                }
+
+                // .item__content
+                &__content {
+                    position: relative;
+                    width: 100%;
+                    height: calc(100% - 40px);
+                    background: #fff;
+
+                    img {
                         display: block;
                         width: 100%;
                         height: 100%;
-                        @include btn_hoveritem(map-get($btn_color, red));
-                        box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
-                                    0 0 6px map-get($bg_color, secondary) inset;
-                        &::before {
-                            @include btn_hoverlight01(200%);
-                        }
-                    }
-                    // 手指效果
-                    @include btn_hoverHandler(1px, map-get($txt_color, primary));
-                }
-            }
-            // .table__content
-            &__content{
-                @include d_f(flex, flex-start, flex-start);
-                @include scrollbar(hidden, auto);
-                width: 100%;
-                height: calc(100% - 40px);
-                align-content: flex-start;
-                flex-wrap: wrap;
-                padding: 5px;
-                background: #323031;
-                position: relative;
-                border-radius: 0 0 5px 5px;
-            }
-            // .table__item
-            &__item{
-                width: calc(100% / 2 - 8px);
-                height: 140px;
-                margin: 4px;
-                position: relative;
-                border-radius: 5px;
-                cursor: pointer;
-                &:hover{
-                    .mask__unselected{
-                        display: flex;
                     }
                 }
-                @at-root .item{
-                    // .item__bg
-                    &__bg{
-                        @include pos_a(trbl, -2px);
-                        background: #b0b0b0;
-                        border-radius: 5px;
-                        @at-root .--active .item__bg{
-                            background: linear-gradient(to bottom, #f2bd79 0%, #563d29 100%);
-                        }
-                    }
-                    // .item__main
-                    &__main{
-                        position: relative;
-                        display: flex;
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 5px;
-                        flex-direction: column;
-                        overflow: hidden;
-                        -webkit-user-select: none;
-                    }
-                    // .item__title
-                    &__title{
-                        @include d_f(flex, center, center);
-                        width: 100%;
-                        height: 40px;
-                        background: linear-gradient(180deg, #666666 0%, #121212 100%);
-                        border-radius: 5px 5px 0 0;
-                        color: map-get($txt_color, white);
-                        position: relative;
-                        text-align: center;
-                        text-shadow: 0px 2px #000;
-                        @at-root .--active .item__title{
-                            background: linear-gradient(to bottom, #000 0%, #14100b 50%, #42210b 100%);
-                        }
-                        b{
-                            @include pos_a(trbl, 0, 25px, 0, 0);
-                            height: 18px;
-                            margin: auto;
-                        }
-                    }
-                    // .item__icon
-                    &__icon{
-                        @include pos_a(t, 0);
-                        &:first-child{
-                            left: 0;
-                        }
-                        &:nth-child(3){
-                            right: 25px;
-                        }
-                        &.--vip{
-                            width: 30px;
-                            height: 100%;
-                            background: url(../images/icon_vip.svg) center/contain no-repeat;
-                        }
-                        &.--fast,
-                        &.--exclusive{
-                            width: 20px;
-                            height: 100%;
-                            background: url(../images/icon_fast.svg) no-repeat;
-                            background-position: center;
-                            background-size: 18px;
-                        }
-                        &.--exclusive{
-                            background: url(../images/icon_exclusive_en.svg) no-repeat;
-                            background-position: center;
-                            background-size: 18px;
-                        }
-                        @at-root .TW .--exclusive,
-                        .CN .--exclusive{
-                            background-image: url(../images/icon_exclusive.svg);
-                        }
-                    }
-                    // .item__video_btn
-                    &__video_btn{
-                        @include pos_a(tr, 0);
-                        width: 25px;
-                        height: 100%;
-                        border: 0;
-                        background: url(../images/icon_video_enable.svg) no-repeat;
-                        background-position: center;
-                        background-size: 18px 12px;
-                        span{
-                            @include pos_a(tr, 30px, 0);
-                            @include border(1px, linear-gradient(45deg, #9c6932, #fcf7b7, #9c6932) 5 5);
-                            display: none;
-                            width: 90px;
-                            padding: 2px;
-                            color: #D6C197;
-                            background: rgba(0, 0, 0, .7);
-                            z-index: 2;
-                        }
-                        @include hoverHandler{
-                            span{
-                                display: block;
-                            }
-                        }
-                    }
-                    // .item__content
-                    &__content{
-                        position: relative;
-                        width: 100%;
-                        height: calc(100% - 40px);
-                        background: #fff;
-                        img{
-                            display: block;
+
+                // .item__mask
+                &__mask {
+                    @include pos_a(trbl, 0);
+
+                    @at-root .mask {
+
+                        // .mask__selected
+                        &__selected {
+                            @include d_f(flex, center, center);
                             width: 100%;
                             height: 100%;
-                        }
-                    }
-                    // .item__mask
-                    &__mask{
-                        @include pos_a(trbl, 0);
-                        @at-root .mask{
-                            // .mask__selected
-                            &__selected{
+                            background: rgba(0, 0, 0, .5);
+
+                            b {
                                 @include d_f(flex, center, center);
-                                width: 100%;
-                                height: 100%;
-                                background: rgba(0, 0, 0, .5);
-                                b{
-                                    @include d_f(flex, center, center);
-                                    width: 30px;
-                                    height: 30px;
-                                    font-size: 18px;
-                                    font-weight: normal;
-                                    color: map-get($txt_color, black);
-                                    background: #f2bd79;
-                                    border-radius: 50%;
+                                width: 30px;
+                                height: 30px;
+                                font-size: 18px;
+                                font-weight: normal;
+                                color: map-get($txt_color, black);
+                                background: #f2bd79;
+                                border-radius: 50%;
+                            }
+                        }
+
+                        // .mask__unselected
+                        &__unselected {
+                            @include d_f (flex, center, space-between);
+                            flex-wrap: wrap;
+                            width: 100%;
+                            height: 100%;
+                            padding: 3px 10px;
+                            background: rgba(0, 0, 0, .5);
+                            display: none;
+
+                            button {
+                                @include fz(x-small);
+                                width: calc(50% - 2px);
+                                height: 25px;
+                                font-weight: bold;
+                                color: #240913;
+                                border: 1px solid #f2bd79;
+                                border-radius: 5px;
+                                background: linear-gradient(#ffffc5, #f2d77a, #b47c24);
+                                cursor: pointer;
+
+                                @include hoverHandler {
+                                    color: #fefdb3;
+                                    background: linear-gradient(#f36428, #440010);
                                 }
                             }
-                            // .mask__unselected
-                            &__unselected{
-                                @include d_f (flex, center, space-between);
-                                flex-wrap: wrap;
-                                width: 100%;
-                                height: 100%;
-                                padding: 3px 10px;
-                                background: rgba(0, 0, 0, .5);
-                                display: none;
-                                button{
-                                    @include fz(x-small);
-                                    width: calc(50% - 2px);
-                                    height: 25px;
-                                    font-weight: bold;
-                                    color: #240913;
-                                    border: 1px solid #f2bd79;
-                                    border-radius: 5px;
-                                    background: linear-gradient(#ffffc5, #f2d77a, #b47c24);
-                                    cursor: pointer;
-                                    @include hoverHandler{
-                                        color: #fefdb3;
-                                        background: linear-gradient(#f36428, #440010);
-                                    }
-                                }
-                            }
-                            // .mask__dragon
-                            &__dragon{
-                                width: 100%;
-                                height: 100%;
-                                opacity: .5;
-                                background: url(../images/dragon_ani.gif) center/cover no-repeat;
-                            }
-                            // .mask__lock
-                            &__lock{
-                                width: 100%;
-                                height: 100%;
-                                background: rgba(0, 0, 0, .5) url(../images/stopbet.png) center/35% no-repeat;
-                            }
+                        }
+
+                        // .mask__dragon
+                        &__dragon {
+                            width: 100%;
+                            height: 100%;
+                            opacity: .5;
+                            background: url(../images/dragon_ani.gif) center/cover no-repeat;
+                        }
+
+                        // .mask__lock
+                        &__lock {
+                            width: 100%;
+                            height: 100%;
+                            background: rgba(0, 0, 0, .5) url(../images/stopbet.png) center/35% no-repeat;
                         }
                     }
                 }

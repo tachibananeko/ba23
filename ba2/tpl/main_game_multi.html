@@ -325,189 +325,130 @@
 
 
 
-                <!-- 選擇桌次&下注資訊 -->
-                <div class="selectTB" style="display: none;">
-                    <!-- 點擊好路提示加上.--active -->
-                    <div class="selectTB__info">
-                        <button class="selectTB__btn --latest">最新投注</button>
-                        <button class="selectTB__btn --good_road">好路提示<i class="setting_btn"></i></button>
-                        <div class="selectTB__content --latest">
-                            <div class="latest_content" id="betArea_ten_history">
-                                <ul class="betArea_list" id="betArea_list">
-                                    <li id="noData" class="no_data">尚未成立交易單</li>
+                <!-- 下注資訊&選擇桌次 -->
+                <div class="selectTB">
+                    <!-- 下注資訊 -->
+                    <div class="detail__box --on">
+                    
+                        <!-- 當前選項span加上.--on -->
+                        <div class="detail__box__title --plural">
+                            <span data-txt="好路提示" class="--on"></span>
+                            <button class="goodroad_btn"></button>
+                            <span data-txt="最新投注"></span>
+                        </div>
+                    
+                        <!-- 最新投注 -->
+                        <ul class="orderInfo" style="display: none;">
+                            <li>
+                                <ul class="orderInfo__txt">
+                                    <li>卡號1002001</li>
+                                    <li class="txt_gray">2001桌5靴16局</li>
+                                    <!-- 莊.txt_bank 閒.txt_play 和.txt_tie -->
+                                    <li class="txt_play">閒 2000</li>
+                                    <li class="txt_win">派彩 30000</li>
+                                    <li>
+                                        <button class="orderInfo__btn">取消</button>
+                                    </li>
                                 </ul>
-                                <div id="cancel_info" class="cancel_info" style="display:none;">
-                                    <div>是否確定取消<br>xxxx桌xx靴xx局,莊,20元</div>
-                                    <div class="cancel_btn_box">
-                                        <div id="cancelInfo" name="button"  class="cancel_info_btn">確定</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="selectTB__content --good_road">
-                            <ul class="goodroadList">
-                                <li class="goodroadList__item">
-                                    <span class="hover_item"></span>
-                                    <span class="goodroadList__item__tb">2001</span>
-                                    <span class="goodroadList__item__txt">拍拍黐<i></i></span>
-                                    <span class="goodroadList__item__go">
-                                        <i data-txt="立即前往"></i>
-                                    </span>
-                                </li>
-                                <li class="goodroadList__item --banker">
-                                    <span class="hover_item"></span>
-                                    <span class="goodroadList__item__tb">2001</span>
-                                    <span class="goodroadList__item__txt">長莊<i></i></span>
-                                    <span class="goodroadList__item__go">
-                                        <i data-txt="立即前往"></i>
-                                    </span>
-                                </li>
-                                <li class="goodroadList__item --player">
-                                    <span class="hover_item"></span>
-                                    <span class="goodroadList__item__tb">2001</span>
-                                    <span class="goodroadList__item__txt">長閒<i></i></span>
-                                    <span class="goodroadList__item__go">
-                                        <i data-txt="立即前往"></i>
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
+                            </li>
+                            <li>
+                                <ul class="orderInfo__txt">
+                                    <li>卡號1002001</li>
+                                    <li class="txt_gray">2001桌5靴16局</li>
+                                    <!-- 莊.txt_bank 閒.txt_play 和.txt_tie -->
+                                    <li class="txt_play">閒 2000</li>
+                                    <li class="txt_win">派彩 30000</li>
+                                    <li>
+                                        <button class="orderInfo__btn">取消</button>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="orderInfo__txt">
+                                    <li>卡號1002001</li>
+                                    <li class="txt_gray">2001桌5靴16局</li>
+                                    <!-- 莊.txt_bank 閒.txt_play 和.txt_tie -->
+                                    <li class="txt_play">閒 2000</li>
+                                    <li class="txt_win">派彩 30000</li>
+                                    <li>
+                                        <button class="orderInfo__btn">取消</button>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- 最新投注 end -->
+                    
+                        <!-- 好路提示 -->
+                        <ul class="goodroadList">
+                            <li class="goodroadList__item">
+                                <span class="hover_item"></span>
+                                <span class="goodroadList__item__tb">2001</span>
+                                <span class="goodroadList__item__txt">拍拍球<i></i></span>
+                                <span class="goodroadList__item__go">
+                                    <i data-txt="立即前往"></i>
+                                </span>
+                            </li>
+                            <li class="goodroadList__item --banker">
+                                <span class="hover_item"></span>
+                                <span class="goodroadList__item__tb">2001</span>
+                                <span class="goodroadList__item__txt">長莊<i></i></span>
+                                <span class="goodroadList__item__go">
+                                    <i data-txt="立即前往"></i>
+                                </span>
+                            </li>
+                            <li class="goodroadList__item --player">
+                                <span class="hover_item"></span>
+                                <span class="goodroadList__item__tb">2001</span>
+                                <span class="goodroadList__item__txt">長閒<i></i></span>
+                                <span class="goodroadList__item__go">
+                                    <i data-txt="立即前往"></i>
+                                </span>
+                            </li>
+                            <li class="goodroadList__item">
+                                <span class="hover_item"></span>
+                                <span class="goodroadList__item__tb">2001</span>
+                                <span class="goodroadList__item__txt">拍拍球<i></i></span>
+                                <span class="goodroadList__item__go">
+                                    <i data-txt="立即前往"></i>
+                                </span>
+                            </li>
+                            <li class="goodroadList__item --banker">
+                                <span class="hover_item"></span>
+                                <span class="goodroadList__item__tb">2001</span>
+                                <span class="goodroadList__item__txt">長莊<i></i></span>
+                                <span class="goodroadList__item__go">
+                                    <i data-txt="立即前往"></i>
+                                </span>
+                            </li>
+                            <li class="goodroadList__item --player">
+                                <span class="hover_item"></span>
+                                <span class="goodroadList__item__tb">2001</span>
+                                <span class="goodroadList__item__txt">長閒<i></i></span>
+                                <span class="goodroadList__item__go">
+                                    <i data-txt="立即前往"></i>
+                                </span>
+                            </li>
+                        </ul>
+                        <!-- 好路提示 end -->
                     </div>
+                    <!-- 下注資訊 end -->
+
+
+
+                    <!-- 選擇桌次 -->
                     <div class="selectTB__table">
                         <div class="table__title">
                             選擇桌次
                             <button class="clear_btn" data-txt="清除選取">
-                                <i class="hover_item"></i>
+                                <span class="hover_item"></span>
                             </button>
                         </div>
+
+
+                        <!-- 桌次 -->
                         <div class="table__content">
                             <!-- 選擇後加上.--active -->
                             <div class="table__item --active">
-                                <div class="item__bg"></div>
-                                <div class="item__main">
-                                    <div class="item__title">
-                                        <i class="item__icon"></i>
-                                        <b>MB2001</b>
-                                        <i class="item__icon"></i>
-                                        <button class="item__video_btn">
-                                            <span>觀看視訊</span>
-                                        </button>
-                                    </div>
-                                    <div class="item__content">
-                                        <img src="" alt="">
-                                        <div class="item__mask">
-                                            <div class="mask__selected" style="display: none;">
-                                                <b>1</b>
-                                            </div>
-                                            <div class="mask__unselected">
-                                                <button>位置1</button>
-                                                <button>位置2</button>
-                                                <button>位置3</button>
-                                                <button>位置4</button>
-                                                <button>位置5</button>
-                                                <button>位置6</button>
-                                            </div>
-                                            <div class="mask__dragon" style="display: none;"></div>
-                                            <div class="mask__lock" style="display: none;"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="table__item">
-                                <div class="item__bg"></div>
-                                <div class="item__main">
-                                    <div class="item__title">
-                                        <i class="item__icon"></i>
-                                        <b>MB2001</b>
-                                        <i class="item__icon"></i>
-                                        <button class="item__video_btn">
-                                            <span>觀看視訊</span>
-                                        </button>
-                                    </div>
-                                    <div class="item__content">
-                                        <img src="" alt="">
-                                        <div class="item__mask">
-                                            <div class="mask__selected" style="display: none;">
-                                                <b>1</b>
-                                            </div>
-                                            <div class="mask__unselected">
-                                                <button>位置1</button>
-                                                <button>位置2</button>
-                                                <button>位置3</button>
-                                                <button>位置4</button>
-                                                <button>位置5</button>
-                                                <button>位置6</button>
-                                            </div>
-                                            <div class="mask__dragon" style="display: none;"></div>
-                                            <div class="mask__lock" style="display: none;"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="table__item">
-                                <div class="item__bg"></div>
-                                <div class="item__main">
-                                    <div class="item__title">
-                                        <i class="item__icon"></i>
-                                        <b>MB2001</b>
-                                        <i class="item__icon"></i>
-                                        <button class="item__video_btn">
-                                            <span>觀看視訊</span>
-                                        </button>
-                                    </div>
-                                    <div class="item__content">
-                                        <img src="" alt="">
-                                        <div class="item__mask">
-                                            <div class="mask__selected" style="display: none;">
-                                                <b>1</b>
-                                            </div>
-                                            <div class="mask__unselected">
-                                                <button>位置1</button>
-                                                <button>位置2</button>
-                                                <button>位置3</button>
-                                                <button>位置4</button>
-                                                <button>位置5</button>
-                                                <button>位置6</button>
-                                            </div>
-                                            <div class="mask__dragon" style="display: none;"></div>
-                                            <div class="mask__lock" style="display: none;"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="table__item">
-                                <div class="item__bg"></div>
-                                <div class="item__main">
-                                    <div class="item__title">
-                                        <i class="item__icon"></i>
-                                        <b>MB2001</b>
-                                        <i class="item__icon"></i>
-                                        <button class="item__video_btn">
-                                            <span>觀看視訊</span>
-                                        </button>
-                                    </div>
-                                    <div class="item__content">
-                                        <img src="" alt="">
-                                        <div class="item__mask">
-                                            <div class="mask__selected" style="display: none;">
-                                                <b>1</b>
-                                            </div>
-                                            <div class="mask__unselected">
-                                                <button>位置1</button>
-                                                <button>位置2</button>
-                                                <button>位置3</button>
-                                                <button>位置4</button>
-                                                <button>位置5</button>
-                                                <button>位置6</button>
-                                            </div>
-                                            <div class="mask__dragon" style="display: none;"></div>
-                                            <div class="mask__lock" style="display: none;"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="table__item">
-                                <div class="item__bg"></div>
                                 <div class="item__main">
                                     <div class="item__title">
                                         <i class="item__icon"></i>
@@ -538,9 +479,11 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- 桌次 end -->
                     </div>
+                    <!-- 選擇桌次 end -->
                 </div>
-                <!-- 選擇桌次&下注資訊 end -->
+                <!-- 下注資訊&選擇桌次 end -->
                 
 
 
