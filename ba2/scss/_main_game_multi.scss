@@ -136,6 +136,7 @@
             @include hoverHandler {
                 width: 55px;
                 height: 55px;
+                transform: translateY(-20%);
             }
         }
     }
@@ -228,125 +229,89 @@
             width: calc(100% / 2 - 10px);
             height: 140px;
             margin: 5px;
-            border-radius: 3px;
+            border-radius: 5px;
+            border: 2px solid map-get($bg_color, secondary02);
 
-            &::before{
-                content: '';
-
-            }
-
-            &:hover {
+            @include hoverHandler{
                 .mask__unselected {
                     display: flex;
                 }
             }
 
-            @at-root .item {
+            @at-root .itemBox {
+                position: relative;
+                display: flex;
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+                flex-direction: column;
+                overflow: hidden;
+                -webkit-user-select: none;
 
-                // .item__bg
-                &__bg {
-                    @include pos_a(trbl, -2px);
-                    background: #b0b0b0;
-                    border-radius: 5px;
-
-                    @at-root .--active .item__bg {
-                        background: linear-gradient(to bottom, #f2bd79 0%, #563d29 100%);
-                    }
-                }
-
-                // .item__main
-                &__main {
-                    position: relative;
-                    display: flex;
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 5px;
-                    flex-direction: column;
-                    overflow: hidden;
-                    -webkit-user-select: none;
-                }
-
-                // .item__title
+                // .itemBox__title
                 &__title {
+                    @extend %txtshadow;
                     @include d_f(flex, center, center);
+                    position: relative;
                     width: 100%;
                     height: 40px;
-                    background: linear-gradient(180deg, #666666 0%, #121212 100%);
-                    border-radius: 5px 5px 0 0;
+                    background: map-get($bg_color, gray_gradual);
                     color: map-get($txt_color, white);
-                    position: relative;
+                    font-weight: bold;
                     text-align: center;
-                    text-shadow: 0px 2px #000;
 
-                    @at-root .--active .item__title {
-                        background: linear-gradient(to bottom, #000 0%, #14100b 50%, #42210b 100%);
-                    }
-
-                    b {
-                        @include pos_a(trbl, 0, 25px, 0, 0);
-                        height: 18px;
-                        margin: auto;
+                    @at-root .--on .itemBox__title {
+                        background: map-get($bg_color, alert_bg);
                     }
                 }
 
-                // .item__icon
+                // .itemBox__icon
                 &__icon {
                     @include pos_a(t, 0);
 
                     &:first-child {
-                        left: 0;
+                        left: 5px;
                     }
 
-                    &:nth-child(3) {
-                        right: 25px;
+                    &:nth-child(2) {
+                        right: 30px;
                     }
 
-                    &.--vip {
-                        width: 30px;
+                    &.--i_vip{
+                        width: 35px;
                         height: 100%;
-                        background: url(../images/icon_vip.svg) center/contain no-repeat;
+                        background: url(../images/icon_vip.svg) no-repeat center / contain;
                     }
 
-                    &.--fast,
-                    &.--exclusive {
+                    &.--i_fast,
+                    &.--i_ex{
                         width: 20px;
                         height: 100%;
-                        background: url(../images/icon_fast.svg) no-repeat;
-                        background-position: center;
-                        background-size: 18px;
+                        background: url(../images/icon_fast.svg) no-repeat center / contain;
                     }
 
-                    &.--exclusive {
-                        background: url(../images/icon_exclusive_en.svg) no-repeat;
-                        background-position: center;
-                        background-size: 18px;
-                    }
-
-                    @at-root .TW .--exclusive,
-                    .CN .--exclusive {
-                        background-image: url(../images/icon_exclusive.svg);
+                    &.--i_ex {
+                        background: url(../images/icon_exclusive.svg) no-repeat center /contain;
                     }
                 }
 
-                // .item__video_btn
+                // .itemBox__video_btn
                 &__video_btn {
-                    @include pos_a(tr, 0);
+                    @include pos_a(tr, 0, 3px);
                     width: 25px;
                     height: 100%;
-                    border: 0;
-                    background: url(../images/icon_video_enable.svg) no-repeat;
-                    background-position: center;
-                    background-size: 18px 12px;
+                    background: url(../images/icon_video_enable.svg) no-repeat center / 80%;
 
-                    span {
+                    >span {
                         @include pos_a(tr, 30px, 0);
-                        @include border(1px, linear-gradient(45deg, #9c6932, #fcf7b7, #9c6932) 5 5);
-                        display: none;
-                        width: 90px;
-                        padding: 2px;
-                        color: #D6C197;
-                        background: rgba(0, 0, 0, .7);
+                        @include border(1px 0, map-get($border_color, primary));
+                        padding: 2px 5px;
+                        color: map-get($txt_color, primary);
+                        background: map-get($bg_color, black_alpha);
+                        white-space: nowrap;
                         z-index: 2;
+
+                        display: none;
                     }
 
                     @include hoverHandler {
@@ -356,12 +321,12 @@
                     }
                 }
 
-                // .item__content
+                // .itemBox__content
                 &__content {
                     position: relative;
                     width: 100%;
                     height: calc(100% - 40px);
-                    background: #fff;
+                    background: map-get($bg_color, white);
 
                     img {
                         display: block;
@@ -370,7 +335,7 @@
                     }
                 }
 
-                // .item__mask
+                // .itemBox__mask
                 &__mask {
                     @include pos_a(trbl, 0);
 
@@ -381,61 +346,64 @@
                             @include d_f(flex, center, center);
                             width: 100%;
                             height: 100%;
-                            background: rgba(0, 0, 0, .5);
+                            background: map-get($bg_color, black_alpha);
 
                             b {
                                 @include d_f(flex, center, center);
-                                width: 30px;
-                                height: 30px;
-                                font-size: 18px;
-                                font-weight: normal;
-                                color: map-get($txt_color, black);
-                                background: #f2bd79;
+                                width: 35px;
+                                height: 35px;
+                                color: map-get($txt_color, secondary);
+                                background: map-get($bg_color, gold);
                                 border-radius: 50%;
+                                font-size: 20px;
+                                font-weight: bold;
                             }
                         }
 
-                        // .mask__unselected
+                        // .mask__unselected 桌放置位置
                         &__unselected {
                             @include d_f (flex, center, space-between);
                             flex-wrap: wrap;
                             width: 100%;
                             height: 100%;
                             padding: 3px 10px;
-                            background: rgba(0, 0, 0, .5);
+                            background: map-get($bg_color, black_alpha);
                             display: none;
 
-                            button {
+                            li {
+                                @extend %hand;
                                 @include fz(x-small);
-                                width: calc(50% - 2px);
+                                width: calc(50% - 5px);
                                 height: 25px;
-                                font-weight: bold;
-                                color: #240913;
-                                border: 1px solid #f2bd79;
+                                padding: 3px 5px;
+                                border: 1px solid map-get($bg_color, secondary02);
                                 border-radius: 5px;
-                                background: linear-gradient(#ffffc5, #f2d77a, #b47c24);
-                                cursor: pointer;
+                                background: map-get($bg_color, gold);
+                                color: map-get($txt_color, secondary);
+                                font-weight: bold;
+                                text-align: center;
 
                                 @include hoverHandler {
-                                    color: #fefdb3;
-                                    background: linear-gradient(#f36428, #440010);
+                                    color: map-get($txt_color, primary);
+                                    background: map-get($bg_color, table_no);
                                 }
                             }
                         }
 
-                        // .mask__dragon
+                        // .mask__dragon 好路出現
                         &__dragon {
                             width: 100%;
                             height: 100%;
-                            opacity: .5;
-                            background: url(../images/dragon_ani.gif) center/cover no-repeat;
+                            background: url(../images/img_dragon.gif) no-repeat center / 150% map-get($bg_color, black);
+                            opacity: 0.7;
                         }
 
-                        // .mask__lock
+                        // .mask__lock 超過限制鎖頭
                         &__lock {
                             width: 100%;
                             height: 100%;
-                            background: rgba(0, 0, 0, .5) url(../images/stopbet.png) center/35% no-repeat;
+                            background: url(../images/icon_locked.svg) no-repeat center / 30% map-get($bg_color, black_alpha);
+                            filter: brightness(200%);
                         }
                     }
                 }

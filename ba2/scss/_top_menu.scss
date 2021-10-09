@@ -90,8 +90,9 @@
             padding: 2px 5px;
             background: map-get($bg_color, black_alpha);
             white-space: nowrap;
-            display: none;
             z-index: 1;
+            
+            display: none;
         }
         @include hoverHandler{
             .--open{

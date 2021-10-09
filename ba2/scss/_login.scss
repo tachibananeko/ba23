@@ -6,7 +6,7 @@
 
     @include mw_xs{
         display: block;
-        background: map-get($bg_color, alert_bg);
+        background: map-get($bg_color, darkbrown_gradual);
     }
 }
 

@@ -493,7 +493,7 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background: map-get($bg_color, alert_bg);
+    background: map-get($bg_color, darkbrown_gradual);
 
     // .record__header
     &__header{
