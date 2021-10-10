@@ -238,7 +238,7 @@
                 }
             }
 
-            @at-root .itemBox {
+            .itemBox {
                 position: relative;
                 display: flex;
                 width: 100%;
@@ -260,7 +260,7 @@
                     font-weight: bold;
                     text-align: center;
 
-                    @at-root .--on .itemBox__title {
+                    @at-root .--on.table__item .itemBox__title {
                         background: map-get($bg_color, alert_bg);
                     }
                 }
@@ -296,7 +296,7 @@
                 }
 
                 // .itemBox__video_btn
-                &__video_btn {
+                @at-root .video_btn {
                     @include pos_a(tr, 0, 3px);
                     width: 25px;
                     height: 100%;
@@ -501,580 +501,229 @@
         height: 100%;
     }
 }
+
+// 下注區
 .rapid{
     // .rapid_multi
     &_multi{
+        @include radius_hidden(5px);
         padding: 1px;
         width: 100%;
         height: 100%;
         display: flex;
         flex-direction: column;
-        background: linear-gradient(90deg, #B67C24 0%, #F4D97A 20%, #F4D97A 80%, #B67C24 100%);
-        border-radius: 5px;
+        background: map-get($bg_color, gold);
     }
     // .rapid__title
     &__title{
-        @include border(0 0 1px 0, linear-gradient(to right, #bd904c 0%, #e5d9af 60%, #bd904c 100%) 1);
+        @include d_f(flex, unset, flex-start);
+        @include radius_hidden(5px 5px 0 0);
+        @include border(0 0 1px 0, map-get($border_color, primary));
         width: 100%;
         height: 25px;
-        border-radius: 5px 5px 0 0;
-        background: linear-gradient(180deg, #42210B 0%, #14100B 50%, #000 100%);
-        display: flex;
-        @at-root .bet{
-            // .bet__number
-            &__number{
-                @include d_f(flex, center, flex-start);
-                width: 90px;
-                padding: 0 2px;
-                position: relative;
-                background: url(../images/table_title_bg.png) no-repeat;
-                background-size: 90px 25px;
-                i{
-                    display: inline-block;
-                    width: 20px;
-                    height: 20px;
-                    background: #dcd09e;
-                    position: relative;
-                    border-radius: 50%;
-                }
-                b{
-                    @include pos_a(tl, 1px);
-                    @include d_f(flex, center, center);
-                    width: 18px;
-                    height: 18px;
-                    color: map-get($txt_color, white);
-                    font-style: normal;
-                    font-size: 12px;
-                    text-align: center;
-                    background: #000;
-                    border-radius: 50%;
-                }
-                span{
-                    display: inline-block;
-                    margin-left: 3px;
-                    font-size: 15px;
-                    font-weight: bold;
-                    color: #000;
-                    text-shadow: 0 -1px 1px #F2BD79, 1px 0 1px #F2BD79, 0 1px 1px #F2BD79, -1px 0 1px #F2BD79;
-                }
+        background: map-get($bg_color, primary_vl);
+
+        .number{
+            @include d_f(flex, center, flex-start);
+            flex: none;
+            position: relative;
+            padding: 0 5px 0 10px;
+            background: map-get($bg_color, gold);
+            transform: skewX(25deg);
+            left: -5px;
+
+            i{
+                @include d_f(flex, center, center);
+                width: 20px;
+                height: 20px;
+                background: map-get($bg_color, primary_vl);
+                border-radius: 50%;
+                color: map-get($txt_color, white);
+                font-weight: bold;
+                margin-right: 3px;
+                transform: skewX(-25deg);
             }
-            // .bet__amount
-            &__amount{
-                @include d_f(flex, center, flex-start);
-                width: 150px;
-                height: 100%;
-                font-size: 12px;
+            span{
+                display: inline-block;
+                color: map-get($txt_color, secondary);
+                font-weight: bold;
+                letter-spacing: -1px;
+                transform: skewX(-25deg);
+            }
+        }
+
+        .amount{
+            @include d_f(flex, center, flex-start);
+            flex: none;
+            color: map-get($txt_color, primary);
+            font-size: 12px;
+
+            &::before{
+                content: attr(data-txt);
+                margin-right: 3px;
+            }
+
+            span{
+                @include border(0 0 1px 0, map-get($border_color, primary));
+                display: block;
+                padding: 2px 5px;
+                background: map-get($bg_color, black);
+                color: map-get($txt_color, white);
+            }
+        }
+
+        .status{
+            @include d_f(flex, center, flex-end);
+            flex: 1 1 100%;
+            position: relative;
+            padding-right: 3px;
+
+            .video_btn{
+                right: auto;
+                left: 0;
+            }
+
+            // .status__txt
+            &__txt{
                 color: map-get($txt_color, secondary02);
-                position: relative;
-                span{
-                    @include border(0 0 1px 0, linear-gradient(to right, rgba(0, 0, 0, 0), #644c2a, #908d6a, #644c2a, rgba(0, 0, 0, 0)) 1);
-                    display: block;
-                    color: map-get($txt_color, white);
-                    font-size: 12px;
-                    padding-left: 5px;
-                    margin-left: 5px;
-                    min-width: 70px;
-                    width: auto;
-                    height: 15px;
-                    background: #000;
-                    border-radius: 0 0 5px 5px;
-                    box-shadow: 1px 0 1px #2e2119, -1px 0 1px #2e2119;
+                font-weight: bold;
+                
+                &.--count{
+                    font-size: 24px;
                 }
             }
-            // .bet__status
-            &__status{
-                @include d_f(flex, center, flex-end);
-                position: relative;
-                width: calc(100% - 230px);
-                .status{
-                    // .status__video
-                    &__video{
-                        @include pos_a(tl, 0);
-                        width: 24px;
-                        height: 100%;
-                        background: transparent;
-                        border: 0;
-                        cursor: pointer;
-                        @include hoverHandler{
-                            span{
-                                display: block;
-                            }
-                        }
-                        &:before{
-                            content: '';
-                            @include pos_a(trbl, 0);
-                            width: 18px;
-                            height: 12px;
-                            margin: auto;
-                            background: url(../images/video_btn_enable.svg);
-                        }
-                        span{
-                            @include pos_a(tl, 20px, -5px);
-                            @include border(1px, linear-gradient(45deg, #9c6932, #fcf7b7, #9c6932) 5 5);
-                            display: none;
-                            width: 90px;
-                            padding: 2px;
-                            color: #D6C197;
-                            background: rgba(0, 0, 0, .7);
-                            z-index: 2;
-                        }
-                    }
-                    // .status__txt
-                    &__txt{
-                        color: map-get($txt_color, secondary02);
-                        font-weight: bold;
-                        height: 25px;
-                        line-height: 25px;
-                        &.--count{
-                            font-size: 24px;
-                        }
-                    }
-                }
-                .close_btn{
-                    margin-left: 5px;
-                    @include hoverHandler{
-                        transform: none;
-                    }
-                }
+
+            .close_btn{
+                margin-left: 5px;
             }
         }
     }
+
     // .rapid__content
     &__content{
+        @include d_f(flex, flex-start, flex-start);
+        @include radius_hidden(0 0 5px 5px);
         width: 100%;
         height: calc(100% - 25px);
-        border-radius: 0 0 5px 5px;
-        position: relative;
-        display: flex;
-        background: linear-gradient(225deg, #313131, #000);
+        background: map-get($bg_color, black);
     }
-    // .rapid__bet
+
+    // .rapid__content 下注區塊
     &__bet{
-        width: 250px;
-        height: 100%;
-        backface-visibility: hidden;
-        position: relative;
-        @at-root .bet{
-            // .bet__table
-            &__table{
-                position: relative;
-                width: 100%;
-                height: calc(100% - 73px);
-                display: flex;
-                flex-wrap: wrap;
-                background: #234d4c;
-            }
-            // .bet__area
-            &__area{
-                height: 60px;
-                border: 1px solid #1b090f;
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                &.--top{
-                    width: 50%;
-                }
-                &.--bot{
-                    width: calc(100% / 3);
-                }
-                &.--forbid:after{
-                    content: '';
-                    @include pos_a(trbl, 0);
-                    background: rgba(0,0,0,0.5);
-                }
-                &.--light_color{
-                    border: 1px solid #fefdb3;
-                    background: linear-gradient(to top, rgba(160, 102, 42, .7), rgba(255, 255, 199, .7));
-                    box-shadow: 0 0 10px #fff;
-                }
-            }
-            // .bet__txt
-            &__txt{
-                width: 100%;
-                display: block;
-                font-size: 12px;
-                white-space: nowrap;
-                &.--odds,
-                &.--limit{
-                    height: 9px;
-                    line-height: 9px;
-                }
-                &.--target{
-                    font-size: 35px;
-                    height: 40px;
-                    line-height: 40px;
-                    text-align: center;
-                }
-                &.--limit{
-                    color: #FFFFC5;
-                    text-shadow: 0 -1px 1px #42210b, 1px 0 1px #42210b, 0 1px 1px #42210b, -1px 0 1px #42210b;
-                }
-                @at-root .--player .bet__txt{
-                    color: #0068ED;
-                }
-                @at-root .--banker .bet__txt{
-                    color: #FF302A;
-                }
-                @at-root .--tie .bet__txt{
-                    color: #009245;
-                }
-            }
-            // .bet__flicker
-            &__flicker{
-                @include pos_a(tl, 0);
-                width: 100%;
-                height: 100%;
-                pointer-events: none;
-                -webkit-animation: blink_mask 0.6s ease infinite;
-                animation: blink_mask 0.6s ease infinite;
-                background: rgba(255,246,152,0.2);
-                @keyframes blink_mask{
-                    0%{
-                        opacity: 0;
-                    }
-                    50%{
-                        opacity: 1;
-                    }
-                    100%{
-                        opacity: 0;
-                    }
-                }
-            }
-            // .bet__message
-            &__message{
-                @include pos_a(trbl, 0);
-                @include d_f(flex, center, center);
-                color: #f2bd79;
-                text-align: center;
-                text-shadow: 3px 3px 3px #000;
-                background: rgba(28,65,68,0.7);
-            }
-            // .bet__result
-            &__result{
-                width: 100%;
-                height: 20px;
-                color: map-get($txt_color, white);
-                background: linear-gradient(180deg, #42210B 0%, #14100B 50%, #000 100%);
-                @include d_f(flex, center, flex-start);
-                .result{
-                    // .result__stat
-                    &__stat{
-                        @include d_f(flex, center, center);
-                        width: 20%;
-                        height: 100%;
-                    }
-                    // .result__icon
-                    &__icon{
-                        position: relative;
-                        width: 10px;
-                        height: 10px;
-                        border-radius: 50%;
-                        &.--banker,
-                        &.--banker:before{
-                            background: #F00;
-                        }
-                        &.--player,
-                        &.--player:before{
-                            background: #1f5cfa;
-                        }
-                        &.--tie{
-                            background: #2d8e03;
-                        }
-                        &.--pair{
-                            &:before{
-                                content: '';
-                                @include pos_a(tl, -2px);
-                                width: 4px;
-                                height: 4px;
-                                border-radius: 50%;
-                                border: 1px solid #fff;
-                            }
-                        }
-                    }
-                    // .result__txt
-                    &__txt{
-                        padding-left: 5px;
-                        font-size: 14px;
-                        font-weight: normal;
-                    }
-                }
-            }
-            // .bet__road
-            &__road{
-                width: 250px;
-                height: 50px;
-                background: #FFF;
-                border-radius: 0 0 0 5px;
-            }
-            // .bet__mask
-            &__mask{
-                @include pos_a(trbl, 0);
-                @include d_f(flex, center, center);
-                background: rgba(0, 0, 0, .6);
-                .mask{
-                    // .mask__win
-                    &__win{
-                        @include pos_a(t, 20px);
-                        @include d_f(flex, center, center);
-                        color: #ffffc5;
-                        padding: 0 20px;
-                        background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-                    }
-                    // .mask__animation
-                    &__animation{
-                        width: 45px;
-                        height: 45px;
-                        .animation__road{
-                            width: 100%;
-                            height: 100%;
-                            background-position: center;
-                            background-size: contain;
-                            background-repeat: no-repeat;
-                            animation: circle-animate 3s both;
-                            @keyframes circle-animate{
-                                0%{
-                                    transform: scale(0);
-                                }
-                                25%{
-                                    transform: scale(1);
-                                }
-                                75%{
-                                    opacity: 1;
-                                    transform: translateY(0px) scale(1);
-                                }
-                                100%{
-                                    opacity: 0;
-                                    transform: translateY(50px) scale(0);
-                                }
-                            }
-                        }
-                        @at-root .--bkpl_0 { background-image: url(../images/bkpl_0_en.svg);}
-                        @at-root .--bkpl_1 { background-image: url(../images/bkpl_1_en.svg);}
-                        @at-root .--bkpl_2 { background-image: url(../images/bkpl_2_en.svg);}
-                        @at-root .--bkpl_3 { background-image: url(../images/bkpl_3_en.svg);}
-                        @at-root .--bkpl_4 { background-image: url(../images/bkpl_4_en.svg);}
-                        @at-root .--bkpl_5 { background-image: url(../images/bkpl_5_en.svg);}
-                        @at-root .--bkpl_6 { background-image: url(../images/bkpl_6_en.svg);}
-                        @at-root .--bkpl_7 { background-image: url(../images/bkpl_7_en.svg);}
-                        @at-root .--bkpl_8 { background-image: url(../images/bkpl_8_en.svg);}
-                        @at-root .--bkpl_9 { background-image: url(../images/bkpl_9_en.svg);}
-                        @at-root .--bkpl_10 { background-image: url(../images/bkpl_10_en.svg);}
-                        @at-root .--bkpl_11 { background-image: url(../images/bkpl_11_en.svg);}
+        flex: 1 1 100%;
 
-                        @at-root .TW .--bkpl_0 { background-image: url(../images/bkpl_0_tw.svg);}
-                        @at-root .TW .--bkpl_1 { background-image: url(../images/bkpl_1_tw.svg);}
-                        @at-root .TW .--bkpl_2 { background-image: url(../images/bkpl_2_tw.svg);}
-                        @at-root .TW .--bkpl_3 { background-image: url(../images/bkpl_3_tw.svg);}
-                        @at-root .TW .--bkpl_4 { background-image: url(../images/bkpl_4_tw.svg);}
-                        @at-root .TW .--bkpl_5 { background-image: url(../images/bkpl_5_tw.svg);}
-                        @at-root .TW .--bkpl_6 { background-image: url(../images/bkpl_6_tw.svg);}
-                        @at-root .TW .--bkpl_7 { background-image: url(../images/bkpl_7_tw.svg);}
+        .area_b, .area_p, .area_t, .area_bp, .area_pp{
+            padding: 1px;
+            font-size: 30px;
+        }
+        .area_t, .area_bp, .area_pp{
+            font-size: 20px;
+        }
 
-                        @at-root .CN .--bkpl_0 { background-image: url(../images/bkpl_0.svg);}
-                        @at-root .CN .--bkpl_1 { background-image: url(../images/bkpl_1.svg);}
-                        @at-root .CN .--bkpl_2 { background-image: url(../images/bkpl_2.svg);}
-                        @at-root .CN .--bkpl_3 { background-image: url(../images/bkpl_3.svg);}
-                        @at-root .CN .--bkpl_4 { background-image: url(../images/bkpl_4.svg);}
-                        @at-root .CN .--bkpl_5 { background-image: url(../images/bkpl_5.svg);}
-                        @at-root .CN .--bkpl_6 { background-image: url(../images/bkpl_6.svg);}
-                        @at-root .CN .--bkpl_7 { background-image: url(../images/bkpl_7.svg);}
-                        @at-root .TW .--bkpl_8,
-                        .CN .--bkpl_8 { background-image: url(../images/bkpl_8.svg);}
-                        @at-root .TW .--bkpl_9,
-                        .CN .--bkpl_9 { background-image: url(../images/bkpl_9.svg);}
-                        @at-root .TW .--bkpl_10,
-                        .CN .--bkpl_10 { background-image: url(../images/bkpl_10.svg);}
-                        @at-root .TW .--bkpl_11,
-                        .CN .--bkpl_11 { background-image: url(../images/bkpl_11.svg);}
-                    }
-                    // .mask__result
-                    &__result{
-                        @include d_f(flex, flex-start, center);
-                        @include pos_a(t, calc(50% - 50px));
-                        width: 40px;
-                        height: 120px;
-                        font-size: 30px;
-                        flex-wrap: wrap;
-                        align-content: space-between;
-                        span{
-                            text-shadow: 0 -1px #f2bd79, 0 1px #f2bd79, 0 1px #f2bd79, -1px 0 #f2bd79;
-                        }
-                        i{
-                            @include d_f(flex, center, center);
-                            width: 40px;
-                            height: 60px;
-                            border-radius: 5px;
-                            border: 1px solid #f2bd79;
-                            color: #f3eabd;
-                        }
-                        &.--player{
-                            left: 20px;
-                            color: #0072fa;
-                            i{
-                                background: linear-gradient(to bottom, #0072fa, #0031ab);
-                            }
-                        }
-                        &.--banker{
-                            right: 20px;
-                            color: #f00;
-                            i{
-                                background: linear-gradient(to bottom, #f00, #a50000);
-                            }
-                        }
-                    }
-                }
-            }
+        .total_amount{
+            height: 15px;
+        }
+
+        .road{
+            height: 50px;
+            background: map-get($bg_color, white);
         }
     }
-    // .rapid__aside
+
+    // .rapid__aside 下注按鈕
     &__aside{
-        @include d_f(flex, center, space-between);
-        width: calc(100% - 250px);
-        height: 100%;
+        @include d_f(flex, unset, space-between);
         flex-direction: column;
-        font-size: 12px;
-        @at-root .aside{
-            // .aside__info
-            &__info{
-                @include d_f(flex, center, space-between);
-                position: relative;
-                width: 100%;
-                height: 30px;
-                padding: 0 2px;
-                background: linear-gradient(#313131, #000);
-                b{
-                    position: relative;
+        flex: none;
+        width: 70px;
+        height: 100%;
+        padding: 3px;
+
+        
+        // 靴局
+        .aside__info{
+            @include d_f(flex, center, space-between);
+            width: 100%;
+            font-size: 12px;
+
+            span{
+                background: map-get($bg_color, black);
+                color: map-get($txt_color, primary);
+
+                &::before{
+                    content: attr(data-txt);
                     color: map-get($txt_color, white);
-                    z-index: 1;
-                    height: 18px;
-                }
-                span{
-                    @include d_f(flex, center, center);
-                    position: relative;
-                    width: 16px;
-                    height: 16px;
-                    color: map-get($txt_color, secondary02);
-                    z-index: 0;
-                    &:after{
-                        content: '';
-                        @include pos_a(trbl, 0);
-                        background: map-get($bg_color, black);
-                        border-radius: 3px;
-                        box-shadow: 0 1px 0 #f2d77a;
-                        z-index: -1;
-                    }
+                    margin: auto;
                 }
             }
-            &__bet button,
-            &__road button{
-                @include border(1px 0, linear-gradient(to right, rgba(255,255,255,0) 2%, #63402c 10%, #eae0ad 45%, #eae0ad 55%, #63402c 90%, rgba(255,255,255,0) 98%) 1);
-                border-radius: 3px;
-                font-size: 12px;
-                text-align: center;
-                position: relative;
-                color: #feffc3;
-                border: none;
-                outline: none;
-                cursor: pointer;
-                text-shadow: 0 2px 2px #000;
-                overflow: hidden;
-            }
-            // .aside__bet
-            &__bet{
+            
+        }
+        
+        // 確定續押取消
+        .order__function{
+            flex-direction: column;
+            height: auto;
+
+            .function_btn{
+                @include radius_hidden();
                 width: 100%;
-                height: 100px;
-                padding: 0 4px;
-                .bet__btn{
-                    position: relative;
-                    width: 100%;
-                    height: 30px;
-                    font-size: 13px;
-                    line-height: 1;
-                    border: 1px solid #f2bd79;
-                    &:before{
-                        @include btn_hoverlight01(200%);
-                    }
-                    &:after{
-                        @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
-                        font-size: 14px;
-                    }
-                    .hover_item{
-                        @include btn_hoveritem(map-get($btn_color, blue));
-                        &:before{
-                            @include btn_hoverlight01(200%);
-                        }
-                    }
-                    &.--confirm{
-                        height: 40px;
-                        background: map-get($btn_color, lightblue);
-                    }
-                    &.--rebet{
-                        background: map-get($btn_color, lightgreen);
-                        .hover_item {
-                            background: map-get($btn_color, green);
-                        }
-                    }
-                    &.--cancel{
-                        background: map-get($btn_color, lightred);
-                        margin-bottom: 5px;
-                        .hover_item {
-                            background: map-get($btn_color, red);
-                        }
-                    }
-                    // 手指效果
-                    @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
+                height: 35px;
+                border: 1px solid map-get($bg_color, secondary);
+
+                &::after{
+                    font-size: 14px;
                 }
-            }
-            // .aside__road
-            &__road{
-                width: 100%;
-                height: 50px;
-                padding: 0 4px;
-                margin-bottom: 3px;
-                .road__btn{
-                    width: 100%;
-                    height: 25px;
-                    border: 1px solid #f2bd79;
-                    &:before{
-                        @include btn_hoverlight01(200%);
-                    }
-                    &:after{
-                        @include btn_txt(center, map-get($txt_color, white), map-get($txt_color, shadow));
-                        font-size: 14px;
-                    }
-                    .hover_item{
-                        @include btn_hoveritem(map-get($btn_color, blue));
-                        &:before{
-                            @include btn_hoverlight01(200%);
-                        }
-                    }
-                    &.--player{
-                        background: map-get($btn_color, lightblue);
-                    }
-                    &.--banker{
-                        background: map-get($btn_color, lightred);
-                        .hover_item {
-                            background: map-get($btn_color, red);
-                        }
-                    }
-                    // 手指效果
-                    @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
-                }
+
+                // 手指效果
+                @include btn_hoverHandler(1px, map-get($txt_color, primary));
             }
         }
+
+        // 莊閒問路
+        .aside__road_btn{
+            @include btn_set(100%, 25px, map-get($btn_color, lightblue));
+            @include radius_hidden();
+            border: 1px solid map-get($bg_color, secondary);
+
+            &::before{
+                @include btn_hoverlight01(200%);
+            }
+            &::after{
+                @include btn_txt(center, map-get($txt_color, white), map-get($txt_color, shadow));
+                font-size: 12px;
+
+            }
+            .hover_item{
+                @include btn_hoveritem(map-get($btn_color, blue));
+                box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
+                            0 0 6px map-get($bg_color, secondary) inset;
+                &::before {
+                    @include btn_hoverlight01(200%);
+                }
+            }
+
+            // 莊問路
+            &:nth-child(2){
+                background: map-get($btn_color, orange);
+                
+                .hover_item {
+                    background: map-get($btn_color, lightorange);
+                }
+            }
+
+            // 手指效果
+            @include btn_hoverHandler(1px, map-get($txt_color, white));
+        }
     }
+
+
     // .rapid__loading
     &__loading{
-        @include pos_a(trbl, 1px);
-        margin: auto;
+        @include load_set;
+        position: fixed;
+        width: calc(100% - 2px);        
+        height: calc(100% - 2px);
         background: map-get($bg_color, black);
-        z-index: 1;
-        .loading__img{
-            @include pos_a(trbl, 0);
-            margin: auto;
-            width: 38px;
-            height: 38px;
-            background: url(../images/new_loading.gif) 0 0 no-repeat;
-        }
+        border-radius: 5px;
     }
 }

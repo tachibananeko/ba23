@@ -1,0 +1,283 @@
+
+// 下注區
+.rapid{
+    
+    // .rapid__bet
+    &__bet{
+        width: 250px;
+        height: 100%;
+        backface-visibility: hidden;
+        position: relative;
+        @at-root .bet{
+            // .bet__table
+            &__table{
+                position: relative;
+                width: 100%;
+                height: calc(100% - 73px);
+                display: flex;
+                flex-wrap: wrap;
+                background: #234d4c;
+            }
+            // .bet__area
+            &__area{
+                height: 60px;
+                border: 1px solid #1b090f;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                &.--top{
+                    width: 50%;
+                }
+                &.--bot{
+                    width: calc(100% / 3);
+                }
+                &.--forbid:after{
+                    content: '';
+                    @include pos_a(trbl, 0);
+                    background: rgba(0,0,0,0.5);
+                }
+                &.--light_color{
+                    border: 1px solid #fefdb3;
+                    background: linear-gradient(to top, rgba(160, 102, 42, .7), rgba(255, 255, 199, .7));
+                    box-shadow: 0 0 10px #fff;
+                }
+            }
+            // .bet__txt
+            &__txt{
+                width: 100%;
+                display: block;
+                font-size: 12px;
+                white-space: nowrap;
+                &.--odds,
+                &.--limit{
+                    height: 9px;
+                    line-height: 9px;
+                }
+                &.--target{
+                    font-size: 35px;
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                }
+                &.--limit{
+                    color: #FFFFC5;
+                    text-shadow: 0 -1px 1px #42210b, 1px 0 1px #42210b, 0 1px 1px #42210b, -1px 0 1px #42210b;
+                }
+                @at-root .--player .bet__txt{
+                    color: #0068ED;
+                }
+                @at-root .--banker .bet__txt{
+                    color: #FF302A;
+                }
+                @at-root .--tie .bet__txt{
+                    color: #009245;
+                }
+            }
+            // .bet__flicker
+            &__flicker{
+                @include pos_a(tl, 0);
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                -webkit-animation: blink_mask 0.6s ease infinite;
+                animation: blink_mask 0.6s ease infinite;
+                background: rgba(255,246,152,0.2);
+                @keyframes blink_mask{
+                    0%{
+                        opacity: 0;
+                    }
+                    50%{
+                        opacity: 1;
+                    }
+                    100%{
+                        opacity: 0;
+                    }
+                }
+            }
+            // .bet__message
+            &__message{
+                @include pos_a(trbl, 0);
+                @include d_f(flex, center, center);
+                color: #f2bd79;
+                text-align: center;
+                text-shadow: 3px 3px 3px #000;
+                background: rgba(28,65,68,0.7);
+            }
+            // .bet__result
+            &__result{
+                width: 100%;
+                height: 20px;
+                color: map-get($txt_color, white);
+                background: linear-gradient(180deg, #42210B 0%, #14100B 50%, #000 100%);
+                @include d_f(flex, center, flex-start);
+                .result{
+                    // .result__stat
+                    &__stat{
+                        @include d_f(flex, center, center);
+                        width: 20%;
+                        height: 100%;
+                    }
+                    // .result__icon
+                    &__icon{
+                        position: relative;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        &.--banker,
+                        &.--banker:before{
+                            background: #F00;
+                        }
+                        &.--player,
+                        &.--player:before{
+                            background: #1f5cfa;
+                        }
+                        &.--tie{
+                            background: #2d8e03;
+                        }
+                        &.--pair{
+                            &:before{
+                                content: '';
+                                @include pos_a(tl, -2px);
+                                width: 4px;
+                                height: 4px;
+                                border-radius: 50%;
+                                border: 1px solid #fff;
+                            }
+                        }
+                    }
+                    // .result__txt
+                    &__txt{
+                        padding-left: 5px;
+                        font-size: 14px;
+                        font-weight: normal;
+                    }
+                }
+            }
+            // .bet__road
+            &__road{
+                width: 250px;
+                height: 50px;
+                background: #FFF;
+                border-radius: 0 0 0 5px;
+            }
+            // .bet__mask
+            &__mask{
+                @include pos_a(trbl, 0);
+                @include d_f(flex, center, center);
+                background: rgba(0, 0, 0, .6);
+                .mask{
+                    // .mask__win
+                    &__win{
+                        @include pos_a(t, 20px);
+                        @include d_f(flex, center, center);
+                        color: #ffffc5;
+                        padding: 0 20px;
+                        background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+                    }
+                    // .mask__animation
+                    &__animation{
+                        width: 45px;
+                        height: 45px;
+                        .animation__road{
+                            width: 100%;
+                            height: 100%;
+                            background-position: center;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            animation: circle-animate 3s both;
+                            @keyframes circle-animate{
+                                0%{
+                                    transform: scale(0);
+                                }
+                                25%{
+                                    transform: scale(1);
+                                }
+                                75%{
+                                    opacity: 1;
+                                    transform: translateY(0px) scale(1);
+                                }
+                                100%{
+                                    opacity: 0;
+                                    transform: translateY(50px) scale(0);
+                                }
+                            }
+                        }
+                        @at-root .--bkpl_0 { background-image: url(../images/bkpl_0_en.svg);}
+                        @at-root .--bkpl_1 { background-image: url(../images/bkpl_1_en.svg);}
+                        @at-root .--bkpl_2 { background-image: url(../images/bkpl_2_en.svg);}
+                        @at-root .--bkpl_3 { background-image: url(../images/bkpl_3_en.svg);}
+                        @at-root .--bkpl_4 { background-image: url(../images/bkpl_4_en.svg);}
+                        @at-root .--bkpl_5 { background-image: url(../images/bkpl_5_en.svg);}
+                        @at-root .--bkpl_6 { background-image: url(../images/bkpl_6_en.svg);}
+                        @at-root .--bkpl_7 { background-image: url(../images/bkpl_7_en.svg);}
+                        @at-root .--bkpl_8 { background-image: url(../images/bkpl_8_en.svg);}
+                        @at-root .--bkpl_9 { background-image: url(../images/bkpl_9_en.svg);}
+                        @at-root .--bkpl_10 { background-image: url(../images/bkpl_10_en.svg);}
+                        @at-root .--bkpl_11 { background-image: url(../images/bkpl_11_en.svg);}
+
+                        @at-root .TW .--bkpl_0 { background-image: url(../images/bkpl_0_tw.svg);}
+                        @at-root .TW .--bkpl_1 { background-image: url(../images/bkpl_1_tw.svg);}
+                        @at-root .TW .--bkpl_2 { background-image: url(../images/bkpl_2_tw.svg);}
+                        @at-root .TW .--bkpl_3 { background-image: url(../images/bkpl_3_tw.svg);}
+                        @at-root .TW .--bkpl_4 { background-image: url(../images/bkpl_4_tw.svg);}
+                        @at-root .TW .--bkpl_5 { background-image: url(../images/bkpl_5_tw.svg);}
+                        @at-root .TW .--bkpl_6 { background-image: url(../images/bkpl_6_tw.svg);}
+                        @at-root .TW .--bkpl_7 { background-image: url(../images/bkpl_7_tw.svg);}
+
+                        @at-root .CN .--bkpl_0 { background-image: url(../images/bkpl_0.svg);}
+                        @at-root .CN .--bkpl_1 { background-image: url(../images/bkpl_1.svg);}
+                        @at-root .CN .--bkpl_2 { background-image: url(../images/bkpl_2.svg);}
+                        @at-root .CN .--bkpl_3 { background-image: url(../images/bkpl_3.svg);}
+                        @at-root .CN .--bkpl_4 { background-image: url(../images/bkpl_4.svg);}
+                        @at-root .CN .--bkpl_5 { background-image: url(../images/bkpl_5.svg);}
+                        @at-root .CN .--bkpl_6 { background-image: url(../images/bkpl_6.svg);}
+                        @at-root .CN .--bkpl_7 { background-image: url(../images/bkpl_7.svg);}
+                        @at-root .TW .--bkpl_8,
+                        .CN .--bkpl_8 { background-image: url(../images/bkpl_8.svg);}
+                        @at-root .TW .--bkpl_9,
+                        .CN .--bkpl_9 { background-image: url(../images/bkpl_9.svg);}
+                        @at-root .TW .--bkpl_10,
+                        .CN .--bkpl_10 { background-image: url(../images/bkpl_10.svg);}
+                        @at-root .TW .--bkpl_11,
+                        .CN .--bkpl_11 { background-image: url(../images/bkpl_11.svg);}
+                    }
+                    // .mask__result
+                    &__result{
+                        @include d_f(flex, flex-start, center);
+                        @include pos_a(t, calc(50% - 50px));
+                        width: 40px;
+                        height: 120px;
+                        font-size: 30px;
+                        flex-wrap: wrap;
+                        align-content: space-between;
+                        span{
+                            text-shadow: 0 -1px #f2bd79, 0 1px #f2bd79, 0 1px #f2bd79, -1px 0 #f2bd79;
+                        }
+                        i{
+                            @include d_f(flex, center, center);
+                            width: 40px;
+                            height: 60px;
+                            border-radius: 5px;
+                            border: 1px solid #f2bd79;
+                            color: #f3eabd;
+                        }
+                        &.--player{
+                            left: 20px;
+                            color: #0072fa;
+                            i{
+                                background: linear-gradient(to bottom, #0072fa, #0031ab);
+                            }
+                        }
+                        &.--banker{
+                            right: 20px;
+                            color: #f00;
+                            i{
+                                background: linear-gradient(to bottom, #f00, #a50000);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
