@@ -149,16 +149,32 @@
     .detail__box{
         flex: 0 0 200px;
 
+        @include mw_lg{
+            height: 100%;
+        }
+
         &__title{
             font-size: 14px;
+
+            @include mw_lg{
+                display: flex;
+            }
         }
     }
 
+    // 好路追注按鈕
     .goodroad_btn{
         width: 25px;
 
         @at-root .--on + .goodroad_btn{
             filter: brightness(0%);
+        }
+    }
+    .goodroadList__item__go,
+    .goodroadList__item__tb{
+        @include mw_lg{
+            flex: 0 0 50px;
+            font-size: unset;
         }
     }
 
@@ -412,7 +428,7 @@
     }
 }
 
-// 多桌下注
+// 空桌區
 .betArea {
         @include d_f(flex, space-between, space-around);
         @include scrollbar(hidden, auto);
@@ -527,7 +543,7 @@
             @include d_f(flex, center, flex-start);
             flex: none;
             position: relative;
-            padding: 0 5px 0 10px;
+            padding: 0 10px;
             background: map-get($bg_color, gold);
             transform: skewX(25deg);
             left: -5px;
@@ -610,6 +626,7 @@
 
     // .rapid__content 下注區塊
     &__bet{
+        position: relative;
         flex: 1 1 100%;
 
         .area_b, .area_p, .area_t, .area_bp, .area_pp{
@@ -620,13 +637,85 @@
             font-size: 20px;
         }
 
-        .total_amount{
-            height: 15px;
+        // 結果統計
+        .result{
+            @include d_f(flex, center, space-around);
+            height: 13px;
+
+            li{
+                position: relative;
+                width: 10px;
+                height: 10px;
+                border-radius: 10px;
+                background: map-get($bg_color, play);
+                
+                &.--pair::before{
+                    @include pos_a(tl, -2px, -2px);
+                        content: '';
+                        width: 3px;
+                        height: 3px;
+                        background: map-get($bg_color, play);
+                        border-radius: 3px;
+                        border: 1px solid map-get($bg_color, white);
+                    }
+
+                &:nth-child(3n + 1){
+                    background: map-get($bg_color, bank);
+
+                    &.--pair::before{
+                        background: map-get($bg_color, bank);
+                    }
+                }
+                &:nth-child(3){
+                    background: map-get($bg_color, tie);
+                }
+
+                &::after{
+                    @include pos_a(tl, -2px, calc(100% + 2px));
+                    content: attr(data-num);
+                    color: map-get($txt_color, white);
+                    font-size: 12px;
+                }
+            }
         }
 
+        // 珠路
         .road{
             height: 50px;
             background: map-get($bg_color, white);
+        }
+
+        // 開牌結果
+        .bet__mask{
+            @include pos_a(trbl, 0);
+            padding: 5px 10px 30px;
+            background: map-get($bg_color, black_alpha);
+            text-align: center;
+
+            &::before{
+                @include bg_txt(map-get($bg_color, gold), 24px);
+                content:attr(data-txt);
+                font-weight: bold;
+            }
+
+            .result__box{
+                height: calc(100% - 30px);
+                align-items: flex-end;
+            }
+            
+            .result__box__img{
+                background-image: url(../images/bkpl_0.svg);
+            }
+
+            .txt{
+                @include mw_xs{
+                    font-size: 30px;
+                }
+            }
+
+            .--banker{
+                justify-content: flex-end;
+            }
         }
     }
 
