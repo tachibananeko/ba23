@@ -7,6 +7,7 @@
     .video__function {
         width: 100%;
         height: calc(100% - 50px);
+        vertical-align: middle;
     }
 
     // .video__pause 視訊暫停傳送
@@ -246,7 +247,11 @@
             height: 140px;
             margin: 5px;
             border-radius: 5px;
-            border: 2px solid map-get($bg_color, secondary02);
+            border: 2px solid map-get($bg_color, gray);
+
+            @at-root .--on.table__item{
+                border-color: map-get($bg_color, secondary02);
+            }
 
             @include hoverHandler{
                 .mask__unselected {
@@ -273,6 +278,7 @@
                     height: 40px;
                     background: map-get($bg_color, gray_gradual);
                     color: map-get($txt_color, white);
+                    font-size: 14px;
                     font-weight: bold;
                     text-align: center;
 
@@ -301,7 +307,7 @@
 
                     &.--i_fast,
                     &.--i_ex{
-                        width: 20px;
+                        width: 18px;
                         height: 100%;
                         background: url(../images/icon_fast.svg) no-repeat center / contain;
                     }
@@ -320,7 +326,7 @@
 
                     >span {
                         @include pos_a(tr, 30px, 0);
-                        @include border(1px 0, map-get($border_color, primary));
+                        @include border(0 0 1px, map-get($border_color, primary));
                         padding: 2px 5px;
                         color: map-get($txt_color, primary);
                         background: map-get($bg_color, black_alpha);
@@ -583,7 +589,6 @@
             }
 
             span{
-                @include border(0 0 1px 0, map-get($border_color, primary));
                 display: block;
                 padding: 2px 5px;
                 background: map-get($bg_color, black);
