@@ -331,6 +331,8 @@
                     }
 
                     @include hoverHandler {
+                        background-size: 100%;
+
                         span {
                             display: block;
                         }
@@ -437,6 +439,7 @@
         flex-wrap: wrap;
         align-content: space-between;
 
+    // .betArea__box .betArea__empty
     &__box,
     &__empty{
         position: relative;
@@ -447,7 +450,7 @@
     // .bet__box 桌次區塊
     &__box {
         @include d_f(flex, center, center);
-        width: 320px;
+        width: 300px;
     }
 
     // .bet__empty 空桌時
@@ -596,7 +599,7 @@
 
             .video_btn{
                 right: auto;
-                left: 0;
+                left: 3px;
             }
 
             // .status__txt
@@ -640,6 +643,7 @@
         // 結果統計
         .result{
             @include d_f(flex, center, space-around);
+            padding-right: 10px;
             height: 13px;
 
             li{

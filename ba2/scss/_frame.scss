@@ -190,8 +190,8 @@
             grid-area: inside;
 
             display: grid;
-            grid-template-rows: 450px minmax(200px, 1fr);
-            grid-template-columns: 600px minmax(0, 1fr);
+            grid-template-rows: 410px minmax(200px, 1fr);
+            grid-template-columns: 550px minmax(0, 1fr);
             grid-template-areas:"video bet"
                                 "select bet";
 
