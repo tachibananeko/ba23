@@ -271,7 +271,7 @@ caption {
 html,
 body {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: #000;
   -ms-touch-action: manipulation;
       touch-action: manipulation;
@@ -372,7 +372,7 @@ tt {
   }
 }
 
-.PRmini__txt, .agree__line_btn, .lobbyTb, .lobbyTb__title__limit {
+.pr_mini__txt, .agree__line_btn, .lobbyTb, .lobbyTb__title__limit {
   text-shadow: 2px 2px rgba(23, 13, 14, 0.5);
 }
 
@@ -401,7 +401,7 @@ tt {
 .func_btn::after,
 .func_btn.--gold::after,
 .txtlink_style,
-.PRmini,
+.pr_mini,
 .menu__info__language,
 .menu__info__txt .amount,
 .menu__main ul li:not(.--PR),
@@ -418,7 +418,7 @@ tt {
 .alert .roadSet__info .--allChecked,
 .alert .roadSet__info__item,
 .lobbyTb__foot__btn::after,
-.video__function .PR_btn::after,
+.video__function .pr_btn::after,
 .--bigTv .table__title,
 .table__title::after,
 .table__group li,
@@ -2315,7 +2315,7 @@ tt {
         grid-template-rows: minmax(0, 1fr) 50px;
     -ms-grid-columns: minmax(0, 1fr);
         grid-template-columns: minmax(0, 1fr);
-        grid-template-areas: "main" "menu";
+        grid-template-areas: "main" "menu";
   }
 }
 
@@ -2372,7 +2372,7 @@ tt {
       grid-template-rows: 50px minmax(0, 1fr);
   -ms-grid-columns: minmax(0, 1fr);
       grid-template-columns: minmax(0, 1fr);
-      grid-template-areas: "nav" "inside";
+      grid-template-areas: "nav" "inside";
 }
 
 @media screen and (max-width: 599px) {
@@ -2417,7 +2417,7 @@ tt {
       grid-template-rows: 480px 80px minmax(200px, 250px);
   -ms-grid-columns: 750px minmax(0, 1fr);
       grid-template-columns: 750px minmax(0, 1fr);
-      grid-template-areas: "video order" "table order" "road detail";
+      grid-template-areas: "video order" "table order" "road detail";
 }
 
 @media screen and (max-width: 1180px) {
@@ -2439,14 +2439,14 @@ tt {
 
 @media screen and (max-width: 996px) {
   .frame__main__inside {
-        grid-template-areas: "video" "order" "road";
+        grid-template-areas: "video" "order" "road";
     -ms-grid-rows: 50vw 1fr minmax(200px, 250px);
         grid-template-rows: 50vw 1fr minmax(200px, 250px);
     -ms-grid-columns: minmax(0, 1fr);
         grid-template-columns: minmax(0, 1fr);
   }
   .--tableOpen .frame__main__inside {
-        grid-template-areas: "video" "table" "order" "road";
+        grid-template-areas: "video" "table" "order" "road";
     -ms-grid-rows: 50vw 120px 1fr minmax(200px, 250px);
         grid-template-rows: 50vw 120px 1fr minmax(200px, 250px);
   }
@@ -2570,7 +2570,7 @@ tt {
   -webkit-overflow-scrolling: touch;
 }
 
-.PRmini {
+.pr_mini {
   position: relative;
   width: 130px;
   height: auto;
@@ -2603,14 +2603,14 @@ tt {
 }
 
 @media screen and (max-width: 1180px) {
-  .PRmini {
+  .pr_mini {
     width: 80px;
     font-size: 12px;
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .PRmini {
+  .pr_mini {
     width: 100%;
     padding: 5px;
     -webkit-box-orient: horizontal;
@@ -2621,12 +2621,12 @@ tt {
   }
 }
 
-.PRmini__txt code {
+.pr_mini__txt code {
   color: #fefdb3;
   font-weight: bold;
 }
 
-.PRmini .load {
+.pr_mini .load {
   display: inline-block;
   position: relative;
   width: 20px;
@@ -2635,12 +2635,12 @@ tt {
 }
 
 @media screen and (max-width: 1024px) {
-  .PRmini .load {
+  .pr_mini .load {
     margin: 0 20px;
   }
 }
 
-.PRmini .load::before {
+.pr_mini .load::before {
   position: absolute;
   right: 0;
   bottom: calc(100% + 10px);
@@ -2652,7 +2652,7 @@ tt {
   white-space: nowrap;
 }
 
-.PRmini .load div {
+.pr_mini .load div {
   position: absolute;
   top: 0;
   right: 0;
@@ -2667,7 +2667,7 @@ tt {
           animation: load 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 }
 
-.PRmini .load div:nth-child(2) {
+.pr_mini .load div:nth-child(2) {
   -webkit-animation-delay: -.5s;
           animation-delay: -.5s;
 }
@@ -2707,17 +2707,17 @@ tt {
 }
 
 .--telType .frame__main__inside {
-      grid-template-areas: "video detail" "table detail" "road road";
+      grid-template-areas: "video detail" "table detail" "road road";
 }
 
 @media screen and (max-width: 996px) {
   .--telType .frame__main__inside {
-        grid-template-areas: "video" "order" "road";
+        grid-template-areas: "video" "order" "road";
     -ms-grid-rows: 60vw 60px minmax(200px, 300px);
         grid-template-rows: 60vw 60px minmax(200px, 300px);
   }
   .--telType.--tableOpen .frame__main__inside {
-        grid-template-areas: "video" "table" "order" "road";
+        grid-template-areas: "video" "table" "order" "road";
     -ms-grid-rows: 60vw 1fr 1fr minmax(200px, 300px);
         grid-template-rows: 60vw 1fr 1fr minmax(200px, 300px);
   }
@@ -2726,7 +2726,7 @@ tt {
         grid-template-rows: 60vw 200px minmax(200px, 300px);
   }
   .--telType.--cardOpen.--tableOpen .frame__main__inside {
-        grid-template-areas: "video" "table" "order" "road";
+        grid-template-areas: "video" "table" "order" "road";
     -ms-grid-rows: 60vw 1fr 1fr minmax(200px, 300px);
         grid-template-rows: 60vw 1fr 1fr minmax(200px, 300px);
   }
@@ -2741,19 +2741,19 @@ tt {
 
 .--noCard .frame__main__inside,
 .--noOrder .frame__main__inside {
-      grid-template-areas: "video detail" "table detail" "road road";
+      grid-template-areas: "video detail" "table detail" "road road";
 }
 
 @media screen and (max-width: 996px) {
   .--noCard .frame__main__inside,
   .--noOrder .frame__main__inside {
-        grid-template-areas: "video" "road";
+        grid-template-areas: "video" "road";
     -ms-grid-rows: 60vw minmax(200px, 300px);
         grid-template-rows: 60vw minmax(200px, 300px);
   }
   .--noCard.--tableOpen .frame__main__inside,
   .--noOrder.--tableOpen .frame__main__inside {
-        grid-template-areas: "video" "table" "road";
+        grid-template-areas: "video" "table" "road";
     -ms-grid-rows: 60vw 120px minmax(200px, 300px);
         grid-template-rows: 60vw 120px minmax(200px, 300px);
   }
@@ -2783,7 +2783,7 @@ tt {
       grid-template-rows: 550px 20px 200px 30px;
   -ms-grid-columns: minmax(0, 1fr);
       grid-template-columns: minmax(0, 1fr);
-      grid-template-areas: "video" "table" "order" "road";
+      grid-template-areas: "video" "table" "order" "road";
 }
 
 .--telType.--bigTv .frame__main__inside {
@@ -2791,14 +2791,14 @@ tt {
       grid-template-rows: 550px 20px 30px;
   -ms-grid-columns: minmax(0, 1fr);
       grid-template-columns: minmax(0, 1fr);
-      grid-template-areas: "video" "table" "road";
+      grid-template-areas: "video" "table" "road";
 }
 
 .--telType.--bigTv.--cardOpen .frame__main__inside,
 .--telType.--bigTv.--tableOpen .frame__main__inside {
   -ms-grid-rows: 550px 20px 100px 30px;
       grid-template-rows: 550px 20px 100px 30px;
-      grid-template-areas: "video" "table" "order" "road";
+      grid-template-areas: "video" "table" "order" "road";
 }
 
 .--telType.--bigTv .frame__main__inside .order {
@@ -2811,7 +2811,7 @@ tt {
       grid-template-rows: 550px 20px;
   -ms-grid-columns: minmax(0, 1fr);
       grid-template-columns: minmax(0, 1fr);
-      grid-template-areas: "video" "table";
+      grid-template-areas: "video" "table";
 }
 
 .--noCard.--bigTv.--tableOpen .frame__main__inside,
@@ -6732,7 +6732,7 @@ tt {
   }
 }
 
-.video__function .PR_btn {
+.video__function .pr_btn {
   position: relative;
   width: auto;
   height: 30px;
@@ -6749,7 +6749,7 @@ tt {
 }
 
 @media screen and (max-width: 1024px) {
-  .video__function .PR_btn {
+  .video__function .pr_btn {
     position: fixed;
     bottom: auto;
     top: 10px;
@@ -6758,7 +6758,7 @@ tt {
 }
 
 @media screen and (max-width: 996px) {
-  .video__function .PR_btn {
+  .video__function .pr_btn {
     position: absolute;
     top: auto;
     bottom: 0;
@@ -6768,7 +6768,7 @@ tt {
   }
 }
 
-.video__function .PR_btn::before {
+.video__function .pr_btn::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -6779,7 +6779,7 @@ tt {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 50%, transparent 51%, transparent 100%);
 }
 
-.video__function .PR_btn::after {
+.video__function .pr_btn::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6798,7 +6798,7 @@ tt {
   pointer-events: none;
 }
 
-.video__function .PR_btn .hover_item {
+.video__function .pr_btn .hover_item {
   position: absolute;
   top: 0;
   left: 0;
@@ -6813,7 +6813,7 @@ tt {
           box-shadow: 0 0 1px #fbe2b0 inset, 0 0 3px #fbe2b0 inset;
 }
 
-.video__function .PR_btn .hover_item::before {
+.video__function .pr_btn .hover_item::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -6824,7 +6824,7 @@ tt {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 50%, transparent 51%, transparent 100%);
 }
 
-.video__function .PR_btn i {
+.video__function .pr_btn i {
   position: absolute;
   top: 0;
   right: 0;
@@ -6834,7 +6834,7 @@ tt {
   background: linear-gradient(to right, transparent 0%, #caff71b3 50%, transparent 100%) 0 3%/100% 2px no-repeat;
 }
 
-.video__function .PR_btn i::before {
+.video__function .pr_btn i::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -6845,7 +6845,7 @@ tt {
   background: linear-gradient(to right, transparent 0%, #caff71b3 50%, transparent 100%) 0 97%/100% 2px no-repeat;
 }
 
-.video__function .PR_btn i::after {
+.video__function .pr_btn i::after {
   position: absolute;
   top: 0;
   right: 0;
@@ -6856,26 +6856,26 @@ tt {
 }
 
 @media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
-  .video__function .PR_btn:hover {
+  .video__function .pr_btn:hover {
     border-width: 1px;
   }
-  .video__function .PR_btn:hover::after {
+  .video__function .pr_btn:hover::after {
     color: #fff;
   }
-  .video__function .PR_btn:hover .hover_item {
+  .video__function .pr_btn:hover .hover_item {
     opacity: 1;
   }
 }
 
-.video__function .PR_btn:active {
+.video__function .pr_btn:active {
   border-width: 1px;
 }
 
-.video__function .PR_btn:active::after {
+.video__function .pr_btn:active::after {
   color: #fff;
 }
 
-.video__function .PR_btn:active .hover_item {
+.video__function .pr_btn:active .hover_item {
   -webkit-transition: none;
   transition: none;
   opacity: 1;

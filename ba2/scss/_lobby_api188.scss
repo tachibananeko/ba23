@@ -1,0 +1,79 @@
+.lobby{
+    &_api188{
+        padding: 90px 90px 0;
+        width: 100%;
+        height: 100%;
+    }
+    &_item{
+        width: 100%;
+        .item{
+            &__title{
+                position: relative;
+                width: 100%;
+                height: 100px;
+                z-index: 0;
+                &:before{
+                    content: '';
+                    @include pos_a(tl, -50px, 0);
+                    width: 100%;
+                    height: 200px;
+                    background: url(../images/ba_title.png) top left/contain no-repeat;
+                }
+                &:after{
+                    content: '';
+                    @include pos_a(tl, 0);
+                    width: 100%;
+                    height: 100px;
+                    transform: skewX(45deg);
+                    background: linear-gradient(to right, rgba(255, 255, 197, 0) 0%, #f2d77a 10%, rgba(180, 124, 36, 0.1) 50%, rgba(180, 124, 36, 0) 70%);
+                    z-index: -1;
+                }
+                @at-root .--other .item__title:before{
+                    background-image: url(../images/other_title.png);
+                }
+                @at-root .--elec .item__title:before{
+                    background-image: url(../images/elec_title.png);
+                }
+            }
+            &__content{
+                @include d_f(flex, flex-start,flex-start);
+                position: relative;
+                width: 100%;
+                flex-wrap: wrap;
+                margin-bottom: 20px;
+            }
+            &__table{
+                position: relative;
+                width: 300px;
+                height: 175px;
+                margin: 10px 25px;
+                padding: 0 15px 10px;
+                border-radius: 5px;
+                background: linear-gradient(to bottom, #1a1a1a, #4d4d4d);
+                &:after{
+                    content: '';
+                    @include pos_a(tl, 0);
+                    width: 15px;
+                    height: 15px;
+                    background: url(../images/table_decoration.svg) center/contain no-repeat;
+                }
+                .table{
+                    &__num{
+                        width: 100%;
+                        height: 50px;
+                        @include bg_txt(linear-gradient(#ffffad 40%, #dabf7a 70%, #b6805c 100%), 20px);
+                        @include d_f(flex, center, center);
+                    }
+                    &__content{
+                        width: 100%;
+                        height: 105px;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
