@@ -445,6 +445,20 @@
         flex-wrap: wrap;
         align-content: space-between;
 
+    // .betArea__title 顯示金額
+    &__title{
+        @include d_f(flex, center, space-around);
+        @include border(0 0 1px, map-get($border_color, primary));
+        width: 100%;
+        padding: 2px 5px;
+        font-size: 14px;
+
+        li::before {
+            content: attr(data-txt);
+            color: map-get($txt_color, white);
+        }
+    }
+
     // .betArea__box .betArea__empty
     &__box,
     &__empty{
