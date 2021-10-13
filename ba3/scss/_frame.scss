@@ -37,6 +37,7 @@
         @include mw_md{
             @include d_f(flex, center, center);
             position: fixed;
+            width: 100%;
             bottom: constant(safe-area-inset-bottom);
             bottom: env(safe-area-inset-bottom);
         }
