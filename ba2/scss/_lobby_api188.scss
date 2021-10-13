@@ -38,18 +38,28 @@
                     background-image: url(../images/elec_title.png);
                 }
                 .title__txt{
-                    display: block;
+                    @include pos_a(tl, 15px, 100px);
                     position: relative;
-                    padding-left: 100px;
-                    font-size: 50px;
+                    display: inline-block;
+                    font-size: 45px;
                     font-weight: bold;
                     color: transparent;
-                    text-shadow: 0 -2px 0px #000, 2px 0 0px #000, 0 2px 0px #000, -2px 0 0px #000, 0 -4px 3px #b37c24, 4px 0 3px #b37c24, 0 4px 3px #b37c24, -4px 0 3px #b37c24;
+                    text-shadow: 2px 3px 0px #161616, 3px 5px 3px #fbd20b, 0 0 5px #fbd20b, -1px 0 2px #fbe90b, 0 0 5px #ff552f;
+                    transform: skew(5deg);
+
                     &:before{
-                        @include pos_a(tl, 0, 100px);
-                        @include bg_txt(linear-gradient(to right, #6e6e6e 0%, #fff 30%, #fff 70%, #737373 100%), 50px);
+                        @include pos_a(tl, 0);
+                        @include bg_txt(linear-gradient(150deg, #3e3e3e 10%, #fff 40%, #fff 70%, #737373 100%), inherit);
                         content: attr(data-txt);
                         text-shadow: none;
+                    }
+
+                    &:nth-child(2){
+                        font-size: 20px;
+
+                        &:before{
+                            top: 1px;
+                        }
                     }
                 }
             }
@@ -80,10 +90,11 @@
                 .table{
                     // table__num
                     &__num{
+                        @include d_f(flex, center, center);
+                        @include bg_txt(linear-gradient(#ffffad 40%, #dabf7a 70%, #b6805c 100%), 32px);
                         width: 100%;
                         height: 50px;
-                        @include bg_txt(linear-gradient(#ffffad 40%, #dabf7a 70%, #b6805c 100%), 32px);
-                        @include d_f(flex, center, center);
+                        font-weight: bold;
                     }
                     // table__content
                     &__content{
