@@ -30,13 +30,15 @@
     }
 
     // .frame__menu
-    &__menu {
+    &__menu {       
         grid-area: menu;
         background: map-get($bg_color, primary);
         z-index: 5;
         @include mw_md{
             @include d_f(flex, center, center);
-            position: relative;
+            position: fixed;
+            bottom: constant(safe-area-inset-bottom);
+            bottom: env(safe-area-inset-bottom);
         }
         @include mw_ls{
             flex-direction: column;
