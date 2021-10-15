@@ -4,6 +4,10 @@
         padding: 90px 90px 0;
         width: 100%;
         height: 100%;
+        @include scrollbar(hidden, auto);
+        @include mw_md{
+            padding: 35px 10px;
+        }
     }
     // lobby_item
     &_item{
@@ -15,12 +19,20 @@
                 width: 100%;
                 height: 80px;
                 z-index: 0;
+                @include mw_md{
+                    height: 50px;
+                }
                 &:before{
                     content: '';
                     @include pos_a(tl, -50px, 0);
                     width: 1345px;
                     height: 200px;
                     background: url(../images/ba_title.png) top left/contain no-repeat;
+                    @include mw_md{
+                        top: -25px;
+                        width: 670px;
+                        height: 100px;
+                    }
                 }
                 &:after{
                     content: '';
@@ -46,19 +58,26 @@
                     color: transparent;
                     text-shadow: 2px 3px 0px #161616, 3px 5px 3px #fbd20b, 0 0 5px #fbd20b, -1px 0 2px #fbe90b, 0 0 5px #ff552f;
                     transform: skew(5deg);
-
+                    @include mw_md{
+                        top: 0;
+                        font-size: 30px;
+                    }
                     &:before{
                         @include pos_a(tl, 0);
                         @include bg_txt(linear-gradient(150deg, #3e3e3e 10%, #fff 40%, #fff 70%, #737373 100%), inherit);
                         content: attr(data-txt);
                         text-shadow: none;
+                        @include mw_md{
+                            font-size: 30px;
+                        }
                     }
-
                     &:nth-child(2){
                         font-size: 20px;
-
                         &:before{
                             top: 1px;
+                            @include mw_md{
+                                font-size: 20px;
+                            }
                         }
                     }
                 }
@@ -68,15 +87,31 @@
                 @include d_f(flex, flex-start,flex-start);
                 position: relative;
                 width: 100%;
+                max-width: 1020px;
                 flex-wrap: wrap;
-                margin-bottom: 20px;
+                margin: 0 auto 40px;
+                @include mw_lg{
+                    max-width: 765px;
+                }
+                @include mw_sm{
+                    max-width: 610px;
+                }
+                @include mw_xs{
+                    justify-content: center;
+                }
+                @at-root .--ba .item__content{
+                    max-width: 990px;
+                    @include mw_lg{
+                        max-width: 660px;
+                    }
+                }
             }
             // item__table
             &__table{
                 position: relative;
                 width: 300px;
                 height: 175px;
-                margin: 10px 25px;
+                margin: 10px 15px;
                 padding: 0 15px 10px;
                 border-radius: 5px;
                 background: linear-gradient(to bottom, #1a1a1a, #4d4d4d);
@@ -104,6 +139,82 @@
                             width: 100%;
                             height: 100%;
                         }
+                        @at-root .hover_mask{
+                            @include pos_a(bl, 0);
+                            cursor: pointer;
+                            width: 100%;
+                            height: 0;
+                            opacity: 0;
+                            border: 1px solid #ffffc4;
+                            border-radius: 5px;
+                            box-shadow: 0 0 20px #b37c24 inset;
+                            background: rgba(0, 0, 0, .8);
+                            @at-root .item__table:hover .hover_mask,
+                            .item__cube:hover .hover_mask{
+                                height: 100%;
+                                opacity: 1;
+                                transition: height .3s, opacity .3s;
+                            }
+                            .mask__btn{
+                                @include btn_set(110px, 40px, linear-gradient(to bottom, #a46b2a 0%, #f8df72 50%, #fffeae 100%));
+                                @include pos_a(trbl, 0);
+                                border: 1px solid #ffffc4;
+                                border-radius: 3px;
+                                margin: auto;
+                                &::before {
+                                    @include btn_hoverlight01(200%);
+                                }
+                                &::after {
+                                    @include btn_txt(center, map-get($txt_color, black), none);
+                                    font-size: 16px;
+                                }
+                                .hover_item {
+                                    // @include btn_hoveritem(linear-gradient(to top, #a46b2a 0%, #f8df72 50%, #fffeae 100%));
+                                    box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
+                                        0 0 6px map-get($bg_color, secondary) inset;
+
+                                    &::before {
+                                        @include btn_hoverlight01(200%);
+                                    }
+                                }
+                                // 手指效果
+                                @include btn_hoverHandler(1px, map-get($txt_color, black));
+                            }
+                        }
+                    }
+                }
+            }
+            // item__cube
+            &__cube{
+                width: 225px;
+                height: 225px;
+                margin: 15px 15px 0;
+                @include mw_sm{
+                    margin: 40px 40px 0;
+                }
+                @include mw_xs{
+                    margin: 15px 15px 0;
+                }
+                .cube{
+                    // cube__content
+                    &__content{
+                        position: relative;
+                        width: 100%;
+                        height: 180px;
+                        border-radius: 5px;
+                        background: #1a1a1a;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    // cube__title
+                    &__title{
+                        @include d_f(flex, center, center);
+                        width: 100%;
+                        height: calc(100% - 180px);
+                        font-size: 22px;
+                        color: map-get($txt_color, white);
                     }
                 }
             }
