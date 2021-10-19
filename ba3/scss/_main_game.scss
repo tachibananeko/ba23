@@ -601,9 +601,9 @@
             }
         }
 
-        .area_b,
+        .area_p,
         .area_t,
-        .area_bp {
+        .area_pp {
             border-right: 1px solid map-get($bg_color, black);
         }
 
@@ -673,7 +673,7 @@
                 font-size: 12px;
             }
 
-            @at-root .area_p .limit{
+            @at-root .area_b .limit{
                 text-align: right;
             }
 

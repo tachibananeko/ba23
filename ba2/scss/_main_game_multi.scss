@@ -438,15 +438,16 @@
 
 // 空桌區
 .betArea {
-        @include d_f(flex, space-between, space-around);
+        @include d_f(flex, unset, center);
         @include scrollbar(hidden, auto);
         position: relative;
+        padding-top: 30px;
         background: map-get($bg_color, black);
         flex-wrap: wrap;
-        align-content: space-between;
 
     // .betArea__title 顯示金額
     &__title{
+        @include pos_a(tl, 0);
         @include d_f(flex, center, space-around);
         @include border(0 0 1px, map-get($border_color, primary));
         width: 100%;
