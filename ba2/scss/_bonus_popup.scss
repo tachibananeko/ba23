@@ -1,0 +1,187 @@
+.bonus_popup{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+    @at-root .bonus{
+        @include pos_a(trbl, 0);
+        width: 550px;
+        height: 420px;
+        margin: auto;
+        background: url(../images/bonus_bg.jpg) center/cover no-repeat;
+        @include mw_xs{
+            width: 360px;
+            height: 420px;
+            background-image: url(../images/bonus_bg2.jpg);
+            background-size: contain;
+        }
+        // bonus__title
+        &__title{
+            @include d_f(flex, center, center);
+            position: relative;
+            font-size: 48px;
+            margin: auto;
+            font-weight: bold;
+            color: transparent;
+            text-shadow: 2px 3px 0px #161616, 3px 5px 3px #fbd20b, 0 0 5px #fbd20b, -1px 0 2px #fbe90b, 0 0 5px #ff552f;
+            @include mw_xs{
+                font-size: 36px;
+            }
+            &:before{
+                position: absolute;
+                content: attr(data-txt);
+                -webkit-text-fill-color: transparent;
+                color: transparent;
+                background: linear-gradient(to bottom, #d1852f 0%, #f6e086 50%, #d1852f 100%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                font-size: inherit;
+                text-shadow: none;
+            }
+            &.--sub{
+                font-size: 36px;
+                text-shadow: 3px 3px 3px #000;
+                @include mw_xs{
+                    font-size: 24px;
+                }
+                &:before{
+                    background: linear-gradient(to right, #ffffc4 0%, #f1d67a 70%, #b37c24 100%);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                }
+            }
+            &:not(.--sub){
+                margin: 20px auto;
+            }
+        }
+        // bonus__list
+        &__list{
+            margin: 20px 0;
+        }
+        // bonus__item
+        &__item{
+            padding-left: 65px;
+            font-size: 24px;
+            color: transparent;
+            text-shadow: 3px 3px 3px #000;
+            margin-bottom: 10px;
+            @include mw_xs{
+                font-size: 20px;
+                padding-left: 20px;
+            }
+            &:before{
+                position: absolute;
+                content: attr(data-txt);
+                -webkit-text-fill-color: transparent;
+                color: transparent;
+                background: linear-gradient(to right, #b0b0b0 0%, #fff 30%, #fff 70%, #b0b0b0 100%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                font-size: inherit;
+                text-shadow: none;
+            }
+        }
+        // bonus__btn_box
+        &__btn_box{
+            @include d_f(flex, center, space-around);
+            @include mw_xs{
+                margin-top: 50px;
+                justify-content: center;
+            }
+        }
+        // bonus__btn
+        &__btn{
+            @include btn_set(160px, 40px, linear-gradient(to bottom, #3e3123 0%, #140a0c 100%));
+            // @include border(2px, linear-gradient(to right, #b68c2e 0%, #faf075 15%, #8b5b24 65%, #e4c655 95%)1);
+            border: 2px solid #faf075;
+            border-radius: 3px;
+            @include mw_xs{
+                & + .bonus__btn{
+                    margin-left: 10px;
+                }
+            }
+            &::before {
+                @include btn_hoverlight01(200%);
+            }
+            &::after {
+                @include btn_txt(center, map-get($txt_color, white), none);
+                font-size: 16px;
+            }
+            .hover_item {
+                @include btn_hoveritem(linear-gradient(to bottom, #a46b2a 0%, #f8df72 50%, #fffeae 100%));
+                box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
+                            0 0 6px map-get($bg_color, secondary) inset;
+
+                &::before {
+                    @include btn_hoverlight01(200%);
+                }
+            }
+            // 手指效果
+            @include btn_hoverHandler(1px, map-get($txt_color, black));
+        }
+        .link{
+            @include pos_a(trbl, 0, -200px, 0, auto);
+            @include d_f(flex, flex-end, center);
+            align-content: flex-end;
+            flex-wrap: wrap;
+            width: 200px;
+            height: 100%;
+            @include mw_xs{
+                top: auto;
+                right: 0;
+                bottom: -150px;
+                left: 0;
+                width: 100%;
+                height: 150px;
+                justify-content: flex-end;
+            }
+            // link__btn
+            &__btn{
+                position: relative;
+                background: transparent;
+            }
+            // link__icon
+            &__icon{
+                &.--rank{
+                    width: 140px;
+                    height: 125px;
+                    @include mw_xs{
+                        width: 110px;
+                        height: 110px;
+                    }
+                }
+                &.--area{
+                    width: 160px;
+                    height: 175px;
+                    @include mw_xs{
+                        width: 115px;
+                        height: 125px;
+                    }
+                }
+            }
+            // link__txt
+            &__txt{
+                @include pos_a(rbl, 0,);
+                margin: auto;
+                text-align: center;
+                font-size: 38px;
+                font-weight: bold;
+                color: transparent;
+                text-shadow: 3px 3px 3px #161616;
+                @include mw_xs{
+                    font-size: 26px;
+                }
+                &:before{
+                    position: absolute;
+                    content: attr(data-txt);
+                    -webkit-text-fill-color: transparent;
+                    color: transparent;
+                    background: linear-gradient(to bottom, #d1852f 0%, #f6e086 50%, #d1852f 100%);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    font-size: inherit;
+                    text-shadow: none;
+                }
+            }
+        }
+    }
+}
