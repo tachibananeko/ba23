@@ -751,6 +751,7 @@
             width: 50px;
             height: 50px;
             flex: none;
+            transform: translate3d(0, 0, 0);
 
             @include mw_sm {
                 margin: 0 20px;
@@ -766,6 +767,7 @@
             &.--on{
                 width: 70px;
                 height: 70px;
+                transform: translate3d(0, -10%, 0);
                 
                 @include mw_sm {
                     width: 50px;
@@ -777,6 +779,7 @@
             @include hoverHandler {
                 width: 70px;
                 height: 70px;
+                transform: translate3d(0, -10%, 0);
 
                 @include mw_sm {
                     width: 50px;
