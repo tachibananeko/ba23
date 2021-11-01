@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="../style/all.min.css">
+</head>
+<body ontouchstart="">
+    <div class="bonus_wrap">
+        <div class="bonus_detail">
+            <div class="bonus_detail__title">活動內容</div>
+            <div class="bonus_detail__table">
+                <div class="table__filter">
+                    <span class="filter__txt">活動</span>
+                    <div class="filter__select">
+                        <select name="" id="">
+                            <option value="">進行中</option>
+                            <option value="">失敗</option>
+                            <option value="">成功</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table__head">
+                    <div style="width: 12%;">活動代碼</div>
+                    <div style="width: 40%;">活動名稱</div>
+                    <div style="width: 12%;">開始時間</div>
+                    <div style="width: 12%;">結束時間</div>
+                    <div style="width: 12%;">進度</div>
+                    <div style="width: 12%;">達標</div>
+                </div>
+                <div class="table__content">
+                    <table>
+                        <tr>
+                            <td data-txt="活動代碼">A01</td>
+                            <td class="activity_name" data-txt="活動名稱">連續天數 天天送</td>
+                            <td data-txt="開始時間">2021 01 01</td>
+                            <td data-txt="結束時間">2021 12 31</td>
+                            <td data-txt="進度">第七天</td>
+                            <td data-txt="達標">進行中</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <ul class="bonus_detail__list">
+                <li class="bonus_detail__item">
+                    <img src="../images/activity.png" alt="">
+                    <div class="finish_mask">活動<br>已結束</div>
+                </li>
+                <li class="bonus_detail__item">
+                    <img src="../images/activity.png" alt="">
+                </li>
+                <li class="bonus_detail__item">
+                    <img src="../images/activity.png" alt="">
+                </li>
+            </ul>
+        </div>
+        <!-- 點擊.bonus_detail__item後顯示的彈出視窗 -->
+        <div class="activity" style="display: none;">
+            <div class="activity__detail">
+                <div class="activity__title">
+                    <button class="close_btn"></button>
+                </div>
+                <div class="activity__content">
+                    <div class="activity__banner">
+                        <img src="../images/activity.png" alt="">
+                    </div>
+                    <div class="activity__btn_box">
+                        <a class="activity__btn --time" href="#time">
+                            <span class="activity__btn_txt" data-txt="活動時間" data-sub="永久生效">活動時間</span>
+                            <i class="activity__btn_mask"></i>
+                        </a>
+                        <a class="activity__btn --content" href="#content">
+                            <span class="activity__btn_txt" data-txt="活動內容" data-sub="點擊看更多">活動內容</span>
+                            <i class="activity__btn_mask"></i>
+                        </a>
+                        <a class="activity__btn --bonus" href="#bonus">
+                            <span class="activity__btn_txt" data-txt="獎勵方式" data-sub="點擊看更多">獎勵方式</span>
+                            <i class="activity__btn_mask"></i>
+                        </a>
+                    </div>
+                    <!-- 這邊已經存在id的是為了跟上面a標籤的href對應,可直接替換掉 -->
+                    <div class="activity__list">
+                        <li class="activity__item" id="time">
+                            <span class="item__title">活動時間</span>
+                            <div class="item__content">
+                                <div class="content__block">
+                                    <span class="content__txt">第一期</span>
+                                    <span>2020年1月8日00:00:00</span>
+                                    <i class="content__arrow"></i>
+                                    <span>2020年2月6日23:59:59</span>
+                                </div>
+                                <div class="content__block">
+                                    <span class="content__txt">第二期</span>
+                                    <span>2020年1月8日00:00:00</span>
+                                    <i class="content__arrow"></i>
+                                    <span>2020年2月6日23:59:59</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="activity__item" id="content">
+                            <span class="item__title">活動內容</span>
+                            <div class="item__content">
+                                <p class="content__paragraph">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae,
+                                    corrupti expedita pariatur ab vero molestiae tempora sunt nostrum,
+                                    aliquid fugit odit sed repellendus, iusto illum dolores eum voluptatem animi minus!
+                                </p>
+                            </div>
+                        </li>
+                        <li class="activity__item" id="bonus">
+                            <span class="item__title">獎勵方式</span>
+                            <div class="item__content">
+                                <ul class="content__list">
+                                    <li class="content__item">
+                                        <span>1.每三日積分排行榜活動獎勵如下:</span>
+                                        <table class="content__table">
+                                            <tr>
+                                                <th>名次</th>
+                                                <th>獎金</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>168888</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>16800</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>10000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4-10</td>
+                                                <td>5000</td>
+                                            </tr>
+                                        </table>
+                                    </li>
+                                    <li class="content__item">2.每三日獎金可於隔日12:00:00之後在領獎專區領取。</li>
+                                    <li class="content__item">3.領獎期限為2020年5月31日12:00:00。</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </div>
+                    <div class="activity__remark">
+                        <span>本活動內容本公司擁有最終解釋權利</span>
+                        <span>(活動內容如有變動請以最後網頁釋出為準)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
