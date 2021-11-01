@@ -15370,6 +15370,8 @@ span.--on::after {
 
 .bonus_detail__item img {
   border-radius: 5px;
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 .bonus_detail__item .finish_mask {
@@ -15451,6 +15453,45 @@ span.--on::after {
   bottom: 0;
   right: 10px;
   margin: auto;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
+  .activity__title .close_btn:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+.activity__title .close_btn:active {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.activity__title .close_btn:before, .activity__title .close_btn:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  margin: auto;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.activity__title .close_btn:after {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
 }
 
 .activity__content {
@@ -15469,6 +15510,11 @@ span.--on::after {
 
 .activity__banner {
   width: 100%;
+}
+
+.activity__banner img {
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 .activity__btn_box {
