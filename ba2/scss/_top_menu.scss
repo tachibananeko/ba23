@@ -1,14 +1,54 @@
 
 // 返回按鈕
-.back_btn{
+.back_btn,
+.voice_btn,
+.music_btn {
     @include btn_set(30px, 30px, url(../images/icon_back.svg) no-repeat center / contain);
-    @include mr_distance;
     flex: none;
-
+    margin-right: 10px;
+    
     // 手指效果
     @include hoverHandler{
         filter: brightness(200%);
     }
+}
+
+// 音效音樂按鈕
+.voice_btn,
+.music_btn {
+    background-image: url(../images/icon_voice.svg);
+
+    @at-root &.--off {
+        @extend %no_hand;
+        filter: grayscale(1);
+
+        &::after{
+            @include pos_a(trb, 0, 14px, 0);
+            content: '';
+            width: 2px;
+            height: 100%;
+            background: map-get($bg_color, gray);
+            transform: rotate(-45deg);
+        }
+    }
+
+    // 手指效果
+    @include hoverHandler {
+        &::before{
+            @include pos_a(tl, calc(100% + 5px), 0);
+            @include border (0 0 1px, map-get($border_color, primary));
+            content: attr(data-txt);
+            padding: 2px 5px;
+            background: map-get($bg_color, black_alpha);
+            color: #fff;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+    }
+}
+.music_btn {
+    @include mr_distance;
+    background-image: url(../images/icon_music.svg);
 }
 
 // 視訊頻道
