@@ -18,31 +18,58 @@
 .music_btn {
     background-image: url(../images/icon_voice.svg);
 
+    // 開關顯示字
+    &::before {
+        @extend %transition;
+        @include pos_a(tl, calc(100% + 5px), 0);
+        @include border (0 0 1px, map-get($border_color, primary));
+        content: attr(data-txt);
+        padding: 2px 5px;
+        background: map-get($bg_color, black_alpha);
+        color: #fff;
+        font-size: 14px;
+        white-space: nowrap;
+        opacity: 0;
+    }
+
+    // 關閉斜線
+    &::after {
+        @extend %transition;
+        @include pos_a(tr, 5px, 24px);
+        content: '';
+        width: 2px;
+        height: 0;
+        background: map-get($bg_color, gray);
+        transform: rotate(-45deg);
+        transform-origin: 0 top;
+    }
+
+    // 關閉
     @at-root &.--off {
-        @extend %no_hand;
         filter: grayscale(1);
 
         &::after{
-            @include pos_a(trb, 0, 14px, 0);
-            content: '';
-            width: 2px;
             height: 100%;
-            background: map-get($bg_color, gray);
-            transform: rotate(-45deg);
+        }
+        // 手指效果
+        @include hoverHandler{
+            filter: none;
+            &::after{
+                height: 0;
+            }
         }
     }
 
     // 手指效果
     @include hoverHandler {
-        &::before{
-            @include pos_a(tl, calc(100% + 5px), 0);
-            @include border (0 0 1px, map-get($border_color, primary));
-            content: attr(data-txt);
-            padding: 2px 5px;
-            background: map-get($bg_color, black_alpha);
-            color: #fff;
-            font-size: 14px;
-            white-space: nowrap;
+        filter: grayscale(1);
+
+        &::before {
+            opacity: 1;
+        }
+
+        &::after{
+            height: 100%;
         }
     }
 }
