@@ -24,9 +24,9 @@
         @include pos_a(tl, calc(100% + 5px), 0);
         @include border (0 0 1px, map-get($border_color, primary));
         content: attr(data-txt);
-        padding: 2px 5px;
+        padding: 3px 5px;
         background: map-get($bg_color, black_alpha);
-        color: #fff;
+        color: map-get($txt_color, primary);
         font-size: 14px;
         white-space: nowrap;
         opacity: 0;
@@ -191,7 +191,7 @@
 
     &::after{
         @include pos_a(tl, calc(100% + 5px), 0);
-        @include border(1px, map-get($border_color, primary ));
+        @include border(0 0 1px, map-get($border_color, primary ));
         content: attr(data-txt);
         background: map-get($bg_color , black_alpha );
         padding: 3px 5px;
