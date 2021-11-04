@@ -14501,7 +14501,6 @@ span.--on::after {
 }
 
 .lobby_item .item__table .table__num {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
@@ -14510,14 +14509,14 @@ span.--on::after {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  content: attr(data-txt);
+  display: -webkit-box;
+  -webkit-text-fill-color: transparent;
   color: transparent;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, #ffffad), color-stop(70%, #dabf7a), to(#b6805c));
   background: linear-gradient(#ffffad 40%, #dabf7a 70%, #b6805c 100%);
   -webkit-background-clip: text;
   background-clip: text;
   font-size: 32px;
-  -webkit-text-fill-color: transparent;
   width: 100%;
   height: 50px;
   font-weight: bold;
@@ -14548,8 +14547,24 @@ span.--on::after {
   background: rgba(0, 0, 0, 0.8);
 }
 
-.item__table:hover .hover_mask,
-.item__cube:hover .hover_mask {
+.item__table,
+.item__cube {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
+  .item__table:hover .hover_mask,
+  .item__cube:hover .hover_mask {
+    height: 100%;
+    opacity: 1;
+    -webkit-transition: height .3s, opacity .3s;
+    transition: height .3s, opacity .3s;
+  }
+}
+
+.item__table:active .hover_mask,
+.item__cube:active .hover_mask {
   height: 100%;
   opacity: 1;
   -webkit-transition: height .3s, opacity .3s;
@@ -15370,7 +15385,7 @@ span.--on::after {
 
 .bonus_detail__item img {
   border-radius: 5px;
-  max-width: 100%;
+  min-width: 100%;
   vertical-align: middle;
 }
 

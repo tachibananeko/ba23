@@ -126,7 +126,15 @@
                     // table__num
                     &__num{
                         @include d_f(flex, center, center);
-                        @include bg_txt(linear-gradient(#ffffad 40%, #dabf7a 70%, #b6805c 100%), 32px);
+                        // 如果沒用-webkit-box蓋掉flex webkit核心的瀏覽器在行動裝置上字體會無法顯示
+                        display: -webkit-box;
+                        -webkit-text-fill-color: transparent;
+                        color: transparent;
+                        background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, #ffffad), color-stop(70%, #dabf7a), to(#b6805c));
+                        background: linear-gradient(#ffffad 40%, #dabf7a 70%, #b6805c 100%);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        font-size: 32px;
                         width: 100%;
                         height: 50px;
                         font-weight: bold;
@@ -149,11 +157,15 @@
                             border-radius: 5px;
                             box-shadow: 0 0 20px #b37c24 inset;
                             background: rgba(0, 0, 0, .8);
-                            @at-root .item__table:hover .hover_mask,
-                            .item__cube:hover .hover_mask{
-                                height: 100%;
-                                opacity: 1;
-                                transition: height .3s, opacity .3s;
+                            @at-root .item__table,
+                            .item__cube{
+                                @include hoverHandler{
+                                    .hover_mask{
+                                        height: 100%;
+                                        opacity: 1;
+                                        transition: height .3s, opacity .3s;
+                                    }
+                                }
                             }
                             .mask__btn{
                                 @include btn_set(110px, 40px, linear-gradient(to bottom, #a46b2a 0%, #f8df72 50%, #fffeae 100%));
