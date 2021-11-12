@@ -13,7 +13,6 @@
 		display: inline-block;
         width: $box;
         height: $box;
-        background: map-get($bg_color, gray);
         margin-right: 5px;
 
 		&::before{
