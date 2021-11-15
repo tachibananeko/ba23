@@ -131,14 +131,14 @@
             &.--on {
                 width: 55px;
                 height: 55px;
-                transform: translate(0, -20%, 0);
+                transform: translate3d(0, -20%, 0);
             }
 
             // 手指效果
             @include hoverHandler {
                 width: 55px;
                 height: 55px;
-                transform: translate(0, -20%, 0);
+                transform: translate3d(0, -20%, 0);
             }
         }
     }
