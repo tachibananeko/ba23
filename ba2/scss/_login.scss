@@ -9,6 +9,10 @@
         background: map-get($bg_color, darkbrown_gradual);
     }
 }
+.login_logo{
+    height: 150px;
+    background: url(../images/logo_iba.svg) no-repeat center top / 55%;
+}
 
 // 登入資訊
 .logArea{
