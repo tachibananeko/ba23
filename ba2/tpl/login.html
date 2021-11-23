@@ -8,12 +8,28 @@
     <meta name="format-detection" content="telephone=no" />
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
     <title>Welcome</title>
-
-    <link rel="stylesheet" href="../style/all.min.css">
+	<script type="text/javascript">
+        var VERSION = '<?php echo VERSION; ?>';
+        var IMAGES_VER = '<?php echo IMAGES_VER; ?>';
+		var php_domain = '<?php echo $_SERVER["SERVER_NAME"]; ?>';
+		var sitepath = '<?php echo SITE_PATH; ?>';
+		var langx = '<?php echo $langx; ?>';
+		var cosino = '<?php echo CASINO_CSS; ?>';
+		var isapp = '<?php echo $isapp; ?>' ;
+		var username = '<?php echo $username; ?>';
+		var password = '<?php echo $password; ?>';
+		var appversion = '<?php echo $appversion; ?>';
+	</script>
+    <link rel="stylesheet" href="../../style/all.min.css">
+	<script type="text/javascript" src="../../js/lib/LangString.js?version=<?php echo VERSION; ?>"></script>
+	<script type="text/javascript" src="../../js/lib/ListenEvent.js?version=<?php echo VERSION; ?>"></script>
+	<script type="text/javascript" src="../../js/lib/Util.js?version=<?php echo VERSION; ?>"></script>
+	<script type="text/javascript" src="../../js/login/newlogin.js?version=<?php echo VERSION; ?>"></script>
+	<script type="text/javascript" src="../../tpljson/newlogin.json?version=<?php echo VERSION; ?>"></script>
 
 </head>
 
-<body class="logBg">
+<body onLoad="init();" class="logBg" style="display: none;">
 
     <!-- 登入資訊 -->
     <div class="logArea">
@@ -27,40 +43,48 @@
 
             <!-- 語系 -->
             <label class="logArea__from__Language">
-                <select name="" id="">
-                    <option value="">繁體</option>
-                    <option value="">簡體</option>
-                    <option value="">English</option>
+                <select name="" id="langx_select">
+					<option value="zh-tw" data-func="langx">繁體</option>
+					<option value="zh-cn" data-func="langx">簡體</option>
+					<option value="en-us" data-func="langx">English</option>
+					<option value="ko-kr" data-func="langx">한국어</option>
+					<option value="ja-jp" data-func="langx">日本語</option>
+					<option value="vi-vn" data-func="langx">Việt Nam</option>
+					<option value="sa-in" data-func="langx">हिन्दी</option>
+					<option value="th-th" data-func="langx">ไทย</option>
+					<option value="km-kh" data-func="langx">ខ្មែរ</option>
+					<option value="id-id" data-func="langx">bahasa Indonesia</option>
                 </select>
                 <i class="icon_downArr"></i>
             </label>
             <!-- 語系 end -->
 
             <div class="logArea__from__import">
-                <input type="text" name="" id="" placeholder="請輸入用戶帳戶" autocapitalize="off" autocomplete="new-password" autocorrect="off" spellcheck="false">
+                <input id="username" name="text" data-func="login" data-input="a_z_nums" type="text" placeholder="*ART_newlogin_username*" autocapitalize="off" autocomplete="new-password" autocorrect="off" spellcheck="false">
             </div>
 
             <div class="logArea__from__import">
-                <input type="password" name="" id="" placeholder="請輸入密碼">
+                <input id="password" name="text" data-func="login" data-input="a_z_nums" type="password" placeholder="*ART_newlogin_password*">
             </div>
 
-            <div class="logArea__from__import --ver" data-txt="1688">
-                <input type="tel" name="" id="" placeholder="請輸入驗證碼" maxlength="4">
+            <div class="logArea__from__import --ver">
+                <input id="checkTxt" name="text" data-func="login" data-input="nums" type="tel" placeholder="*ART_newlogin_verification*" maxlength="4">
+                <span id="intImg" class="verification">1688</span>
             </div>
 
-            <label class="logArea__from__remeber" data-txt="記住帳號">
-                <input type="checkbox" name="" id="">
+            <label class="logArea__from__remeber" data-txt="*ART_newlogin_remember*">
+                <input type="checkbox" id="remember" name="remember">
                 <span></span>
             </label>
 
-            <button class="logArea__from_btn" data-txt="登入" id="loginBtn">
+            <button id="login_check" name="button" data-func="login" class="logArea__from_btn" data-txt="*ART_newlogin_login*">
                 <span class="hover_item"></span>
             </button>
 
             <!-- QR扣 -->
             <div class="logQR">
                 <img src="../images/img_qr.png" alt="">
-                <a id="android_dl" href="https://sm.iabc365.com/phoneapp/TI.apk" target="_blank">Android 下載</a>
+                <a id="android_dl" href="https://sm.iabc365.com/phoneapp/TI.apk" target="_blank">*ART_newlogin_Android* *ART_newlogin_Downlond*</a>
             </div>
             <!-- QR扣 end -->
 
@@ -74,18 +98,18 @@
     <!-- foot -->
     <div class="logFoot">
         <ul class="logFoot__clear">
-            <li>清除緩存說明</li>
-            <li>
-                <a href="/www_html5/tpl/loginClear.html?langx=zh-tw&amp;tab=tab1" target="_blank">IE</a>
+            <li>*ART_newlogin_clear*</li>
+            <li style="display: none;">
+                <a href="/www_html5/tpl/loginClear.html?langx=zh-tw&amp;tab=tab1" target="_blank">*ART_newlogin_IE*</a>
             </li>
             <li>
-                <a href="/www_html5/tpl/loginClear.html?langx=zh-tw&amp;tab=tab2" target="_blank">谷歌</a>
+                <a href="/www_html5/tpl/loginClear.html?langx=zh-tw&amp;tab=tab2" target="_blank">*ART_newlogin_Google*</a>
             </li>
             <li>
-                <a href="/www_html5/tpl/loginClear.html?langx=zh-tw&amp;tab=tab3" target="_blank">火狐</a>
+                <a href="/www_html5/tpl/loginClear.html?langx=zh-tw&amp;tab=tab3" target="_blank">*ART_newlogin_Firefox*</a>
             </li>
-            <li>
-                <a href="/www_html5/tpl/loginClear.html?langx=zh-tw&amp;tab=tab4" target="_blank" class="ie10">IE10兼容性修改說明</a>
+            <li style="display: none;">
+                <a href="/www_html5/tpl/loginClear.html?langx=zh-tw&amp;tab=tab4" target="_blank" class="ie10">*ART_newlogin_IE10instructions*</a>
             </li>
         </ul>
 
@@ -95,9 +119,9 @@
             <i class="icon_google"></i>
             <span>
                 <a href="https://www.google.cn/intl/en-us/chrome/" target="_blank">
-                    下載谷歌<i class="icon_download"></i>
+                    *ART_newlogin_GoogleDownlond*<i class="icon_download"></i>
                 </a>
-                <a href="http://www.tudou.com/programs/view/_pIEWm4IwV0/" target="_blank">觀看谷歌教學</a>
+                <a href="http://www.tudou.com/programs/view/_pIEWm4IwV0/" target="_blank">*ART_newlogin_GoogleWatch*</a>
             </span>
         </button>
 
@@ -105,10 +129,10 @@
             <i class="icon_firefox"></i>
             <span>
                 <a href="https://www.mozilla.org/zh-CN/firefox/new/" target="_blank">
-                    下載火狐<i class="icon_download"></i>
+                    *ART_newlogin_FirefoxDownlond*<i class="icon_download"></i>
                 </a>
                 <a href="http://video.tudou.com/v/XOTMwMzU5Nzcy.html?from=s1.8-1-1.2&amp;spm=a2h0k.8191414.0.0"
-                    target="_blank">觀看火狐教學</a>
+                    target="_blank">*ART_newlogin_FirefoxWatch*</a>
             </span>
         </button>
     </div>
@@ -121,9 +145,9 @@
     <!-- copyright end -->
 
 
-    <script>
+    <!-- <script>
         document.querySelector('#loginBtn').addEventListener('click', () => window.location.href = "agree.html")
-    </script>
+    </script> -->
 </body>
 
 </html>
