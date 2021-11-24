@@ -1870,7 +1870,8 @@
 // .order內層細項設定
 // 電投有卡 電投無卡
 .--telType [class^="order__"],
-.--noCard .memberInfo{
+.--noCard .memberInfo,
+.--noOrder .memberInfo {
     display: none;
 }
 
