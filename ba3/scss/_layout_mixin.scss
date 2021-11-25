@@ -331,7 +331,8 @@ $icon: (
 	'hollow_play',
 	'slash_bank',
 	'slash_play',
-	'detail'
+	'detail',
+	'warn',
 );
 
 @each $name in $icon {
@@ -359,7 +360,8 @@ $chips: (
 	'100k',
 	'auto01',
 	'auto02',
-	'set'
+	'set',
+	'allin'
 );
 @each $name in $chips {
 	.chips_#{$name} {

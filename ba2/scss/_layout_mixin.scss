@@ -271,7 +271,8 @@ $chips: (
 	'100k',
 	'auto01',
 	'auto02',
-	'set'
+	'set',
+	'allin'
 );
 @each $name in $chips {
 	.chips_#{$name} {
