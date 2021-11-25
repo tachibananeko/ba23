@@ -520,7 +520,7 @@
 
     // 下注桌布.order__area
     &__area {
-        @include d_f(flex, flex-start, flex-start);
+        @include d_f(flex, flex-start, center);
         position: relative;
         flex-wrap: wrap;
         flex: 1 1 100%;
@@ -585,12 +585,28 @@
             }
         }
 
+        // 線段出現樣式
+        .area_p,
+        .area_b,
+        .area_t {
+            border-style: solid;
+            border-color: map-get($bg_color, black);
+        }
+        .area_p{
+            border-width: 0 1px 1px 0;
+        }
+        .area_b {
+            border-width: 0 0 1px;
+        }
+        .area_t{
+            border-width: 0 1px;
+        }
+
         .area_t,
         .area_bp,
         .area_pp {
             width: calc(100% / 3);
             height: 45%;
-            border-top: 1px solid map-get($bg_color, black);
             font-size: 40px;
 
             @include mw_lg {
@@ -601,10 +617,10 @@
             }
         }
 
-        .area_p,
-        .area_t,
-        .area_pp {
-            border-right: 1px solid map-get($bg_color, black);
+        // 對子隱藏
+        @at-root .--pair_none .area_bp,
+        .--pair_none .area_pp{
+            display: none;
         }
 
         // 下注區內容物
