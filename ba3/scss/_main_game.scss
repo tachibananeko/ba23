@@ -187,6 +187,40 @@
             }
         }
 
+        // 視訊訊息 .video__function__msg
+        &__msg {
+            @extend %txtshadow;
+            @include d_f(flex, center, center);
+            @include pos_a(tl, 40%, 0);
+            @include border(1px 0, map-get($border_color, secondary));
+            width: 100%;
+            min-height: 100px;
+            padding: 10px;
+            background: map-get($bg_color, black_alpha);
+            font-size: 32px;
+            text-align: center;
+            margin: auto;
+
+            &::before{
+                content: '';
+                display: block;
+                width: 30px;
+                height: 30px;
+                background: url(../images/icon_shock.svg) no-repeat center / cover;
+                margin-right: 10px;
+            }
+
+            @include mw_xs {
+                min-height: auto;
+                font-size: 16px;
+
+                &::before {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+        }
+
         // 連線訊號燈.video__function__speed
         &__speed{
             @include pos_a(rb, 0);

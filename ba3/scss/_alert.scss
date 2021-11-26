@@ -12,7 +12,7 @@
         flex-direction: column;
         position: relative;
         width: 100%;
-        max-width: 300px;
+        max-width: 350px;
         min-height: 150px;
         max-height: 100%;
         padding: 2px;
@@ -77,12 +77,19 @@
                 padding: 20px 20px 0;
             }
 
+            code{
+                color: map-get($txt_color, darkyellow);
+            }
+
             .msg{
-                @include d_f(flex, center, center);
-                font-size: 20px;
+                @extend %txtshadow;
+                @include d_f(flex, center, flex-start);
+                color: map-get($txt_color, warn);
                 margin-bottom: 20px;
+                text-align: left;
 
                 i{
+                    flex: none;
                     width: 20px;
                     height: 20px;
                     margin-right: 5px;
@@ -94,6 +101,7 @@
 
                 li{
                     @include d_f(flex, center, flex-start);
+                    flex-wrap: wrap;
                     color: map-get($txt_color, white);
                     margin-bottom: 5px;
 
@@ -205,6 +213,7 @@
 
     // 彈窗功能按鈕
     .func{
+        justify-content: space-between;
         flex-wrap: wrap;
         padding: 0 10px;
 
@@ -214,12 +223,8 @@
 
         // .func_btn
         &_btn{
-            max-width: 120px;
+            max-width: 150px;
             margin-bottom: 10px;
-            
-            &:nth-child(even){
-                margin-left: 36px;
-            }
         }
     }
 
