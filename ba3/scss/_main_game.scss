@@ -725,7 +725,7 @@
             color: map-get($txt_color, primary);
             font-size: 14px;
 
-            @at-root .area_p .amount {
+            @at-root .area_b .amount {
                 left: auto;
                 right: 5px;
             }
