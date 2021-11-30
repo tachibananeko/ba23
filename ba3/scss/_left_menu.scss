@@ -158,16 +158,17 @@
             }
         }
 
-        .name{
-            display: block;
+        .name {
+            display: inline-block;
             position: relative;
-            max-width: calc(100% - 20px);
-            padding: 3px 5px;
+            max-width: 100%;
+            padding: 3px 15px;
             font-size: 14px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            margin: auto auto 5px;
+            margin-bottom: 5px;
+
             // &::after{
             //     @extend %transition;
             //     @include pos_a(tl, 0);
@@ -176,16 +177,16 @@
             //     height: calc(100% - 2px);
             //     border: 1px solid transparent;
             // }
-            @include mw_lg{
-                max-width: calc(100% - 10px);
-            }
-            @include mw_md{
-                @include d_f(flex, center, flex-start);
+            @include mw_lg {
                 max-width: 100%;
+            }
+
+            @include mw_md {
+                @include d_f(flex, center, flex-start);
                 white-space: normal;
                 word-break: break-word;
 
-                &::before{
+                &::before {
                     content: '';
                     flex: none;
                     width: 15px;
@@ -196,18 +197,13 @@
             }
 
             // 手指效果
-            @include hoverHandler{
+            @include hoverHandler {
                 max-width: none;
-                display: inline-block;
                 background: map-get($bg_color, black_alpha);
-                margin-left: 10px;
                 // &::after{
                 //     border: 1px solid map-get($bg_color, secondary);
                 // }
 
-                @include mw_lg {
-                    margin-left: 5px;
-                }
                 @include mw_md {
                     display: flex;
                     background: transparent;

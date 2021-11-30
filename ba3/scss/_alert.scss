@@ -142,9 +142,9 @@
                     padding-left: 0;
                     
                     li{
-                    justify-content: center;
+                    display: block;
                     font-weight: bold;
-                    font-size: 20px;
+                    font-size: 18px;
                     
                     &::before{
                         content: none;
@@ -170,9 +170,8 @@
 
         // 彈窗功能按鈕
         .func {
-            justify-content: space-between;
+            justify-content: space-around;
             flex-wrap: wrap;
-            padding: 0 10px;
 
             @at-root .--password .func {
                 padding: 0 20px 10px;

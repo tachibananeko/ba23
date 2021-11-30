@@ -79,14 +79,14 @@
             grid-area: inside;
 
             display: grid;
-            grid-template-rows: 480px 80px minmax(200px, 250px);
+            grid-template-rows: 480px 80px minmax(200px, 230px);
             grid-template-columns: 750px minmax(0, 1fr);
             grid-template-areas:"video order"
                                 "table order"
                                 "road detail";
             
             @include mw_lg{
-                grid-template-rows: 430px 30px minmax(200px, 250px);
+                grid-template-rows: 430px 30px minmax(200px, 230px);
                 grid-template-columns: 700px minmax(0, 1fr);
             }
             @include mw_md {
@@ -96,7 +96,7 @@
                 grid-template-areas:"video"
                                     "order"
                                     "road";
-                grid-template-rows: 50vw 1fr minmax(200px, 250px);
+                grid-template-rows: 50vw 1fr minmax(200px, 420px);
                 grid-template-columns: minmax(0, 1fr);
 
                 // 選擇桌次展開
@@ -105,7 +105,7 @@
                                         "table"
                                         "order"
                                         "road";
-                    grid-template-rows: 50vw 120px 1fr minmax(200px, 250px);
+                    grid-template-rows: 50vw 120px 1fr minmax(200px, 420px);
                 }
             }
             @include mw_xs {
@@ -338,7 +338,7 @@
     @include mw_sm{
         grid-template-areas:"video"
                             "road";
-        grid-template-rows: 60vw minmax(200px, 300px);
+        grid-template-rows: 60vw minmax(200px, 420px);
 
         // 選擇桌次展開
         @at-root .--noCard.--tableOpen .frame__main__inside,
@@ -346,7 +346,7 @@
             grid-template-areas:"video"
                                 "table"
                                 "road";
-            grid-template-rows: 60vw 120px minmax(200px, 300px);
+            grid-template-rows: 60vw 120px minmax(200px, 420px);
         }
     }
 }
