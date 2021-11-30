@@ -18,6 +18,14 @@
         padding: 2px;
         background: map-get($bg_color, secondary_vl);
 
+        // 打賞視窗位置控制
+        @at-root .video .alert__box{
+            @include pos_a(trbl, 0);
+            width: 300px;
+            height: 230px;
+            margin: auto;
+        }
+
         &.--password{
             background: map-get($bg_color, lightblue);
         }
@@ -158,7 +166,23 @@
                     margin-left: 20px;
                 }
             }
-            
+        }
+
+        // 彈窗功能按鈕
+        .func {
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0 10px;
+
+            @at-root .--password .func {
+                padding: 0 20px 10px;
+            }
+
+            // .func_btn
+            &_btn {
+                max-width: 150px;
+                margin-bottom: 10px;
+            }
         }
 
 
@@ -209,150 +233,4 @@
         }
     }
 
-
-
-    // 彈窗功能按鈕
-    .func{
-        justify-content: space-between;
-        flex-wrap: wrap;
-        padding: 0 10px;
-
-        @at-root .--password .func{
-            padding: 0 20px 10px;
-        }
-
-        // .func_btn
-        &_btn{
-            max-width: 150px;
-            margin-bottom: 10px;
-        }
-    }
-
-
-
-    // 好路提示設定
-    .roadSet{
-        @include pos_a(rb, 0);
-        @include d_f(flex, unset, center);
-        @include radius_hidden(5px);
-        flex-direction: column;
-        width: 100%;
-        max-width: 500px;
-        max-height: 100%;
-        padding: 2px;
-        background: map-get($bg_color, lightblue);
-
-        @include mw_md{
-            position: relative;
-        }
-        @include mw_xs{
-            max-width: 300px;
-        }
-
-        &::before{
-            @include pos_a(trbl, 0);
-            content: '';
-            width: calc(100% - 4px);
-            height: calc(100% - 4px);
-            background: map-get($bg_color, black);
-            margin: auto;
-        }
-
-        // .roadSet__title
-        &__title{
-            @include border(0 0 1px, map-get($border_color, secondary));
-            position: relative;
-            background: map-get($bg_color, primary_vl);
-            flex: none;
-            padding: 10px;
-            font-weight: bold;
-            text-align: center;
-
-            .roadSet_btn{
-                @include pos_a(trb, 0, 20px, 0);
-                @include d_f(flex, center, flex-start);
-                color: map-get($txt_color, primary);
-                font-size: 14px;
-                margin: auto;
-                
-                @include mw_xs{
-                    code{
-                        display: none;
-                    }
-                }
-
-                &::before{
-                    content: '';
-                    display: block;
-                    width: 20px;
-                    height: 20px;
-                    background: url(../images/icon_notice.svg) no-repeat left center;
-                    margin-right: 5px;
-                }
-
-                // 手指效果
-                @include hoverHandler{
-                    opacity: .7;
-                }
-            }
-        }
-
-        // .roadSet__info
-        &__info{
-            @include scrollbar(hidden, auto);
-            @include d_f(flex, flex-start, space-around);
-            align-content: flex-start;
-            flex-wrap: wrap;
-            flex: 1 1 100%;
-            padding: 20px 20px 0;
-
-            .--allChecked{
-                @extend %hand;
-                @include pos_a(bl, 20px);
-                @include d_f(flex, center, center);
-                color: map-get($txt_color, primary);
-                font-size: 14px;
-
-                @include mw_xs{
-                    position: relative;
-                    width: 100%;
-                    justify-content: flex-start;
-                    bottom: auto;
-                    left: 15px;
-                    margin-bottom: 10px;
-                }
-            }
-
-            // .roadSet__info__item
-            &__item{
-                @extend %hand;
-                @include d_f(flex, center, flex-start);
-                @include radius_hidden();
-                flex-wrap: wrap;
-                position: relative;
-                width: 100px;
-                padding: 1px;
-                background: map-get($bg_color, lightblue);
-                margin-bottom: 20px;
-
-                &::before{
-                    @include pos_a(trbl, 0);
-                    content: '';
-                    width: calc(100% - 2px);
-                    height: calc(100% - 2px);
-                    background: map-get($bg_color, primary_vl);
-                    pointer-events: none;
-                    margin: auto;
-                }
-
-                *{
-                    position: relative;
-                }
-
-                code{
-                    font-size: 12px;
-                }
-            }
-        }
-    }
 }

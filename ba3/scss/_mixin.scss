@@ -304,7 +304,7 @@ $direction: (
 $num: 100; 
 @while $num > 0 {
 	.w#{$num} {
-		width: $num * 1%;
+		width: $num * 1% !important;
 	}
 	.w#{$num}px {
 		width: $num + px !important;
