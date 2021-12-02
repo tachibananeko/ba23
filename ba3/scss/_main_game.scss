@@ -207,7 +207,7 @@
                 display: block;
                 width: 30px;
                 height: 30px;
-                background: url(../images/icon_shock.svg) no-repeat center / cover;
+                background: url(../images/icon_warn.svg) no-repeat center / cover;
                 margin-right: 10px;
             }
 
@@ -1008,6 +1008,11 @@
             height: calc(100% - 47px);
         }
 
+        @include mw_xs {
+            top: 60px;
+            height: calc(100% - 60px);
+        }
+
         // 卡片all展開
         @at-root .--cardOpen .cardAll{
             display: block;
@@ -1170,6 +1175,10 @@
             @include pos_a(trb, 0, 10px, 0);
             margin: auto;
             opacity: .3;
+
+            @include mw_md {
+                display: none;
+            }
 
             // 手指效果
             @include hoverHandler{
@@ -2063,7 +2072,7 @@
 
 // -----------------------------------------
 // .order內層細項設定
-// 電投有卡 電投無卡
+// 電投有卡 電投無卡 網投無卡
 .--telType [class^="order__"],
 .--noCard .memberInfo,
 .--noOrder .memberInfo {

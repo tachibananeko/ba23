@@ -225,6 +225,7 @@ $breakpoints: (
 
 // 一般滑過
 @mixin hoverHandler {
+	@extend %transition;
 	@media (pointer: fine) and (max-resolution: 2dppx),
 	screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2),
 	(-moz-touch-enabled: 0) {
@@ -235,8 +236,6 @@ $breakpoints: (
 	&:active {
 		@content;
 	}
-
-	transition: all .3s ease-in-out;
 }
 
 // 按鈕滑過
