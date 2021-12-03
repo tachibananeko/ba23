@@ -753,10 +753,10 @@
 
         .amount {
             @include pos_a(bl, 25px, 5px);
+            @include d_f(flex, center, flex-start);
             @include border(1px, map-get($border_color, primary));
             min-width: 50px;
             height: 25px;
-            padding: 2px 5px;
             background: map-get($bg_color, black);
             color: map-get($txt_color, primary);
             font-size: 14px;
@@ -765,10 +765,12 @@
                 left: auto;
                 right: 5px;
             }
-
+            >span{
+                width: calc(100% - 23px);
+                padding-left: 5px;
+            }
             &_btn {
                 @include btn_set(23px, 23px, transparent);
-                @include pos_a(tr, 0);
                 background: url(../images/icon_x.svg) no-repeat center / 50%;
 
                 // 手指效果
