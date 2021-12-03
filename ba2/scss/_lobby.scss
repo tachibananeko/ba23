@@ -376,6 +376,7 @@
 
         // 珠路上的廠商logo+珠路圖 .lobbyTb__road__img
         &__img{
+            @extend %hand;
             position: relative;
             [class^=icon_] {
                 position: absolute;

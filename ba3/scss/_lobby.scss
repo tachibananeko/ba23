@@ -179,6 +179,7 @@
         
         // 珠路圖 .lobbyTb__road__img
         &__img{
+            @extend %hand;
             img[src=""]{
                 display: none;
             }
