@@ -28,7 +28,7 @@
         height: 25px;
         background: url(../images/icon_member.svg) no-repeat center;
         cursor: default!important;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
 
         @include mw_md{
             height: 100%;
@@ -122,7 +122,7 @@
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
         font-size: 0;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
 
         @include mw_md {
             @include border(0 0 1px, map-get($border_color, secondary));

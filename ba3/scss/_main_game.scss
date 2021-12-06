@@ -363,6 +363,7 @@
         @include scrollbar(hidden, auto);
         @include d_f(flex, flex-start, flex-start);
         flex: 1 1 100%;
+        width: 100%;
         align-content: flex-start;
         flex-wrap: wrap;
         background: map-get($bg_color, black_alpha);
@@ -370,7 +371,6 @@
 
         @include mw_lg{
             @include pos_a(tl, 30px, 0);
-            width: 100%;
             max-height: 100px;
             display: none;
 
@@ -786,9 +786,14 @@
             max-height: 60%;
             transform: scale(.8);
 
-            @at-root .area_b .coin {
+            @at-root .area_p .coin {
                 right: auto;
                 left: 0;
+                bottom: 45px;
+            }
+
+            @at-root .area_b .coin {
+                bottom: 45px;
             }
         }
     }
@@ -1240,6 +1245,7 @@
 
         @include mw_lg {
             width: 100%;
+
 
             &:not(.--on) {
                 display: none;

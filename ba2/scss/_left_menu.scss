@@ -34,7 +34,7 @@
         width: 100%;
         height: 25px;
         background: url(../images/icon_member.svg) no-repeat center;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         cursor: default!important;
 
         @include mw_md{
@@ -129,7 +129,7 @@
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
         font-size: 0;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
 
         &::before{
             content: '(' attr(data-txt) ')';
