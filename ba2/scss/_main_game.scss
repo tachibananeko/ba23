@@ -878,6 +878,11 @@
             width: 75px;
             max-height: 60%;
             transform: scale(.8);
+
+            @at-root .area_b .coin{
+                right: auto;
+                left: 0;
+            }
         }
     }
 
