@@ -141,7 +141,7 @@
 .table_group{
     @include mw_xs{
         width: calc(100% - 20px);
-        margin: auto !important;
+        margin: auto;
         
         &:not(.--total){
             padding-top: 10px;
@@ -161,6 +161,19 @@
     }
     @include mw_xs{
         font-size: 16px;
+    }
+
+    // 特殊標題
+    caption {
+        @include border(0 0 1px, map-get($border_color, secondary));
+        padding: 5px 0;
+        background: map-get($bg_color, primary_vl);
+        font-weight: bold;
+        font-size: 16px;
+
+        &.--cancel {
+            background: map-get($btn_color, lightblue_vl);
+        }
     }
     
     thead{
@@ -285,19 +298,7 @@
         @include mw_sm{
             font-size: 12px;
         }
-
-        caption{
-            @include border(0 0 1px, map-get($border_color, secondary));
-            padding: 5px 0;
-            background: map-get($bg_color, primary_vl);
-            font-weight: bold;
-            font-size: 16px;
-
-            &.--cancel{
-                background: map-get($btn_color, lightblue_vl);
-            }
-        }
-
+        
         .normal_box{
             @include mw_xs{
                 @include d_f(flex, unset, flex-start);
