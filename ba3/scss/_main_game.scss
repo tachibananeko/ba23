@@ -1133,8 +1133,13 @@
             margin: auto;
 
             // 無統計資料
-            &.--none::before{
+            &.--none::before {
+                @include pos_a(trbl, 0);
                 content: attr(data-txt);
+                line-height: 30px;
+                background: map-get($bg_color, darkblue_vl);
+                margin: auto;
+                text-align: center;
             }
             li{
                 @include d_f(flex, center, center);
