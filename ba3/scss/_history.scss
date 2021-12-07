@@ -141,7 +141,7 @@
 .table_group{
     @include mw_xs{
         width: calc(100% - 20px);
-        margin: auto;
+        margin: auto !important;
         
         &:not(.--total){
             padding-top: 10px;
