@@ -139,7 +139,7 @@
 
 // 表格設定
 .table_group{
-    @include mw_xs{
+    @include mw_sm{
         width: calc(100% - 20px);
         margin: auto;
         
@@ -177,13 +177,13 @@
     }
     
     thead{
-        @include mw_xs{
+        @include mw_sm{
             display: none;
         }
     }
 
     .normal_box{
-        @include mw_xs{
+        @include mw_sm{
             display: block;
             margin-bottom: 10px;
         }
@@ -206,7 +206,7 @@
     td{
         background: map-get($bg_color, td_gray);
 
-        @include mw_xs{
+        @include mw_sm{
             position: relative;
             @include d_f(flex, center, space-between);
             width: 100%;
@@ -229,7 +229,7 @@
     @at-root .--total{
         @extend %transition;
 
-        @include mw_xs{
+        @include mw_sm{
             position: fixed;
             top: calc(100% - 50px);
             left: 10px;
@@ -246,7 +246,7 @@
         td{
             background: map-get($bg_color, td_titlegray);
 
-            @include mw_xs{
+            @include mw_sm{
                 width: auto !important;
                 background: map-get($bg_color, td_gray);
 
@@ -263,7 +263,7 @@
         th{
             color: map-get($txt_color, white);
 
-            @include mw_xs{
+            @include mw_sm{
                 @include pos_a(bl, 100%, 0);
                 @include d_f(flex, center, center);
                 @include radius_hidden(5px 5px 0 0);
@@ -296,12 +296,12 @@
     &.--detail{
         padding-top: 0;
         
-        @include mw_sm{
+        @include mw_md{
             font-size: 12px;
         }
         
         .normal_box{
-            @include mw_xs{
+            @include mw_sm{
                 @include d_f(flex, unset, flex-start);
                 padding-top: 35px;
                 flex-wrap: wrap;
@@ -318,6 +318,12 @@
                         top: auto;
                         bottom: 100%;
                     }
+
+                    // 結果改成
+                    &:last-child{
+                        flex-direction: column;
+                    }
+
                 }
 
                 .first_row{
@@ -338,32 +344,117 @@
             }
         }
         .result{
-            color: map-get($txt_color, secondary);
-            font-weight: bold;
+            @include d_f(flex, center, center);
+            position: relative;
+            width: 25px;
+            height: 25px;
+            border-radius: 25px;
+            color: map-get($txt_color, primary);
+            font-size: 16px;
+            margin: auto;
+
+            &::before,
+            &::after {
+                content: none;
+                position: absolute;
+                display: block;
+                width: 5px;
+                height: 5px;
+                background: map-get($bg_color, bank);
+                border: 1px solid map-get($bg_color, white);
+                border-radius: 50%;
+                top: -1px;
+                left: -1px;
+            }
+
+            &::after {
+                background: map-get($bg_color, play);
+                top: auto;
+                left: auto;
+                bottom: -1px;
+                right: -1px;
+            }
             
             // 有結果
-            &:empty{
-                color: map-get($txt_color, primary);
+            //         莊對     莊閒對  莊對閒對
+            // 莊  MH  MH_HP    MH_CP   MH_HPCP
+            // 閒  MC  MC_HP    MC_CP   MC_HPCP
+            // 和  MN  MN_HP    MN_CP   MN_HPCP
+
+            // 莊對 HP
+            // 閒對 CP
+
+            // --MH_
+            // --MH_HP
+            // --MH_CP
+            // --MH_HPCP
+            // --MC
+            // --MC_HP
+            // --MC_CP
+            // --MC_HPCP
+            // --MN
+            // --MN_HP
+            // --MN_CP
+            // --MN_HPCP
+            &[class*="--MH"] {
+                background: map-get($bg_color, bank);
+            }
+
+            &[class*="--MC"] {
+                background: map-get($bg_color, play);
+            }
+
+            &[class*="--MN"] {
+                background: map-get($bg_color, tie);
+            }
+
+            &[class$="CP"]:after,
+            &[class$="HPCP"]:after,
+            &[class$="HP"]:before,
+            &[class$="HPCP"]:before{
+                content: '';
+            }
+        }
+
+        .cardItem{
+            @include d_f(flex, center, space-around);
+
+            span{
+                display: block;
+                width: 25px;
+                height: 45px;
+                padding: 2px 0;
+                background: map-get($bg_color, white);
+                border: 1px solid map-get($bg_color, black);
+                border-radius: 5px;
+                color: map-get($txt_color, secondary);
+                font-weight: bold;
+                margin-top: 5px;
+                text-align: center;
+
+                // 莊
+                &:nth-child(1){
+                    border-color: map-get($bg_color, bank);
+                    color: map-get($txt_color, bank);
+                }
+                // 閒
+                &:nth-child(5) {
+                    border-color: map-get($bg_color, play);
+                    color: map-get($txt_color, play);
+                }
+
+                // 紅心方塊顏色
+                &.--heart,
+                &.--diamond{
+                    color: map-get($txt_color, red);
+                }
+
 
                 &::before{
-                @include d_f(flex, center, center);
-                content: attr(data-txt);
-                width: 25px;
-                height: 25px;
-                border-radius: 25px;
-                font-size: 16px;
-                margin: auto;
-
-                @at-root .--banker::before{
-                    background: map-get($bg_color, bank);
+                    content: attr(data-txt);
+                    display: block;
+                    font-size: 14px;
                 }
-                @at-root .--player::before{
-                    background: map-get($bg_color, play);
-                }
-                @at-root .--tie::before{
-                    background: map-get($bg_color, tie);
-                }
-            }
             }
         }
     }
