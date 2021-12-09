@@ -295,8 +295,15 @@
     // 電投細單
     &.--detail{
         padding-top: 0;
-        
-        @include mw_md{
+        font-size: 14px;
+
+        @include mw_lg {
+            font-size: 12px;
+        }
+        @include mw_sm {
+            font-size: 14px;
+        }
+        @include mw_xs {
             font-size: 12px;
         }
         
@@ -339,7 +346,10 @@
                     margin-bottom: 35px;
                 }
                 .last_row{
-                    width: calc(100% / 3);
+                    width: 20%;
+                }
+                .result_row {
+                    width: 60%;
                 }
             }
         }
@@ -350,7 +360,6 @@
             height: 25px;
             border-radius: 25px;
             color: map-get($txt_color, primary);
-            font-size: 16px;
             margin: auto;
 
             &::before,
@@ -381,10 +390,7 @@
             // 閒  MC  MC_HP    MC_CP   MC_HPCP
             // 和  MN  MN_HP    MN_CP   MN_HPCP
 
-            // 莊對 HP
-            // 閒對 CP
-
-            // --MH_
+            // --MH
             // --MH_HP
             // --MH_CP
             // --MH_HPCP
@@ -426,11 +432,20 @@
                 padding: 2px 0;
                 background: map-get($bg_color, white);
                 border: 1px solid map-get($bg_color, black);
-                border-radius: 5px;
+                border-radius: 3px;
                 color: map-get($txt_color, secondary);
                 font-weight: bold;
                 margin-top: 5px;
                 text-align: center;
+
+                @include mw_lg{
+                    width: 20px;
+                    height: 40px;
+                }
+                @include mw_md {
+                    width: 25px;
+                    height: 45px;
+                }
 
                 // 莊
                 &:nth-child(1){
@@ -449,11 +464,26 @@
                     color: map-get($txt_color, red);
                 }
 
-
                 &::before{
                     content: attr(data-txt);
                     display: block;
                     font-size: 14px;
+                }
+                // 黑桃♠
+                &.--spades::before {
+                    content: '♠';
+                }
+                // 紅心♥
+                &.--heart::before {
+                    content: '♥';
+                }
+                // 梅花♣
+                &.--club::before {
+                    content: '♣';
+                }
+                // 方塊♦
+                &.--diamond::before {
+                    content: '♦';
                 }
             }
         }
