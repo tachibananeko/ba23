@@ -10,13 +10,10 @@
     @include mw_md{
         @include d_f(inline-flex, center, center);
         width: 50px;
-        height: 100%;
+        height: 50px;
         flex: none;
         box-shadow: 3px 2px 3px map-get($bg_color, black_alpha);
         z-index: 1;
-    }
-    @include mw_ls {
-        height: 50px;
     }
 
     // .menu__info__logo
