@@ -234,12 +234,12 @@
             top: calc(100% - 50px);
             left: 10px;
             border: 1px solid map-get($bg_color, secondary);
-            transform: translateY(0);
+            transform: translate3d(0, 0, 0);;
             z-index: 2;
 
             &.--on{
                 box-shadow: 0 -3px 10px map-get($bg_color, darkgray);
-                transform: translateY(-100%);
+                transform: translate3d(0, -100%, 0);;
             }
         }
 
