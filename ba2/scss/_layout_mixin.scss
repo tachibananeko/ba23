@@ -250,7 +250,7 @@ $icon: (
 	.icon_#{$name} {
 		display: inline-block;
 		//若沒有svg就讀png
-		background:url(../images/icon_#{$name}.png) no-repeat center / contain,
+		background://url(../images/icon_#{$name}.png) no-repeat center / contain,
 		url(../images/icon_#{$name}.svg) no-repeat center / contain;
 	}
 }

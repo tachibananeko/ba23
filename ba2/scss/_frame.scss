@@ -73,7 +73,7 @@
             grid-area: inside;
 
             display: grid;
-            grid-template-rows: 480px 80px minmax(200px, 250px);
+            grid-template-rows: 480px 80px minmax(200px, 1fr);
             grid-template-columns: 750px minmax(0, 1fr);
             grid-template-areas:"video order"
                                 "table order"
