@@ -882,15 +882,15 @@
             max-height: 60%;
             transform: scale(.8);
 
-            @at-root .area_p .coin {
-                right: auto;
-                left: 0;
-                bottom: 45px;
-            }
+            // @at-root .area_p .coin {
+            //     right: auto;
+            //     left: 0;
+            //     bottom: 45px;
+            // }
 
-            @at-root .area_b .coin {
-                bottom: 45px;
-            }
+            // @at-root .area_b .coin {
+            //     bottom: 45px;
+            // }
         }
     }
 
