@@ -288,7 +288,7 @@
         height: calc(100% - 50px);
     }
 
-    ul{
+    >ul{
         @include mw_md {
             @include d_f(inline-flex, center, flex-start);
             flex: none;
@@ -298,13 +298,13 @@
             flex-direction: column;
         }
 
-        li {
+        >li {
             height: 100%;
             font-size: 14px;
         }
 
         // 一般 btn
-        li:not(.--PR) {
+        >li:not(.--PR) {
             @extend %hand;
             @include d_f(inline-flex, center, flex-start);
             @include btn_set(100%, auto, transparent);
@@ -373,8 +373,8 @@
         }
 
         // 槍手桌號
-        li.--PR {
-            @include radius_hidden();
+        >li.--PR {
+            position: relative;
             width: calc(100% - 20px);
             padding-bottom: 5px;
             background: map-get($bg_color, black);
@@ -408,9 +408,60 @@
                 border: 1px solid map-get($bg_color, black);
                 color: map-get($txt_color, secondary);
                 margin-bottom: 5px;
+                text-align: center;
+            }
+
+            
+
+            // 有兩個以上桌號
+            &.hasTable {
+                @extend %hand;
+
+                @include mw_lg{
+                    text-align: left;
+
+                    span {
+                        padding-left: 5px;
+                    }
+                }
+                
+                &::after {
+                    @include pos_a(br, 8px, 2px);
+                    @include triangle(10px, map-get($bg_color, white), bottom);
+                    content: '';
+
+                    @include mw_md{
+                        bottom: 5px;
+                    }
+                }
             }
         }
+        
+        // 桌號展開
+        .pr_table {
+            @extend %transition;
+            @include pos_a(tl, 100%, 0);
+            @include border(1px, map-get($border_color, primary));
+            width: 100%;
+            background: map-get($bg_color, black);
+            line-height: 25px;
+            text-align: center;
+            opacity: 0;
 
+            z-index: 1;
+
+            @include mw_md{
+                top: 0;
+                left: 100%;
+                line-height: 14px;
+                font-size: 12px;
+            }
+
+            @at-root .--PR.--active .pr_table{
+                opacity: 1;
+            }
+        }
+        
         // ph語系選單
         li.ph_language{
             display: none;
