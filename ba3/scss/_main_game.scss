@@ -804,6 +804,7 @@
         flex: none;
         height: 70px;
         background: map-get($bg_color, darkblue_vl);
+        z-index: 1;
 
         @include mw_sm{
             height: 50px;
