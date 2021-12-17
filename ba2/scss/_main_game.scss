@@ -740,21 +740,21 @@
         .area_p,
         .area_b,
         .area_t,
-        .area_bp,
         .area_pp,
+        .area_big,
         .area_small{
             border-style: solid;
             border-color: map-get($bg_color, black);
         }
         .area_p,
         .area_b {
-            border-width: 0 0 1px;
+            border-width: 1px 0 0;
         }
         .area_t {
-            border-width: 0 1px 1px;
+            border-width: 1px 1px 0;
         }
-        .area_bp,
         .area_pp,
+        .area_big,
         .area_small{
             border-width: 0 1px 0 0;
         }
