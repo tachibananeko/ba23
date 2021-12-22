@@ -411,26 +411,32 @@
                 text-align: center;
             }
             
-            // 有兩個以上桌號
+            /// 有兩個以上桌號
             &.hasTable {
-                @extend %hand;
-
-                @include mw_lg{
+                @include mw_lg {
                     text-align: left;
 
                     span {
                         padding-left: 5px;
                     }
                 }
-                
+
                 &::after {
                     @include pos_a(br, 8px, 2px);
-                    @include triangle(10px, map-get($bg_color, white), bottom);
+                    @include triangle(8px, map-get($bg_color, white), bottom);
                     content: '';
 
-                    @include mw_md{
+                    @include mw_md {
                         bottom: 5px;
                     }
+                }
+
+                input {
+                    @extend %hand;
+                    @include pos_a(trbl, 0);
+                    width: 100%;
+                    margin: auto;
+                    background: transparent;
                 }
             }
         }
@@ -438,7 +444,7 @@
         // 桌號展開
         .pr_table {
             @extend %transition;
-            @include pos_a(tl, 100%, 0);
+            @include pos_a(tl, 21px, 0);
             @include border(1px, map-get($border_color, primary));
             width: 100%;
             background: map-get($bg_color, black);
@@ -446,17 +452,18 @@
             text-align: center;
             opacity: 0;
 
-            z-index: 1;
+            z-index: -1;
 
-            @include mw_md{
+            @include mw_md {
                 top: 0;
                 left: 100%;
                 line-height: 14px;
                 font-size: 12px;
             }
 
-            @at-root .--PR.--active .pr_table{
+            @at-root .--PR.hasTable.--active .pr_table {
                 opacity: 1;
+                z-index: 1;
             }
         }
         
