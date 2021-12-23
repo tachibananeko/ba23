@@ -180,7 +180,6 @@
 
         // 視訊訊息 .video__function__msg
         &__msg {
-            @extend %txtshadow;
             @include d_f(flex, center, center);
             @include pos_a(tl, 40%, 0);
             @include border(1px 0, map-get($border_color, secondary));
@@ -190,17 +189,18 @@
             background: map-get($bg_color, black_alpha);
             font-size: 32px;
             text-align: center;
+            text-shadow: 0 0 5px map-get($txt_color, secondary);
             margin: auto;
 
 
-            &::before {
-                content: '';
-                display: block;
-                width: 30px;
-                height: 30px;
-                background: url(../images/icon_shock.svg) no-repeat center / cover;
-                margin-right: 10px;
-            }
+            // &::before {
+            //     content: '';
+            //     display: block;
+            //     width: 30px;
+            //     height: 30px;
+            //     background: url(../images/icon_shock.svg) no-repeat center / cover;
+            //     margin-right: 10px;
+            // }
 
             @include mw_xs {
                 min-height: auto;
