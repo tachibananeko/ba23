@@ -40,6 +40,7 @@
                 width: 45px;
                 height: 45px;
                 margin: 10px;
+                transform-origin: center bottom;
 
                 &::before{
                     @include pos_a(trbl, 0);
@@ -52,7 +53,7 @@
                 }
                 
                 &::after{
-                    @include pos_a(trl, calc(100% + 5px), 0, 0);
+                    @include pos_a(trl, calc(100% + 3px), 0, 0);
                     content: '';
                     width: 45px;
                     height: 2px;
@@ -62,8 +63,12 @@
                 }
 
                 // on效果
-                &.--on::after{
-                    background: map-get($bg_color, yellow);
+                &.--on {
+                    transform: scale(1.2);
+                }
+
+                &.--on::after {
+                    background: map-get($bg_color, gold);
                 }
 
                 // 手指效果
