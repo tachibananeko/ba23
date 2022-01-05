@@ -65,7 +65,7 @@
         &::after{
             @include triangle(8px, map-get($txt_color, primary), bottom);
             content: '';
-            margin-left: 5px;
+            margin-left: auto;
             pointer-events: none;
         }
 
