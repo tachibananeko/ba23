@@ -653,11 +653,14 @@
         position: relative;
         flex: 1 1 100%;
 
-        .area_b, .area_p, .area_t, .area_bp, .area_pp{
+        [class^="area_"] {
             padding: 1px;
             font-size: 30px;
         }
-        .area_t, .area_bp, .area_pp{
+        .area_pp,
+        .area_big,
+        .area_bp,
+        .area_small {
             font-size: 20px;
         }
 
