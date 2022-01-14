@@ -179,9 +179,16 @@ $breakpoints: (
 	}
 }
 
+// 筆電高度 766px 正常高度870px
+@mixin mw_lowhigh {
+	@media only screen and (max-height: 770px) and (min-width: 1025px) and (max-width: 1440px) {
+		@content;
+	}
+}
+
 // ph橫向
 @mixin mw_ls {
-	@media only screen and (max-height: 480px) and (max-width: 926px) {
+	@media only screen and (max-height: 480px) and (min-width: 481px) and (max-width: 926px) {
 		@content;
 	}
 }
