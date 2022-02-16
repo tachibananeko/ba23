@@ -221,11 +221,12 @@ $breakpoints: (
 
 // 手指hover相關
 // 一般
+.hand,
 [class*="_btn"]:not(:disabled),
 %hand {
 	cursor: pointer;
 }
-
+.no_hand,
 %no_hand {
 	cursor: default;
 	transition: none;
