@@ -193,7 +193,7 @@
         @include pos_a(tl, calc(100% + 5px), 0);
         @include border(0 0 1px, map-get($border_color, primary ));
         content: attr(data-txt);
-        background: map-get($bg_color , black_alpha );
+        background: map-get($bg_color , black);
         padding: 3px 5px;
         font-size: 14px;
         white-space: nowrap;
