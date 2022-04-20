@@ -1433,6 +1433,7 @@
 // 好路追注.goodroadList
 .goodroadList {
     @include scrollbar(hidden, auto);
+    position: relative;
     flex: 1 1 100%;
     padding: 10px 5px;
 
@@ -1559,6 +1560,16 @@
 
         // 手指效果
         @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
+    }
+
+    // 沒有好路時
+    &:empty::after {
+        @include pos_a(trbl, 0);
+        content: attr(data-txt);
+        height: 20px;
+        padding: 0 5px;
+        margin: auto;
+        text-align: center;
     }
 }
 // 最新投注.orderInfo
