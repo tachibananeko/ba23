@@ -1,36 +1,4 @@
-// 語系字體尺寸
-$txt_size: (
-    zh: (
-        xxx-large: 60px,
-        xx-large: 50px,
-        x-large: 40px,
-        large: 30px,
-        medium: 24px,
-        normal: 16px,
-        small: 14px,
-        x-small: 12px
-    ),
-    en: (
-        xxx-large: 60px,
-        xx-large: 50px,
-        x-large: 40px,
-        large: 30px,
-        medium: 24px,
-        normal: 14px,
-        small: 12px,
-        x-small: 12px
-    )
-);
-@mixin fz($size: "normal"){
-    @at-root &{
-            $zh: map-get($txt_size, zh);
-            font-size: map-get($zh, $size);
-    }
-    @at-root .en &{
-            $en: map-get($txt_size, en);
-            font-size: map-get($en, $size);
-    }
-}
+
 
 
 
@@ -50,6 +18,8 @@ $txt_color: (
     tie: #009245,
 );
 
+
+
 // 背景色
 $bg_color: (
     primary: linear-gradient(to right, #001940 0%, #004889 100%),
@@ -65,16 +35,17 @@ $bg_color: (
     play_gradual_vl: linear-gradient(to bottom, #0072fa 0%, #0031ab) 80%,
     tie_gradual: linear-gradient(to right, #113924 0%, #000) 100%,
     gold: linear-gradient(#f2bd79, #fefdb3 50%, #f2bd79 90%),
-    gold_gradual: radial-gradient(circle at center ,rgba(#fefdb3,.0),rgba(#fefdb3,.0) 35%,rgba(#fefdb3,.1) 50%, rgba(#ffd300,.15) 65%,rgba(#ffd300,.15) 75%,rgba(#fefdb3,.025) 90%, rgba(#fefdb3,.0) 100%),
+    gold_gradual: radial-gradient(circle at center, rgba(#fefdb3, .0), rgba(#fefdb3, .0) 35%, rgba(#fefdb3, .1) 50%, rgba(#ffd300, .15) 65%, rgba(#ffd300, .15) 75%, rgba(#fefdb3, .025) 90%, rgba(#fefdb3, .0) 100%),
     alert_bg: linear-gradient(to top, #00326e 30%, #000f28 100%),
     white: #fff,
     gray: #b3b3b3,
     darkgray: #333,
     gray_gradual: linear-gradient(to top, #4d4d4d 30%, #808080 100%),
-    td_titlegray: #4d4d4d,
-    td_gray: #808080,
+    td_titlegray: #817d7d,
+    td_gray: #aba9a9,
     black: #000,
     black_alpha: rgba(0, 0, 0, 0.6),
+    black_lightalpha: rgba(0, 0, 0, 0.2),
     secondary_alpha: #fdfcb350,
     blue: #0f2f66,
     middblue: #001940,
@@ -95,6 +66,63 @@ $bg_color: (
     tie: #009245,
     win: linear-gradient(to bottom, rgba(255, 255, 199, .7) 60%, rgba(160, 102, 42, .7) 100%)
 );
+$simple_bg_color: (
+    primary: #000,
+    primary_vl: linear-gradient(to bottom, #004889 0%, #001940 100%),
+    secondary: #fbe2b0,
+    secondary_vl: linear-gradient(to top, #f2bd79 60%, #563d29 100%),
+    darkblue: linear-gradient(-137deg, #001940 0%, #000) 100%,
+    darkblue_vl: linear-gradient(to top, #001940 0%, #000) 100%,
+    darkblue_vl_re: linear-gradient(to bottom, #001940 0%, #000) 100%,
+    bank_gradual: linear-gradient(to right, #9b0109 0%, #000) 100%,
+    bank_gradual_vl: linear-gradient(to bottom, #f00 0%, #650008) 80%,
+    play_gradual: linear-gradient(to right, #004889 0%, #000) 100%,
+    play_gradual_vl: linear-gradient(to bottom, #0072fa 0%, #0031ab) 80%,
+    tie_gradual: linear-gradient(to right, #113924 0%, #000) 100%,
+    gold: linear-gradient(#f2bd79, #fefdb3 50%, #f2bd79 90%),
+    gold_gradual: radial-gradient(circle at center, rgba(#fefdb3, .0), rgba(#fefdb3, .0) 35%, rgba(#fefdb3, .1) 50%, rgba(#ffd300, .15) 65%, rgba(#ffd300, .15) 75%, rgba(#fefdb3, .025) 90%, rgba(#fefdb3, .0) 100%),
+    alert_bg: linear-gradient(to top, #00326e 30%, #000f28 100%),
+    white: #fff,
+    gray: #b3b3b3,
+    darkgray: #333,
+    gray_gradual: linear-gradient(to top, #4d4d4d 30%, #808080 100%),
+    td_titlegray: #817d7d,
+    td_gray: #aba9a9,
+    black: #000,
+    black_alpha: rgba(0, 0, 0, 0.6),
+    black_lightalpha: rgba(0, 0, 0, 0.2),
+    secondary_alpha: #fdfcb350,
+    blue: #0f2f66,
+    middblue: #001940,
+    lightblue: #37c6ff,
+    lightyellow: #ffd300,
+    green: #115f24,
+    lightgreen: #00d345,
+    darkgreen: #0f361e,
+    red: #c11615,
+    darkred: #650008,
+    i_blue: #37c6ffb3,
+    i_green: #caff71b3,
+    i_red: #ffe1f9b3,
+    i_gold: #fbe2b0b3,
+    order_area: #224d4d,
+    bank: #000,
+    play: #000,
+    tie: #000,
+    win: linear-gradient(to bottom, rgba(255, 255, 199, .7) 60%, rgba(160, 102, 42, .7) 100%)
+);
+
+$mainBg: 'simple';
+$mainColor: '';
+
+@if($mainBg  !='simple') {
+    $mainColor : $bg_color;
+}
+
+@else {
+    $mainColor : $simple_bg_color;
+}
+
 
 // 按鈕色
 $btn_color: (
@@ -134,3 +162,5 @@ $border_color: (
         background: $value !important;
     }
 }
+
+
