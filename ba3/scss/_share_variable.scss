@@ -21,7 +21,7 @@ $txt_color: (
 
 
 // 背景色
-$bg_color: (
+$normal_bg_color: (
     primary: linear-gradient(to right, #001940 0%, #004889 100%),
     primary_vl: linear-gradient(to bottom, #004889 0%, #001940 100%),
     secondary: #fbe2b0,
@@ -113,14 +113,14 @@ $simple_bg_color: (
 );
 
 $mainBg: 'simple';
-$mainColor: '';
+$bg_color: '';
 
 @if($mainBg  !='simple') {
-    $mainColor : $bg_color;
+    $bg_color : $normal_bg_color;
 }
 
 @else {
-    $mainColor : $simple_bg_color;
+    $bg_color : $simple_bg_color;
 }
 
 
