@@ -19,6 +19,7 @@ $txt_color: (
 );
 
 // 背景色
+// 背景色
 $normal_bg_color: (
     primary: linear-gradient(to right, #001940 0%, #004889 100%),
     primary_vl: linear-gradient(to bottom, #004889 0%, #001940 100%),
@@ -65,13 +66,13 @@ $normal_bg_color: (
     win: linear-gradient(to bottom, rgba(255, 255, 199, .7) 60%, rgba(160, 102, 42, .7) 100%)
 );
 $simple_bg_color: (
-    primary: #f00,
-    primary_vl: linear-gradient(to bottom, #004889 0%, #001940 100%),
+    primary: linear-gradient(to right, #181713 0%, #2a2d2a 100%),
+    primary_vl: linear-gradient(to bottom, #2a2d2a 0%, #181713 100%),
     secondary: #fbe2b0,
     secondary_vl: linear-gradient(to top, #f2bd79 60%, #563d29 100%),
-    darkblue: linear-gradient(-137deg, #001940 0%, #000) 100%,
-    darkblue_vl: linear-gradient(to top, #001940 0%, #000) 100%,
-    darkblue_vl_re: linear-gradient(to bottom, #001940 0%, #000) 100%,
+    darkblue: linear-gradient(-137deg, #181713 0%, #000) 100%,
+    darkblue_vl: linear-gradient(to top, #181713 0%, #000) 100%,
+    darkblue_vl_re: linear-gradient(to bottom, #181713 0%, #000) 100%,
     bank_gradual: linear-gradient(to right, #9b0109 0%, #000) 100%,
     bank_gradual_vl: linear-gradient(to bottom, #f00 0%, #650008) 80%,
     play_gradual: linear-gradient(to right, #004889 0%, #000) 100%,
@@ -91,15 +92,15 @@ $simple_bg_color: (
     black_lightalpha: rgba(0, 0, 0, 0.2),
     secondary_alpha: #fdfcb350,
     blue: #0f2f66,
-    middblue: #001940,
-    lightblue: #37c6ff,
+    middblue: #563d29,
+    lightblue: #f2bd79,
     lightyellow: #ffd300,
     green: #115f24,
     lightgreen: #00d345,
     darkgreen: #0f361e,
     red: #c11615,
     darkred: #650008,
-    i_blue: #37c6ffb3,
+    i_blue: #fbe2b0b3,
     i_green: #caff71b3,
     i_red: #ffe1f9b3,
     i_gold: #fbe2b0b3,
@@ -129,10 +130,10 @@ $normal_btn_color: (
 $simple_btn_color: (
     primary: linear-gradient(to right, #f2bd79 50%, #563d29 100%),
     primary_vl: linear-gradient(to bottom, #f2bd79 50%, #563d29 100%),
-    secondary: linear-gradient(to right, #001940 0%, #004889 100%),
-    secondary_vl: linear-gradient(to top, #001940 0%, #004889 100%),
-    lightblue: linear-gradient(to right, #00a6ed 30%, #004889 100%),
-    lightblue_vl: linear-gradient(to bottom, #00a6ed 30%, #004889 100%),
+    secondary: linear-gradient(to right, #000 0%, #2a2d2a 100%),
+    secondary_vl: linear-gradient(to top, #181713 30%, #2a2d2a 100%),
+    lightblue: linear-gradient(to right, #f2bd79 30%, #563d29 100%),
+    lightblue_vl: linear-gradient(to bottom, #ffffad 30%, #b6805c 100%),
     green: linear-gradient(to top, #009245 0%, #113924 100%),
     lightgreen: linear-gradient(to top, #00c945 0%, #117024 100%),
     orange: linear-gradient(to top, #f36428 0%, #440010 100%),
@@ -141,8 +142,9 @@ $simple_btn_color: (
     lightorange_hl: linear-gradient(to right, #ff901d 0%, #991b10 100%),
     red: linear-gradient(to top, #FF302A 0%, #440010 100%)
 );
+
 // 裝飾線色
-$border_color: (
+$normal_border_color: (
     primary: linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1,
     secondary: linear-gradient(to right, transparent 0%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1,
     blue: linear-gradient(to right, #63faff 0%, #37c6ff 100%) 1,
@@ -151,13 +153,23 @@ $border_color: (
     darkblue: linear-gradient(to right, #001940 0%, #004889 100%) 1,
     gold: linear-gradient(to right, transparent 5%, #f2d77a 20%, #ffffc5 60%, #f2d77a 80%, transparent 100%) 1,
 );
+$simple_border_color: (
+    primary: linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1,
+    secondary: linear-gradient(to right, transparent 0%, #f2bd79 20%, #ffffc5 60%, #f2bd79 80%, transparent 100%) 1,
+    blue: linear-gradient(to right, #63faff 0%, #37c6ff 100%) 1,
+    green: linear-gradient(to right, #00d345 0%, #14b045 100%) 1,
+    red: linear-gradient(to right, #ff5f67 0%, #ff302a 100%) 1,
+    darkblue: linear-gradient(to right, #001940 0%, #004889 100%) 1,
+    gold: linear-gradient(to right, transparent 5%, #f2d77a 20%, #ffffc5 60%, #f2d77a 80%, transparent 100%) 1,
+);
+
 
 
 // 顏色map模組判斷
 $mainBg: 'simple';
 $bg_color : if($mainBg =='simple', $simple_bg_color, $normal_bg_color);
 $btn_color : if($mainBg =='simple', $simple_btn_color, $normal_btn_color);
-
+$border_color : if($mainBg =='simple', $simple_border_color, $normal_border_color);
 
 
 // 顏色class
